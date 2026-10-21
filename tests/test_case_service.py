@@ -33,7 +33,7 @@ class CaseServiceTests(unittest.TestCase):
 
     def concern_state(self):
         state = start()
-        for text in (OPTIONS[3], 'CARD-001', 'The agreed amount was GBP 30, but I was billed more.', 'TX-1003', 'GBP 30', 'Yes', 'No'):
+        for text in (OPTIONS[3], 'CARD-001', 'The agreed amount was INR 30, but I was billed more.', 'TX-1003', 'INR 30', 'Yes', 'No'):
             if text.startswith('TX-'):
                 prepare_reference(state, text)
             submit(state, text)

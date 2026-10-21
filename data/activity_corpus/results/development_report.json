@@ -712,7 +712,7 @@
     {
       "case_id": "TX-640688",
       "family": "amount_boundary",
-      "variant": "at_floor_minus_one",
+      "variant": "at",
       "passed": true,
       "actual": {
         "status": "ASSESSED",
@@ -728,7 +728,7 @@
     {
       "case_id": "TX-182180",
       "family": "amount_boundary",
-      "variant": "at_floor",
+      "variant": "above",
       "passed": true,
       "actual": {
         "status": "ASSESSED",

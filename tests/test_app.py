@@ -80,7 +80,7 @@ class ConversationTests(unittest.TestCase):
     def test_billing_branches(self):
         branches = [
             ['I was charged more than once', 'TX-1004', 'One purchase', 'Yes'],
-            ['The amount is wrong', 'GBP 30', 'Yes', 'No'],
+            ['The amount is wrong', 'INR 30', 'Yes', 'No'],
             ['The currency is unexpected', 'EUR', 'EUR 40'],
         ]
         for answers in branches:
@@ -98,7 +98,7 @@ class ConversationTests(unittest.TestCase):
         s = walk([OPTIONS[3], 'TX-1003'])
         self.assertEqual(s['step'], 'expected_amount')
         self.assertEqual(s['answers']['billing_type'], 'The amount is wrong')
-        for answer in ['GBP 30.00', 'Yes', 'No']:
+        for answer in ['INR 30.00', 'Yes', 'No']:
             submit(s, answer)
         self.assertEqual(s['decision']['reason'], 'BILLING_REVIEW')
         duplicate = walk([OPTIONS[2], 'TX-1003'])
@@ -109,7 +109,7 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(s['step'], 'duplicate')
 
     def test_refund_does_not_invent_credit_lookup(self):
-        s = walk([OPTIONS[4], 'TX-1003', 'They confirmed the refund was processed', '2026-10-18', 'GBP 42', 'This card', 'No'])
+        s = walk([OPTIONS[4], 'TX-1003', 'They confirmed the refund was processed', '2026-10-18', 'INR 42', 'This card', 'No'])
         self.assertEqual(s['decision']['reason'], 'REFUND_EVIDENCE_UNAVAILABLE')
         self.assertEqual(s['step'], 'handoff_confirm')
         self.assertEqual(s['review_requirement'], 'REQUIRED')

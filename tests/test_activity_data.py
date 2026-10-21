@@ -35,6 +35,9 @@ class RichActivityDataTests(unittest.TestCase):
         for forbidden in ('authorisation_truth','expected','legitimate_large_purchase','spending_scale','profile'):
             self.assertNotIn(forbidden,runtime)
         self.assertEqual(self.report['errors'],[])
+        self.assertEqual(set(self.report['currency_balance']),{'INR'})
+        for table in ('accounts','transactions','receipts','refunds','credits'):
+            self.assertEqual({row['currency'] for row in self.read('runtime/'+table+'.json')},{'INR'})
         self.assertGreater(self.report['missing_receipt_count'],0)
         self.assertGreater(self.report['missing_order_references'],0)
         self.assertGreater(self.report['delayed_presentment_count'],0)

@@ -8,7 +8,7 @@ from pathlib import Path
 import random
 
 SNAPSHOT = date(2026, 10, 20)
-VERSION = '1.1'
+VERSION = '1.2'
 
 
 def evidence(source, reference):
@@ -28,7 +28,7 @@ def generate_merchants():
 def generate_accounts(count, cards_per_customer=1):
     accounts = [dict(customer_id=f'C-{i:03}', account_id=f'A-{i:03}', card_id=f'CARD-{i:03}',
                  display_name='Alex Morgan' if i == 1 else f'Demo Customer {i}',
-                 currency='GBP', authorised_customer_ids=[f'C-{i:03}'],
+                 currency='INR', authorised_customer_ids=[f'C-{i:03}'],
                  **evidence('demo_identity_service', f'A-{i:03}')) for i in range(1, count + 1)]
     extras = []
     for number in range(2, cards_per_customer + 1):
@@ -61,8 +61,8 @@ def generate_transactions(rng, accounts, merchants, history_size):
                 merchant=m['trading_name'], descriptor=m['descriptor'],
                 purchase_date=occurred.isoformat(),
                 posted_date=(occurred + timedelta(days=0 if j < 5 else min(2, days))).isoformat() if status == 'Posted' else None,
-                amount_minor=amount, currency='GBP', original_amount_minor=amount,
-                original_currency='GBP', status=status,
+                amount_minor=amount, currency='INR', original_amount_minor=amount,
+                original_currency='INR', status=status,
                 channel='Online' if m['merchant_id'] in ['M-2', 'M-3', 'M-5'] else 'Card present',
                 recurring=m['merchant_id'] == 'M-2',
                 order_reference=f'ORDER-{tid}', **evidence('demo_transaction_service', tid)))
@@ -70,7 +70,7 @@ def generate_transactions(rng, accounts, merchants, history_size):
 
 
 def inr_example():
-    """Explicit optional INR fixture; no FX conversion is implied."""
+    """Optional fixed INR 200 example, in addition to the INR-generated history."""
     return dict(transaction_id='TX-999001', account_id='A-001', card_id='CARD-001',
                 merchant_id='M-3', merchant='Market Square', descriptor='MARKET SQ ONLINE',
                 purchase_date='2026-10-19', posted_date='2026-10-19', amount_minor=20000,
@@ -147,7 +147,7 @@ def validate(data):
     for table in ['receipts', 'cancellations', 'refunds']:
         if any(r['transaction_id'] not in ids for r in data[table]): errors.append(f'Broken {table} reference')
     signatures = Counter((t['account_id'], t['merchant_id'], t['purchase_date'], t['amount_minor']) for t in txs)
-    return dict(errors=errors, transaction_count=len(txs), status_balance=dict(Counter(t['status'] for t in txs)),
+    return dict(errors=errors, transaction_count=len(txs), currency_balance=dict(Counter(t['currency'] for t in txs)), status_balance=dict(Counter(t['status'] for t in txs)),
         recurring_count=sum(t['recurring'] for t in txs),
         duplicate_looking_groups=sum(n > 1 for n in signatures.values()),
         missing_posted_dates=sum(t['posted_date'] is None for t in txs),
@@ -197,7 +197,7 @@ def generate(output, seed=42, customers=3, history_size=30, cards_per_customer=1
     hashes = {str(p.relative_to(output)): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in sorted(owned)}
     write_json(output / 'manifest.json', dict(generator_version=VERSION, seed=seed, customers=customers,
-        transactions_per_card=history_size, cards_per_customer=cards_per_customer, include_inr_example=include_inr_example, snapshot=SNAPSHOT.isoformat(), sha256=hashes))
+        transactions_per_card=history_size, cards_per_customer=cards_per_customer, include_inr_example=include_inr_example, currency='INR', snapshot=SNAPSHOT.isoformat(), sha256=hashes))
     return report
 
 
@@ -206,7 +206,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--customers', type=int, default=3)
     parser.add_argument('--transactions-per-customer', type=int, default=30)
-    parser.add_argument('--include-inr-example', action='store_true')
+    parser.add_argument('--include-inr-example', action='store_true', help='Add the fixed INR 200 example; all base records already use INR')
     parser.add_argument('--cards-per-customer', type=int, default=1)
     parser.add_argument('--output', type=Path, default=Path(__file__).resolve().parents[1] / 'data')
     args = parser.parse_args()

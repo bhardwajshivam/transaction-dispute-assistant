@@ -88,9 +88,9 @@ CONCERNS_DATABASE="$PWD/data/activity.sqlite" python -m streamlit run app.py
 
 Choose the unrecognised-payment option, CARD-001, and describe **TX-691847**.
 After confirming search and selecting it, open **Spending-pattern clustering**.
-The existing richer database, relabelled to INR without changing amounts, gives
-this legitimate large purchase a distance score of approximately **1.745**.
-TX-869736 scores approximately **0.239** despite a repeated-order signal from
+The directly generated INR activity corpus gives
+this legitimate large purchase a distance score of approximately **1.744**.
+TX-869736 scores approximately **0.515** despite a repeated-order signal from
 the deterministic rules. This difference illustrates why both techniques have
 limits and why duplicate processing is not inferred from distance alone.
 

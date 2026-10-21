@@ -12,15 +12,14 @@ for the recorded clean-environment verification. The default application needs
 no model server or API key. Package installation requires an internet connection
 or a separately provisioned wheelhouse.
 
-Clone the repository (GitHub access is required), then enter its directory:
+Clone the repository, then enter its directory:
 
 ```sh
 git clone https://github.com/bhardwajshivam/transaction-dispute-assistant.git
 cd transaction-dispute-assistant
 ```
 
-The repository is private; reviewers must have access and authenticate with their
-own GitHub account. Do not share your personal token or credentials.
+Use your own GitHub account if access is restricted. Never share personal tokens or credentials.
 
 Create the virtual environment and prepare the demo:
 
@@ -31,7 +30,6 @@ python -m pip install -r requirements.txt
 python -m pip check
 python scripts/generate_data.py --seed 42 --cards-per-customer 2 --include-inr-example
 python scripts/load_database.py
-python scripts/convert_demo_currency.py data/disputes.sqlite
 ```
 
 On Windows, use `py -m venv .venv` and activate with
@@ -39,10 +37,10 @@ On Windows, use `py -m venv .venv` and activate with
 same. The recorded clean-room run was on macOS; Windows-specific installation
 and browser behaviour have not been validated.
 
-Generation writes fictional account/transaction/evidence JSON. Loading creates
-`data/disputes.sqlite`; the final command relabels synthetic GBP financial fields
-to INR without changing nominal amounts. This is not FX conversion. The optional
-anchor is TX-999001 for INR 200.00 on 19 October 2026.
+Generation writes fictional account/transaction/evidence JSON directly in INR.
+Loading creates `data/disputes.sqlite` with the same currency and minor-unit
+amounts; there is no conversion step. The optional anchor is TX-999001 for
+INR 200.00 on 19 October 2026.
 
 Run the loader only when creating a new database. It deliberately refuses to
 overwrite an existing database. Do not use `--replace` just to restart the app:
@@ -205,7 +203,7 @@ python scripts/demonstrate_journeys.py
 python scripts/validate_bank_integration.py
 ```
 
-Recorded results: 207 regression tests, 14/14 deterministic extraction probes,
+Recorded results: 208 regression tests, 14/14 deterministic extraction probes,
 47/47 workflow cases, 14/14 policy cases, 8/8 demonstration journeys and 46/46
 simulator contract checks. Reports are JSON/Markdown under `data/`; workflow
 reports include source fingerprints, component checks, critical errors, weighted
@@ -256,7 +254,7 @@ to `deterministic`. Details are in [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
 | `FileExistsError` from the loader | The database already exists; skip loading and start the app. Use `--replace` only for an explicitly disposable reset. |
 | Missing database or tables | Run the generation and loading commands from the repository root using the active venv. |
 | `ModuleNotFoundError` | Activate the venv, install requirements and use `python -m streamlit`, not an unrelated system Streamlit executable. |
-| Wrong currency in manual examples | Run the README demo relabelling step on the fresh demo database; it does not convert amounts. |
+| Existing database uses a different currency | New generation does not rewrite an existing database. Preserve histories and use a separate fresh database, or deliberately regenerate/reset an expendable demo using the documented setup. |
 | No matching transaction | Check selected card, purchase date, actual amount/currency and confirmed criteria; do not use expected/refund amount as the original charge. |
 | Representative view locked | Configure the staff token hash in the server's environment, restart and enter the original token. |
 | Cannot decrypt saved history | Restore the original key or correct external-key configuration. Do not generate a replacement key over existing encrypted history. |

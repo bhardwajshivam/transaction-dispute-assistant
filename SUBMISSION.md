@@ -32,7 +32,6 @@ python -m pip install -r requirements.txt
 python -m pip check
 python scripts/generate_data.py --seed 42 --cards-per-customer 2 --include-inr-example
 python scripts/load_database.py
-python scripts/convert_demo_currency.py data/disputes.sqlite
 python -m unittest discover -s tests -q
 python scripts/evaluate_deterministic_extraction.py
 python scripts/evaluate_workflow.py
@@ -49,11 +48,11 @@ python -m streamlit run app.py
 Run the generation/loader on a fresh directory. A second loader run intentionally
 refuses to overwrite an existing database; skip it when reopening the app.
 `--replace` is only for deliberately discarding an expendable demo database.
-JSON remains the generator's original currency; relabelling the demo database
-changes nominal currency codes, not amounts or FX values. Activity corpus JSON
-retains its documented GBP/INR mix.
+Both base and activity generators now create INR fixtures directly. JSON and
+loaded databases agree on currency; neither setup nor evaluation needs a
+conversion step. The conversion script is a legacy opt-in maintenance tool only.
 
-Expected results: 207 regression tests pass; deterministic extraction 14/14;
+Expected results: 208 regression tests pass; deterministic extraction 14/14;
 workflow 47/47 with zero observed critical errors; policy 14/14; demonstration
 journeys 8/8; simulator contracts 46/46; activity rules 78/78 in each split.
 Clustering reports descriptive status/signal counts, not fraud accuracy.

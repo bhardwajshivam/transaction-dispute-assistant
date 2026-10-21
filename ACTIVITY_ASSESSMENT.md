@@ -27,7 +27,7 @@ or validated fraud thresholds:
 | Distinct orders | Same matching charge pattern, different nonempty order references | Context only; does not independently recommend review or establish that both charges are legitimate |
 | Missing/malformed evidence | Missing history, malformed values, unavailable database/rules or failed ownership check | Partial/insufficient/unavailable/forbidden result, never an assurance that the payment is safe |
 
-These data use two-decimal GBP/INR amounts; no currency conversion occurs. The
+Generated histories use two-decimal INR amounts; dedicated component fixtures also exercise other currencies; no currency conversion occurs. The
 5,000-minor-unit floor is deliberately simple and uncalibrated across currencies.
 Production needs institution-approved currency-specific thresholds. Median
 calculation uses exact integer/fraction arithmetic at the decision boundary.

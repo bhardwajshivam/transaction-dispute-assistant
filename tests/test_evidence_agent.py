@@ -79,7 +79,7 @@ class EvidenceControllerTests(unittest.TestCase):
         state = self.selected(4, 'TX-1003')
         run(state, database=self.db)
         self.assertEqual(state['evidence']['refunds']['status'], 'NOT_FOUND')
-        for answer in ['They agreed to issue a refund', '2026-10-18', 'GBP 42.00', 'This card', 'No']:
+        for answer in ['They agreed to issue a refund', '2026-10-18', 'INR 42.00', 'This card', 'No']:
             submit(state, answer)
         self.assertEqual(state['decision']['reason'], 'REFUND_RECORDS_REVIEW')
         self.assertIn('does not prove', state['decision']['explanation'])

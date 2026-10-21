@@ -1,4 +1,6 @@
-"""Relabel GBP demo facts as INR without changing amounts or historical snapshots."""
+"""Legacy opt-in maintenance; new generators already produce INR directly.
+
+Relabel old GBP demo facts without changing amounts or historical snapshots."""
 import argparse
 from datetime import datetime, timezone
 import json

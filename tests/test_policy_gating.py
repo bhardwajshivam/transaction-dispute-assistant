@@ -28,7 +28,7 @@ class PolicyGatingTests(unittest.TestCase):
 
     def state(self,complete=True):
         state=start()
-        for text in (OPTIONS[3],'CARD-001','I agreed GBP 30 but the charged payment was different.','TX-1003','GBP 30','Yes'):
+        for text in (OPTIONS[3],'CARD-001','I agreed INR 30 but the charged payment was different.','TX-1003','INR 30','Yes'):
             if text.startswith('TX-'): prepare_reference(state,text)
             submit(state,text)
         if complete: submit(state,'No')

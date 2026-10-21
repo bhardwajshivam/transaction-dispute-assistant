@@ -1,6 +1,9 @@
 {
   "errors": [],
   "transaction_count": 2225,
+  "currency_balance": {
+    "INR": 2225
+  },
   "status_balance": {
     "Posted": 2223,
     "Pending": 2
@@ -15,10 +18,6 @@
     "Labels, profiles, family names, customer statements and construction metadata are excluded from runtime tables.",
     "Near-neighbours are intentional: amount/order/time edits are grouped by family. No learned model has been fitted."
   ],
-  "currency_balance": {
-    "GBP": 1454,
-    "INR": 771
-  },
   "channel_balance": {
     "Online": 1405,
     "Card present": 820

@@ -19,8 +19,7 @@ git clone https://github.com/bhardwajshivam/transaction-dispute-assistant.git
 cd transaction-dispute-assistant
 ```
 
-The repository is private; reviewers must have access and authenticate with their
-own GitHub account. Do not share your personal token or credentials.
+Never share personal tokens or credentials in the repository. No API key is required for the default application.
 
 Python 3.10 or newer:
 
@@ -30,11 +29,12 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 python scripts/generate_data.py --seed 42 --cards-per-customer 2 --include-inr-example
 python scripts/load_database.py
-python scripts/convert_demo_currency.py data/disputes.sqlite
 python -m streamlit run app.py
 ```
 
-Open http://localhost:8501. The setup creates two cards per customer and relabels synthetic GBP financial fields to INR without changing nominal amounts; this is not FX conversion. Generated JSON remains the original fixture currency. No working database, encryption key or saved concern history is included in the submission archive. If the database already exists, skip the loader and launch the app. To deliberately reset all demo data, including saved concern histories and handoff requests, stop the app and run `python scripts/load_database.py --replace`. No reset is needed when updating application code; concern schema migrations are additive.
+Open [http://localhost:8501](http://localhost:8501). The setup generates two cards per customer and all account, transaction, receipt, refund and credit amounts directly in INR. The optional example adds a fixed INR 200 transaction. No currency conversion or relabelling step is required; both generated JSON and the imported database use INR.
+
+No working database, encryption key or saved concern history is included in the submission archive. If the database already exists, skip generation/loading and launch the app to preserve saved concerns. Updated generation does not rewrite an existing database. To deliberately reset all demo data, including saved concern histories and handoff requests, stop the app, regenerate the fixtures with the command above, then run `python scripts/load_database.py --replace`. No reset is needed when updating application code; concern schema migrations are additive.
 
 ## Local model mode
 
@@ -109,7 +109,7 @@ The same arguments reproduce JSON and checksums. Runtime data, scenario labels a
 python -m unittest discover -s tests -v
 ```
 
-Current result: **207 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
+Current result: **208 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
 
 
 ## Card selection and scope

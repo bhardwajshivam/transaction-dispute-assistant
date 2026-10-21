@@ -1,4 +1,4 @@
-# Synthetic dataset v1
+# Synthetic dataset v1.2
 
 For the newer, separate activity-history corpus (2,225 transactions, 24 cards and
 156 customer-disjoint scenario variants), see [ACTIVITY_DATA.md](ACTIVITY_DATA.md).
@@ -26,7 +26,7 @@ All records are fictional. Generator: `scripts/generate_data.py`. Snapshot: 20 O
 
 ## Sampling versus construction
 
-A local seeded PRNG samples merchants uniformly, transaction ages uniformly from 1–90 days, and non-subscription GBP amounts uniformly from 250–25,000 minor units. Streamwave amounts are fixed at 1,299 minor units. Payments older than two days are posted; newer sampled payments may be pending. These are transparent demo assumptions, not empirically calibrated distributions.
+A local seeded PRNG samples merchants uniformly, transaction ages uniformly from 1–90 days, and non-subscription INR amounts uniformly from 250–25,000 minor units. Streamwave amounts are fixed at 1,299 minor units. Payments older than two days are posted; newer sampled payments may be pending. These are transparent demo assumptions, not empirically calibrated distributions.
 
 The first five account-A-001 transactions are constructed anchors to preserve the interactive examples, including a duplicate-looking pair and pending payment. Recurring indicators follow merchant identity. Every transaction receives a matching receipt; recurring transactions receive a cancellation before purchase. Every seventh posted transaction receives a fully processed refund and a matching credit. These deliberately simple supporting-record patterns are unsuitable for evaluating cancellation/refund routing and must be diversified before that evaluation.
 
@@ -54,15 +54,23 @@ routing evaluation. Runtime code never reads expected labels.
 The evidence controller retrieves scoped policy and supporting records. The app
 queries only accounts accessible to the fixed demo customer and the selected
 card, rather than hard-coding a single account. This is still demo identity,
-not production authentication. Fresh generation uses GBP fixtures (plus the
-optional INR anchor); the README explicitly relabels the loaded demo database to
-INR without changing nominal amounts. Generation and relabelling are distinct;
-no FX conversion is claimed.
+not production authentication. Generator v1.2 produces accounts, transactions,
+original amounts, receipts, refunds and credits directly in INR. JSON and SQLite
+therefore agree without a migration or FX conversion. The recommended setup uses
+two cards per customer plus the fixed INR 200 anchor: 181 transactions. The
+single-card default without that optional anchor remains 90 transactions.
+The legacy conversion script remains available only for old disposable fixtures;
+it is not invoked by setup or workflow evaluation.
 
 ## SQLite import
 
 `scripts/load_database.py` imports runtime fixtures into typed relational tables and preserves evidence payloads as JSON text. The importer excludes development/evaluation labels and testing fixtures. See README for import, reset and query commands. JSON generation and SQLite import are separate reproducible steps.
 
-Generator v1.1 adds optional `--cards-per-customer` (default 1). Extra cards use separate accounts with the same synthetic customer and access membership. History size is per card; existing base account/card references remain stable. This simplifies the prototype and does not model multiple cards on a single account.
+The optional `--cards-per-customer` (default 1) controls card count. Extra cards use separate accounts with the same synthetic customer and access membership. History size is per card; existing base account/card references remain stable. This simplifies the prototype and does not model multiple cards on a single account.
 
 Optional INR example: `python scripts/generate_data.py --include-inr-example` includes TX-999001, INR 200.00, dated 19-10-2026 on CARD-001. This is an explicit synthetic currency fixture; FX conversion to account currency is not modelled. The recommended setup includes it; the submission does not ship a working database.
+
+The `--include-inr-example` flag remains for compatibility: it adds the fixed
+INR 200 transaction, not INR support. Without it, all ordinary generated records
+already use INR. Multi-currency extraction/isolation tests and preserved historical
+evaluation outputs may still contain other currencies intentionally.

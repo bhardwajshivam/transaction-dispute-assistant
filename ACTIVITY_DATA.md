@@ -38,7 +38,7 @@ IDs drawn without replacement; their sequence does not encode scenario labels.
 | Posting | Sampled 0/1/2/5-day lags with probabilities 50/32/15/3%; posting beyond the snapshot stays pending |
 | Recurrence | Six monthly subscription payments on the third of each month, May–October, with stable amount per card |
 | Merchant ambiguity | 14 merchants, including similar Express trading names and unfamiliar descriptors; category/MCC and domestic merchant country |
-| Currency | GBP and INR histories with explicit nominal scales; no FX conversion or currency-normalised score is implied |
+| Currency | Direct INR generation for every account and financial record; customer-specific nominal spending scales, with no FX conversion |
 | Legitimate exceptions | Planned large purchases with matching receipts; matching charges for separate orders |
 | Review candidates | Matching merchant/amount/currency charges sharing an order reference, without asserting confirmed duplicate processing |
 | Missingness | About 20% of receipts and 3.5% of sampled order references omitted; pending posting fields are null |
@@ -99,7 +99,7 @@ Default generation produces:
 | Check | Result |
 |---|---:|
 | Transactions / customers / cards | 2,225 / 12 / 24 |
-| GBP / INR transactions | 1,454 / 771 |
+| INR transactions | 2,225 |
 | Missing receipts | 417 |
 | Missing order references | 79 |
 | Posting lags of at least three days | 48 |
@@ -131,7 +131,7 @@ split. That result is intentional: it exposes why these signals must not be
 treated as fraud probabilities. The other 66 cases have unknown authorisation.
 
 At the activity-corpus milestone, 116 regression tests passed, including seven
-new corpus tests. The current complete suite passes 207 tests. Matching synthetic expected routes is not
+new corpus tests. The current complete suite passes 208 tests. Matching synthetic expected routes is not
 evidence of real-world fraud detection performance.
 
 ## What this enables next
@@ -143,3 +143,13 @@ and a separate temporal/family challenge set. Bank-approved, independently
 labelled outcomes are still needed to calibrate any probability of fraud.
 Device/location signals, overseas behaviour, FX, real prevalence and realistic
 terminal cancellation/refund outcomes remain outside this corpus.
+
+Generator ACTIVITY-CORPUS-1.1 produces INR directly. The three customer spending
+profiles retain their relative scales and all use the explicit INR nominal scale;
+merchant-country fixtures are IN. Background amounts and cluster observations
+were regenerated for that distribution. Currency-isolation tests still construct
+explicit foreign-currency counterexamples separately; the runtime corpus itself
+is INR-only. No thresholds or expected routes were changed to fit the new data.
+
+Existing working databases are not rewritten by regeneration. The current score
+examples and quality counts describe a fresh import of the v1.1 INR corpus.

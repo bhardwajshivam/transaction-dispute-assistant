@@ -120,7 +120,7 @@ python scripts/evaluate_policy.py
 python -m unittest discover -s tests -q
 ```
 
-The gating milestone added 18 tests and brought the suite to 168. The current complete suite passes 207 tests. New coverage
+The gating milestone added 18 tests and brought the suite to 168. The current complete suite passes 208 tests. New coverage
 includes the shared attribution schema/clock; missing/conflicting/expired/wrong-
 scope policy; metadata mismatch; unsupported rule prose; unmet premises; cached
 success after source loss; changed-content and forged-citation withdrawal;

@@ -17,7 +17,7 @@ from activity import evaluate, review_decision, load_rules
 
 def transaction(reference='TARGET', amount=6000, day='2026-10-20', **changes):
     row = dict(transaction_id=reference, account_id='A-001', card_id='CARD-001', merchant_id='M-3',
-               amount_minor=amount, currency='GBP', purchase_date=day, posted_date=day,
+               amount_minor=amount, currency='INR', purchase_date=day, posted_date=day,
                status='Posted', order_reference='ORDER-A')
     return dict(row, **changes)
 
@@ -46,7 +46,7 @@ def scenarios():
     add('same_day_ambiguous', transaction(amount=5000), history()+[transaction('SAME-DAY',5000)], pair='date_ordering')
     add('future_payment', transaction(amount=5000), history()+[transaction('FUTURE',5000,'2026-10-21')], pair='date_ordering')
     add('delayed_presentment', transaction(amount=5000), history()+[transaction('DELAYED',5000,'2026-10-19',posted_date='2026-10-21')])
-    add('other_currency', transaction(currency='INR'), history(), status='PARTIAL')
+    add('other_currency', transaction(currency='USD'), history(), status='PARTIAL')
     bad = history(); bad[0]['amount_minor'] = '2000'
     add('malformed_history', transaction(), bad, status='INSUFFICIENT_DATA')
     add('pending_target', transaction(status='Pending',posted_date=None), history(), status='INSUFFICIENT_DATA')

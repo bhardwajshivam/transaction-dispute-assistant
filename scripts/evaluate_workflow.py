@@ -58,7 +58,7 @@ def run(output,seed=42,cases=None):
                          'actual_controls':{k:result['actual'].get(k) for k in ('review_required','reason','candidates','selected','step','pending_field')},
                          'passed':result['passed']})
     source_paths=list(ROOT.glob('*.py'))+list((ROOT/'evaluation').glob('*.py'))+list((ROOT/'policies').rglob('*.json'))+[
-        ROOT/'evaluation/costs.json',ROOT/'scripts/generate_data.py',ROOT/'scripts/load_database.py',ROOT/'scripts/convert_demo_currency.py',Path(__file__)]
+        ROOT/'evaluation/costs.json',ROOT/'scripts/generate_data.py',ROOT/'scripts/load_database.py',Path(__file__)]
     hashes={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(set(source_paths))}
     summary={'case_count':len(results),'passed':sum(r['passed'] for r in results),'failed':sum(not r['passed'] for r in results),
              'critical_case_count':sum(r['critical'] for r in results),'error_counts':dict(errors),
@@ -76,7 +76,7 @@ def run(output,seed=42,cases=None):
     write_json(output/'cases.json',cases); write_json(output/'costs.json',costs)
     write_json(output/'results.json',results); write_json(output/'summary.json',summary)
     write_json(output/'failed_outputs.json',[r for r in results if not r['passed']])
-    write_json(output/'manifest.json',{'seed':seed,'python':platform.python_version(),'dataset':'generate_data(cards_per_customer=2), relabel GBP to INR without FX',
+    write_json(output/'manifest.json',{'seed':seed,'python':platform.python_version(),'dataset':'generate_data(cards_per_customer=2), directly generated INR fixtures',
                'policy_as_of':'2026-10-20','model_transport':'offline mocks only','source_sha256':hashes,
                'cases_sha256':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()).hexdigest(),
                'reproducibility':'Metrics and outcomes repeat for the same seed/source; UUIDs and audit timestamps in full traces intentionally vary.'})

@@ -226,8 +226,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-c7a03f3fba8f",
-              "EV-1ac01208f8b5",
+              "EV-71913acb0767",
+              "EV-61b386fd89b4",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -537,9 +537,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-7d1fc676b594",
-              "EV-23a7bc34167d",
-              "EV-8762fc87c433",
+              "EV-c4e93c3d2c4d",
+              "EV-b549944acc11",
+              "EV-de2c66dd836b",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -785,8 +785,8 @@
             "policy_conclusion": false,
             "policy_reason_code": "CUSTOMER_ACKNOWLEDGEMENT_OR_OPERATIONAL_REFERRAL",
             "evidence_ids": [
-              "EV-51708561a58f",
-              "EV-9cff95bca587"
+              "EV-26a7d03f72fa",
+              "EV-db1c87abe9b7"
             ]
           },
           "review_codes": [
@@ -1522,8 +1522,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-1f77ec578e66",
-              "EV-aac986d3fdc0",
+              "EV-a24746d47531",
+              "EV-cfef51df2048",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -1602,32 +1602,32 @@
         {
           "customer_statements_unverified": [
             {
-              "recorded_at": "2026-10-21T13:30:22.433864+00:00",
+              "recorded_at": "2026-10-21T15:51:28.380237+00:00",
               "question_key": "issue",
               "customer_statement": "I have an unrecognised transaction"
             },
             {
-              "recorded_at": "2026-10-21T13:30:22.446312+00:00",
+              "recorded_at": "2026-10-21T15:51:28.390326+00:00",
               "question_key": "card",
               "customer_statement": "CARD-001"
             },
             {
-              "recorded_at": "2026-10-21T13:30:22.450607+00:00",
+              "recorded_at": "2026-10-21T15:51:28.394027+00:00",
               "question_key": "elaborate",
               "customer_statement": "Please investigate payment TX-1001."
             },
             {
-              "recorded_at": "2026-10-21T13:30:22.454887+00:00",
+              "recorded_at": "2026-10-21T15:51:28.397464+00:00",
               "question_key": "search_confirm",
               "customer_statement": "Confirm and search"
             },
             {
-              "recorded_at": "2026-10-21T13:30:22.466913+00:00",
+              "recorded_at": "2026-10-21T15:51:28.405262+00:00",
               "question_key": "transaction",
               "customer_statement": "TX-1001"
             },
             {
-              "recorded_at": "2026-10-21T13:30:22.474623+00:00",
+              "recorded_at": "2026-10-21T15:51:28.410281+00:00",
               "question_key": "handoff_confirm",
               "customer_statement": "Yes, request human assistance"
             }
@@ -1661,10 +1661,10 @@
           },
           "evidence": {
             "transaction": {
-              "evidence_id": "EV-b95c546df417",
+              "evidence_id": "EV-5586e120ce67",
               "source": "verify_selected_transaction",
               "transaction_id": "TX-1001",
-              "observed_at": "2026-10-21T13:30:22.461234+00:00",
+              "observed_at": "2026-10-21T15:51:28.401706+00:00",
               "status": "SUCCESS",
               "records": [
                 {
@@ -1710,18 +1710,18 @@
               ]
             },
             "merchant": {
-              "evidence_id": "EV-3e8518e59592",
+              "evidence_id": "EV-d4fe9f22effb",
               "source": "resolve_merchant",
               "transaction_id": "TX-1001",
-              "observed_at": "2026-10-21T13:30:22.461691+00:00",
+              "observed_at": "2026-10-21T15:51:28.402009+00:00",
               "status": "UNAVAILABLE",
               "records": []
             },
             "policy": {
-              "evidence_id": "EV-db6849851680",
+              "evidence_id": "EV-4da8bb6eca86",
               "source": "resolve_intake_policy",
               "transaction_id": "TX-1001",
-              "observed_at": "2026-10-21T13:30:22.461706+00:00",
+              "observed_at": "2026-10-21T15:51:28.402018+00:00",
               "status": "SUCCESS",
               "records": [
                 {
@@ -1844,7 +1844,7 @@
                 "transaction_id": "TX-1001"
               },
               "validation": "VALIDATED",
-              "recorded_at": "2026-10-21T13:30:22.461234+00:00",
+              "recorded_at": "2026-10-21T15:51:28.401706+00:00",
               "result_status": "SUCCESS"
             },
             {
@@ -1854,7 +1854,7 @@
                 "transaction_id": "TX-1001"
               },
               "validation": "VALIDATED",
-              "recorded_at": "2026-10-21T13:30:22.461691+00:00",
+              "recorded_at": "2026-10-21T15:51:28.402009+00:00",
               "result_status": "UNAVAILABLE"
             },
             {
@@ -1864,7 +1864,7 @@
                 "transaction_id": "TX-1001"
               },
               "validation": "VALIDATED",
-              "recorded_at": "2026-10-21T13:30:22.461706+00:00",
+              "recorded_at": "2026-10-21T15:51:28.402018+00:00",
               "result_status": "SUCCESS"
             }
           ],
@@ -2204,6 +2204,7 @@
             "reason_codes": [],
             "notice": "Cluster-distance anomaly score, not a probability of fraud. No action is authorised."
           },
+          "card_protection": null,
           "policy_qa": null,
           "policy_qa_history": [],
           "intake_assertions": [
@@ -2319,7 +2320,7 @@
             ],
             [
               "assistant",
-              "Your assistance request has been recorded: HELP-430BF6481699. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
+              "Your assistance request has been recorded: HELP-630F8A9BD3B4. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
             ]
           ]
         }
@@ -2430,7 +2431,7 @@
             "EVIDENCE_VERIFICATION_UNAVAILABLE"
           ],
           "assistant": [
-            "Your assistance request has been recorded: HELP-430BF6481699. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
+            "Your assistance request has been recorded: HELP-630F8A9BD3B4. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
           ],
           "case_status": null,
           "counts": {

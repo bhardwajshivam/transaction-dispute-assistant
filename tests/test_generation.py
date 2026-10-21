@@ -34,6 +34,26 @@ class GenerationTests(unittest.TestCase):
             data['transactions'][0]['account_id'] = 'MISSING'
             self.assertIn('Broken transaction reference', validate(data)['errors'])
 
+    def test_direct_inr_generation_and_import_without_conversion(self):
+        import sqlite3
+        from scripts.load_database import load_database
+        with tempfile.TemporaryDirectory() as directory:
+            output=Path(directory)
+            report=generate(output,cards_per_customer=2,include_inr_example=True)
+            self.assertEqual(report['currency_balance'],{'INR':181})
+            for table in ('accounts','transactions','receipts','refunds','credits'):
+                rows=json.loads((output/'runtime'/f'{table}.json').read_text())
+                self.assertTrue(rows)
+                self.assertEqual({row['currency'] for row in rows},{'INR'})
+                if table=='transactions':self.assertEqual({row['original_currency'] for row in rows},{'INR'})
+            database=output/'inr.sqlite';load_database(output/'runtime',database)
+            with sqlite3.connect(database) as db:
+                self.assertEqual(db.execute('SELECT DISTINCT currency FROM transactions').fetchall(),[('INR',)])
+                self.assertEqual(db.execute("SELECT amount_minor FROM transactions WHERE transaction_id='TX-999001'").fetchone()[0],20000)
+            manifest=json.loads((output/'manifest.json').read_text())
+            self.assertEqual(manifest['currency'],'INR')
+            self.assertEqual(manifest['generator_version'],'1.2')
+
     def test_account_scope(self):
         a = {t.reference for t in load_transactions('A-001')}
         b = {t.reference for t in load_transactions('A-002', customer_id='C-002')}

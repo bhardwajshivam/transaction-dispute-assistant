@@ -33,9 +33,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.3954872207715386,
+      "anomaly_score": 0.3954826696052485,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -43,9 +43,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.3954696433687086,
+      "anomaly_score": 0.3954768122535888,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -53,9 +53,9 @@
       "family": "legitimate_exception",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.3954696433687086,
+      "anomaly_score": 0.3954768122535888,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -63,9 +63,9 @@
       "family": "normal_looking_unauthorised",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.405400356333641,
+      "anomaly_score": 0.4207377879896743,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -73,9 +73,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.4053616415582415,
+      "anomaly_score": 0.4204148465648873,
       "flagged": false,
-      "model_id": "cluster-fd70c0539358eb5492a6a589",
+      "model_id": "cluster-f574ab0f1b4149af1de38f1a",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -83,9 +83,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.4053616415582415,
+      "anomaly_score": 0.4204148465648873,
       "flagged": false,
-      "model_id": "cluster-ca3558880dce39f7ed8d2d4d",
+      "model_id": "cluster-08190703f1c47601ab6f2480",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -93,9 +93,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.4053616415582415,
+      "anomaly_score": 0.4204148465648873,
       "flagged": false,
-      "model_id": "cluster-a37ea67f35d17ee4ab305551",
+      "model_id": "cluster-7b7bb0c38a5bdef8dd2e9c1f",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -103,9 +103,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.4053616415582415,
+      "anomaly_score": 0.4204148465648873,
       "flagged": false,
-      "model_id": "cluster-0a6b9d8ad852136bbeb5e798",
+      "model_id": "cluster-5a12eeb90c0ee72898a58ee7",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -113,9 +113,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.405400356333641,
+      "anomaly_score": 0.4207377879896743,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -123,9 +123,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.405400356333641,
+      "anomaly_score": 0.4207377879896743,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -133,9 +133,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.405400356333641,
+      "anomaly_score": 0.4207377879896743,
       "flagged": false,
-      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "model_id": "cluster-3bce097768477b39f7bf3392",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -163,9 +163,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5436609857988082,
+      "anomaly_score": 0.5436158703705388,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -173,9 +173,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5437298876118298,
+      "anomaly_score": 0.5436388306968997,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -183,9 +183,9 @@
       "family": "legitimate_exception",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5437298876118298,
+      "anomaly_score": 0.5436388306968997,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -193,9 +193,9 @@
       "family": "normal_looking_unauthorised",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5032615728124199,
+      "anomaly_score": 0.5353851860476556,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -203,9 +203,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5029115488231172,
+      "anomaly_score": 0.5367537936394414,
       "flagged": false,
-      "model_id": "cluster-ca4e84171602c649cd19fd5b",
+      "model_id": "cluster-223fef5e542ecd05322852dc",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -213,9 +213,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5029115488231172,
+      "anomaly_score": 0.5367537936394414,
       "flagged": false,
-      "model_id": "cluster-460c526bd044f67d92e41c46",
+      "model_id": "cluster-ee0e90d1b03a7f144382c054",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -223,9 +223,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5029115488231172,
+      "anomaly_score": 0.5367537936394414,
       "flagged": false,
-      "model_id": "cluster-5529cafa923d1278f44bc70f",
+      "model_id": "cluster-c107af09787101436f9cc767",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -233,9 +233,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5029115488231172,
+      "anomaly_score": 0.5367537936394414,
       "flagged": false,
-      "model_id": "cluster-5d6453bef180e75fbbd9a7b1",
+      "model_id": "cluster-39e72522f1cf351376465863",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -243,9 +243,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5032615728124199,
+      "anomaly_score": 0.5353851860476556,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -253,9 +253,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5032615728124199,
+      "anomaly_score": 0.5353851860476556,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -263,9 +263,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.5032615728124199,
+      "anomaly_score": 0.5353851860476556,
       "flagged": false,
-      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "model_id": "cluster-0b3225c68cf618b3ac0b8cba",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -423,9 +423,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.4952014900746042,
+      "anomaly_score": 0.5271402993223235,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -433,9 +433,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.49512333902155453,
+      "anomaly_score": 0.5271095940830208,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -443,9 +443,9 @@
       "family": "legitimate_exception",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.49512333902155453,
+      "anomaly_score": 0.5271095940830208,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -453,9 +453,9 @@
       "family": "normal_looking_unauthorised",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -463,9 +463,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-6cf1a28685a37ea30c1e3679",
+      "model_id": "cluster-73f94447786895b040433d96",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -473,9 +473,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-77b4bd9bbb22a9ca1421408e",
+      "model_id": "cluster-b13c9000fa108143c1570347",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -483,9 +483,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-a68225ae1aaceb96bd89235a",
+      "model_id": "cluster-2f1e19bc94bd096af432b7d5",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -493,9 +493,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-d268d5a2df0fa17825a85eb9",
+      "model_id": "cluster-594ca3427ced59386767d4c1",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -503,9 +503,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -513,9 +513,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -523,9 +523,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.46754526006177044,
+      "anomaly_score": 0.5125608595542275,
       "flagged": false,
-      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "model_id": "cluster-a222177b40b0d9a8d879c04d",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -553,9 +553,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.29729505251659666,
+      "anomaly_score": 0.29734635143724064,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -563,9 +563,9 @@
       "family": "amount_boundary",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.2973112966315677,
+      "anomaly_score": 0.2973517640881731,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -573,9 +573,9 @@
       "family": "legitimate_exception",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.2973112966315677,
+      "anomaly_score": 0.2973517640881731,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -583,9 +583,9 @@
       "family": "normal_looking_unauthorised",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.25823155723315555,
+      "anomaly_score": 0.3321911532524783,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -593,9 +593,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.29700529996491687,
+      "anomaly_score": 0.34220832046618194,
       "flagged": false,
-      "model_id": "cluster-ebcb861a5bb73ebe9657d726",
+      "model_id": "cluster-ceed15a14bc9c1cb5531df6e",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -603,9 +603,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.29700529996491687,
+      "anomaly_score": 0.34220832046618194,
       "flagged": false,
-      "model_id": "cluster-d89a46bdca60cb0cb2ddd3a5",
+      "model_id": "cluster-36f2bf1b426de07744c6f7b6",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -613,9 +613,9 @@
       "family": "order_reference",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.29700529996491687,
+      "anomaly_score": 0.34220832046618194,
       "flagged": false,
-      "model_id": "cluster-7544eb7d413b5ee3268181e2",
+      "model_id": "cluster-a17521abf1755a4113c9a537",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -623,9 +623,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.29700529996491687,
+      "anomaly_score": 0.34220832046618194,
       "flagged": false,
-      "model_id": "cluster-e3a22151bec0187eabdf8c5c",
+      "model_id": "cluster-4a1e9e66734b5355b76b8e58",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -633,9 +633,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.25823155723315555,
+      "anomaly_score": 0.3321911532524783,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -643,9 +643,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.25823155723315555,
+      "anomaly_score": 0.3321911532524783,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -653,9 +653,9 @@
       "family": "time_availability",
       "status": "ASSESSED",
       "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
-      "anomaly_score": 0.25823155723315555,
+      "anomaly_score": 0.3321911532524783,
       "flagged": false,
-      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "model_id": "cluster-1b1885a0c341303c3a85cb29",
       "route": "NO_ADDITIONAL_ROUTE"
     },
     {
@@ -814,14 +814,14 @@
       "customer_id": "C-001",
       "construction": "100x_largest_historical_amount",
       "status": "ASSESSED",
-      "anomaly_score": 3.248833046388915,
+      "anomaly_score": 3.2468496846271577,
       "flagged": true
     },
     {
       "customer_id": "C-002",
       "construction": "100x_largest_historical_amount",
       "status": "ASSESSED",
-      "anomaly_score": 3.099891960913214,
+      "anomaly_score": 3.098963987710143,
       "flagged": true
     },
     {
@@ -835,14 +835,14 @@
       "customer_id": "C-004",
       "construction": "100x_largest_historical_amount",
       "status": "ASSESSED",
-      "anomaly_score": 3.6000757873762983,
+      "anomaly_score": 3.598179136361591,
       "flagged": true
     },
     {
       "customer_id": "C-005",
       "construction": "100x_largest_historical_amount",
       "status": "ASSESSED",
-      "anomaly_score": 3.0001958210552577,
+      "anomaly_score": 3.0000815247040973,
       "flagged": true
     },
     {

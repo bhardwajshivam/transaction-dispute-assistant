@@ -339,6 +339,25 @@
         "tests/test_report_metadata.py": "427d40245ce906f194d7d29df50ca94f910b8959e400ccd6b4e06421d9a0ee02"
       },
       "scope": "Source and report hygiene; prior clean-room verification remains historical evidence."
+    },
+    {
+      "change": "Base v1.2 and activity v1.1 generators produce INR directly. Removed migration from setup and workflow evaluation; regenerated fixtures and reports. Existing working databases were not reset.",
+      "validation": {
+        "regression_tests": 208,
+        "workflow_cases": 47,
+        "demonstration_journeys": 8,
+        "simulator_contract_tests": 46,
+        "activity_cases_per_split": 78,
+        "native_setup_cli": "Passed generation and loading in a fresh extracted directory without running the conversion tool. All financial tables use INR; 181 demo transactions including INR 200 anchor."
+      },
+      "source_sha256": {
+        "scripts/generate_data.py": "2accc0c2b9fd16a40b065fa0c11e3c479136de6f4b0e464bf6fb330c48f2979a",
+        "scripts/generate_activity_data.py": "e53b1bf0866a469824b3029487ad3c5584bc1f46ba8771bfb92f292737aa95dd",
+        "evaluation/runner.py": "8addbdf84eee6e8783720e74b4d1c9634c305c1e05fa4383913f9abbfecfef1d",
+        "scripts/evaluate_workflow.py": "a38cd80eb754bb5a288e68e677b034f126f5135dd48f55530f012c6c1915762c",
+        "tests/test_generation.py": "3d96021874a259fb671fe98ee1865fd8efb80fdaf13a76b827c97566d16a834d"
+      },
+      "scope": "Dependencies unchanged; fresh-directory CLI/data checks and current regression suite, not a new dependency-installation run."
     }
   ],
   "privacy_note": "Machine-local paths redacted from captured diagnostics. Recorded outcomes and source fingerprints are unchanged; historical fingerprints refer to the originally tested inputs."

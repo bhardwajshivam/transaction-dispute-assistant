@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.generate_data import (SNAPSHOT, evidence, generate_accounts, generate_policies,
                                    generate_supporting_records, validate, write_json)
 
-VERSION = 'ACTIVITY-CORPUS-1.0'
+VERSION = 'ACTIVITY-CORPUS-1.1'
 CATEGORIES = [
     ('groceries', 'Market Square', 'MS RETAIL', 3500, .30, '5411'),
     ('coffee', 'Northstar Coffee', 'NSC HOSPITALITY', 650, .23, '5814'),
@@ -100,7 +100,7 @@ def activity_cases(rng, account, history, allocate_ref):
     """Independent constructed route labels, not calls into the assessor.
 
     Baseline histories are sampled from this customer's realistic ledger. Only
-    qualifying earlier GBP/INR records enter the designed boundary calculation.
+    qualifying earlier INR records enter the designed boundary calculation.
     """
     prior = [deepcopy(t) for t in history if t['status']=='Posted' and t['posted_date']<'2026-10-20'
              and '2026-07-22'<=t['purchase_date']<'2026-10-20']
@@ -241,10 +241,9 @@ def generate(output,seed=20261021,customers=12,history_size=120):
     rows=[]; design=[]; profiles=[]; protected=set(); splits={'development':[],'evaluation':[]}
     for account in accounts:
         index=int(account['customer_id'].split('-')[1])-1
-        account['currency']='INR' if index%3==2 else 'GBP'
         # INR amounts are generated in their own nominal scale, never converted
         # or used as a currency-normalised representation.
-        scale=[.65,1.4,3.0][index%3]*(3 if account['currency']=='INR' else 1)*rng.uniform(.85,1.15)
+        scale=[.65,1.4,3.0][index%3]*3*rng.uniform(.85,1.15)
         secondary=account['card_id'].endswith('-2')
         count=round(history_size*(.35 if secondary else 1.0)*rng.uniform(.85,1.15))
         hist=_history(rng,account,by_category,count,scale,ref)
@@ -284,7 +283,7 @@ def generate(output,seed=20261021,customers=12,history_size=120):
         output/'design'/'profiles.json',output/'design'/'runtime_exceptions.json',output/'quality_report.json',output/'testing'/'history_tool_responses.json']
     hashes={str(p.relative_to(output)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(managed)}
     write_json(output/'manifest.json',dict(generator_version=VERSION,seed=seed,customers=customers,sampled_primary_card_history=history_size,
-               snapshot=SNAPSHOT.isoformat(),sha256=hashes))
+               snapshot=SNAPSHOT.isoformat(),currency='INR',sha256=hashes))
     return report
 
 

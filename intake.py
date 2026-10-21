@@ -45,7 +45,7 @@ def normalise(field, text):
     if field.endswith('_currency'):
         value = SYMBOLS.get(text, text.upper())
         if value not in CURRENCIES:
-            raise ValueError('Please enter a supported currency code, such as GBP, EUR, USD or INR. A $ symbol alone is ambiguous.')
+            raise ValueError('Please enter a supported currency code, such as INR, GBP, EUR or USD. A $ symbol alone is ambiguous.')
         return value
     if field == 'transaction_reference':
         if not re.fullmatch(r'TX-\d{4,12}', text.upper()):
@@ -107,8 +107,8 @@ def search_question(state):
     if field in DATE_FIELDS:
         return f"What is the {LABELS[field].lower()}? Please use DD-MM-YYYY. You may provide a range as DD-MM-YYYY to DD-MM-YYYY, or enter the exact TX reference if available."
     if field.endswith('_currency'):
-        return f"What was the {LABELS[field].lower()}? Please enter the currency code, for example GBP."
-    return f"What was the {LABELS[field].lower()}? Include the currency if known, for example GBP 10.00."
+        return f"What was the {LABELS[field].lower()}? Please enter the currency code, for example INR."
+    return f"What was the {LABELS[field].lower()}? Include the currency if known, for example INR 10.00."
 
 
 def confirmation_text(state):

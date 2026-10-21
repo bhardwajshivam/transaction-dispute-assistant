@@ -17,7 +17,6 @@ from domain import search_transactions
 from privacy import protect,sanitise
 from scripts.generate_data import generate
 from scripts.load_database import load_database
-from scripts.convert_demo_currency import migrate
 from case_chat import CONFIRM,RETRY
 
 
@@ -56,7 +55,7 @@ def execute_case(steps,fixture=None,seed=42):
     with tempfile.TemporaryDirectory() as directory,ExitStack() as stack:
         root=Path(directory)
         generate(root/'data',seed=seed,cards_per_customer=2)
-        database=root/'runtime.sqlite'; load_database(root/'data/runtime',database); migrate(database)
+        database=root/'runtime.sqlite'; load_database(root/'data/runtime',database)
         stack.enter_context(patch.dict(os.environ,{'CONCERNS_DATABASE':str(database),'CONCERN_EXTRACTION_MODE':'deterministic','EVIDENCE_PROPOSER_MODE':'deterministic'}))
         os.environ.pop('CONCERN_ENCRYPTION_KEY',None)
         _fixture(database,fixture)

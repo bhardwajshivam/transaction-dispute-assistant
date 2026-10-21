@@ -44,38 +44,38 @@ class IntakeTests(unittest.TestCase):
         self.assertIn('Change search details', choices(s))
 
     def test_two_matching_transactions_and_skip_already_supplied_expected_amount(self):
-        s = begin(3, 'I was charged GBP 42 instead of GBP 40 on 15-10-2026')
+        s = begin(3, 'I was charged INR 42 instead of INR 40 on 15-10-2026')
         self.assertEqual(s['step'], 'search_confirm')
         submit(s, 'Confirm and search')
         self.assertEqual({t.reference for t in search_transactions(s)}, {'TX-1003', 'TX-1004'})
         submit(s, 'TX-1003')
         self.assertEqual(s['step'], 'receipt')
-        self.assertEqual(s['answers']['expected_amount'], 'GBP 40.00')
+        self.assertEqual(s['answers']['expected_amount'], 'INR 40.00')
 
     def test_edit_invalidates_confirmation_and_amount_not_expected_used_for_search(self):
-        s = begin(3, 'charged GBP 42 instead of GBP 8 on 15-10-2026')
+        s = begin(3, 'charged INR 42 instead of INR 8 on 15-10-2026')
         submit(s, 'Edit details')
         self.assertEqual(s['step'], 'elaborate')
         self.assertFalse(s['search_confirmed'])
         self.assertEqual(search_transactions(s), ())
-        submit(s, 'charged GBP 8.50 instead of GBP 8 on 17-10-2026')
+        submit(s, 'charged INR 8.50 instead of INR 8 on 17-10-2026')
         submit(s, 'Confirm and search')
         self.assertEqual([t.reference for t in search_transactions(s)], ['TX-1001'])
         s['intake']['charged_amount'] = '42.00'
         self.assertEqual(search_transactions(s), ())
 
     def test_cancellation_and_refund_dates_are_not_purchase_dates(self):
-        s = begin(1, 'I cancelled on 01-10-2026 but was charged GBP 12.99')
+        s = begin(1, 'I cancelled on 01-10-2026 but was charged INR 12.99')
         self.assertEqual(s['intake']['cancellation_date'], '2026-10-01')
         self.assertEqual(s['pending_search_field'], 'transaction_date')
-        s = begin(4, 'My refund of GBP 20 was processed on 18-10-2026')
+        s = begin(4, 'My refund of INR 20 was processed on 18-10-2026')
         self.assertEqual(s['intake']['refund_date'], '2026-10-18')
         self.assertEqual(s['intake']['refund_amount'], '20.00')
         self.assertNotIn('original_amount', s['intake'])
         self.assertEqual(s['pending_search_field'], 'original_date')
 
     def test_partial_refund_uses_original_purchase(self):
-        s = begin(4, 'My refund of GBP 20 was processed on 18-10-2026. My original purchase was GBP 42 on 15-10-2026')
+        s = begin(4, 'My refund of INR 20 was processed on 18-10-2026. My original purchase was INR 42 on 15-10-2026')
         self.assertEqual(s['step'], 'search_confirm')
         submit(s, 'Confirm and search')
         self.assertEqual({t.reference for t in search_transactions(s)}, {'TX-1003', 'TX-1004'})
@@ -87,7 +87,7 @@ class IntakeTests(unittest.TestCase):
         submit(s, '18-10-2026 to 15-10-2026'); self.assertNotIn('transaction_date', s['intake'])
         submit(s, '15-10-2026 to 17-10-2026')
         self.assertEqual(s['pending_search_field'], 'identifier')
-        submit(s, 'GBP 42')
+        submit(s, 'INR 42')
         self.assertEqual(s['step'], 'search_confirm')
         submit(s, 'Confirm and search')
         self.assertEqual(len(search_transactions(s)), 2)
@@ -126,7 +126,7 @@ class IntakeTests(unittest.TestCase):
             app = AppTest.from_file('app.py').run()
             next(b for b in app.button if b.label == OPTIONS[3]).click().run()
             next(b for b in app.button if b.label.startswith('Demo card CARD-001 ')).click().run()
-            app.chat_input[0].set_value('I was charged GBP 42 instead of GBP 40 on 15-10-2026').run()
+            app.chat_input[0].set_value('I was charged INR 42 instead of INR 40 on 15-10-2026').run()
             self.assertEqual(app.session_state.conversation['step'], 'search_confirm')
             self.assertEqual(conversation_search.call_count, 0)
             self.assertEqual(ui_search.call_count, 0)

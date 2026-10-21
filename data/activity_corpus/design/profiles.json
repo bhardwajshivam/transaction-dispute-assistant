@@ -2,7 +2,7 @@
   {
     "customer_id": "C-001",
     "card_id": "CARD-001",
-    "spending_scale": 0.6590082211647328,
+    "spending_scale": 1.9770246634941986,
     "sampled_count": 116,
     "profile": "lower_spend",
     "sparse_secondary_card": false
@@ -10,7 +10,7 @@
   {
     "customer_id": "C-002",
     "card_id": "CARD-002",
-    "spending_scale": 1.3843642681830353,
+    "spending_scale": 4.153092804549106,
     "sampled_count": 131,
     "profile": "mixed_spend",
     "sparse_secondary_card": false
@@ -26,7 +26,7 @@
   {
     "customer_id": "C-004",
     "card_id": "CARD-004",
-    "spending_scale": 0.6694710717425085,
+    "spending_scale": 2.0084132152275256,
     "sampled_count": 137,
     "profile": "lower_spend",
     "sparse_secondary_card": false
@@ -34,7 +34,7 @@
   {
     "customer_id": "C-005",
     "card_id": "CARD-005",
-    "spending_scale": 1.1996421337738705,
+    "spending_scale": 3.598926401321611,
     "sampled_count": 104,
     "profile": "mixed_spend",
     "sparse_secondary_card": false
@@ -50,7 +50,7 @@
   {
     "customer_id": "C-007",
     "card_id": "CARD-007",
-    "spending_scale": 0.6050783175125886,
+    "spending_scale": 1.8152349525377658,
     "sampled_count": 102,
     "profile": "lower_spend",
     "sparse_secondary_card": false
@@ -58,7 +58,7 @@
   {
     "customer_id": "C-008",
     "card_id": "CARD-008",
-    "spending_scale": 1.380411531285219,
+    "spending_scale": 4.141234593855656,
     "sampled_count": 136,
     "profile": "mixed_spend",
     "sparse_secondary_card": false
@@ -74,7 +74,7 @@
   {
     "customer_id": "C-010",
     "card_id": "CARD-010",
-    "spending_scale": 0.6806269417132538,
+    "spending_scale": 2.0418808251397613,
     "sampled_count": 106,
     "profile": "lower_spend",
     "sparse_secondary_card": false
@@ -82,7 +82,7 @@
   {
     "customer_id": "C-011",
     "card_id": "CARD-011",
-    "spending_scale": 1.486476759660994,
+    "spending_scale": 4.459430278982982,
     "sampled_count": 117,
     "profile": "mixed_spend",
     "sparse_secondary_card": false
@@ -98,7 +98,7 @@
   {
     "customer_id": "C-001",
     "card_id": "CARD-001-2",
-    "spending_scale": 0.6721082130617372,
+    "spending_scale": 2.0163246391852114,
     "sampled_count": 37,
     "profile": "lower_spend",
     "sparse_secondary_card": true
@@ -106,7 +106,7 @@
   {
     "customer_id": "C-002",
     "card_id": "CARD-002-2",
-    "spending_scale": 1.3239188311796082,
+    "spending_scale": 3.9717564935388245,
     "sampled_count": 38,
     "profile": "mixed_spend",
     "sparse_secondary_card": true
@@ -122,7 +122,7 @@
   {
     "customer_id": "C-004",
     "card_id": "CARD-004-2",
-    "spending_scale": 0.5866619761840737,
+    "spending_scale": 1.759985928552221,
     "sampled_count": 46,
     "profile": "lower_spend",
     "sparse_secondary_card": true
@@ -130,7 +130,7 @@
   {
     "customer_id": "C-005",
     "card_id": "CARD-005-2",
-    "spending_scale": 1.501381962712775,
+    "spending_scale": 4.504145888138324,
     "sampled_count": 46,
     "profile": "mixed_spend",
     "sparse_secondary_card": true
@@ -146,7 +146,7 @@
   {
     "customer_id": "C-007",
     "card_id": "CARD-007-2",
-    "spending_scale": 0.6609686808808614,
+    "spending_scale": 1.9829060426425842,
     "sampled_count": 42,
     "profile": "lower_spend",
     "sparse_secondary_card": true
@@ -154,7 +154,7 @@
   {
     "customer_id": "C-008",
     "card_id": "CARD-008-2",
-    "spending_scale": 1.3401437754023109,
+    "spending_scale": 4.020431326206932,
     "sampled_count": 42,
     "profile": "mixed_spend",
     "sparse_secondary_card": true
@@ -170,7 +170,7 @@
   {
     "customer_id": "C-010",
     "card_id": "CARD-010-2",
-    "spending_scale": 0.6898593258197664,
+    "spending_scale": 2.069577977459299,
     "sampled_count": 37,
     "profile": "lower_spend",
     "sparse_secondary_card": true
@@ -178,7 +178,7 @@
   {
     "customer_id": "C-011",
     "card_id": "CARD-011-2",
-    "spending_scale": 1.3340313497010257,
+    "spending_scale": 4.002094049103077,
     "sampled_count": 41,
     "profile": "mixed_spend",
     "sparse_secondary_card": true

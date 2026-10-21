@@ -4,7 +4,7 @@
     "account_id": "A-001",
     "card_id": "CARD-001",
     "display_name": "Alex Morgan",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-001"
     ],
@@ -18,7 +18,7 @@
     "account_id": "A-002",
     "card_id": "CARD-002",
     "display_name": "Demo Customer 2",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-002"
     ],
@@ -46,7 +46,7 @@
     "account_id": "A-004",
     "card_id": "CARD-004",
     "display_name": "Demo Customer 4",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-004"
     ],
@@ -60,7 +60,7 @@
     "account_id": "A-005",
     "card_id": "CARD-005",
     "display_name": "Demo Customer 5",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-005"
     ],
@@ -88,7 +88,7 @@
     "account_id": "A-007",
     "card_id": "CARD-007",
     "display_name": "Demo Customer 7",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-007"
     ],
@@ -102,7 +102,7 @@
     "account_id": "A-008",
     "card_id": "CARD-008",
     "display_name": "Demo Customer 8",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-008"
     ],
@@ -130,7 +130,7 @@
     "account_id": "A-010",
     "card_id": "CARD-010",
     "display_name": "Demo Customer 10",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-010"
     ],
@@ -144,7 +144,7 @@
     "account_id": "A-011",
     "card_id": "CARD-011",
     "display_name": "Demo Customer 11",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-011"
     ],
@@ -172,7 +172,7 @@
     "account_id": "A-001-2",
     "card_id": "CARD-001-2",
     "display_name": "Alex Morgan",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-001"
     ],
@@ -186,7 +186,7 @@
     "account_id": "A-002-2",
     "card_id": "CARD-002-2",
     "display_name": "Demo Customer 2",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-002"
     ],
@@ -214,7 +214,7 @@
     "account_id": "A-004-2",
     "card_id": "CARD-004-2",
     "display_name": "Demo Customer 4",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-004"
     ],
@@ -228,7 +228,7 @@
     "account_id": "A-005-2",
     "card_id": "CARD-005-2",
     "display_name": "Demo Customer 5",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-005"
     ],
@@ -256,7 +256,7 @@
     "account_id": "A-007-2",
     "card_id": "CARD-007-2",
     "display_name": "Demo Customer 7",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-007"
     ],
@@ -270,7 +270,7 @@
     "account_id": "A-008-2",
     "card_id": "CARD-008-2",
     "display_name": "Demo Customer 8",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-008"
     ],
@@ -298,7 +298,7 @@
     "account_id": "A-010-2",
     "card_id": "CARD-010-2",
     "display_name": "Demo Customer 10",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-010"
     ],
@@ -312,7 +312,7 @@
     "account_id": "A-011-2",
     "card_id": "CARD-011-2",
     "display_name": "Demo Customer 11",
-    "currency": "GBP",
+    "currency": "INR",
     "authorised_customer_ids": [
       "C-011"
     ],
