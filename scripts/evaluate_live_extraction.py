@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import concern_extraction as extraction
 from ollama_backend import local_chat
 from scripts.generate_data import write_json
+from report_metadata import model_metadata, portable
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -37,9 +38,11 @@ def server_metadata():
                 raise ValueError()
             value = json.loads(raw)
             if key == 'models':
-                value = [dict(name=m.get('name'), digest=m.get('digest'), details=m.get('details'))
+                value = [model_metadata(m)
                          for m in value.get('models', []) if m.get('name') == 'smollm2:135m']
-            metadata[key] = value
+            else:
+                value = {'version': value.get('version')}
+            metadata[key] = portable(value)
         except Exception:
             metadata[key] = 'UNAVAILABLE'
         finally:
@@ -72,7 +75,7 @@ def run(output, transport=local_chat):
             with patch.object(extraction, 'baseline_entities', return_value=[]):
                 model_only, _, model_trace = extraction.extract(case['text'], case['kind'], transport=lambda *_: deepcopy(response))
             rows.append({'id': case['id'], 'expected': case['expected'],
-                         'response': response, 'error_code': failure, 'elapsed_ms': elapsed,
+                         'response': portable(response), 'error_code': failure, 'elapsed_ms': elapsed,
                          'rejected_model_fields': model_trace.get('rejected_fields', []),
                          'model_response_valid': available, 'trace': trace,
                          'model_only': model_only, 'combined': combined,
@@ -81,7 +84,7 @@ def run(output, transport=local_chat):
     summary = {'cases': len(rows), 'valid_model_responses': sum(r['model_response_valid'] for r in rows),
                'model_name': 'smollm2:135m',
                'server_metadata': server_metadata() if transport is local_chat else {'status':'TEST_ADAPTER'},
-               'source_sha256': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ('concern_extraction.py','intake.py','privacy.py','scripts/evaluate_live_extraction.py')},
+               'source_sha256': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ('concern_extraction.py','intake.py','privacy.py','scripts/evaluate_live_extraction.py','report_metadata.py')},
                'cases_with_rejected_model_fields': sum(bool(r['rejected_model_fields']) for r in rows),
                'model_response_note': 'Valid JSON does not imply grounded or useful extraction. Precision/recall describe validated fields; inspect rejected proposals and raw synthetic outputs.',
                'transport': 'actual loopback Ollama' if transport is local_chat else 'test adapter',

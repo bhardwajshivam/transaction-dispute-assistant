@@ -105,7 +105,7 @@ was 46/47 (97.9%), obscuring one mandatory-review failure.
 After these changes the same 47 reference journeys pass: zero observed critical
 misses, unsupported actions or false success claims; weighted cost zero. The
 before/after case fingerprint is unchanged, so expectations were not relaxed to
-fit the fixes. The full regression suite contains 204 passing tests.
+fit the fixes. The full regression suite contains 207 passing tests.
 
 ## Limits and next evidence needed
 

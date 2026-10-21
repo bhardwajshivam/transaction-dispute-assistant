@@ -325,6 +325,21 @@
         "mermaid_diagrams_parsed": 4
       },
       "limitations": "Original clean-room report predates this addition. New changes were validated with isolated synthetic tests and current application environment; production integration remains unvalidated."
+    },
+    {
+      "change": "Minimised machine-local paths and model metadata in published reports; added report-privacy regression checks and JSON packaging guard.",
+      "validation": {
+        "regression_tests": 207,
+        "new_report_metadata_tests": 3
+      },
+      "source_sha256": {
+        "report_metadata.py": "8cd59230ee57a786acbaab358271d79cbe7c6e306ffc13192cc445e1dc09021d",
+        "scripts/evaluate_live_extraction.py": "8c891160b1a0a15e019db6ba4c06c798c6112cfd004bbc9fd5dc6a57b0f0f992",
+        "scripts/package_submission.py": "f65e2a42d8f2ec294dfb55d1db50f1df7685230b988e5285ac85d18ae823b611",
+        "tests/test_report_metadata.py": "427d40245ce906f194d7d29df50ca94f910b8959e400ccd6b4e06421d9a0ee02"
+      },
+      "scope": "Source and report hygiene; prior clean-room verification remains historical evidence."
     }
-  ]
+  ],
+  "privacy_note": "Machine-local paths redacted from captured diagnostics. Recorded outcomes and source fingerprints are unchanged; historical fingerprints refer to the originally tested inputs."
 }

@@ -132,7 +132,7 @@ relative severities, not financial loss estimates. Original failed outputs and
 case fingerprints are retained so reviewers can see what improved without
 assuming the expected outcomes were relaxed.
 
-The full regression suite currently passes 204 tests. A test count alone is not
+The full regression suite currently passes 207 tests. A test count alone is not
 an assurance argument. The important checks are the invariants they exercise:
 scoped references, mandatory review, withheld unsupported conclusions, explicit
 confirmation, duplicate prevention, unknown-outcome recovery and truthful status

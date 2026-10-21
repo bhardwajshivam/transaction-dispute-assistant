@@ -11,7 +11,6 @@
         "name": "smollm2:135m",
         "digest": "9077fe9d2ae1a4a41a868836b56b8163731a8fe16621397028c2c76f838c6907",
         "details": {
-          "parent_model": "[LOCAL_PATH_REDACTED]",
           "format": "gguf",
           "family": "llama",
           "families": [
@@ -48,5 +47,6 @@
     "field_recall": 1.0,
     "cases_with_wrong_fields": 0
   },
-  "status": "MEASURED"
+  "status": "MEASURED",
+  "privacy_note": "Machine-local parent-model paths removed; model digest and evaluation outcomes retained."
 }

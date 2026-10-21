@@ -53,7 +53,7 @@ JSON remains the generator's original currency; relabelling the demo database
 changes nominal currency codes, not amounts or FX values. Activity corpus JSON
 retains its documented GBP/INR mix.
 
-Expected results: 204 regression tests pass; deterministic extraction 14/14;
+Expected results: 207 regression tests pass; deterministic extraction 14/14;
 workflow 47/47 with zero observed critical errors; policy 14/14; demonstration
 journeys 8/8; simulator contracts 46/46; activity rules 78/78 in each split.
 Clustering reports descriptive status/signal counts, not fraud accuracy.

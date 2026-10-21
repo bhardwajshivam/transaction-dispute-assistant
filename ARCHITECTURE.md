@@ -180,7 +180,7 @@ for key, staff and retention setup and known limits.
   critical errors, route-specific metrics, cost framework and preserved failures.
 - [LIVE_VALIDATION.md](LIVE_VALIDATION.md): 14 unchanged extraction probes pass
   deterministically after a parser fix; live model-only validated recall remains
-  0%. All 204 regression tests pass. These are development/synthetic results.
+  0%. All 207 regression tests pass. These are development/synthetic results.
 - [ACTIVITY_DATA.md](ACTIVITY_DATA.md) and [DATASET.md](DATASET.md): generation,
   schemas, sampled versus constructed evidence, coverage and remaining gaps.
 - [ACTIVITY_ASSESSMENT.md](ACTIVITY_ASSESSMENT.md) and [CLUSTERING.md](CLUSTERING.md):

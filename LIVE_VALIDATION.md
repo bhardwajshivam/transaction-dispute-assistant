@@ -111,4 +111,6 @@ After the fix, the actual Ollama rerun also achieved 14/14 combined exact matche
 with 100% field precision/recall. Model-only validated field recall remained 0%
 and all 14 responses contained rejected model fields. The live evaluator therefore
 still exits 1 intentionally: parser success does not satisfy model-quality checks.
-The full regression suite passes 204 tests; all 47 workflow journeys still pass.
+The full regression suite passes 207 tests; all 47 workflow journeys still pass.
+
+Published server/model metadata excludes machine-local parent-model paths and arbitrary username/hostname fields. Synthetic raw responses are path-minimised before storage. Earlier report copies have had environment-specific path metadata removed without changing their metrics. Source fingerprints retain their original provenance.

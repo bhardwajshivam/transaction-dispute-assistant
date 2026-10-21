@@ -79,3 +79,7 @@ References: [OWASP logging](https://cheatsheetseries.owasp.org/cheatsheets/Loggi
 ## Simulated card controls
 
 The separate card-protection service requires a `card:protect` demo principal, current card access, durable permission, approved fictional policy, a current preview and explicit confirmation. It records durable intent and audited idempotent actions, supports unknown-outcome reconciliation, and includes attempts in confirmed handoffs. Card/action/status metadata is cleartext synthetic operational data; concern payloads remain encrypted. See [CARD_PROTECTION.md](CARD_PROTECTION.md). No real bank card is modified.
+
+## Portable evaluation metadata
+
+Published report diagnostics redact machine-local home/cache/temporary paths. Model metadata uses an explicit detail-field allowlist rather than copying `parent_model`, usernames or hostnames from the local server. The submission builder rejects JSON containing recognised machine-local path metadata. These checks minimise environmental metadata and do not establish exhaustive PII detection. Numeric results and model digests are preserved; historical source fingerprints describe the original tested inputs before report redaction. Git author identity is governed separately and is not changed by this metadata cleanup.

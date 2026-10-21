@@ -131,7 +131,7 @@ split. That result is intentional: it exposes why these signals must not be
 treated as fraud probabilities. The other 66 cases have unknown authorisation.
 
 At the activity-corpus milestone, 116 regression tests passed, including seven
-new corpus tests. The current complete suite passes 204 tests. Matching synthetic expected routes is not
+new corpus tests. The current complete suite passes 207 tests. Matching synthetic expected routes is not
 evidence of real-world fraud detection performance.
 
 ## What this enables next

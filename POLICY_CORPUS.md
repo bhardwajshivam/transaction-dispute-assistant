@@ -133,4 +133,4 @@ not a general semantic-entailment metric or an end-to-end safety score.
 Seventeen focused tests also exercise metadata/path validation, claim/source
 presence, no account lookup, no case action, explicit handoff confirmation,
 encrypted concern persistence, report reproducibility and the Streamlit journey.
-At the information-corpus milestone, 150 regression tests passed; the current complete suite passes 204 tests. The subsequent workflow evaluation and cost-sensitive report are documented in [EVALUATION.md](EVALUATION.md).
+At the information-corpus milestone, 150 regression tests passed; the current complete suite passes 207 tests. The subsequent workflow evaluation and cost-sensitive report are documented in [EVALUATION.md](EVALUATION.md).

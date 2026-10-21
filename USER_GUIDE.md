@@ -205,7 +205,7 @@ python scripts/demonstrate_journeys.py
 python scripts/validate_bank_integration.py
 ```
 
-Recorded results: 204 regression tests, 14/14 deterministic extraction probes,
+Recorded results: 207 regression tests, 14/14 deterministic extraction probes,
 47/47 workflow cases, 14/14 policy cases, 8/8 demonstration journeys and 46/46
 simulator contract checks. Reports are JSON/Markdown under `data/`; workflow
 reports include source fingerprints, component checks, critical errors, weighted
@@ -267,3 +267,7 @@ to `deterministic`. Details are in [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
 Resetting an expendable demo with `python scripts/load_database.py --replace`
 erases operational database state. Back up any needed database and its matching
 encryption key securely before doing so. Never publish either in GitHub.
+
+## Clones created before the metadata cleanup
+
+Repository history was rewritten to remove machine-specific paths from earlier reports. If your clone predates that cleanup, make a fresh clone rather than merging or pushing the old history back. Preserve any needed local database and its matching encryption key privately before moving to the new checkout; neither belongs in GitHub.

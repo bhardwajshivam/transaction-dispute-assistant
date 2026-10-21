@@ -2,9 +2,12 @@
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 import zipfile
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from report_metadata import portable
 DATA_DIRS = {'runtime','development','evaluation','testing','activity_corpus',
              'activity_evaluation','policy_evaluation','workflow_evaluation',
              'live_extraction_evaluation','deterministic_extraction_evaluation','bank_integration_validation'}
@@ -29,6 +32,11 @@ def files(root=ROOT):
 def build(destination):
     destination = Path(destination); destination.parent.mkdir(parents=True, exist_ok=True)
     selected = list(files())
+    for path in selected:
+        if path.suffix=='.json':
+            document=json.loads(path.read_text())
+            if portable(document)!=document:
+                raise ValueError(f'Machine-local path metadata must be removed before packaging: {path.relative_to(ROOT)}')
     hashes = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in selected}
     with zipfile.ZipFile(destination,'w',zipfile.ZIP_DEFLATED) as archive:
         for path in selected:
