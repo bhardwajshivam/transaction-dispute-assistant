@@ -9,8 +9,10 @@ No runtime database, customer history, keys or local machine metadata is copied.
 
 1. **Baseline — complete:** source/config fingerprints, fresh offline test result,
    historical reports and a sanitised observed failure are preserved.
-2. **Data quality — pending:** reproducible leakage/similarity analysis, independent
-   cases with expectations frozen before fixes, consolidated quality report.
+2. **Data quality — implemented with external review outstanding:** reproducible
+   surface-token/template analysis and consolidated report; six new challenge
+   expectations frozen before execution. External adjudication and semantic
+   paraphrase review remain open; no independence claim is made.
 3. **Extraction — pending:** versioned prompt/schema/model traces; fresh live
    model-only, parser-only and combined measurements, including failures.
 4. **Workflow/handoff — pending:** explicit transition matrix and invalid/repeated/
@@ -57,3 +59,15 @@ Paths below identify the current implementation/report and intended evidence.
 - Do not reset working databases or commit keys, customer histories or model blobs.
 - Preserve confirmation, ownership, policy gates, permission and action idempotency.
 - Use fresh temporary databases for evaluation; record the tested commit and hashes.
+
+## Step 2 evidence (completed implementation)
+
+- Reproduce: `python scripts/audit_data_quality.py`.
+- Report: `data/data_quality/REPORT.md`; detailed pairs/associations/fingerprints:
+  `data/data_quality/report.json`.
+- Frozen challenge design: `evaluation/data_challenges.json` (six cases, not run).
+- Tests: `tests/test_data_audit.py`; full offline suite: 216 passing tests.
+- Items 1 and 3 have implemented diagnostic/report evidence. Item 2 has lexical
+  checks, while semantic review remains incomplete. Item 9 has new frozen cases
+  but still requires external adjudication; it is not complete.
+- No application behaviour, working database or existing evaluation labels changed.

@@ -1,0 +1,57 @@
+{
+  "version": "CHALLENGE-DESIGN-1.0",
+  "provenance": "New cases authored during AI-assisted development, before execution against the app. Not externally reviewed, not independently adjudicated, and not a new held-out benchmark.",
+  "review_status": "PENDING_EXTERNAL_REVIEW",
+  "execution_status": "NOT_EXECUTED",
+  "policy_scope": "Intake search and clarification only; no eligibility or financial action decisions.",
+  "cases": [
+    {
+      "id": "CH-01", "pair": "currency", "issue": "wrong_amount", "card": "CARD-001",
+      "customer_statement": "The debit was 42 on 15-10-2026. I cannot remember which currency the statement showed.",
+      "facts_required": ["Owned selected card", "Bank records TX-1003 and TX-1004 dated 2026-10-15 with nominal amount 42"],
+      "expected": {"route": "CLARIFY", "step": "search_confirm", "search_allowed_before_confirmation": false, "currency_filter": null, "selected_transaction": null},
+      "reason": "Missing currency does not prevent confirmed nominal-amount lookup; never infer a currency.",
+      "after_confirm_expected_candidates": ["TX-1003", "TX-1004"]
+    },
+    {
+      "id": "CH-02", "pair": "currency", "issue": "wrong_amount", "card": "CARD-001",
+      "customer_statement": "The debit was INR 42 on 15-10-2026. I remember which currency the statement showed.",
+      "facts_required": ["Same records as CH-01, both INR"],
+      "expected": {"route": "CLARIFY", "step": "search_confirm", "search_allowed_before_confirmation": false, "currency_filter": "INR", "selected_transaction": null},
+      "reason": "Explicit currency adds an exact filter; supplied INR does not change this fixture's candidate set.",
+      "after_confirm_expected_candidates": ["TX-1003", "TX-1004"]
+    },
+    {
+      "id": "CH-03", "pair": "merchant_invariance", "issue": "unrecognised", "card": "CARD-001",
+      "customer_statement": "Northstar appears beside a debit of INR 42 dated 15-10-2026.",
+      "facts_required": ["Same owned card and date/amount anchors; merchant names do not filter search"],
+      "expected": {"route": "CLARIFY", "step": "search_confirm", "selected_transaction": null},
+      "reason": "Merchant assertion is context, not a transaction identifier or authorisation fact.",
+      "after_confirm_expected_candidates": ["TX-1003", "TX-1004"]
+    },
+    {
+      "id": "CH-04", "pair": "merchant_invariance", "issue": "unrecognised", "card": "CARD-001",
+      "customer_statement": "Cedar appears beside a debit of INR 42 dated 15-10-2026.",
+      "facts_required": ["Same facts as CH-03; only reported merchant changes"],
+      "expected": {"route": "CLARIFY", "step": "search_confirm", "selected_transaction": null},
+      "reason": "An irrelevant merchant edit must leave search candidates unchanged.",
+      "after_confirm_expected_candidates": ["TX-1003", "TX-1004"]
+    },
+    {
+      "id": "CH-05", "pair": "date_certainty", "issue": "unrecognised", "card": "CARD-001",
+      "customer_statement": "I paid INR 42, maybe on 15-10-2026. I need to check the date before you search.",
+      "facts_required": ["No verified transaction selected; date is explicitly uncertain"],
+      "expected": {"route": "CLARIFY", "step": "search_details", "pending_field": "transaction_date", "selected_transaction": null},
+      "reason": "A possible date cannot be silently accepted as an exact search date.",
+      "acceptable_alternative": "Ask the customer to confirm an explicit date range; do not search first."
+    },
+    {
+      "id": "CH-06", "pair": "date_certainty", "issue": "unrecognised", "card": "CARD-001",
+      "customer_statement": "I paid INR 42 on 15-10-2026. I checked the date before asking you to search.",
+      "facts_required": ["Same nominal payment details as CH-05; date is now explicitly stated"],
+      "expected": {"route": "CLARIFY", "step": "search_confirm", "selected_transaction": null},
+      "reason": "Explicit date enables confirmation, not automatic search or transaction selection.",
+      "after_confirm_expected_candidates": ["TX-1003", "TX-1004"]
+    }
+  ]
+}

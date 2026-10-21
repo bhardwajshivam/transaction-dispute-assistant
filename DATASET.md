@@ -46,8 +46,8 @@ Current coverage is distributed across three complementary suites:
 | [Activity corpus](ACTIVITY_DATA.md) | Richer recurrence, missingness, near-neighbour analysis, customer-disjoint splits and data-quality defects/corrections | Shared families and simplified refund/cancellation support |
 | [Workflow evaluation](EVALUATION.md) | 47 constructed terminal/intermediate behaviours including contradictions, stale/conflicting policy, malformed data, counterfactuals and tool/model/action failures | Hand-authored expectations, not independently adjudicated labels |
 
-Independently reviewed terminal labels, family-held-out generalisation, systematic
-superficial-token leakage analysis and richer terminal cancellation/refund
+Independently reviewed terminal labels, family-held-out generalisation, semantic
+leakage review beyond the surface-token audit and richer terminal cancellation/refund
 populations remain outstanding. The initial-question reference set is not final
 routing evaluation. Runtime code never reads expected labels.
 
@@ -74,3 +74,38 @@ The `--include-inr-example` flag remains for compatibility: it adds the fixed
 INR 200 transaction, not INR support. Without it, all ordinary generated records
 already use INR. Multi-currency extraction/isolation tests and preserved historical
 evaluation outputs may still contain other currencies intentionally.
+
+## Consolidated audit and leakage diagnostics
+
+Run `python scripts/audit_data_quality.py` after generation. The script reads
+JSON fixtures only, recomputes structural checks and richer split checks, and
+writes [data/data_quality/REPORT.md](data/data_quality/REPORT.md) and a detailed
+JSON report with input fingerprints. It does not modify runtime data or fit an
+application model. It adds cross-split lexical template similarity, workflow
+description similarity, token/route associations, literal route-label checks,
+base field missingness and a small wording-only diagnostic.
+
+Normalisation hides numeric values and references to detect template reuse.
+The 0.8 SequenceMatcher threshold is a diagnostic heuristic, not a semantic
+paraphrase guarantee. Intentional counterfactual pairs are identified; untagged
+similar pairs are exposed for review, not silently deleted. Four initial examples
+per split make the text-only baseline descriptive, not a reliable generalisation
+measure. Shared-family evaluation remains a limitation even when exact input
+overlap is zero. This implements a first systematic surface-token audit; external
+label review and semantic paraphrase analysis remain outstanding.
+
+### Frozen challenge schema
+
+`evaluation/data_challenges.json` contains six new, unexecuted challenge cases.
+Each records an ID, counterfactual group, issue, card, customer assertion, required
+bank evidence, expected route/step/controls, rationale, optional acceptable
+clarification and expected candidates after confirmation. Numeric expected
+candidates reference the documented fixed fixtures. The top-level review and
+execution statuses prevent these authored expectations being presented as
+independent labels or passed tests. They are evaluator assets, never imported
+into runtime tables. The audit fingerprints them before later evaluation.
+
+These cases were authored during AI-assisted development; an external reviewer
+must approve or amend them before we claim independent adjudication. Expected
+search controls are frozen before execution; later failures must be preserved
+and investigated rather than expectations relaxed to match current behaviour.

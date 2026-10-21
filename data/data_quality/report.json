@@ -1,0 +1,4974 @@
+{
+  "activity_quality": {
+    "card_history_counts": {
+      "CARD-001": 127,
+      "CARD-001-2": 48,
+      "CARD-002": 142,
+      "CARD-002-2": 49,
+      "CARD-003": 124,
+      "CARD-003-2": 55,
+      "CARD-004": 148,
+      "CARD-004-2": 57,
+      "CARD-005": 115,
+      "CARD-005-2": 57,
+      "CARD-006": 144,
+      "CARD-006-2": 50,
+      "CARD-007": 113,
+      "CARD-007-2": 53,
+      "CARD-008": 147,
+      "CARD-008-2": 53,
+      "CARD-009": 144,
+      "CARD-009-2": 56,
+      "CARD-010": 117,
+      "CARD-010-2": 48,
+      "CARD-011": 128,
+      "CARD-011-2": 52,
+      "CARD-012": 142,
+      "CARD-012-2": 56
+    },
+    "channel_balance": {
+      "Card present": 820,
+      "Online": 1405
+    },
+    "currency_balance": {
+      "INR": 2225
+    },
+    "customer_count": 12,
+    "customer_split_overlap": [],
+    "delayed_presentment_count": 48,
+    "duplicate_looking_groups": 0,
+    "errors": [],
+    "evaluation_family_balance": {
+      "development": {
+        "amount_boundary": 12,
+        "legitimate_exception": 6,
+        "malformed_history": 6,
+        "normal_looking_unauthorised": 6,
+        "order_reference": 18,
+        "sparse_history": 6,
+        "time_availability": 24
+      },
+      "evaluation": {
+        "amount_boundary": 12,
+        "legitimate_exception": 6,
+        "malformed_history": 6,
+        "normal_looking_unauthorised": 6,
+        "order_reference": 18,
+        "sparse_history": 6,
+        "time_availability": 24
+      }
+    },
+    "evaluation_route_balance": {
+      "development": {
+        "NO_ADDITIONAL_ROUTE": 48,
+        "RECOMMEND_SPECIALIST_REVIEW": 30
+      },
+      "evaluation": {
+        "NO_ADDITIONAL_ROUTE": 48,
+        "RECOMMEND_SPECIALIST_REVIEW": 30
+      }
+    },
+    "evaluation_truth_balance": {
+      "development": {
+        "authorised": 6,
+        "unauthorised": 6,
+        "unknown": 66
+      },
+      "evaluation": {
+        "authorised": 6,
+        "unauthorised": 6,
+        "unknown": 66
+      }
+    },
+    "exact_cross_split_inputs": 0,
+    "field_missingness": {
+      "merchant_category": 0,
+      "merchant_country": 0,
+      "occurred_at": 0,
+      "order_reference": 79,
+      "posted_at": 2,
+      "posted_date": 2
+    },
+    "merchant_count": 14,
+    "missing_order_references": 79,
+    "missing_posted_dates": 2,
+    "missing_receipt_count": 417,
+    "near_duplicate_pairs_within_three_days": {
+      "distinct_orders": 121,
+      "same_order": 24
+    },
+    "notes": [
+      "No real fraud prevalence or calibration is claimed.",
+      "Same family recipes deliberately recur across customer-disjoint splits; this is not family-held-out generalisation.",
+      "Repeated evaluation inputs with different truth illustrate non-identifiability of authorisation from transaction patterns.",
+      "Labels, profiles, family names, customer statements and construction metadata are excluded from runtime tables.",
+      "Near-neighbours are intentional: amount/order/time edits are grouped by family. No learned model has been fitted."
+    ],
+    "recurring_count": 144,
+    "repeated_inputs_within_split": {
+      "development": 6,
+      "evaluation": 6
+    },
+    "status_balance": {
+      "Pending": 2,
+      "Posted": 2223
+    },
+    "transaction_count": 2225
+  },
+  "base_field_missingness": {
+    "account_id": 0,
+    "amount_minor": 0,
+    "card_id": 0,
+    "channel": 0,
+    "currency": 0,
+    "descriptor": 0,
+    "merchant": 0,
+    "merchant_id": 0,
+    "observed_at": 0,
+    "order_reference": 0,
+    "original_amount_minor": 0,
+    "original_currency": 0,
+    "posted_date": 3,
+    "purchase_date": 0,
+    "recurring": 0,
+    "source": 0,
+    "source_reference": 0,
+    "status": 0,
+    "transaction_id": 0,
+    "verification_status": 0
+  },
+  "base_quality": {
+    "currency_balance": {
+      "INR": 181
+    },
+    "duplicate_looking_groups": 2,
+    "errors": [],
+    "missing_posted_dates": 3,
+    "notes": [
+      "Duplicate-looking entries are intentional and do not establish duplicate processing.",
+      "Missing posting dates are expected for pending payments.",
+      "Initial fixtures are not statistically representative; currency coverage is explicit rather than calibrated.",
+      "Reference scenarios cover question selection, not final policy outcomes.",
+      "Development/evaluation wording differs but scenario families overlap; not an independent generalisation benchmark."
+    ],
+    "recurring_count": 30,
+    "status_balance": {
+      "Pending": 3,
+      "Posted": 178
+    },
+    "transaction_count": 181
+  },
+  "boundary_coverage": {
+    "activity_families": {
+      "development": {
+        "amount_boundary": 12,
+        "legitimate_exception": 6,
+        "malformed_history": 6,
+        "normal_looking_unauthorised": 6,
+        "order_reference": 18,
+        "sparse_history": 6,
+        "time_availability": 24
+      },
+      "evaluation": {
+        "amount_boundary": 12,
+        "legitimate_exception": 6,
+        "malformed_history": 6,
+        "normal_looking_unauthorised": 6,
+        "order_reference": 18,
+        "sparse_history": 6,
+        "time_availability": 24
+      }
+    },
+    "limit": "Counts of constructed families, not proof every policy threshold is covered.",
+    "workflow_families": {
+      "adversarial": 2,
+      "billing": 2,
+      "cancellation": 3,
+      "case_action": 6,
+      "clarification": 3,
+      "evidence": 1,
+      "matching": 4,
+      "model_failure": 4,
+      "policy": 3,
+      "policy_failure": 6,
+      "privacy": 1,
+      "recognition": 2,
+      "recovery": 3,
+      "refund": 2,
+      "tool_failure": 2,
+      "unauthorised": 3
+    }
+  },
+  "errors": [],
+  "findings": [
+    "Shared family recipes remain across splits; no held-out-family generalisation claim.",
+    "Within-workflow similar descriptions often end in different routes because evidence/replies differ. Text alone cannot establish terminal route.",
+    "Normalised similarity ignores amounts/dates deliberately to expose repeated templates; this is separate from exact evidence-signature overlap.",
+    "New challenges were authored during this development session; they are not independently adjudicated labels.",
+    "Activity labels exclude construction metadata at runtime; zero exact overlap does not rule out template leakage."
+  ],
+  "frozen_challenges": {
+    "count": 6,
+    "independent_review": "PENDING_EXTERNAL_REVIEW",
+    "sha256": "979d806a0b8a36b28000e0b15e278ab6d87e71ff1674b82a80109a7b9d748acb",
+    "status": "EXPECTED_BEHAVIOURS_FROZEN_NOT_EXECUTED"
+  },
+  "initial_text": {
+    "cross_split_pairs_at_0_8": [],
+    "development_labels": {
+      "billing_type": 1,
+      "cancel_type": 1,
+      "recognise": 1,
+      "refund_status": 1
+    },
+    "evaluation_labels": {
+      "billing_type": 1,
+      "cancel_type": 1,
+      "recognise": 1,
+      "refund_status": 1
+    },
+    "near_pair_rate": 0.0,
+    "normalisation": "Lowercase words; remove specific reference and numeric values. SequenceMatcher ratio >=0.8. This detects surface overlap, not semantic equivalence.",
+    "pair_count": 16,
+    "shared_label_families": [
+      "billing_type",
+      "cancel_type",
+      "recognise",
+      "refund_status"
+    ],
+    "word_only_baseline": {
+      "accuracy": 0.5,
+      "limit": "Four examples per split; next-question labels, not terminal routes. Diagnostic only, no model selection or runtime training.",
+      "majority_accuracy": 0.25,
+      "predictions": [
+        {
+          "expected": "recognise",
+          "id": "evaluation-recognition",
+          "predicted": "recognise"
+        },
+        {
+          "expected": "cancel_type",
+          "id": "evaluation-cancellation",
+          "predicted": "cancel_type"
+        },
+        {
+          "expected": "billing_type",
+          "id": "evaluation-billing",
+          "predicted": "cancel_type"
+        },
+        {
+          "expected": "refund_status",
+          "id": "evaluation-refund",
+          "predicted": "cancel_type"
+        }
+      ],
+      "test_count": 4,
+      "train_count": 4
+    }
+  },
+  "input_sha256": {
+    "data/activity_corpus/development/activity_cases.json": "27fbe6998d9c9649d67a0578f515f75a2b2cdb9efaa17445f944ff095ce9901b",
+    "data/activity_corpus/evaluation/activity_cases.json": "b7adab46744398fa135cd89afee896ec50e799a878740e9c42bfe1f6701ec876",
+    "data/activity_corpus/runtime/accounts.json": "b3ebee35ef1c37c479b557f1eaee991b317abc0014f07a0dc7eebeeb94d9cd28",
+    "data/activity_corpus/runtime/actions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/activity_corpus/runtime/audit_events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/activity_corpus/runtime/cancellations.json": "f74f9ba8f7b6d1400bc11e3f5e04f7044de5bcaf9295546c3f4786b7a5cb55fe",
+    "data/activity_corpus/runtime/cases.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/activity_corpus/runtime/credits.json": "32f214fa222d288437ab45a37893e5c50b7a335a5e2b754e3368b21625b623d0",
+    "data/activity_corpus/runtime/merchants.json": "d3cd208ff008e003f2e5f4eabccf569c31e6723b8a445d5044fedf4cd226fae3",
+    "data/activity_corpus/runtime/policies.json": "f52f86878dbcbd5c9614065912fa1325045953d84da7d96c90176fb855c78074",
+    "data/activity_corpus/runtime/receipts.json": "584a7ace72e407081c78f9dba3431e9b308c91a3c765e4843aa17933ff18eb3a",
+    "data/activity_corpus/runtime/refunds.json": "d050df7b118ce0c4d2938f9a0a5a2cd4444f5b3d576952866a96d7e761250db2",
+    "data/activity_corpus/runtime/transactions.json": "8d6984fd2e8a7faf5f00bddf641197f712e6c32d1eeda237e322fa92878adad0",
+    "data/development/customer_statements.json": "45d5e1769631ada83751f6c182b52a274f7fa5d5ee40a68dbc9a40c95628ff2f",
+    "data/development/expected_outcomes.json": "ba0a12f1e4943a3749e5645d8e2060ba252f3c3d346da67cc0923ecd0c81fb1b",
+    "data/evaluation/customer_statements.json": "6911cb30f2c146aae320cc9d6ee8637d3d409ffe212814251593296f8736c56b",
+    "data/evaluation/expected_outcomes.json": "3e2a06de55e8e9d7febb5959772b4ea9ab025bbd1fe20314a6f06aef4a89bd37",
+    "data/runtime/accounts.json": "d06ffe106c043790df165bc81579295d34e3e3134e6ea9e121a231a6700aafbd",
+    "data/runtime/actions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/runtime/audit_events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/runtime/cancellations.json": "e658576d37f0e52304c1c0cad0b1759c6071d685afd22ea6fc7cd4ec1347accc",
+    "data/runtime/cases.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "data/runtime/credits.json": "dc0dbd84042316fab178db1bbcb922bfdbb62a6638f1839f4b0b6015a6e92d8f",
+    "data/runtime/merchants.json": "b9df468b129a2d0ccd683bd177d5e9b8bef9238b24ef8d91133c5a0db950027d",
+    "data/runtime/policies.json": "f52f86878dbcbd5c9614065912fa1325045953d84da7d96c90176fb855c78074",
+    "data/runtime/receipts.json": "af96e247ec3f057fff0e83e67b2271bb03941f120815a8ca34d307130d37f85f",
+    "data/runtime/refunds.json": "cae711a4a46708b6a85c208dc52d79d3497f07ede08764b332b54fe21f1b6d8f",
+    "data/runtime/transactions.json": "63c65183aee30fe8c2c00db3b397685c2b3371551ace9585cf5a64d9cde5d7ed",
+    "evaluation/data_challenges.json": "979d806a0b8a36b28000e0b15e278ab6d87e71ff1674b82a80109a7b9d748acb",
+    "evaluation/scenarios.py": "b0af7039afda9bb76ec00d939000824891647a3c2967afd45e698304f999c54f",
+    "scripts/audit_data_quality.py": "0b8f0955f9ddd3dbfe0d6589c9fef930aa8359f54be5e844006d5eef0a83058f",
+    "scripts/generate_activity_data.py": "e53b1bf0866a469824b3029487ad3c5584bc1f46ba8771bfb92f292737aa95dd",
+    "scripts/generate_data.py": "2accc0c2b9fd16a40b065fa0c11e3c479136de6f4b0e464bf6fb330c48f2979a"
+  },
+  "label_consistency": {
+    "initial_transaction_reference_errors": [],
+    "limit": "Structural/reference consistency is checked. Independent correctness of terminal policy labels is not established by this audit; evaluator comparison belongs to step 6."
+  },
+  "version": "DATA-AUDIT-1.0",
+  "workflow_text": {
+    "exact_normalised_pair_count": 499,
+    "limit": "Description only, excluding opening UI labels and subsequent replies. Token associations can be legitimate issue cues; neither high nor low association proves leakage.",
+    "literal_label_in_text": [],
+    "near_pair_rate": 0.6585365853658537,
+    "pairs_at_0_8": [
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "reported_unauthorised",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "authorisation_uncertain",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "ongoing_card_risk",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "cancelled_subscription",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "cancellation_date_matches",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "cancellation_date_conflicts",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "multiple_charges",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "wrong_amount",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "refund_credit_found",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "refund_no_link",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "model_invalid",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "model_timeout",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "extraction_invalid",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "extraction_invented",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "descriptor_injection",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "recognised",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": true,
+        "left": "reported_unauthorised",
+        "right": "authorisation_uncertain",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "ongoing_card_risk",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "cancelled_subscription",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "cancellation_date_matches",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "cancellation_date_conflicts",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "multiple_charges",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "wrong_amount",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "reported_unauthorised",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "ongoing_card_risk",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "cancelled_subscription",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "cancellation_date_matches",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "cancellation_date_conflicts",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "multiple_charges",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "wrong_amount",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "authorisation_uncertain",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "cancelled_subscription",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "cancellation_date_matches",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "cancellation_date_conflicts",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "multiple_charges",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "wrong_amount",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "ongoing_card_risk",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "cancellation_date_matches",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "cancellation_date_conflicts",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "multiple_charges",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "wrong_amount",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancelled_subscription",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": true,
+        "left": "cancellation_date_matches",
+        "right": "cancellation_date_conflicts",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "multiple_charges",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "wrong_amount",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "refund_credit_found",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "refund_no_link",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_matches",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "multiple_charges",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "wrong_amount",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "cancellation_date_conflicts",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "wrong_amount",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "multiple_charges",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "refund_credit_found",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_amount",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "refund_no_link",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_credit_found",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "wrong_card",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "other_customer",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "confirmation_required",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "case_confirmed",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "refund_no_link",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": true,
+        "left": "search_amount_42",
+        "right": "search_amount_43",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "search_amount_42",
+        "right": "missing_date",
+        "same_target": true,
+        "similarity": 0.902
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "search_amount_42",
+        "right": "future_date",
+        "same_target": true,
+        "similarity": 0.902
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "search_amount_43",
+        "right": "missing_date",
+        "same_target": true,
+        "similarity": 0.902
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "search_amount_43",
+        "right": "future_date",
+        "same_target": true,
+        "similarity": 0.902
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "other_customer",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "confirmation_required",
+        "same_target": true,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "wrong_card",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "confirmation_required",
+        "same_target": true,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": false,
+        "intentional_counterfactual": false,
+        "left": "other_customer",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 0.8308
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "missing_date",
+        "right": "future_date",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "policy_missing",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "policy_conflicting",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "policy_expired",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "policy_metadata",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_required",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "policy_conflicting",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "policy_expired",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "policy_metadata",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "tool_unavailable_handoff",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "malformed_transaction",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_missing",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "policy_expired",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "policy_metadata",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "tool_unavailable_handoff",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "malformed_transaction",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_conflicting",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "policy_metadata",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "tool_unavailable_handoff",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "malformed_transaction",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_expired",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "model_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "model_timeout",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "extraction_invalid",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "extraction_invented",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "descriptor_injection",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "tool_unavailable_handoff",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "malformed_transaction",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "policy_metadata",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "model_timeout",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "extraction_invalid",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "extraction_invented",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "descriptor_injection",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_invalid",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "extraction_invalid",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "extraction_invented",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "descriptor_injection",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "model_timeout",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "extraction_invented",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "descriptor_injection",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invalid",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "descriptor_injection",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "extraction_invented",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "tool_unavailable_handoff",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "malformed_transaction",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "descriptor_injection",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "malformed_transaction",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "tool_unavailable_handoff",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "case_confirmed",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "same_key_replay",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "repeat_concern",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "confirmation_without_preview",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "expired_confirmation",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "permission_revoked",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "timeout_before_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "timeout_after_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "malformed_transaction",
+        "right": "chat_save_after_case_commit",
+        "same_target": false,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "same_key_replay",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "case_confirmed",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "repeat_concern",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "same_key_replay",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "repeat_concern",
+        "right": "confirmation_without_preview",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "repeat_concern",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "repeat_concern",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "repeat_concern",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "repeat_concern",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "repeat_concern",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_without_preview",
+        "right": "expired_confirmation",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_without_preview",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_without_preview",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_without_preview",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "confirmation_without_preview",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "expired_confirmation",
+        "right": "permission_revoked",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "expired_confirmation",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "expired_confirmation",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "expired_confirmation",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "permission_revoked",
+        "right": "timeout_before_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "permission_revoked",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "permission_revoked",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "timeout_before_commit",
+        "right": "timeout_after_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "timeout_before_commit",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      },
+      {
+        "exact_normalised": true,
+        "intentional_counterfactual": false,
+        "left": "timeout_after_commit",
+        "right": "chat_save_after_case_commit",
+        "same_target": true,
+        "similarity": 1.0
+      }
+    ],
+    "possible_pair_count": 861,
+    "route_balance": {
+      "ABSTAIN": 9,
+      "CLARIFY": 8,
+      "EXPLAIN": 8,
+      "GATHER_EVIDENCE": 2,
+      "HUMAN_REVIEW": 19,
+      "POLICY_INFORMATION": 1
+    },
+    "sample_count": 42,
+    "token_route_associations": [
+      {
+        "dominant_route_fraction": 1.0,
+        "route_counts": {
+          "CLARIFY": 4
+        },
+        "support": 4,
+        "token": "instead"
+      },
+      {
+        "dominant_route_fraction": 1.0,
+        "route_counts": {
+          "CLARIFY": 4
+        },
+        "support": 4,
+        "token": "of"
+      },
+      {
+        "dominant_route_fraction": 0.8,
+        "route_counts": {
+          "CLARIFY": 4,
+          "HUMAN_REVIEW": 1
+        },
+        "support": 5,
+        "token": "charged"
+      },
+      {
+        "dominant_route_fraction": 0.8,
+        "route_counts": {
+          "CLARIFY": 4,
+          "HUMAN_REVIEW": 1
+        },
+        "support": 5,
+        "token": "i"
+      },
+      {
+        "dominant_route_fraction": 0.8,
+        "route_counts": {
+          "CLARIFY": 4,
+          "HUMAN_REVIEW": 1
+        },
+        "support": 5,
+        "token": "inr"
+      },
+      {
+        "dominant_route_fraction": 0.8,
+        "route_counts": {
+          "CLARIFY": 4,
+          "HUMAN_REVIEW": 1
+        },
+        "support": 5,
+        "token": "was"
+      },
+      {
+        "dominant_route_fraction": 0.6666666666666666,
+        "route_counts": {
+          "CLARIFY": 2,
+          "HUMAN_REVIEW": 1
+        },
+        "support": 3,
+        "token": "on"
+      },
+      {
+        "dominant_route_fraction": 0.5625,
+        "route_counts": {
+          "ABSTAIN": 6,
+          "CLARIFY": 1,
+          "EXPLAIN": 6,
+          "GATHER_EVIDENCE": 1,
+          "HUMAN_REVIEW": 18
+        },
+        "support": 32,
+        "token": "investigate"
+      },
+      {
+        "dominant_route_fraction": 0.5142857142857142,
+        "route_counts": {
+          "ABSTAIN": 6,
+          "CLARIFY": 3,
+          "EXPLAIN": 7,
+          "GATHER_EVIDENCE": 1,
+          "HUMAN_REVIEW": 18
+        },
+        "support": 35,
+        "token": "please"
+      },
+      {
+        "dominant_route_fraction": 0.5135135135135135,
+        "route_counts": {
+          "ABSTAIN": 6,
+          "CLARIFY": 3,
+          "EXPLAIN": 8,
+          "GATHER_EVIDENCE": 1,
+          "HUMAN_REVIEW": 19
+        },
+        "support": 37,
+        "token": "payment"
+      },
+      {
+        "dominant_route_fraction": 0.5135135135135135,
+        "route_counts": {
+          "ABSTAIN": 6,
+          "CLARIFY": 3,
+          "EXPLAIN": 8,
+          "GATHER_EVIDENCE": 1,
+          "HUMAN_REVIEW": 19
+        },
+        "support": 37,
+        "token": "tx"
+      }
+    ]
+  }
+}
