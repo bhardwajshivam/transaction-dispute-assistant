@@ -26,7 +26,7 @@ Do not invent values, identify bank transactions, decide fraud, or execute actio
 
 PROMPT_VERSION = 'DISPUTE-EXTRACTION-PROMPT-2.0'
 SCHEMA_VERSION = 'DISPUTE-EXTRACTION-SCHEMA-1.0'
-VALIDATOR_VERSION = 'DISPUTE-EXTRACTION-VALIDATOR-1.2'
+VALIDATOR_VERSION = 'DISPUTE-EXTRACTION-VALIDATOR-1.3'
 MODEL = 'smollm2:135m'
 FIELD_GUIDANCE = {
     'wrong_amount': 'transaction_date, charged_amount/currency, expected_amount/currency',
@@ -118,7 +118,8 @@ def extract(text, kind, use_ollama=True, transport=None):
             trace['status'] = 'OLLAMA_EXTRACTED'
         except Exception as error:
             trace['status'] = 'EXTRACTION_UNAVAILABLE_GUIDED_FALLBACK'
-            trace['error_code'] = error.code if isinstance(error, BackendError) else 'INVALID_EXTRACTION_RESPONSE'
+            from diagnostic_codes import safe_code, EXTRACTION_CODES
+            trace['error_code'] = safe_code(error, EXTRACTION_CODES, 'INVALID_EXTRACTION_RESPONSE')
     fields, sources, conflicts, provenance, uncertain = {}, {}, set(), {}, set()
     negated_payment = bool(re.search(r"\b(?:(?:not|never)\s+(?:charged|debited|paid)|(?:wasn't|wasn’t)\s+(?:charged|debited)|(?:didn't|didn’t|did not)\s+pay)\b", text, re.I))
     if negated_payment:

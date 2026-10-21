@@ -126,7 +126,16 @@ def run(state, proposer=propose, customer_id='C-001', database=None):
         if not valid:
             state['agent_stop_reason'] = reason
             return
-        result = read_tool(proposal, customer_id, database, state.get('answers', {}).get('card_id'))
+        try:
+            result = read_tool(proposal, customer_id, database, state.get('answers', {}).get('card_id'))
+            statuses={'SUCCESS','NOT_FOUND','UNAVAILABLE','MALFORMED','FORBIDDEN_OR_NOT_FOUND'}
+            if proposal['gap']=='policy':
+                statuses.update({'CONFLICT','STALE','OUT_OF_SCOPE','NOT_REQUIRED'})
+            if not isinstance(result,dict) or result.get('status') not in statuses or not isinstance(result.get('records'),list) or not all(isinstance(row,dict) for row in result.get('records',[])):
+                result={'status':'MALFORMED','records':[]}
+        except Exception:
+            # Tool exceptions may contain credentials, query parameters or PII.
+            result={'status':'UNAVAILABLE','records':[]}
         trace['result_status'] = result['status']
         gap = proposal['gap']
         state['evidence'][gap] = {'evidence_id': 'EV-' + uuid4().hex[:12],
@@ -135,7 +144,7 @@ def run(state, proposer=propose, customer_id='C-001', database=None):
         signals = state.setdefault('review_signals', [])
         if gap == 'policy' and result['status'] != 'SUCCESS':
             from policy_contract import review_signal
-            signal = review_signal(result['policy_context'])
+            signal = review_signal(result['policy_context']) if isinstance(result.get('policy_context'),dict) else 'POLICY_UNAVAILABLE'
             if signal not in signals: signals.append(signal)
         if result['status'] in ('UNAVAILABLE', 'MALFORMED', 'FORBIDDEN_OR_NOT_FOUND'):
             if 'EVIDENCE_VERIFICATION_UNAVAILABLE' not in signals:

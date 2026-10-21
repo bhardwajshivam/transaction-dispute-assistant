@@ -42,6 +42,12 @@ def render():
         st.rerun()
     if st.button('Refresh queue'):
         st.rerun()
+    from operations import staff_summary
+    try:
+        with st.expander('Operational counts — authorised customer scope'):
+            st.json(staff_summary(principal))
+    except (sqlite3.Error, FileNotFoundError, PermissionError, ValueError):
+        st.error('Operational counts are unavailable.')
     from case_service import staff_cases
     try:
         cases, pending = staff_cases(principal)

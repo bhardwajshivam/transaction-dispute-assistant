@@ -1,0 +1,56 @@
+{
+  "failures": [],
+  "limits": [
+    "Canary-based checks do not establish exhaustive PII detection or compliance.",
+    "OS, proxy and third-party logs are outside this application test.",
+    "Aggregate counts remain sensitive and require staff scope; no anonymity claim.",
+    "Unknown action counts reflect current commands; replay attempts and pre-save errors are not measured."
+  ],
+  "passed": 22,
+  "scope": "Offline synthetic tests only; no working customer database scanned or exported.",
+  "source_sha256": {
+    "concern_extraction.py": "984ef99839e790a67dba77def19b0e8972597f698261194eb029b9620de36a23",
+    "diagnostic_codes.py": "5bab3d2d7150fb3b8b96ca368ac391bafc45fc5291294c09105ff9a03481dd0c",
+    "evidence_agent.py": "14c361228175f00078fc6dc47e2f3eee1ecd0736ce5b6cbb7da9f3a030e39676",
+    "operations.py": "fe3b56d764078621a45ae87a8c2d4e64fcc3d485559a545ede072bb3270d1fab",
+    "privacy.py": "6265a5463b58b4b20f0ce7793db25a91537e68aefcb42ffc3bc4e5b8c449b201",
+    "representative_ui.py": "f5d54af1b93875935fa53d7e5ca07d4a4eaf3820ec1a897760759174d4521444",
+    "scripts/validate_privacy_operations.py": "c35d1ef22c6070701cde180698b810594948a963bfb90b94d9fc86174a9c3f08",
+    "secure_storage.py": "511a44dbd82f1573721e7d03cbf4fcbad41e82bb1bcb5dcd90e4594fb4c465b7",
+    "tests/test_operational_privacy.py": "344b50f970cdba9d062b21546c98e913ff001d719e15a0a1301ebe5936fba4f4",
+    "tests/test_privacy.py": "83709ddaf90280c0e55aca601230871e0ba5c7b2701e9a83fa3304ff61b89dff",
+    "tests/test_report_metadata.py": "427d40245ce906f194d7d29df50ca94f910b8959e400ccd6b4e06421d9a0ee02",
+    "workflow.py": "05148833ac72909bc5ad8616f4a240d2afa041cebb6830e976a5fcf96f737fcd"
+  },
+  "synthetic_counter_example": {
+    "counts": {
+      "card_noop_commands": 0,
+      "concerns": 1,
+      "evidence_tool_failures": 0,
+      "existing_case_links": 0,
+      "extraction_attempts": 1,
+      "extraction_fallbacks": 1,
+      "extraction_rejected_proposal_cases": 0,
+      "policy_failure_concerns": 1,
+      "queued_handoffs": 0,
+      "required_review_concerns": 1,
+      "unknown_card_commands": 0,
+      "unknown_case_commands": 0
+    },
+    "interpretation": "Snapshot counters, not anonymous statistics or all-request telemetry. No customer identifiers or statements are exported.",
+    "limits": [
+      "Pre-persistence failures and blocked secrets are not counted.",
+      "Existing-case links and no-op card commands are partial duplicate-prevention indicators; replay attempts are not counted.",
+      "Retention changes counts; no time-series, latency SLO or production monitoring is claimed."
+    ],
+    "scope": "AUTHORISED_CUSTOMER_SCOPE_ONLY",
+    "version": "DISPUTE-OPERATIONS-1.0"
+  },
+  "test_modules": [
+    "tests.test_operational_privacy",
+    "tests.test_privacy",
+    "tests.test_report_metadata"
+  ],
+  "tests_run": 22,
+  "version": "PRIVACY-OPERATIONS-VALIDATION-1.0"
+}

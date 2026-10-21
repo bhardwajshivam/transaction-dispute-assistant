@@ -8,7 +8,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from report_metadata import portable
-DATA_DIRS = {'workflow_controls','data_quality','runtime','development','evaluation','testing','activity_corpus',
+DATA_DIRS = {'privacy_operations','workflow_controls','data_quality','runtime','development','evaluation','testing','activity_corpus',
              'activity_evaluation','policy_evaluation','workflow_evaluation',
              'live_extraction_evaluation','deterministic_extraction_evaluation','bank_integration_validation'}
 

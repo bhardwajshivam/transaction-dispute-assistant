@@ -45,8 +45,10 @@ def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None
     try:
         card_handled=handle_card(candidate,text,concern_id,database)
         handled=card_handled or handle_case(candidate,text,concern_id,database)
-    except (sqlite3.Error,ValueError,PermissionError,FileNotFoundError) as error:
-        raise WorkflowError('card' if card_request else 'case',getattr(error,'code','PERMISSION_DENIED' if isinstance(error,PermissionError) else 'CARD_SERVICE_UNAVAILABLE' if card_request else 'CASE_SERVICE_UNAVAILABLE')) from None
+    except Exception as error:
+        from diagnostic_codes import safe_code, ACTION_CODES
+        fallback='PERMISSION_DENIED' if isinstance(error,PermissionError) else 'CARD_SERVICE_UNAVAILABLE' if card_request else 'CASE_SERVICE_UNAVAILABLE'
+        raise WorkflowError('card' if card_request else 'case',safe_code(error,ACTION_CODES,fallback)) from None
     if handled:
         question='card_control' if card_handled else 'case_control'
     elif question=='done':
@@ -63,12 +65,18 @@ def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None
         if extractor is None:
             from concern_extraction import extract
             extractor=extract
-        submit(candidate,text,extractor=extractor)
+        try:
+            submit(candidate,text,extractor=extractor)
+        except Exception:
+            raise WorkflowError('controller','CONTROLLER_UNAVAILABLE') from None
     if candidate.get('answers',{}).get('transaction') and question not in ('handoff_confirm','satisfaction','follow_up_update','case_control','card_control'):
         if gatherer is None:
             from orchestration import gather
             gatherer=gather
-        gatherer(candidate,database=database)
+        try:
+            gatherer(candidate,database=database)
+        except Exception:
+            raise WorkflowError('evidence','EVIDENCE_SERVICE_UNAVAILABLE') from None
         update_review(candidate)
         if candidate['review_requirement']=='REQUIRED' and candidate['step'] not in ('handoff_confirm','handoff_pending','done'):
             offer_review(candidate); prompt(candidate)
@@ -79,7 +87,7 @@ def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None
         raise WorkflowError('transition', str(error)) from None
     try:
         cid,revision=save_note(candidate,question,text,concern_id=concern_id,revision=revision,database=database)
-    except (sqlite3.Error,ValueError,PermissionError,FileNotFoundError):
+    except Exception:
         # A case command may already have committed independently of chat saving.
         raise WorkflowError('storage','CHAT_SAVE_UNCONFIRMED') from None
     return TurnResult(candidate,cid,revision,protected.categories)

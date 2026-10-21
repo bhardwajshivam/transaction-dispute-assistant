@@ -89,6 +89,8 @@ Historical live validation found 0% validated model field recall on the old prom
 
 ## Extraction trace contract
 
-`DISPUTE-EXTRACTION-PROMPT-2.0`, `DISPUTE-EXTRACTION-SCHEMA-1.0` and `DISPUTE-EXTRACTION-VALIDATOR-1.2` identify the current contract. Prompt hashes cover system instructions and per-issue guidance; schema hashes cover the structured output contract. New traces retain those identifiers on deterministic, model, failure and blocked-secret paths. Existing saved traces are historical and are not rewritten.
+`DISPUTE-EXTRACTION-PROMPT-2.0`, `DISPUTE-EXTRACTION-SCHEMA-1.0` and `DISPUTE-EXTRACTION-VALIDATOR-1.3` identify the current contract. Prompt hashes cover system instructions and per-issue guidance; schema hashes cover the structured output contract. New traces retain those identifiers on deterministic, model, failure and blocked-secret paths. Existing saved traces are historical and are not rewritten.
 
 Model identity records the configured tag and matching returned tag when available; unexpected returned identities and tool calls cause fallback. Runtime chat responses do not include a model digest, so the trace states that limitation explicitly. The live evaluator additionally captures model digest before and after each suite. Update the relevant version whenever its behaviour changes and rerun evaluation.
+
+Validator 1.3 additionally allowlists diagnostic codes; step-3 live reports retain the measured 1.2 source fingerprints. This diagnostic change is covered by privacy regression checks, not a new claim of live model quality.

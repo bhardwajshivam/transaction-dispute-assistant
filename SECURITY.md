@@ -83,3 +83,12 @@ The separate card-protection service requires a `card:protect` demo principal, c
 ## Portable evaluation metadata
 
 Published report diagnostics redact machine-local home/cache/temporary paths. Model metadata uses an explicit detail-field allowlist rather than copying `parent_model`, usernames or hostnames from the local server. The submission builder rejects JSON containing recognised machine-local path metadata. These checks minimise environmental metadata and do not establish exhaustive PII detection. Numeric results and model digests are preserved; historical source fingerprints describe the original tested inputs before report redaction. Git author identity is governed separately and is not changed by this metadata cleanup.
+
+## Failure-path privacy and operational counts
+
+See [PRIVACY_OPERATIONS.md](PRIVACY_OPERATIONS.md) for allowlisted exception
+diagnostics, safe evidence-adapter failures, debug/export canary checks and
+staff-scoped fixed counters. Run `python scripts/validate_privacy_operations.py`
+for a reproducible synthetic report. Arbitrary exception text/codes never become
+operational dimensions; real OS/proxy/third-party logging and exhaustive PII
+coverage remain outside these tests.

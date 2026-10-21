@@ -20,8 +20,9 @@ No runtime database, customer history, keys or local machine metadata is copied.
 4. **Workflow/handoff — implemented:** explicit ordinary transition contract,
    invalid/repeated/interrupted/reopened journey checks and package-level
    continuation test. Real representative usability review remains outstanding.
-5. **Privacy/visibility — pending:** failure-path logging/export checks and minimised
-   operational counters, without raw customer statements in metrics.
+5. **Privacy/visibility — implemented:** allowlisted failure diagnostics,
+   model/tool/debug/export privacy checks and staff-scoped fixed operational
+   counters. Exhaustive PII detection and external infrastructure logs remain open.
 6. **Evaluation — pending:** rerun component/workflow/demonstration suites and
    expand retrieval, counterfactual, attack and unsupported-claim checks.
 7. **Release — pending:** documentation/reflection aligned with measured behaviour,
@@ -100,3 +101,15 @@ Paths below identify the current implementation/report and intended evidence.
   `data/workflow_controls/report.json`. Nine new contract tests pass.
 - Actual representative usability validation remains open. No formal verification
   or exhaustive state-pair coverage is claimed.
+
+## Step 5 evidence
+
+- Definitions and limits: `PRIVACY_OPERATIONS.md`; authenticated counts in
+  `operations.staff_summary`, displayed only in representative workspace.
+- Privacy hardening: fixed exception-code allowlists, safe adapter exception and
+  malformed-envelope handling; preserve policy-specific failure distinctions.
+- Reproduce: `python scripts/validate_privacy_operations.py`; 22 focused checks
+  pass. Report: `data/privacy_operations/report.json`. Ten new tests were added.
+- No raw statements/IDs/amounts in metrics; no working database exported.
+- Limits: pre-save failures, replay attempts, external logs, exhaustive PII
+  detection and real bank security validation are not established.
