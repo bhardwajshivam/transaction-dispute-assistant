@@ -1,0 +1,21 @@
+{
+  "errors": [],
+  "transaction_count": 181,
+  "currency_balance": {
+    "INR": 181
+  },
+  "status_balance": {
+    "Posted": 178,
+    "Pending": 3
+  },
+  "recurring_count": 30,
+  "duplicate_looking_groups": 2,
+  "missing_posted_dates": 3,
+  "notes": [
+    "Duplicate-looking entries are intentional and do not establish duplicate processing.",
+    "Missing posting dates are expected for pending payments.",
+    "Initial fixtures are not statistically representative; currency coverage is explicit rather than calibrated.",
+    "Reference scenarios cover question selection, not final policy outcomes.",
+    "Development/evaluation wording differs but scenario families overlap; not an independent generalisation benchmark."
+  ]
+}

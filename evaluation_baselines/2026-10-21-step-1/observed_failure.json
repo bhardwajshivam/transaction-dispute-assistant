@@ -1,0 +1,27 @@
+{
+  "id": "OBSERVED-MERCHANT-DATE-20261021",
+  "provenance": "Sanitised subset inspected from the running synthetic demo concern. Not a full raw Ollama response; no original response is available. No customer history or identifiers are copied.",
+  "customer_message": "I was charged INR 42 instead of INR 40 on 15-10-2026",
+  "selected_card": "CARD-001",
+  "observed_accepted_fields": {
+    "transaction_date": "2026-10-15",
+    "charged_amount": "42.00",
+    "expected_amount": "40.00",
+    "expected_currency": "INR",
+    "merchant": "on 15-10-2026",
+    "charged_currency": "INR"
+  },
+  "merchant_source": "ollama",
+  "observed_outcome": "NO_MATCHES",
+  "verified_matching_transactions": [
+    "TX-1003",
+    "TX-1004"
+  ],
+  "cause": "Exact source-span validation accepted a date phrase as merchant; merchant SQL filtering excluded valid transactions.",
+  "fixes_already_in_baseline": [
+    "Reject date/amount merchant spans",
+    "Merchant names never filter transaction search"
+  ],
+  "regression_test": "tests.test_intake.IntakeTests.test_model_date_mislabelled_as_merchant_does_not_hide_matches",
+  "limits": "A captured failure fact record, not a new reproduction of the original model output."
+}

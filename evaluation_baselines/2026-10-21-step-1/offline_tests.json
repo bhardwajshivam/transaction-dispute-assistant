@@ -1,0 +1,7 @@
+{
+  "command": "python -m unittest discover -s tests -q",
+  "test_count": 213,
+  "status": "PASS",
+  "scope": "Offline regression tests; not live model quality or real banking integration",
+  "raw_log_policy": "Only summary retained; local warning paths excluded."
+}

@@ -1,0 +1,71 @@
+{
+  "baseline_id": "2026-10-21-step-1",
+  "source_commit": "84e5eeef9e91038926921a8963e44da9a9996569",
+  "source_tree": "190be5db9d19a11e9821e8ae45d7f06f2415fd74",
+  "source_fingerprints": {
+    "concern_extraction.py": "aaa19adae97d4a19da7c1a8792d3e18391437f947edb98140f5b57f9fbeab1cf",
+    "intake.py": "66df35dae5346a7e10080e083ff5560f16ca12a1f0dcaf481bd5d976c985eb22",
+    "domain.py": "ffa686b0334956bdacd2a620dc88efbf52765f254f674976f28a8532627e02db",
+    "app.py": "513494664f23c06eae19f899336e55ac27ba3485048613a73808c4af008779ba",
+    "workflow.py": "b4ddf1ed40a9e07f6be98862ca7f720a238a3be37e1f170c262e7b46fd01773b",
+    "conversation.py": "040be83f87bbf825f6c476c0cfa924cf8faba05866f77f31d5198328fa2f2d01",
+    "evaluation/scenarios.py": "b0af7039afda9bb76ec00d939000824891647a3c2967afd45e698304f999c54f",
+    "evaluation/costs.json": "8138bc81d9b6241b846f68273fcd571885322f3d17e2b32191e4e1f4fb9488c1",
+    ".env.example": "273cf7f3edb6e143d7463d20b0de345b6269763cf82404b204a3d69b6306653c"
+  },
+  "extraction_config": {
+    "default_mode": "ollama",
+    "model_tag": "smollm2:135m",
+    "temperature": 0,
+    "max_output_tokens": 512,
+    "timeout_seconds": 30,
+    "prompt_sha256": "2d3b88038ed14347bf267d35480ce8756053773f43f1b681fb8052102a758d8e",
+    "schema_sha256": "ceb4c9d3ca752b6bf01adfb3184b73fd5cb1e9b8ab231930ba974233d480b847",
+    "prompt_version": "NOT_YET_ASSIGNED",
+    "schema_version": "NOT_YET_ASSIGNED",
+    "live_model_digest": "NOT_CAPTURED_FOR_CURRENT_PROMPT",
+    "live_quality_status": "REQUIRES_FRESH_EVALUATION"
+  },
+  "evidence_proposer_default": "deterministic",
+  "offline_tests": "offline_tests.json",
+  "historical_reports": [
+    {
+      "original_path": "data/workflow_evaluation/latest/summary.json",
+      "snapshot_file": "historical_0_summary.json",
+      "sha256": "555e0b91e606edfc19019b480d1a85c412d3cd81acbd54f6bc6d5e04c3393347",
+      "status": "HISTORICAL_NOT_RERUN_AT_BASELINE"
+    },
+    {
+      "original_path": "data/workflow_evaluation/before_fixes/failed_outputs.json",
+      "snapshot_file": "historical_1_failed_outputs.json",
+      "sha256": "6e04cee14a47783047301fd72b47d8c7c663bac42ffec71fa2198ca18f93aea2",
+      "status": "HISTORICAL_NOT_RERUN_AT_BASELINE"
+    },
+    {
+      "original_path": "data/quality_report.json",
+      "snapshot_file": "historical_2_quality_report.json",
+      "sha256": "c0d39ac317db30054dad6ddcddeb444d9a56c0e5fd23a311ba4558d49ab67ff1",
+      "status": "HISTORICAL_NOT_RERUN_AT_BASELINE"
+    },
+    {
+      "original_path": "data/activity_corpus/quality_report.json",
+      "snapshot_file": "historical_3_quality_report.json",
+      "sha256": "94635287063d91019965c4761e428591fd592cd2f34db63f74d79230fda81384",
+      "status": "HISTORICAL_NOT_RERUN_AT_BASELINE"
+    }
+  ],
+  "known_failure": "observed_failure.json",
+  "exclusions": [
+    "Runtime databases",
+    "Saved concern histories",
+    "Encryption keys",
+    "Environment secrets",
+    "Model blobs",
+    "Machine-specific paths"
+  ],
+  "limitations": [
+    "Stored workflow report predates recent matching changes",
+    "No fresh live extraction evaluation",
+    "Current default extraction is Ollama; historical deterministic-default claims remain in some documents until release stage"
+  ]
+}
