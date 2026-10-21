@@ -1,0 +1,350 @@
+{
+  "cases": 12,
+  "valid_model_responses": 11,
+  "model_name": "smollm2:135m",
+  "extraction_contract": {
+    "prompt_version": "DISPUTE-EXTRACTION-PROMPT-2.0",
+    "schema_version": "DISPUTE-EXTRACTION-SCHEMA-1.0",
+    "validator_version": "DISPUTE-EXTRACTION-VALIDATOR-1.1",
+    "prompt_sha256": "d59280ba2cf96d44c18f3eb82d29f2cb28c6a258afb3d7ba0eb4458cb27f9059",
+    "schema_sha256": "ceb4c9d3ca752b6bf01adfb3184b73fd5cb1e9b8ab231930ba974233d480b847"
+  },
+  "server_metadata_before": {
+    "server": {
+      "version": "0.33.2"
+    },
+    "models": [
+      {
+        "name": "smollm2:135m",
+        "digest": "9077fe9d2ae1a4a41a868836b56b8163731a8fe16621397028c2c76f838c6907",
+        "details": {
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "134.52M",
+          "quantization_level": "F16",
+          "context_length": 8192,
+          "embedding_length": 576
+        }
+      }
+    ]
+  },
+  "server_metadata": {
+    "server": {
+      "version": "0.33.2"
+    },
+    "models": [
+      {
+        "name": "smollm2:135m",
+        "digest": "9077fe9d2ae1a4a41a868836b56b8163731a8fe16621397028c2c76f838c6907",
+        "details": {
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "134.52M",
+          "quantization_level": "F16",
+          "context_length": 8192,
+          "embedding_length": 576
+        }
+      }
+    ]
+  },
+  "source_sha256": {
+    "concern_extraction.py": "f3cf85ba60ddda469d399daaa3ce1c5fb0d62a791feedb781512e0eac79aaf91",
+    "intake.py": "66df35dae5346a7e10080e083ff5560f16ca12a1f0dcaf481bd5d976c985eb22",
+    "privacy.py": "6265a5463b58b4b20f0ce7793db25a91537e68aefcb42ffc3bc4e5b8c449b201",
+    "scripts/evaluate_live_extraction.py": "24feefd4265af926025229fb781832bbf50ea479b3f275279f209b8b0f7f67ca",
+    "report_metadata.py": "8cd59230ee57a786acbaab358271d79cbe7c6e306ffc13192cc445e1dc09021d"
+  },
+  "cases_with_rejected_model_fields": 10,
+  "model_response_note": "Valid JSON does not imply grounded or useful extraction. Precision/recall describe validated fields; inspect rejected proposals and raw synthetic outputs.",
+  "transport": "actual loopback Ollama",
+  "case_sha256": "9c0c95ae222bd285df2264d872e59e4d451363bbbeb339d9c4d996e0a8e4e5a9",
+  "limits": "Handwritten synthetic probes; not independent customer data. No banking actions or production validation.",
+  "model": {
+    "exact_matches": 4,
+    "field_precision": 0.8823529411764706,
+    "field_recall": 0.5172413793103449,
+    "cases_with_wrong_fields": 1
+  },
+  "parser": {
+    "exact_matches": 8,
+    "field_precision": 0.8484848484848485,
+    "field_recall": 0.9655172413793104,
+    "cases_with_wrong_fields": 3
+  },
+  "combined": {
+    "exact_matches": 8,
+    "field_precision": 0.8484848484848485,
+    "field_recall": 0.9655172413793104,
+    "cases_with_wrong_fields": 3
+  },
+  "model_identity_stable": true,
+  "parser_supported_cases": 11,
+  "model_contributed_cases": 8,
+  "transport_or_schema_fallback_cases": 1,
+  "no_validated_model_fields_cases": 4,
+  "fallback_note": "Parser is always a supporting path, not only an outage fallback. Empty model output on an empty-target case is not a failure.",
+  "field_role_breakdown": {
+    "cancellation_date": {
+      "model": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "charged_amount": {
+      "model": {
+        "correct": 5,
+        "expected": 7,
+        "wrong": 1
+      },
+      "parser": {
+        "correct": 7,
+        "expected": 7,
+        "wrong": 1
+      },
+      "combined": {
+        "correct": 7,
+        "expected": 7,
+        "wrong": 1
+      }
+    },
+    "charged_currency": {
+      "model": {
+        "correct": 0,
+        "expected": 5,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 5,
+        "expected": 5,
+        "wrong": 3
+      },
+      "combined": {
+        "correct": 5,
+        "expected": 5,
+        "wrong": 3
+      }
+    },
+    "date_end": {
+      "model": {
+        "correct": 0,
+        "expected": 0,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 0,
+        "expected": 0,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 0,
+        "expected": 0,
+        "wrong": 0
+      }
+    },
+    "expected_amount": {
+      "model": {
+        "correct": 2,
+        "expected": 2,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 2,
+        "expected": 2,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 2,
+        "expected": 2,
+        "wrong": 0
+      }
+    },
+    "expected_currency": {
+      "model": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "merchant": {
+      "model": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "original_amount": {
+      "model": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "original_currency": {
+      "model": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "original_date": {
+      "model": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "refund_amount": {
+      "model": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "refund_currency": {
+      "model": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "refund_date": {
+      "model": {
+        "correct": 0,
+        "expected": 1,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 1,
+        "expected": 1,
+        "wrong": 0
+      }
+    },
+    "transaction_date": {
+      "model": {
+        "correct": 5,
+        "expected": 6,
+        "wrong": 1
+      },
+      "parser": {
+        "correct": 6,
+        "expected": 6,
+        "wrong": 1
+      },
+      "combined": {
+        "correct": 6,
+        "expected": 6,
+        "wrong": 1
+      }
+    },
+    "transaction_reference": {
+      "model": {
+        "correct": 0,
+        "expected": 0,
+        "wrong": 0
+      },
+      "parser": {
+        "correct": 0,
+        "expected": 0,
+        "wrong": 0
+      },
+      "combined": {
+        "correct": 0,
+        "expected": 0,
+        "wrong": 0
+      }
+    }
+  },
+  "status": "UNAVAILABLE_OR_INVALID"
+}

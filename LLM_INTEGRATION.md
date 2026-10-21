@@ -85,4 +85,10 @@ References: [Ollama chat API](https://docs.ollama.com/api/chat), [SmolLM2 135M m
 
 Historical connectivity smoke check: the already-installed `llama3.2:1b` returned a valid proposal for synthetic transaction metadata in approximately 31 seconds (60-second timeout). This checks connectivity and response shape only, not model reliability. `smollm2:135m` was subsequently installed and checked with two synthetic extraction descriptions; see INTAKE_FLOW.md.
 
-Live validation found 0% validated model field recall on 14 fixed probes. The model is optional and is not the recommended extractor. See [LIVE_VALIDATION.md](LIVE_VALIDATION.md) for retained failures and offline reproduction.
+Historical live validation found 0% validated model field recall on the old prompt. The current local extraction default is Ollama with parser support. Fresh versioned measurements and retained failures are in [prompt_v2/REPORT.md](data/live_extraction_evaluation/prompt_v2/REPORT.md); useful model contribution is still limited. Deterministic-only mode remains available.
+
+## Extraction trace contract
+
+`DISPUTE-EXTRACTION-PROMPT-2.0`, `DISPUTE-EXTRACTION-SCHEMA-1.0` and `DISPUTE-EXTRACTION-VALIDATOR-1.2` identify the current contract. Prompt hashes cover system instructions and per-issue guidance; schema hashes cover the structured output contract. New traces retain those identifiers on deterministic, model, failure and blocked-secret paths. Existing saved traces are historical and are not rewritten.
+
+Model identity records the configured tag and matching returned tag when available; unexpected returned identities and tool calls cause fallback. Runtime chat responses do not include a model digest, so the trace states that limitation explicitly. The live evaluator additionally captures model digest before and after each suite. Update the relevant version whenever its behaviour changes and rerun evaluation.

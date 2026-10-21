@@ -13,8 +13,10 @@ No runtime database, customer history, keys or local machine metadata is copied.
    surface-token/template analysis and consolidated report; six new challenge
    expectations frozen before execution. External adjudication and semantic
    paraphrase review remain open; no independence claim is made.
-3. **Extraction — pending:** versioned prompt/schema/model traces; fresh live
-   model-only, parser-only and combined measurements, including failures.
+3. **Extraction — implemented and measured:** prompt/schema/validator identifiers,
+   tag identity in traces; live evaluator captures model digest and separates
+   model/parser/combined metrics. Raw failures retained; model quality remains
+   limited and one final robustness response required fallback.
 4. **Workflow/handoff — pending:** explicit transition matrix and invalid/repeated/
    interrupted/reopened journey checks; representative continuation test.
 5. **Privacy/visibility — pending:** failure-path logging/export checks and minimised
@@ -71,3 +73,17 @@ Paths below identify the current implementation/report and intended evidence.
   checks, while semantic review remains incomplete. Item 9 has new frozen cases
   but still requires external adjudication; it is not complete.
 - No application behaviour, working database or existing evaluation labels changed.
+
+## Step 3 evidence (completed implementation and measurement)
+
+- Versions and hashes: `concern_extraction.contract_metadata()`.
+- Live measurement: `data/live_extraction_evaluation/prompt_v2/REPORT.md`, with
+  before/after synthetic raw responses, source hashes and model digests.
+- 14 unchanged probes: model recall 37.9%, combined 14/14 exact.
+- 12 authored robustness probes: model recall 51.7%, combined 11/12 exact; one
+  generation-limit failure. No generalisation or production readiness claim.
+- Runtime immutable digest pinning is not implemented; traces explicitly say the
+  chat API does not supply a digest. Evaluator checks local metadata before/after.
+- Relevant observed failures fixed without changing expected answers: reference
+  as merchant, wrong-role currency, negated assertions and orphan conflict currency.
+- New probes have now informed development; they are not held-out evaluation.

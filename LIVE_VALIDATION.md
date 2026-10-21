@@ -118,3 +118,7 @@ Published server/model metadata excludes machine-local parent-model paths and ar
 ## Subsequent configuration change
 
 At the product owner’s request, complaint extraction now defaults to `ollama`; the evidence proposer remains deterministic. The extraction prompt no longer contains the literal amount example copied in the historical failed outputs. The historical measurements above describe the previous prompt/default and remain unchanged. The revised prompt has not yet been re-evaluated live. Exact-span validation, deterministic parser support, confirmation and guided fallback remain active. Explicit `CONCERN_EXTRACTION_MODE=deterministic` still disables the extraction model.
+
+## Step 3: revised prompt and versioned validation
+
+A fresh live measurement is now available in [prompt_v2/REPORT.md](data/live_extraction_evaluation/prompt_v2/REPORT.md). The unchanged 14 probes achieve 37.9% validated model field recall and 14/14 combined exact matches; the new 12 robustness probes achieve 51.7% model field recall and 11/12 combined exact matches. One generation-length failure required fallback, and merchant context remains missing in one case. These developer-authored cases are not independent generalisation evidence. Before/after raw synthetic failures, case hashes and model digests are preserved. Model quality remains limited despite useful extraction on some fields.

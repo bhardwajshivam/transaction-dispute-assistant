@@ -72,7 +72,7 @@ python -m streamlit run app.py
 
 This mode makes no LLM calls. To enable the optional read-only evidence proposer separately, set `EVIDENCE_PROPOSER_MODE=ollama` and `OLLAMA_MODEL=smollm2:135m`. Neither switch grants action or policy authority. See [LLM_INTEGRATION.md](LLM_INTEGRATION.md).
 
-**Model quality limitation:** the previous extraction prompt achieved 0% validated model field recall on 14 fixed live probes. The prompt has since changed and validators have been strengthened, but a new live quality evaluation is still required. Offline tests and parser fallback do not demonstrate useful model extraction. Historical failed outputs remain documented in [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
+**Model quality limitation:** the previous extraction prompt achieved 0% validated model field recall on 14 fixed live probes. Fresh revised-prompt measurements show 37.9% model field recall on the original 14 probes and 51.7% on 12 developer-authored robustness probes. Combined exact matches are 14/14 and 11/12; one robustness response hit the generation limit and required fallback. Parser success does not establish model reliability. See the [current extraction report](data/live_extraction_evaluation/prompt_v2/REPORT.md). Historical failed outputs remain documented in [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
 
 ## Journeys
 
@@ -134,7 +134,7 @@ The same arguments reproduce JSON and checksums. Runtime data, scenario labels a
 python -m unittest discover -s tests -v
 ```
 
-Current result: **216 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
+Current result: **221 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
 
 
 ## Card selection and scope
