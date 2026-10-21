@@ -1,0 +1,13 @@
+{
+  "mode": "deterministic",
+  "cases": 14,
+  "passed": 14,
+  "case_sha256": "423a56447bd50051c2c99c4e9d863ec545e20ebb5ec4e65f0c7eba1397a5b19c",
+  "source_sha256": {
+    "concern_extraction.py": "aaf17065b7bab7b1d4289be36306a3ede7675636ebef2639f443d731625278f6",
+    "intake.py": "300be92ec3dda3588fda3565ecf88f3883b6e792e14085da0b595c788f97d2c4",
+    "privacy.py": "cea75da7286666e82661cf37a83ecacc2c38c84281b687ffc5f93ad17d98fd5a",
+    "scripts/evaluate_deterministic_extraction.py": "60679568bd40f96b7671db4440d03cfa7521b09a7141a5d45764b9d9153105ed"
+  },
+  "limits": "Fixed synthetic development probes, not independent customer-data accuracy."
+}

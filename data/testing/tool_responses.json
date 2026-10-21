@@ -1,0 +1,40 @@
+[
+  {
+    "fixture_id": "TOOL-SUCCESS",
+    "operation": "get_transaction",
+    "status": "SUCCESS",
+    "data": {
+      "transaction_id": "TX-1001"
+    }
+  },
+  {
+    "fixture_id": "TOOL-NOT_FOUND",
+    "operation": "get_transaction",
+    "status": "NOT_FOUND",
+    "data": null
+  },
+  {
+    "fixture_id": "TOOL-FORBIDDEN",
+    "operation": "get_transaction",
+    "status": "FORBIDDEN",
+    "data": null
+  },
+  {
+    "fixture_id": "TOOL-UNAVAILABLE",
+    "operation": "get_transaction",
+    "status": "UNAVAILABLE",
+    "data": null
+  },
+  {
+    "fixture_id": "TOOL-MALFORMED",
+    "operation": "get_transaction",
+    "status": "MALFORMED",
+    "data": null
+  },
+  {
+    "fixture_id": "TOOL-UNKNOWN_OUTCOME",
+    "operation": "get_transaction",
+    "status": "UNKNOWN_OUTCOME",
+    "data": null
+  }
+]

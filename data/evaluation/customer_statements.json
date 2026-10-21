@@ -1,0 +1,30 @@
+[
+  {
+    "scenario_id": "evaluation-recognition",
+    "transaction_id": "TX-1031",
+    "initial_statement": "Can you help identify this debit?",
+    "source": "customer_assertion",
+    "verified": false
+  },
+  {
+    "scenario_id": "evaluation-cancellation",
+    "transaction_id": "TX-1032",
+    "initial_statement": "Why was there a debit after I ended my plan?",
+    "source": "customer_assertion",
+    "verified": false
+  },
+  {
+    "scenario_id": "evaluation-billing",
+    "transaction_id": "TX-1033",
+    "initial_statement": "My statement appears to repeat a purchase.",
+    "source": "customer_assertion",
+    "verified": false
+  },
+  {
+    "scenario_id": "evaluation-refund",
+    "transaction_id": "TX-1034",
+    "initial_statement": "The seller says they sent a credit.",
+    "source": "customer_assertion",
+    "verified": false
+  }
+]

@@ -1,0 +1,2455 @@
+[
+  {
+    "case_id": "recognised",
+    "family": "recognition",
+    "expected": {
+      "route": "EXPLAIN",
+      "reason": "CUSTOMER_RECOGNISED",
+      "selected": "TX-1001",
+      "review_required": false,
+      "policy_id": "DEMO-INTAKE",
+      "policy_version": "1.1"
+    },
+    "actual": {
+      "route": "EXPLAIN",
+      "step": "satisfaction",
+      "reason": "CUSTOMER_RECOGNISED",
+      "review_required": false,
+      "review_codes": [],
+      "selected": "TX-1001",
+      "candidates": [],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [
+        {
+          "policy_id": "DEMO-INTAKE",
+          "version": "1.1",
+          "scope": "synthetic card intake only",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "as_of": "2026-10-20",
+          "authority": "Fictional prototype intake policy",
+          "source_uri": "policy://DEMO-INTAKE/1.1",
+          "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+          "hash_scope": "document"
+        }
+      ],
+      "policy_clauses": [
+        "P-01"
+      ],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I have an unrecognised transaction",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Please investigate payment TX-1001.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1001\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "TX-1001",
+          "before": "transaction",
+          "after": "recognise",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Demo bank record: TX-1001 · 17 Oct 2026 · Northstar Coffee · INR 8.50 · Posted. Statement descriptor: NSC HOSPITALITY. Channel: Card present. Merchant details do not prove authorisation.",
+            "Do these merchant details help you recognise the payment?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes",
+          "before": "recognise",
+          "after": "resolved",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Does this resolve your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes",
+          "before": "resolved",
+          "after": "satisfaction",
+          "error": null,
+          "route": "EXPLAIN",
+          "decision": {
+            "route": "EXPLAIN",
+            "reason": "CUSTOMER_RECOGNISED",
+            "intended_reason": "CUSTOMER_RECOGNISED",
+            "explanation": "You confirmed that you recognise the payment and your concern is resolved. No action was taken.\n\nFictional intake routing source: policy://DEMO-INTAKE/1.1#P-01 (effective from 2026-01-01; applicable as of 2026-10-20).",
+            "decision_type": "INTAKE_ROUTING",
+            "policy": "DEMO-INTAKE v1.1",
+            "policy_records_consulted": [
+              {
+                "policy_id": "DEMO-INTAKE",
+                "version": "1.1",
+                "scope": "synthetic card intake only",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "as_of": "2026-10-20",
+                "authority": "Fictional prototype intake policy",
+                "source_uri": "policy://DEMO-INTAKE/1.1",
+                "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                "hash_scope": "document"
+              }
+            ],
+            "policy_context": {
+              "contract_version": "policy-evidence-v1",
+              "purpose": "transaction_intake",
+              "scope": "synthetic card intake only",
+              "as_of": "2026-10-20",
+              "status": "SUCCESS",
+              "reason_code": "POLICY_VALIDATED",
+              "allowed": true,
+              "sources": [
+                {
+                  "policy_id": "DEMO-INTAKE",
+                  "version": "1.1",
+                  "scope": "synthetic card intake only",
+                  "effective_from": "2026-01-01",
+                  "effective_to": null,
+                  "as_of": "2026-10-20",
+                  "authority": "Fictional prototype intake policy",
+                  "source_uri": "policy://DEMO-INTAKE/1.1",
+                  "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                  "hash_scope": "document"
+                }
+              ],
+              "clauses": [
+                {
+                  "clause_id": "P-01",
+                  "text": "Customer confirms recognition and resolution",
+                  "outcome": "EXPLAIN",
+                  "source_uri": "policy://DEMO-INTAKE/1.1#P-01"
+                }
+              ],
+              "applied_rule_id": "P-01"
+            },
+            "policy_conclusion": true,
+            "policy_reason_code": "POLICY_VALIDATED",
+            "evidence_ids": [
+              "EV-c7a03f3fba8f",
+              "EV-1ac01208f8b5",
+              "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
+            ]
+          },
+          "review_codes": [],
+          "assistant": [
+            "You confirmed that you recognise the payment and your concern is resolved. No action was taken.\n\nFictional intake routing source: policy://DEMO-INTAKE/1.1#P-01 (effective from 2026-01-01; applicable as of 2026-10-20).",
+            "Have I resolved your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "primary_reason_code": true,
+      "transaction_match": true,
+      "expected_errors": true,
+      "retrieval_relevance": true,
+      "policy_version": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "cancelled_subscription",
+    "family": "cancellation",
+    "expected": {
+      "route": "HUMAN_REVIEW",
+      "reason": "CANCELLATION_REVIEW",
+      "review_required": false,
+      "policy_id": "DEMO-INTAKE"
+    },
+    "actual": {
+      "route": "HUMAN_REVIEW",
+      "step": "satisfaction",
+      "reason": "CANCELLATION_REVIEW",
+      "review_required": false,
+      "review_codes": [],
+      "selected": "TX-1002",
+      "candidates": [],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [
+        {
+          "policy_id": "DEMO-INTAKE",
+          "version": "1.1",
+          "scope": "synthetic card intake only",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "as_of": "2026-10-20",
+          "authority": "Fictional prototype intake policy",
+          "source_uri": "policy://DEMO-INTAKE/1.1",
+          "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+          "hash_scope": "document"
+        }
+      ],
+      "policy_clauses": [
+        "P-03"
+      ],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I am charged even after cancelling my subscription",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Please investigate payment TX-1002.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1002\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "TX-1002",
+          "before": "transaction",
+          "after": "cancel_type",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Demo bank record: TX-1002 · 16 Oct 2026 · Streamwave · INR 12.99 · Posted. Statement descriptor: STREAMWAVE MONTHLY. Channel: Online. Merchant details do not prove authorisation.",
+            "What did you cancel?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "A subscription or recurring payment",
+          "before": "cancel_type",
+          "after": "cancel_date",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "The demo merchant record shows a cancellation request dated 2026-10-13. When did you cancel? Enter DD-MM-YYYY or choose ‘I don’t know’; any difference will remain recorded."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "13-10-2026",
+          "before": "cancel_date",
+          "after": "cancel_method",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "How did you cancel?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Email",
+          "before": "cancel_method",
+          "after": "cancel_confirm",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Did you receive cancellation confirmation?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes",
+          "before": "cancel_confirm",
+          "after": "cancel_reference",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please describe the confirmation or provide its cancellation reference. Do not include sensitive details. Documents cannot be verified in this demo."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CANCEL-EXAMPLE",
+          "before": "cancel_reference",
+          "after": "satisfaction",
+          "error": null,
+          "route": "HUMAN_REVIEW",
+          "decision": {
+            "route": "HUMAN_REVIEW",
+            "reason": "CANCELLATION_REVIEW",
+            "intended_reason": "CANCELLATION_REVIEW",
+            "explanation": "Your cancellation details have been collected for review. Confirmation supplied in chat is not independently verified. No eligibility or refund decision has been made.\n\nFictional intake routing source: policy://DEMO-INTAKE/1.1#P-03 (effective from 2026-01-01; applicable as of 2026-10-20).",
+            "decision_type": "INTAKE_ROUTING",
+            "policy": "DEMO-INTAKE v1.1",
+            "policy_records_consulted": [
+              {
+                "policy_id": "DEMO-INTAKE",
+                "version": "1.1",
+                "scope": "synthetic card intake only",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "as_of": "2026-10-20",
+                "authority": "Fictional prototype intake policy",
+                "source_uri": "policy://DEMO-INTAKE/1.1",
+                "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                "hash_scope": "document"
+              }
+            ],
+            "policy_context": {
+              "contract_version": "policy-evidence-v1",
+              "purpose": "transaction_intake",
+              "scope": "synthetic card intake only",
+              "as_of": "2026-10-20",
+              "status": "SUCCESS",
+              "reason_code": "POLICY_VALIDATED",
+              "allowed": true,
+              "sources": [
+                {
+                  "policy_id": "DEMO-INTAKE",
+                  "version": "1.1",
+                  "scope": "synthetic card intake only",
+                  "effective_from": "2026-01-01",
+                  "effective_to": null,
+                  "as_of": "2026-10-20",
+                  "authority": "Fictional prototype intake policy",
+                  "source_uri": "policy://DEMO-INTAKE/1.1",
+                  "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                  "hash_scope": "document"
+                }
+              ],
+              "clauses": [
+                {
+                  "clause_id": "P-03",
+                  "text": "Unresolved billing, cancellation or refund concern",
+                  "outcome": "HUMAN_REVIEW",
+                  "source_uri": "policy://DEMO-INTAKE/1.1#P-03"
+                }
+              ],
+              "applied_rule_id": "P-03"
+            },
+            "policy_conclusion": true,
+            "policy_reason_code": "POLICY_VALIDATED",
+            "evidence_ids": [
+              "EV-7d1fc676b594",
+              "EV-23a7bc34167d",
+              "EV-8762fc87c433",
+              "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
+            ]
+          },
+          "review_codes": [],
+          "assistant": [
+            "Your cancellation details have been collected for review. Confirmation supplied in chat is not independently verified. No eligibility or refund decision has been made.\n\nFictional intake routing source: policy://DEMO-INTAKE/1.1#P-03 (effective from 2026-01-01; applicable as of 2026-10-20).",
+            "Have I resolved your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "primary_reason_code": true,
+      "expected_errors": true,
+      "retrieval_relevance": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "ongoing_card_risk",
+    "family": "unauthorised",
+    "expected": {
+      "route": "HUMAN_REVIEW",
+      "review_required": true,
+      "review_codes": [
+        "ONGOING_CARD_RISK"
+      ],
+      "urgent_guidance": true
+    },
+    "actual": {
+      "route": "HUMAN_REVIEW",
+      "step": "handoff_confirm",
+      "reason": "AUTHORISATION_UNCLEAR",
+      "review_required": true,
+      "review_codes": [
+        "AUTHORISATION_UNCLEAR",
+        "ONGOING_CARD_RISK"
+      ],
+      "selected": "TX-1001",
+      "candidates": [],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": true,
+      "policy_sources": [],
+      "policy_clauses": [],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I have an unrecognised transaction",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Please investigate payment TX-1001.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1001\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "TX-1001",
+          "before": "transaction",
+          "after": "recognise",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Demo bank record: TX-1001 · 17 Oct 2026 · Northstar Coffee · INR 8.50 · Posted. Statement descriptor: NSC HOSPITALITY. Channel: Card present. Merchant details do not prove authorisation.",
+            "Do these merchant details help you recognise the payment?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "No",
+          "before": "recognise",
+          "after": "other_user",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Could another authorised cardholder have made this payment?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "No",
+          "before": "other_user",
+          "after": "permission",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Do you believe this payment was made without your permission?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "No",
+          "before": "permission",
+          "after": "safety",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Is your card missing, or have you noticed any other unfamiliar payments?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes",
+          "before": "safety",
+          "after": "handoff_confirm",
+          "error": null,
+          "route": "HUMAN_REVIEW",
+          "decision": {
+            "route": "HUMAN_REVIEW",
+            "reason": "AUTHORISATION_UNCLEAR",
+            "intended_reason": "AUTHORISATION_UNCLEAR",
+            "explanation": "Your statements need a bank colleague’s review. Merchant history does not establish authorisation. Any uncertainty or conflicting answers will remain in the intake summary.",
+            "decision_type": "OPERATIONAL_REFERRAL",
+            "policy": null,
+            "policy_records_consulted": [],
+            "policy_context": {
+              "contract_version": "policy-evidence-v1",
+              "purpose": "transaction_intake",
+              "scope": "synthetic card intake only",
+              "as_of": "2026-10-20",
+              "status": "NOT_REQUIRED",
+              "reason_code": "CUSTOMER_ACKNOWLEDGEMENT_OR_OPERATIONAL_REFERRAL",
+              "allowed": false,
+              "sources": [],
+              "clauses": []
+            },
+            "policy_conclusion": false,
+            "policy_reason_code": "CUSTOMER_ACKNOWLEDGEMENT_OR_OPERATIONAL_REFERRAL",
+            "evidence_ids": [
+              "EV-51708561a58f",
+              "EV-9cff95bca587"
+            ]
+          },
+          "review_codes": [
+            "AUTHORISATION_UNCLEAR",
+            "ONGOING_CARD_RISK"
+          ],
+          "assistant": [
+            "If your card may be at risk, contact your bank urgently using its official app or the number on your card. This demo cannot block cards or contact the bank.",
+            "Your statements need a bank colleague’s review. Merchant history does not establish authorisation. Any uncertainty or conflicting answers will remain in the intake summary.",
+            "Specialist review is required: Authorisation remains uncertain and requires specialist review. You reported a missing card or other unfamiliar payments. Declining assistance will not clear this requirement.",
+            "May I send the discussion summary to the simulated human-assistance queue? No real representative is connected in this demo."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "review_reason_codes": true,
+      "expected_errors": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "policy_question",
+    "family": "policy",
+    "expected": {
+      "route": "POLICY_INFORMATION",
+      "reason": "POLICY_ANSWER_GROUNDED",
+      "policy_id": "DEMO-CANCEL",
+      "policy_version": "2.0",
+      "clauses": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_required": false
+    },
+    "actual": {
+      "route": "POLICY_INFORMATION",
+      "step": "satisfaction",
+      "reason": "POLICY_ANSWER_GROUNDED",
+      "review_required": false,
+      "review_codes": [],
+      "selected": null,
+      "candidates": [],
+      "search_confirmed": false,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [
+        {
+          "policy_id": "DEMO-CANCEL",
+          "version": "2.0",
+          "scope": "synthetic card dispute information only",
+          "effective_from": "2026-10-01",
+          "effective_to": null,
+          "as_of": "2026-10-20",
+          "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+          "source_uri": "policy://DEMO-CANCEL/2.0",
+          "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+          "hash_scope": "corpus",
+          "supersedes": "1.0",
+          "publication_status": "published",
+          "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+          "applicability": "CURRENT_AS_OF"
+        }
+      ],
+      "policy_clauses": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I have a question about dispute policy",
+          "before": "issue",
+          "after": "policy_topic",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "What would you like to know? These policies are fictional evidence-collection guidance; they do not decide refund eligibility or legal deadlines."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "What evidence do I need after cancelling a subscription?",
+          "before": "policy_topic",
+          "after": "satisfaction",
+          "error": null,
+          "route": "POLICY_INFORMATION",
+          "decision": {
+            "route": "POLICY_INFORMATION",
+            "reason": "POLICY_ANSWER_GROUNDED",
+            "policy": "DEMO-CANCEL v2.0",
+            "policy_records_consulted": [
+              {
+                "policy_id": "DEMO-CANCEL",
+                "version": "2.0",
+                "scope": "synthetic card dispute information only",
+                "effective_from": "2026-10-01",
+                "effective_to": null,
+                "as_of": "2026-10-20",
+                "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+                "source_uri": "policy://DEMO-CANCEL/2.0",
+                "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+                "hash_scope": "corpus",
+                "supersedes": "1.0",
+                "publication_status": "published",
+                "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+                "applicability": "CURRENT_AS_OF"
+              }
+            ],
+            "policy_context": {
+              "contract_version": "policy-evidence-v1",
+              "purpose": "policy_information",
+              "scope": "synthetic card dispute information only",
+              "as_of": "2026-10-20",
+              "status": "SUCCESS",
+              "reason_code": "POLICY_VALIDATED",
+              "allowed": true,
+              "sources": [
+                {
+                  "policy_id": "DEMO-CANCEL",
+                  "version": "2.0",
+                  "scope": "synthetic card dispute information only",
+                  "effective_from": "2026-10-01",
+                  "effective_to": null,
+                  "as_of": "2026-10-20",
+                  "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+                  "source_uri": "policy://DEMO-CANCEL/2.0",
+                  "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+                  "hash_scope": "corpus",
+                  "supersedes": "1.0",
+                  "publication_status": "published",
+                  "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+                  "applicability": "CURRENT_AS_OF"
+                }
+              ],
+              "clauses": [
+                {
+                  "clause_id": "C1",
+                  "text": "Provide the original payment reference, merchant, date, charged amount and currency.",
+                  "source_uri": "policy://DEMO-CANCEL/2.0#C1"
+                },
+                {
+                  "clause_id": "C2",
+                  "text": "Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented.",
+                  "source_uri": "policy://DEMO-CANCEL/2.0#C2"
+                },
+                {
+                  "clause_id": "C3",
+                  "text": "A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review.",
+                  "source_uri": "policy://DEMO-CANCEL/2.0#C3"
+                },
+                {
+                  "clause_id": "C4",
+                  "text": "This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement.",
+                  "source_uri": "policy://DEMO-CANCEL/2.0#C4"
+                }
+              ]
+            },
+            "policy_conclusion": true,
+            "policy_reason_code": "POLICY_VALIDATED",
+            "decision_type": "POLICY_INFORMATION",
+            "explanation": "Fictional prototype policy, applicable as of 2026-10-20: Cancelled recurring payment evidence (DEMO-CANCEL v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Provide the original payment reference, merchant, date, charged amount and currency. [Source: policy://DEMO-CANCEL/2.0#C1]\n\n• Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented. [Source: policy://DEMO-CANCEL/2.0#C2]\n\n• A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review. [Source: policy://DEMO-CANCEL/2.0#C3]\n\n• This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement. [Source: policy://DEMO-CANCEL/2.0#C4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund.",
+            "evidence_ids": [
+              "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a"
+            ]
+          },
+          "review_codes": [],
+          "assistant": [
+            "Fictional prototype policy, applicable as of 2026-10-20: Cancelled recurring payment evidence (DEMO-CANCEL v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Provide the original payment reference, merchant, date, charged amount and currency. [Source: policy://DEMO-CANCEL/2.0#C1]\n\n• Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented. [Source: policy://DEMO-CANCEL/2.0#C2]\n\n• A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review. [Source: policy://DEMO-CANCEL/2.0#C3]\n\n• This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement. [Source: policy://DEMO-CANCEL/2.0#C4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund.",
+            "Have I resolved your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "primary_reason_code": true,
+      "expected_errors": true,
+      "retrieval_relevance": true,
+      "policy_version": true,
+      "clause_attribution": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "search_amount_42",
+    "family": "matching",
+    "expected": {
+      "route": "CLARIFY",
+      "step": "transaction",
+      "candidates": [
+        "TX-1003",
+        "TX-1004"
+      ],
+      "selected": null,
+      "review_required": false
+    },
+    "actual": {
+      "route": "CLARIFY",
+      "step": "transaction",
+      "reason": null,
+      "review_required": false,
+      "review_codes": [],
+      "selected": null,
+      "candidates": [
+        "TX-1003",
+        "TX-1004"
+      ],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [],
+      "policy_clauses": [],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I have been charged the wrong amount",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "I was charged INR 42 instead of INR 40 on 15-10-2026.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nAmount actually charged: 42.00\n\nCurrency actually charged: INR\n\nAmount expected: 40.00\n\nCurrency expected: INR\n\nPayment date: 15-10-2026\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "transaction_match": true,
+      "step": true,
+      "candidates": true,
+      "expected_errors": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "policy_missing",
+    "family": "policy_failure",
+    "expected": {
+      "route": "ABSTAIN",
+      "review_required": true,
+      "review_codes": [
+        "POLICY_UNAVAILABLE"
+      ]
+    },
+    "actual": {
+      "route": "ABSTAIN",
+      "step": "handoff_confirm",
+      "reason": null,
+      "review_required": true,
+      "review_codes": [
+        "POLICY_UNAVAILABLE"
+      ],
+      "selected": "TX-1001",
+      "candidates": [],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [],
+      "policy_clauses": [],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I have an unrecognised transaction",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Please investigate payment TX-1001.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1001\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "TX-1001",
+          "before": "transaction",
+          "after": "handoff_confirm",
+          "error": null,
+          "route": "ABSTAIN",
+          "decision": null,
+          "review_codes": [
+            "POLICY_UNAVAILABLE"
+          ],
+          "assistant": [
+            "Demo bank record: TX-1001 · 17 Oct 2026 · Northstar Coffee · INR 8.50 · Posted. Statement descriptor: NSC HOSPITALITY. Channel: Card present. Merchant details do not prove authorisation.",
+            "Specialist review is required: Applicable authoritative policy is unavailable. Declining assistance will not clear this requirement.",
+            "May I send the discussion summary to the simulated human-assistance queue? No real representative is connected in this demo."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "review_reason_codes": true,
+      "expected_errors": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "model_timeout",
+    "family": "model_failure",
+    "expected": {
+      "route": "EXPLAIN",
+      "reason": "CUSTOMER_RECOGNISED",
+      "review_required": false,
+      "recovered": true,
+      "rejected_extraction": false
+    },
+    "actual": {
+      "route": "EXPLAIN",
+      "step": "satisfaction",
+      "reason": "CUSTOMER_RECOGNISED",
+      "review_required": false,
+      "review_codes": [],
+      "selected": "TX-1001",
+      "candidates": [],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 0,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [
+        {
+          "policy_id": "DEMO-INTAKE",
+          "version": "1.1",
+          "scope": "synthetic card intake only",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "as_of": "2026-10-20",
+          "authority": "Fictional prototype intake policy",
+          "source_uri": "policy://DEMO-INTAKE/1.1",
+          "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+          "hash_scope": "document"
+        }
+      ],
+      "policy_clauses": [
+        "P-01"
+      ],
+      "credit_found": false,
+      "model_calls": 1,
+      "model_fallback": true,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [],
+      "trace": [
+        {
+          "input": "I have an unrecognised transaction",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Please investigate payment TX-1001.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1001\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "TX-1001",
+          "before": "transaction",
+          "after": "recognise",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Demo bank record: TX-1001 · 17 Oct 2026 · Northstar Coffee · INR 8.50 · Posted. Statement descriptor: NSC HOSPITALITY. Channel: Card present. Merchant details do not prove authorisation.",
+            "Do these merchant details help you recognise the payment?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes",
+          "before": "recognise",
+          "after": "resolved",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Does this resolve your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes",
+          "before": "resolved",
+          "after": "satisfaction",
+          "error": null,
+          "route": "EXPLAIN",
+          "decision": {
+            "route": "EXPLAIN",
+            "reason": "CUSTOMER_RECOGNISED",
+            "intended_reason": "CUSTOMER_RECOGNISED",
+            "explanation": "You confirmed that you recognise the payment and your concern is resolved. No action was taken.\n\nFictional intake routing source: policy://DEMO-INTAKE/1.1#P-01 (effective from 2026-01-01; applicable as of 2026-10-20).",
+            "decision_type": "INTAKE_ROUTING",
+            "policy": "DEMO-INTAKE v1.1",
+            "policy_records_consulted": [
+              {
+                "policy_id": "DEMO-INTAKE",
+                "version": "1.1",
+                "scope": "synthetic card intake only",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "as_of": "2026-10-20",
+                "authority": "Fictional prototype intake policy",
+                "source_uri": "policy://DEMO-INTAKE/1.1",
+                "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                "hash_scope": "document"
+              }
+            ],
+            "policy_context": {
+              "contract_version": "policy-evidence-v1",
+              "purpose": "transaction_intake",
+              "scope": "synthetic card intake only",
+              "as_of": "2026-10-20",
+              "status": "SUCCESS",
+              "reason_code": "POLICY_VALIDATED",
+              "allowed": true,
+              "sources": [
+                {
+                  "policy_id": "DEMO-INTAKE",
+                  "version": "1.1",
+                  "scope": "synthetic card intake only",
+                  "effective_from": "2026-01-01",
+                  "effective_to": null,
+                  "as_of": "2026-10-20",
+                  "authority": "Fictional prototype intake policy",
+                  "source_uri": "policy://DEMO-INTAKE/1.1",
+                  "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                  "hash_scope": "document"
+                }
+              ],
+              "clauses": [
+                {
+                  "clause_id": "P-01",
+                  "text": "Customer confirms recognition and resolution",
+                  "outcome": "EXPLAIN",
+                  "source_uri": "policy://DEMO-INTAKE/1.1#P-01"
+                }
+              ],
+              "applied_rule_id": "P-01"
+            },
+            "policy_conclusion": true,
+            "policy_reason_code": "POLICY_VALIDATED",
+            "evidence_ids": [
+              "EV-1f77ec578e66",
+              "EV-aac986d3fdc0",
+              "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
+            ]
+          },
+          "review_codes": [],
+          "assistant": [
+            "You confirmed that you recognise the payment and your concern is resolved. No action was taken.\n\nFictional intake routing source: policy://DEMO-INTAKE/1.1#P-01 (effective from 2026-01-01; applicable as of 2026-10-20).",
+            "Have I resolved your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "primary_reason_code": true,
+      "expected_errors": true,
+      "failure_recovery": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  },
+  {
+    "case_id": "tool_unavailable_handoff",
+    "family": "tool_failure",
+    "expected": {
+      "route": "ABSTAIN",
+      "review_required": true,
+      "handoff_count": 1,
+      "handoff_fields": [
+        "customer_statements_unverified",
+        "demo_bank_facts",
+        "evidence",
+        "policy_context",
+        "missing_information",
+        "actions_attempted"
+      ]
+    },
+    "actual": {
+      "route": "ABSTAIN",
+      "step": "done",
+      "reason": null,
+      "review_required": true,
+      "review_codes": [
+        "EVIDENCE_VERIFICATION_UNAVAILABLE"
+      ],
+      "selected": "TX-1001",
+      "candidates": [],
+      "search_confirmed": true,
+      "pending_field": null,
+      "case_count": 0,
+      "action_count": 0,
+      "handoff_count": 1,
+      "case_status": null,
+      "errors": [],
+      "saw_unknown": false,
+      "unsupported_actions": 0,
+      "cross_account_selection": false,
+      "false_success_claims": 0,
+      "unsupported_policy_conclusion": false,
+      "urgent_guidance": false,
+      "policy_sources": [],
+      "policy_clauses": [],
+      "credit_found": false,
+      "model_calls": 0,
+      "model_fallback": false,
+      "extraction_fallback": false,
+      "rejected_extraction": 0,
+      "handoff_packages": [
+        {
+          "customer_statements_unverified": [
+            {
+              "recorded_at": "2026-10-21T13:30:22.433864+00:00",
+              "question_key": "issue",
+              "customer_statement": "I have an unrecognised transaction"
+            },
+            {
+              "recorded_at": "2026-10-21T13:30:22.446312+00:00",
+              "question_key": "card",
+              "customer_statement": "CARD-001"
+            },
+            {
+              "recorded_at": "2026-10-21T13:30:22.450607+00:00",
+              "question_key": "elaborate",
+              "customer_statement": "Please investigate payment TX-1001."
+            },
+            {
+              "recorded_at": "2026-10-21T13:30:22.454887+00:00",
+              "question_key": "search_confirm",
+              "customer_statement": "Confirm and search"
+            },
+            {
+              "recorded_at": "2026-10-21T13:30:22.466913+00:00",
+              "question_key": "transaction",
+              "customer_statement": "TX-1001"
+            },
+            {
+              "recorded_at": "2026-10-21T13:30:22.474623+00:00",
+              "question_key": "handoff_confirm",
+              "customer_statement": "Yes, request human assistance"
+            }
+          ],
+          "demo_bank_facts": {
+            "transaction_id": "TX-1001",
+            "account_id": "A-001",
+            "card_id": "CARD-001",
+            "merchant_id": "M-1",
+            "merchant": "Northstar Coffee",
+            "descriptor": "NSC HOSPITALITY",
+            "purchase_date": "2026-10-17",
+            "posted_date": "2026-10-17",
+            "amount_minor": 850,
+            "currency": "INR",
+            "original_amount_minor": 850,
+            "original_currency": "INR",
+            "status": "Posted",
+            "channel": "Card present",
+            "recurring": 0,
+            "order_reference": "ORDER-TX-1001",
+            "evidence_json": "{\"account_id\": \"A-001\", \"amount_minor\": 850, \"card_id\": \"CARD-001\", \"channel\": \"Card present\", \"currency\": \"INR\", \"descriptor\": \"NSC HOSPITALITY\", \"merchant\": \"Northstar Coffee\", \"merchant_id\": \"M-1\", \"observed_at\": \"2026-10-20T00:00:00Z\", \"order_reference\": \"ORDER-TX-1001\", \"original_amount_minor\": 850, \"original_currency\": \"INR\", \"posted_date\": \"2026-10-17\", \"purchase_date\": \"2026-10-17\", \"recurring\": false, \"source\": \"demo_transaction_service\", \"source_reference\": \"TX-1001\", \"status\": \"Posted\", \"transaction_id\": \"TX-1001\", \"verification_status\": \"synthetic_verified\"}"
+          },
+          "decision": null,
+          "answers": {
+            "issue": "I have an unrecognised transaction",
+            "card_id": "CARD-001",
+            "elaborate": "Please investigate payment TX-1001.",
+            "transaction": "TX-1001",
+            "handoff_confirm": "Yes, request human assistance"
+          },
+          "evidence": {
+            "transaction": {
+              "evidence_id": "EV-b95c546df417",
+              "source": "verify_selected_transaction",
+              "transaction_id": "TX-1001",
+              "observed_at": "2026-10-21T13:30:22.461234+00:00",
+              "status": "SUCCESS",
+              "records": [
+                {
+                  "transaction_id": "TX-1001",
+                  "account_id": "A-001",
+                  "card_id": "CARD-001",
+                  "merchant_id": "M-1",
+                  "merchant": "Northstar Coffee",
+                  "descriptor": "NSC HOSPITALITY",
+                  "purchase_date": "2026-10-17",
+                  "posted_date": "2026-10-17",
+                  "amount_minor": 850,
+                  "currency": "INR",
+                  "original_amount_minor": 850,
+                  "original_currency": "INR",
+                  "status": "Posted",
+                  "channel": "Card present",
+                  "recurring": 0,
+                  "order_reference": "ORDER-TX-1001",
+                  "evidence_json": {
+                    "account_id": "A-001",
+                    "amount_minor": 850,
+                    "card_id": "CARD-001",
+                    "channel": "Card present",
+                    "currency": "INR",
+                    "descriptor": "NSC HOSPITALITY",
+                    "merchant": "Northstar Coffee",
+                    "merchant_id": "M-1",
+                    "observed_at": "2026-10-20T00:00:00Z",
+                    "order_reference": "ORDER-TX-1001",
+                    "original_amount_minor": 850,
+                    "original_currency": "INR",
+                    "posted_date": "2026-10-17",
+                    "purchase_date": "2026-10-17",
+                    "recurring": false,
+                    "source": "demo_transaction_service",
+                    "source_reference": "TX-1001",
+                    "status": "Posted",
+                    "transaction_id": "TX-1001",
+                    "verification_status": "synthetic_verified"
+                  }
+                }
+              ]
+            },
+            "merchant": {
+              "evidence_id": "EV-3e8518e59592",
+              "source": "resolve_merchant",
+              "transaction_id": "TX-1001",
+              "observed_at": "2026-10-21T13:30:22.461691+00:00",
+              "status": "UNAVAILABLE",
+              "records": []
+            },
+            "policy": {
+              "evidence_id": "EV-db6849851680",
+              "source": "resolve_intake_policy",
+              "transaction_id": "TX-1001",
+              "observed_at": "2026-10-21T13:30:22.461706+00:00",
+              "status": "SUCCESS",
+              "records": [
+                {
+                  "policy_id": "DEMO-INTAKE",
+                  "version": "1.1",
+                  "effective_from": "2026-01-01",
+                  "effective_to": null,
+                  "scope": "synthetic card intake only",
+                  "record_json": {
+                    "effective_from": "2026-01-01",
+                    "effective_to": null,
+                    "fictional": true,
+                    "policy_id": "DEMO-INTAKE",
+                    "rules": [
+                      {
+                        "condition": "Customer confirms recognition and resolution",
+                        "outcome": "EXPLAIN",
+                        "rule_id": "P-01"
+                      },
+                      {
+                        "condition": "Customer reports payment without permission",
+                        "outcome": "HUMAN_REVIEW",
+                        "rule_id": "P-02"
+                      },
+                      {
+                        "condition": "Unresolved billing, cancellation or refund concern",
+                        "outcome": "HUMAN_REVIEW",
+                        "rule_id": "P-03"
+                      }
+                    ],
+                    "scope": "synthetic card intake only",
+                    "version": "1.1"
+                  }
+                }
+              ],
+              "policy_context": {
+                "contract_version": "policy-evidence-v1",
+                "purpose": "transaction_intake",
+                "scope": "synthetic card intake only",
+                "as_of": "2026-10-20",
+                "status": "SUCCESS",
+                "reason_code": "POLICY_VALIDATED",
+                "allowed": true,
+                "sources": [
+                  {
+                    "policy_id": "DEMO-INTAKE",
+                    "version": "1.1",
+                    "scope": "synthetic card intake only",
+                    "effective_from": "2026-01-01",
+                    "effective_to": null,
+                    "as_of": "2026-10-20",
+                    "authority": "Fictional prototype intake policy",
+                    "source_uri": "policy://DEMO-INTAKE/1.1",
+                    "content_sha256": "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950",
+                    "hash_scope": "document"
+                  }
+                ],
+                "clauses": [
+                  {
+                    "clause_id": "P-01",
+                    "text": "Customer confirms recognition and resolution",
+                    "outcome": "EXPLAIN",
+                    "source_uri": "policy://DEMO-INTAKE/1.1#P-01"
+                  },
+                  {
+                    "clause_id": "P-02",
+                    "text": "Customer reports payment without permission",
+                    "outcome": "HUMAN_REVIEW",
+                    "source_uri": "policy://DEMO-INTAKE/1.1#P-02"
+                  },
+                  {
+                    "clause_id": "P-03",
+                    "text": "Unresolved billing, cancellation or refund concern",
+                    "outcome": "HUMAN_REVIEW",
+                    "source_uri": "policy://DEMO-INTAKE/1.1#P-03"
+                  }
+                ],
+                "records": [
+                  {
+                    "policy_id": "DEMO-INTAKE",
+                    "version": "1.1",
+                    "effective_from": "2026-01-01",
+                    "effective_to": null,
+                    "scope": "synthetic card intake only",
+                    "record_json": {
+                      "effective_from": "2026-01-01",
+                      "effective_to": null,
+                      "fictional": true,
+                      "policy_id": "DEMO-INTAKE",
+                      "rules": [
+                        {
+                          "condition": "Customer confirms recognition and resolution",
+                          "outcome": "EXPLAIN",
+                          "rule_id": "P-01"
+                        },
+                        {
+                          "condition": "Customer reports payment without permission",
+                          "outcome": "HUMAN_REVIEW",
+                          "rule_id": "P-02"
+                        },
+                        {
+                          "condition": "Unresolved billing, cancellation or refund concern",
+                          "outcome": "HUMAN_REVIEW",
+                          "rule_id": "P-03"
+                        }
+                      ],
+                      "scope": "synthetic card intake only",
+                      "version": "1.1"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "controller_trace": [
+            {
+              "proposal": {
+                "tool": "verify_selected_transaction",
+                "gap": "transaction",
+                "transaction_id": "TX-1001"
+              },
+              "validation": "VALIDATED",
+              "recorded_at": "2026-10-21T13:30:22.461234+00:00",
+              "result_status": "SUCCESS"
+            },
+            {
+              "proposal": {
+                "tool": "resolve_merchant",
+                "gap": "merchant",
+                "transaction_id": "TX-1001"
+              },
+              "validation": "VALIDATED",
+              "recorded_at": "2026-10-21T13:30:22.461691+00:00",
+              "result_status": "UNAVAILABLE"
+            },
+            {
+              "proposal": {
+                "tool": "resolve_intake_policy",
+                "gap": "policy",
+                "transaction_id": "TX-1001"
+              },
+              "validation": "VALIDATED",
+              "recorded_at": "2026-10-21T13:30:22.461706+00:00",
+              "result_status": "SUCCESS"
+            }
+          ],
+          "unusual_activity": {
+            "status": "ASSESSED",
+            "rules_version": "DEMO-ACTIVITY-1.0",
+            "rules_snapshot": {
+              "rules_version": "DEMO-ACTIVITY-1.0",
+              "history_days": 90,
+              "minimum_history": 10,
+              "amount_multiplier": 3,
+              "minimum_amount_minor": 5000,
+              "repeat_window_days": 3,
+              "review_rule_version": "DEMO-ACTIVITY-REVIEW-1.0",
+              "review_signal_codes": [
+                "AMOUNT_ABOVE_HISTORICAL_BASELINE",
+                "REPEATED_CHARGE_SAME_ORDER",
+                "REPEATED_CHARGE_ORDER_UNKNOWN"
+              ]
+            },
+            "transaction_id": "TX-1001",
+            "source": "synthetic_transaction_history",
+            "card_id": "CARD-001",
+            "signals": [],
+            "checks": {
+              "amount": {
+                "status": "ASSESSED",
+                "baseline_median_minor": 7878.0,
+                "history_count": 27
+              },
+              "repeated_charge": {
+                "status": "ASSESSED",
+                "matching_transaction_ids": []
+              }
+            },
+            "limitations": [
+              "Patterns do not establish fraud or customer authorisation.",
+              "Only the selected card is assessed; other cards and accounts are excluded.",
+              "Date-only records cannot establish intraday ordering. Same-day transactions are excluded.",
+              "Device, location and precise transaction timestamps are unavailable."
+            ],
+            "history_count": 27,
+            "excluded_same_day_count": 0,
+            "invalid_history_count": 0,
+            "history_window": {
+              "from": "2026-07-19",
+              "before": "2026-10-17",
+              "currency": "INR"
+            },
+            "history_evidence": [
+              {
+                "transaction_id": "TX-1002",
+                "purchase_date": "2026-10-16",
+                "posted_date": "2026-10-16",
+                "merchant_id": "M-2",
+                "amount_minor": 1299,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1002"
+              },
+              {
+                "transaction_id": "TX-1003",
+                "purchase_date": "2026-10-15",
+                "posted_date": "2026-10-15",
+                "merchant_id": "M-3",
+                "amount_minor": 4200,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1003"
+              },
+              {
+                "transaction_id": "TX-1004",
+                "purchase_date": "2026-10-15",
+                "posted_date": "2026-10-15",
+                "merchant_id": "M-3",
+                "amount_minor": 4200,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1004"
+              },
+              {
+                "transaction_id": "TX-1006",
+                "purchase_date": "2026-10-06",
+                "posted_date": "2026-10-08",
+                "merchant_id": "M-2",
+                "amount_minor": 1299,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1006"
+              },
+              {
+                "transaction_id": "TX-1007",
+                "purchase_date": "2026-10-08",
+                "posted_date": "2026-10-10",
+                "merchant_id": "M-5",
+                "amount_minor": 19599,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1007"
+              },
+              {
+                "transaction_id": "TX-1009",
+                "purchase_date": "2026-09-22",
+                "posted_date": "2026-09-24",
+                "merchant_id": "M-1",
+                "amount_minor": 7873,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1009"
+              },
+              {
+                "transaction_id": "TX-1010",
+                "purchase_date": "2026-08-03",
+                "posted_date": "2026-08-05",
+                "merchant_id": "M-5",
+                "amount_minor": 1119,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1010"
+              },
+              {
+                "transaction_id": "TX-1011",
+                "purchase_date": "2026-09-24",
+                "posted_date": "2026-09-26",
+                "merchant_id": "M-5",
+                "amount_minor": 23712,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1011"
+              },
+              {
+                "transaction_id": "TX-1012",
+                "purchase_date": "2026-08-27",
+                "posted_date": "2026-08-29",
+                "merchant_id": "M-5",
+                "amount_minor": 7473,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1012"
+              },
+              {
+                "transaction_id": "TX-1013",
+                "purchase_date": "2026-08-05",
+                "posted_date": "2026-08-07",
+                "merchant_id": "M-4",
+                "amount_minor": 9365,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1013"
+              },
+              {
+                "transaction_id": "TX-1014",
+                "purchase_date": "2026-09-29",
+                "posted_date": "2026-10-01",
+                "merchant_id": "M-1",
+                "amount_minor": 23126,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1014"
+              },
+              {
+                "transaction_id": "TX-1015",
+                "purchase_date": "2026-09-06",
+                "posted_date": "2026-09-08",
+                "merchant_id": "M-4",
+                "amount_minor": 9355,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1015"
+              },
+              {
+                "transaction_id": "TX-1016",
+                "purchase_date": "2026-09-22",
+                "posted_date": "2026-09-24",
+                "merchant_id": "M-2",
+                "amount_minor": 1299,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1016"
+              },
+              {
+                "transaction_id": "TX-1017",
+                "purchase_date": "2026-10-06",
+                "posted_date": "2026-10-08",
+                "merchant_id": "M-3",
+                "amount_minor": 3289,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1017"
+              },
+              {
+                "transaction_id": "TX-1018",
+                "purchase_date": "2026-10-07",
+                "posted_date": "2026-10-09",
+                "merchant_id": "M-4",
+                "amount_minor": 12013,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1018"
+              },
+              {
+                "transaction_id": "TX-1019",
+                "purchase_date": "2026-08-03",
+                "posted_date": "2026-08-05",
+                "merchant_id": "M-3",
+                "amount_minor": 8917,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1019"
+              },
+              {
+                "transaction_id": "TX-1020",
+                "purchase_date": "2026-08-22",
+                "posted_date": "2026-08-24",
+                "merchant_id": "M-1",
+                "amount_minor": 17821,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1020"
+              },
+              {
+                "transaction_id": "TX-1021",
+                "purchase_date": "2026-09-01",
+                "posted_date": "2026-09-03",
+                "merchant_id": "M-1",
+                "amount_minor": 2832,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1021"
+              },
+              {
+                "transaction_id": "TX-1022",
+                "purchase_date": "2026-09-12",
+                "posted_date": "2026-09-14",
+                "merchant_id": "M-5",
+                "amount_minor": 20849,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1022"
+              },
+              {
+                "transaction_id": "TX-1023",
+                "purchase_date": "2026-09-03",
+                "posted_date": "2026-09-05",
+                "merchant_id": "M-5",
+                "amount_minor": 19168,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1023"
+              },
+              {
+                "transaction_id": "TX-1024",
+                "purchase_date": "2026-10-11",
+                "posted_date": "2026-10-13",
+                "merchant_id": "M-2",
+                "amount_minor": 1299,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1024"
+              },
+              {
+                "transaction_id": "TX-1025",
+                "purchase_date": "2026-07-27",
+                "posted_date": "2026-07-29",
+                "merchant_id": "M-1",
+                "amount_minor": 7717,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1025"
+              },
+              {
+                "transaction_id": "TX-1026",
+                "purchase_date": "2026-10-09",
+                "posted_date": "2026-10-11",
+                "merchant_id": "M-3",
+                "amount_minor": 7878,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1026"
+              },
+              {
+                "transaction_id": "TX-1027",
+                "purchase_date": "2026-09-01",
+                "posted_date": "2026-09-03",
+                "merchant_id": "M-1",
+                "amount_minor": 9358,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1027"
+              },
+              {
+                "transaction_id": "TX-1028",
+                "purchase_date": "2026-07-30",
+                "posted_date": "2026-08-01",
+                "merchant_id": "M-4",
+                "amount_minor": 12204,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1028"
+              },
+              {
+                "transaction_id": "TX-1029",
+                "purchase_date": "2026-09-02",
+                "posted_date": "2026-09-04",
+                "merchant_id": "M-2",
+                "amount_minor": 1299,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1029"
+              },
+              {
+                "transaction_id": "TX-1030",
+                "purchase_date": "2026-09-23",
+                "posted_date": "2026-09-25",
+                "merchant_id": "M-3",
+                "amount_minor": 22210,
+                "currency": "INR",
+                "order_reference": "ORDER-TX-1030"
+              }
+            ],
+            "evidence_id": "activity-b54cd662161658ac82d84441"
+          },
+          "activity_review": {
+            "policy_version": "DEMO-ACTIVITY-REVIEW-1.0",
+            "route": "NO_ADDITIONAL_ROUTE",
+            "reason_codes": [],
+            "assessment_status": "ASSESSED",
+            "notice": "No signal is not evidence that a transaction is safe. No action is authorised."
+          },
+          "clustering": {
+            "status": "INSUFFICIENT_DATA",
+            "version": "DEMO-KMEANS-1.0",
+            "mode": "shadow",
+            "configuration": {
+              "version": "DEMO-KMEANS-1.0",
+              "mode": "shadow",
+              "history_days": 90,
+              "minimum_history": 50,
+              "maximum_history": 300,
+              "clusters": 3,
+              "maximum_iterations": 40,
+              "training_fraction": 0.7,
+              "minimum_training": 30,
+              "minimum_calibration": 10,
+              "distance_quantile": 0.95,
+              "minimum_distance_threshold": 1.5,
+              "minimum_log_amount_scale": 0.25,
+              "categorical_weight": 0.5
+            },
+            "transaction_id": "TX-1001",
+            "notice": "Cluster-distance anomaly score, not a probability of fraud. No action is authorised.",
+            "limitations": [
+              "Same-day payments excluded; dates do not establish intraday ordering.",
+              "Customer/card-local history may be thin or contaminated. Threshold is an unvalidated prototype choice."
+            ],
+            "history_count": 27,
+            "reason_code": "CLUSTER_HISTORY_TOO_SMALL"
+          },
+          "clustering_review": {
+            "policy_version": "DEMO-CLUSTER-REVIEW-1.0",
+            "mode": "shadow",
+            "route": "NO_ADDITIONAL_ROUTE",
+            "reason_codes": [],
+            "notice": "Cluster-distance anomaly score, not a probability of fraud. No action is authorised."
+          },
+          "policy_qa": null,
+          "policy_qa_history": [],
+          "intake_assertions": [
+            {
+              "field": "transaction_reference",
+              "value": "TX-1001",
+              "source_text": "TX-1001",
+              "source": [
+                "deterministic_parser"
+              ],
+              "verified": false
+            }
+          ],
+          "search_confirmation": {
+            "transaction_reference": "TX-1001"
+          },
+          "extraction_trace": [
+            {
+              "model": null,
+              "status": "DETERMINISTIC",
+              "accepted_fields": [
+                "transaction_reference"
+              ],
+              "rejected_fields": [],
+              "conflicting_fields": [],
+              "uncertain_fields": [],
+              "field_sources": {
+                "transaction_reference": [
+                  "deterministic_parser"
+                ]
+              }
+            }
+          ],
+          "proposer_trace": [],
+          "evidence_runtime": {
+            "requested_mode": "deterministic",
+            "effective_mode": "deterministic",
+            "status": "BASELINE"
+          },
+          "review_requirement": "REQUIRED",
+          "review_reason_codes": [
+            "EVIDENCE_VERIFICATION_UNAVAILABLE"
+          ],
+          "customer_resolution": "NOT_ASKED",
+          "handoff_status": "SIMULATED_QUEUED",
+          "reason_for_handoff": "EVIDENCE_VERIFICATION_UNAVAILABLE",
+          "missing_information": [
+            "MERCHANT_VERIFICATION",
+            "UNCOMPLETED_INTAKE_QUESTIONS",
+            "SPECIALIST_REVIEW_OF_RECORDED_REASONS"
+          ],
+          "actions_attempted": [],
+          "outstanding_step_at_escalation": "recognise",
+          "policy_consulted": null,
+          "policy_context": null,
+          "limitations": "No real human connection. Documents unverified; only fictional intake rules consulted.",
+          "conversation": [
+            [
+              "assistant",
+              "Hi, how can I help you today?"
+            ],
+            [
+              "user",
+              "I have an unrecognised transaction"
+            ],
+            [
+              "assistant",
+              "Which card is this concern about? Please select one of your cards."
+            ],
+            [
+              "user",
+              "CARD-001"
+            ],
+            [
+              "assistant",
+              "Can you please elaborate your concern?"
+            ],
+            [
+              "user",
+              "Please investigate payment TX-1001."
+            ],
+            [
+              "assistant",
+              "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1001\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+            ],
+            [
+              "user",
+              "Confirm and search"
+            ],
+            [
+              "assistant",
+              "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+            ],
+            [
+              "user",
+              "TX-1001"
+            ],
+            [
+              "assistant",
+              "Demo bank record: TX-1001 · 17 Oct 2026 · Northstar Coffee · INR 8.50 · Posted. Statement descriptor: NSC HOSPITALITY. Channel: Card present. Merchant details do not prove authorisation."
+            ],
+            [
+              "assistant",
+              "Specialist review is required: A required evidence lookup could not be verified. Declining assistance will not clear this requirement."
+            ],
+            [
+              "assistant",
+              "May I send the discussion summary to the simulated human-assistance queue? No real representative is connected in this demo."
+            ],
+            [
+              "user",
+              "Yes, request human assistance"
+            ],
+            [
+              "assistant",
+              "Your assistance request has been recorded: HELP-430BF6481699. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
+            ]
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "input": "I have an unrecognised transaction",
+          "before": "issue",
+          "after": "card",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which card is this concern about? Please select one of your cards."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "CARD-001",
+          "before": "card",
+          "after": "elaborate",
+          "error": null,
+          "route": "GATHER_EVIDENCE",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Can you please elaborate your concern?"
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Please investigate payment TX-1001.",
+          "before": "elaborate",
+          "after": "search_confirm",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Please confirm these details before I search your card transactions:\n\nSelected card: CARD-001\n\nTransaction reference: TX-1001\n\nSearch uses the exact reference; other reported details will be compared after selection.\n\nThese are your reported details, not yet verified bank facts."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Confirm and search",
+          "before": "search_confirm",
+          "after": "transaction",
+          "error": null,
+          "route": "CLARIFY",
+          "decision": null,
+          "review_codes": [],
+          "assistant": [
+            "Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "TX-1001",
+          "before": "transaction",
+          "after": "handoff_confirm",
+          "error": null,
+          "route": "ABSTAIN",
+          "decision": null,
+          "review_codes": [
+            "EVIDENCE_VERIFICATION_UNAVAILABLE"
+          ],
+          "assistant": [
+            "Demo bank record: TX-1001 · 17 Oct 2026 · Northstar Coffee · INR 8.50 · Posted. Statement descriptor: NSC HOSPITALITY. Channel: Card present. Merchant details do not prove authorisation.",
+            "Specialist review is required: A required evidence lookup could not be verified. Declining assistance will not clear this requirement.",
+            "May I send the discussion summary to the simulated human-assistance queue? No real representative is connected in this demo."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 0
+          }
+        },
+        {
+          "input": "Yes, request human assistance",
+          "before": "handoff_confirm",
+          "after": "done",
+          "error": null,
+          "route": "ABSTAIN",
+          "decision": null,
+          "review_codes": [
+            "EVIDENCE_VERIFICATION_UNAVAILABLE"
+          ],
+          "assistant": [
+            "Your assistance request has been recorded: HELP-430BF6481699. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
+          ],
+          "case_status": null,
+          "counts": {
+            "cases": 0,
+            "actions": 0,
+            "handoff_requests": 1
+          }
+        }
+      ]
+    },
+    "passed": true,
+    "errors": [],
+    "details": [],
+    "component_checks": {
+      "handoff_count": true,
+      "expected_errors": true,
+      "handoff_package": true
+    },
+    "weighted_cost": 0,
+    "critical": false
+  }
+]

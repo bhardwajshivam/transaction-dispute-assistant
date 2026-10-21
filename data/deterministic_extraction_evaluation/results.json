@@ -1,0 +1,500 @@
+[
+  {
+    "id": "charged_expected",
+    "expected": {
+      "charged_amount": "210.00",
+      "charged_currency": "INR",
+      "expected_amount": "180.00",
+      "expected_currency": "INR",
+      "transaction_date": "2026-10-14"
+    },
+    "actual": {
+      "transaction_date": "2026-10-14",
+      "charged_amount": "210.00",
+      "charged_currency": "INR",
+      "expected_amount": "180.00",
+      "expected_currency": "INR"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency",
+        "expected_amount",
+        "expected_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ],
+        "expected_amount": [
+          "deterministic_parser"
+        ],
+        "expected_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 5,
+    "predicted_fields": 5,
+    "expected_fields": 5,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "reference",
+    "expected": {
+      "transaction_reference": "TX-1023"
+    },
+    "actual": {
+      "transaction_reference": "TX-1023"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "transaction_reference"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_reference": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 1,
+    "predicted_fields": 1,
+    "expected_fields": 1,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "purchase_refund",
+    "expected": {
+      "original_amount": "450.00",
+      "original_currency": "INR",
+      "original_date": "2026-10-01",
+      "refund_amount": "450.00",
+      "refund_currency": "INR",
+      "refund_date": "2026-10-12"
+    },
+    "actual": {
+      "original_date": "2026-10-01",
+      "refund_date": "2026-10-12",
+      "original_amount": "450.00",
+      "original_currency": "INR",
+      "refund_amount": "450.00",
+      "refund_currency": "INR"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "original_amount",
+        "original_currency",
+        "original_date",
+        "refund_amount",
+        "refund_currency",
+        "refund_date"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "original_date": [
+          "deterministic_parser"
+        ],
+        "refund_date": [
+          "deterministic_parser"
+        ],
+        "original_amount": [
+          "deterministic_parser"
+        ],
+        "original_currency": [
+          "deterministic_parser"
+        ],
+        "refund_amount": [
+          "deterministic_parser"
+        ],
+        "refund_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 6,
+    "predicted_fields": 6,
+    "expected_fields": 6,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "cancel_date",
+    "expected": {
+      "cancellation_date": "2026-10-05",
+      "charged_amount": "99.00",
+      "charged_currency": "INR",
+      "transaction_date": "2026-10-15"
+    },
+    "actual": {
+      "cancellation_date": "2026-10-05",
+      "transaction_date": "2026-10-15",
+      "charged_amount": "99.00",
+      "charged_currency": "INR"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "cancellation_date",
+        "charged_amount",
+        "charged_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "cancellation_date": [
+          "deterministic_parser"
+        ],
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 4,
+    "predicted_fields": 4,
+    "expected_fields": 4,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "uncertain",
+    "expected": {},
+    "actual": {},
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [
+        "charged_amount"
+      ],
+      "field_sources": {}
+    },
+    "exact_match": true,
+    "correct_fields": 0,
+    "predicted_fields": 0,
+    "expected_fields": 0,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "no_details",
+    "expected": {},
+    "actual": {},
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {}
+    },
+    "exact_match": true,
+    "correct_fields": 0,
+    "predicted_fields": 0,
+    "expected_fields": 0,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "relative_date",
+    "expected": {
+      "charged_amount": "200.00",
+      "charged_currency": "INR"
+    },
+    "actual": {
+      "charged_amount": "200.00",
+      "charged_currency": "INR"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 2,
+    "predicted_fields": 2,
+    "expected_fields": 2,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "ambiguous_currency",
+    "expected": {
+      "charged_amount": "200.00",
+      "transaction_date": "2026-10-10"
+    },
+    "actual": {
+      "transaction_date": "2026-10-10",
+      "charged_amount": "200.00"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "charged_amount",
+        "transaction_date"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 2,
+    "predicted_fields": 2,
+    "expected_fields": 2,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "future",
+    "expected": {},
+    "actual": {},
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [],
+      "rejected_fields": [
+        "transaction_date"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {}
+    },
+    "exact_match": true,
+    "correct_fields": 0,
+    "predicted_fields": 0,
+    "expected_fields": 0,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "invalid_date",
+    "expected": {},
+    "actual": {},
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [],
+      "rejected_fields": [
+        "transaction_date"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {}
+    },
+    "exact_match": true,
+    "correct_fields": 0,
+    "predicted_fields": 0,
+    "expected_fields": 0,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "duplicate_amount",
+    "expected": {
+      "charged_amount": "320.00",
+      "charged_currency": "INR",
+      "transaction_date": "2026-10-09"
+    },
+    "actual": {
+      "transaction_date": "2026-10-09",
+      "charged_amount": "320.00",
+      "charged_currency": "INR"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 3,
+    "predicted_fields": 3,
+    "expected_fields": 3,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "injection",
+    "expected": {
+      "transaction_reference": "TX-1024"
+    },
+    "actual": {
+      "transaction_reference": "TX-1024"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "transaction_reference"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_reference": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 1,
+    "predicted_fields": 1,
+    "expected_fields": 1,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "missing_reference",
+    "expected": {},
+    "actual": {},
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {}
+    },
+    "exact_match": true,
+    "correct_fields": 0,
+    "predicted_fields": 0,
+    "expected_fields": 0,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  },
+  {
+    "id": "iso_date",
+    "expected": {
+      "charged_amount": "85.00",
+      "charged_currency": "INR",
+      "transaction_date": "2026-10-07",
+      "expected_amount": "75.00",
+      "expected_currency": "INR"
+    },
+    "actual": {
+      "transaction_date": "2026-10-07",
+      "charged_amount": "85.00",
+      "charged_currency": "INR",
+      "expected_amount": "75.00",
+      "expected_currency": "INR"
+    },
+    "trace": {
+      "model": null,
+      "status": "DETERMINISTIC",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency",
+        "expected_amount",
+        "expected_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ],
+        "expected_amount": [
+          "deterministic_parser"
+        ],
+        "expected_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "exact_match": true,
+    "correct_fields": 5,
+    "predicted_fields": 5,
+    "expected_fields": 5,
+    "unsupported_or_wrong_fields": {},
+    "missing_or_wrong_fields": {}
+  }
+]

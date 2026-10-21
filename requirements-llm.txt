@@ -1,0 +1,2 @@
+# Ollama uses the local REST API via Python standard library.
+-r requirements.txt

@@ -1,0 +1,857 @@
+{
+  "configuration": {
+    "version": "DEMO-KMEANS-1.0",
+    "mode": "shadow",
+    "history_days": 90,
+    "minimum_history": 50,
+    "maximum_history": 300,
+    "clusters": 3,
+    "maximum_iterations": 40,
+    "training_fraction": 0.7,
+    "minimum_training": 30,
+    "minimum_calibration": 10,
+    "distance_quantile": 0.95,
+    "minimum_distance_threshold": 1.5,
+    "minimum_log_amount_scale": 0.25,
+    "categorical_weight": 0.5
+  },
+  "split": "development",
+  "case_count": 78,
+  "status_counts": {
+    "ASSESSED": 66,
+    "INSUFFICIENT_DATA": 12
+  },
+  "authorisation_vs_cluster": {
+    "unknown:not_flagged": 54,
+    "authorised:not_flagged": 6,
+    "unauthorised:not_flagged": 6,
+    "unknown:abstained": 12
+  },
+  "results": [
+    {
+      "case_id": "TX-920650",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.3954872207715386,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-977396",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.3954696433687086,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-644612",
+      "family": "legitimate_exception",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.3954696433687086,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-530040",
+      "family": "normal_looking_unauthorised",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.405400356333641,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-838602",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.4053616415582415,
+      "flagged": false,
+      "model_id": "cluster-fd70c0539358eb5492a6a589",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-632426",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.4053616415582415,
+      "flagged": false,
+      "model_id": "cluster-ca3558880dce39f7ed8d2d4d",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-452793",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.4053616415582415,
+      "flagged": false,
+      "model_id": "cluster-a37ea67f35d17ee4ab305551",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-895566",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.4053616415582415,
+      "flagged": false,
+      "model_id": "cluster-0a6b9d8ad852136bbeb5e798",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-368640",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.405400356333641,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-797549",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.405400356333641,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-410610",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.405400356333641,
+      "flagged": false,
+      "model_id": "cluster-df68d1961a1341170d8a91f4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-164574",
+      "family": "sparse_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_HISTORY_TOO_SMALL",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-242779",
+      "family": "malformed_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_FEATURES_INVALID",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-814856",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5436609857988082,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-770566",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5437298876118298,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-839092",
+      "family": "legitimate_exception",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5437298876118298,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-720216",
+      "family": "normal_looking_unauthorised",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5032615728124199,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-192305",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5029115488231172,
+      "flagged": false,
+      "model_id": "cluster-ca4e84171602c649cd19fd5b",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-576969",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5029115488231172,
+      "flagged": false,
+      "model_id": "cluster-460c526bd044f67d92e41c46",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-163438",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5029115488231172,
+      "flagged": false,
+      "model_id": "cluster-5529cafa923d1278f44bc70f",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-505486",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5029115488231172,
+      "flagged": false,
+      "model_id": "cluster-5d6453bef180e75fbbd9a7b1",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-940345",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5032615728124199,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-830201",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5032615728124199,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-647538",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5032615728124199,
+      "flagged": false,
+      "model_id": "cluster-a6aa5f78898160c24c61c130",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-620740",
+      "family": "sparse_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_HISTORY_TOO_SMALL",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-225537",
+      "family": "malformed_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_FEATURES_INVALID",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-603574",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5567831623319046,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-964656",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5567779761391305,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-127422",
+      "family": "legitimate_exception",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5567779761391305,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-779320",
+      "family": "normal_looking_unauthorised",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-499274",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-2879c09417dd894fa4f1bfc7",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-244221",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-8a8839efc28470fd7a095230",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-819686",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-8d59cc374f8d7d572b0d8ebd",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-679419",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-80db0311768b4810cccd42d8",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-250317",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-925172",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-275945",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49927303390716693,
+      "flagged": false,
+      "model_id": "cluster-71707512f772b3dba82cabb4",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-897925",
+      "family": "sparse_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_HISTORY_TOO_SMALL",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-586266",
+      "family": "malformed_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_FEATURES_INVALID",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-640688",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.4952014900746042,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-182180",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49512333902155453,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-995537",
+      "family": "legitimate_exception",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.49512333902155453,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-614850",
+      "family": "normal_looking_unauthorised",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-764250",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-6cf1a28685a37ea30c1e3679",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-782324",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-77b4bd9bbb22a9ca1421408e",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-257948",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-a68225ae1aaceb96bd89235a",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-556546",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-d268d5a2df0fa17825a85eb9",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-537886",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-496457",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-436771",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.46754526006177044,
+      "flagged": false,
+      "model_id": "cluster-ba56d1a0e3cfb7f4798f3524",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-268490",
+      "family": "sparse_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_HISTORY_TOO_SMALL",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-300110",
+      "family": "malformed_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_FEATURES_INVALID",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-281520",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.29729505251659666,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-537043",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.2973112966315677,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-599230",
+      "family": "legitimate_exception",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.2973112966315677,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-248665",
+      "family": "normal_looking_unauthorised",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.25823155723315555,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-743832",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.29700529996491687,
+      "flagged": false,
+      "model_id": "cluster-ebcb861a5bb73ebe9657d726",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-493666",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.29700529996491687,
+      "flagged": false,
+      "model_id": "cluster-d89a46bdca60cb0cb2ddd3a5",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-424964",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.29700529996491687,
+      "flagged": false,
+      "model_id": "cluster-7544eb7d413b5ee3268181e2",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-203161",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.29700529996491687,
+      "flagged": false,
+      "model_id": "cluster-e3a22151bec0187eabdf8c5c",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-899801",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.25823155723315555,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-515071",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.25823155723315555,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-548495",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.25823155723315555,
+      "flagged": false,
+      "model_id": "cluster-f3737769fd0f1c50f47e7528",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-934314",
+      "family": "sparse_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_HISTORY_TOO_SMALL",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-283504",
+      "family": "malformed_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_FEATURES_INVALID",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-272715",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.43235147664328216,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-594033",
+      "family": "amount_boundary",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.43234855181484905,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-865736",
+      "family": "legitimate_exception",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.43234855181484905,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-248886",
+      "family": "normal_looking_unauthorised",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-690094",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-8b81b96652240667ceb197c2",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-398090",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-349529c0a56b9c377afd4104",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-458110",
+      "family": "order_reference",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-a82bc39d084b8784dc2c04d2",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-224008",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-4c05fa049c6ad6ec945b734e",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-968711",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-392874",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-788494",
+      "family": "time_availability",
+      "status": "ASSESSED",
+      "reason_code": "CLUSTER_WITHIN_DISTANCE_THRESHOLD",
+      "anomaly_score": 0.5007715802032852,
+      "flagged": false,
+      "model_id": "cluster-8dc9663bb3f04b298dabac63",
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-538041",
+      "family": "sparse_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_HISTORY_TOO_SMALL",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    },
+    {
+      "case_id": "TX-845775",
+      "family": "malformed_history",
+      "status": "INSUFFICIENT_DATA",
+      "reason_code": "CLUSTER_FEATURES_INVALID",
+      "anomaly_score": null,
+      "flagged": null,
+      "model_id": null,
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  ],
+  "separate_extreme_amount_probes": [
+    {
+      "customer_id": "C-001",
+      "construction": "100x_largest_historical_amount",
+      "status": "ASSESSED",
+      "anomaly_score": 3.248833046388915,
+      "flagged": true
+    },
+    {
+      "customer_id": "C-002",
+      "construction": "100x_largest_historical_amount",
+      "status": "ASSESSED",
+      "anomaly_score": 3.099891960913214,
+      "flagged": true
+    },
+    {
+      "customer_id": "C-003",
+      "construction": "100x_largest_historical_amount",
+      "status": "ASSESSED",
+      "anomaly_score": 3.2826512078007304,
+      "flagged": true
+    },
+    {
+      "customer_id": "C-004",
+      "construction": "100x_largest_historical_amount",
+      "status": "ASSESSED",
+      "anomaly_score": 3.6000757873762983,
+      "flagged": true
+    },
+    {
+      "customer_id": "C-005",
+      "construction": "100x_largest_historical_amount",
+      "status": "ASSESSED",
+      "anomaly_score": 3.0001958210552577,
+      "flagged": true
+    },
+    {
+      "customer_id": "C-006",
+      "construction": "100x_largest_historical_amount",
+      "status": "ASSESSED",
+      "anomaly_score": 3.2084784482465927,
+      "flagged": true
+    }
+  ],
+  "interpretation": "Descriptive synthetic results, not fraud accuracy or a calibrated probability. Case recipes and legitimate-outlier repeats are not independent observations. No thresholds were tuned using these outcomes."
+}

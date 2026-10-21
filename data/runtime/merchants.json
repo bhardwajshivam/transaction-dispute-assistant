@@ -1,0 +1,32 @@
+[
+  {
+    "merchant_id": "M-1",
+    "trading_name": "Northstar Coffee",
+    "descriptor": "NSC HOSPITALITY",
+    "provenance": "synthetic curated mapping"
+  },
+  {
+    "merchant_id": "M-2",
+    "trading_name": "Streamwave",
+    "descriptor": "STREAMWAVE MONTHLY",
+    "provenance": "synthetic curated mapping"
+  },
+  {
+    "merchant_id": "M-3",
+    "trading_name": "Market Square",
+    "descriptor": "MARKET SQ ONLINE",
+    "provenance": "synthetic curated mapping"
+  },
+  {
+    "merchant_id": "M-4",
+    "trading_name": "City Transport",
+    "descriptor": "CITY TRANSIT",
+    "provenance": "synthetic curated mapping"
+  },
+  {
+    "merchant_id": "M-5",
+    "trading_name": "Market Square Express",
+    "descriptor": "MARKET SQ EXPRESS",
+    "provenance": "synthetic curated mapping"
+  }
+]

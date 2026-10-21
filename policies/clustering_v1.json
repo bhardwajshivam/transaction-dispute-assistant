@@ -1,0 +1,16 @@
+{
+  "version": "DEMO-KMEANS-1.0",
+  "mode": "shadow",
+  "history_days": 90,
+  "minimum_history": 50,
+  "maximum_history": 300,
+  "clusters": 3,
+  "maximum_iterations": 40,
+  "training_fraction": 0.7,
+  "minimum_training": 30,
+  "minimum_calibration": 10,
+  "distance_quantile": 0.95,
+  "minimum_distance_threshold": 1.5,
+  "minimum_log_amount_scale": 0.25,
+  "categorical_weight": 0.5
+}

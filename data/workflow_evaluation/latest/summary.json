@@ -1,0 +1,360 @@
+{
+  "case_count": 47,
+  "passed": 47,
+  "failed": 0,
+  "critical_case_count": 0,
+  "error_counts": {},
+  "critical_false_negatives": 0,
+  "unsupported_autonomous_actions": 0,
+  "false_success_claims": 0,
+  "weighted_error_cost": 0,
+  "cost_version": "DEMO-WORKFLOW-COSTS-1.0",
+  "route_metrics": {
+    "ABSTAIN": {
+      "support": 9,
+      "predicted": 9,
+      "correct": 9,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 9,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "CLARIFY": {
+      "support": 8,
+      "predicted": 8,
+      "correct": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 8,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "EXPLAIN": {
+      "support": 8,
+      "predicted": 8,
+      "correct": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 8,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "GATHER_EVIDENCE": {
+      "support": 2,
+      "predicted": 2,
+      "correct": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 2,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "HUMAN_REVIEW": {
+      "support": 19,
+      "predicted": 19,
+      "correct": 19,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 19,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "POLICY_INFORMATION": {
+      "support": 1,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 1,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    }
+  },
+  "route_confusion": {
+    "EXPLAIN": {
+      "EXPLAIN": 8
+    },
+    "HUMAN_REVIEW": {
+      "HUMAN_REVIEW": 19
+    },
+    "GATHER_EVIDENCE": {
+      "GATHER_EVIDENCE": 2
+    },
+    "CLARIFY": {
+      "CLARIFY": 8
+    },
+    "POLICY_INFORMATION": {
+      "POLICY_INFORMATION": 1
+    },
+    "ABSTAIN": {
+      "ABSTAIN": 9
+    }
+  },
+  "component_results": {
+    "primary_reason_code": {
+      "passed": 15
+    },
+    "transaction_match": {
+      "passed": 11
+    },
+    "expected_errors": {
+      "passed": 47
+    },
+    "retrieval_relevance": {
+      "passed": 3
+    },
+    "policy_version": {
+      "passed": 2
+    },
+    "review_reason_codes": {
+      "passed": 9
+    },
+    "step": {
+      "passed": 8
+    },
+    "credit_found": {
+      "passed": 2
+    },
+    "candidates": {
+      "passed": 4
+    },
+    "pending_field": {
+      "passed": 1
+    },
+    "search_confirmed": {
+      "passed": 3
+    },
+    "clause_attribution": {
+      "passed": 1
+    },
+    "failure_recovery": {
+      "passed": 4
+    },
+    "unsupported_extraction_rejected": {
+      "passed": 1
+    },
+    "handoff_count": {
+      "passed": 1
+    },
+    "handoff_package": {
+      "passed": 1
+    },
+    "case_count": {
+      "passed": 6
+    },
+    "action_count": {
+      "passed": 6
+    },
+    "case_status": {
+      "passed": 8
+    },
+    "saw_unknown": {
+      "passed": 2
+    }
+  },
+  "counterfactual_groups": {
+    "irrelevant_wording": [
+      {
+        "case_id": "recognised",
+        "material_change": null,
+        "expected_route": "EXPLAIN",
+        "actual_route": "EXPLAIN",
+        "expected_controls": {
+          "route": "EXPLAIN",
+          "reason": "CUSTOMER_RECOGNISED",
+          "selected": "TX-1001",
+          "review_required": false,
+          "policy_id": "DEMO-INTAKE",
+          "policy_version": "1.1"
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": "CUSTOMER_RECOGNISED",
+          "candidates": [],
+          "selected": "TX-1001",
+          "step": "satisfaction",
+          "pending_field": null
+        },
+        "passed": true
+      },
+      {
+        "case_id": "recognised_polite",
+        "material_change": "Only irrelevant polite wording changes.",
+        "expected_route": "EXPLAIN",
+        "actual_route": "EXPLAIN",
+        "expected_controls": {
+          "route": "EXPLAIN",
+          "reason": "CUSTOMER_RECOGNISED",
+          "review_required": false,
+          "selected": "TX-1001"
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": "CUSTOMER_RECOGNISED",
+          "candidates": [],
+          "selected": "TX-1001",
+          "step": "satisfaction",
+          "pending_field": null
+        },
+        "passed": true
+      }
+    ],
+    "permission": [
+      {
+        "case_id": "reported_unauthorised",
+        "material_change": "Customer reports no permission.",
+        "expected_route": "HUMAN_REVIEW",
+        "actual_route": "HUMAN_REVIEW",
+        "expected_controls": {
+          "route": "HUMAN_REVIEW",
+          "reason": "REPORTED_UNAUTHORISED",
+          "review_required": true,
+          "review_codes": [
+            "REPORTED_UNAUTHORISED"
+          ],
+          "urgent_guidance": true
+        },
+        "actual_controls": {
+          "review_required": true,
+          "reason": "REPORTED_UNAUTHORISED",
+          "candidates": [],
+          "selected": "TX-1001",
+          "step": "handoff_confirm",
+          "pending_field": null
+        },
+        "passed": true
+      },
+      {
+        "case_id": "authorisation_uncertain",
+        "material_change": "Customer is uncertain instead of reporting lack of permission; safe human review still required.",
+        "expected_route": "HUMAN_REVIEW",
+        "actual_route": "HUMAN_REVIEW",
+        "expected_controls": {
+          "route": "HUMAN_REVIEW",
+          "reason": "AUTHORISATION_UNCLEAR",
+          "review_required": true
+        },
+        "actual_controls": {
+          "review_required": true,
+          "reason": "AUTHORISATION_UNCLEAR",
+          "candidates": [],
+          "selected": "TX-1001",
+          "step": "handoff_confirm",
+          "pending_field": null
+        },
+        "passed": true
+      }
+    ],
+    "cancellation_date": [
+      {
+        "case_id": "cancellation_date_matches",
+        "material_change": "Customer date agrees with merchant request date.",
+        "expected_route": "GATHER_EVIDENCE",
+        "actual_route": "GATHER_EVIDENCE",
+        "expected_controls": {
+          "route": "GATHER_EVIDENCE",
+          "step": "cancel_method",
+          "review_required": false
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": null,
+          "candidates": [],
+          "selected": "TX-1002",
+          "step": "cancel_method",
+          "pending_field": null
+        },
+        "passed": true
+      },
+      {
+        "case_id": "cancellation_date_conflicts",
+        "material_change": "Only reported cancellation date differs from merchant evidence.",
+        "expected_route": "HUMAN_REVIEW",
+        "actual_route": "HUMAN_REVIEW",
+        "expected_controls": {
+          "route": "HUMAN_REVIEW",
+          "review_required": true,
+          "review_codes": [
+            "MATERIAL_EVIDENCE_CONFLICT"
+          ]
+        },
+        "actual_controls": {
+          "review_required": true,
+          "reason": null,
+          "candidates": [],
+          "selected": "TX-1002",
+          "step": "handoff_confirm",
+          "pending_field": null
+        },
+        "passed": true
+      }
+    ],
+    "search_amount": [
+      {
+        "case_id": "search_amount_42",
+        "material_change": "Only actual charged amount changes.",
+        "expected_route": "CLARIFY",
+        "actual_route": "CLARIFY",
+        "expected_controls": {
+          "route": "CLARIFY",
+          "step": "transaction",
+          "candidates": [
+            "TX-1003",
+            "TX-1004"
+          ],
+          "selected": null,
+          "review_required": false
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": null,
+          "candidates": [
+            "TX-1003",
+            "TX-1004"
+          ],
+          "selected": null,
+          "step": "transaction",
+          "pending_field": null
+        },
+        "passed": true
+      },
+      {
+        "case_id": "search_amount_43",
+        "material_change": "Only actual charged amount changes.",
+        "expected_route": "CLARIFY",
+        "actual_route": "CLARIFY",
+        "expected_controls": {
+          "route": "CLARIFY",
+          "step": "transaction",
+          "candidates": [],
+          "selected": null,
+          "review_required": false
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": null,
+          "candidates": [],
+          "selected": null,
+          "step": "transaction",
+          "pending_field": null
+        },
+        "passed": true
+      }
+    ]
+  },
+  "model_evaluation": "Deterministic extraction by default; mocked model failure/invalid-output adapters. This does not measure live smollm2 extraction accuracy.",
+  "limits": [
+    "Constructed synthetic functional journeys, not real bank prevalence or independent policy adjudication.",
+    "Shared app turn/reopen services are exercised; browser rendering, session expiry and staff login have separate tests.",
+    "No fitted model is trained on scenario labels. Cases/fault recipes are transparent and related, not independent samples.",
+    "Costs are illustrative relative severities, not currency estimates; categories can overlap.",
+    "Unsupported-claim checks cover provenance and selected dangerous positive assertions, not general semantic entailment."
+  ]
+}

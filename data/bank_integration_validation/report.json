@@ -1,0 +1,131 @@
+{
+  "environment": "ISOLATED_SQLITE_SIMULATOR",
+  "tests_run": 28,
+  "contract_status": "PASS",
+  "checks": [
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_already_prepared_request_cannot_bypass_unknown_guard",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_assertion_change_needs_reconfirmation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_atomic_gateway_failure_is_not_success",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_business_duplicate_and_parallel_requests",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_chat_confirmation_does_not_clear_specialist_review",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_confirmation_and_replay",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_conflicting_evidence_abstains",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_decline_and_expiry",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_encryption_staff_scope_and_retention",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_ownership_rechecked",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_parallel_same_command_replays_safely",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_pending_and_incomplete_cases_abstain",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_permission_scope_and_revocation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_policy_unavailable_and_version_change",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_process_interruption_recovers_from_ledger",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_streamlit_create_and_reopen",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_timeout_after_commit_and_malformed_response",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_timeout_before_commit_retry_same_key",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_transaction_changes_need_reconfirmation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_unconfirmed_gateway_is_denied",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_unknown_blocks_new_concern_submission",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_case_service.CaseServiceTests.test_unknown_chat_signal_does_not_break_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_evidence_agent.EvidenceControllerTests.test_budget_and_proposer_failure_fallback",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_evidence_agent.EvidenceControllerTests.test_missing_policy_and_conflicting_versions",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_evidence_agent.EvidenceControllerTests.test_no_record_is_not_claimed_as_proof",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_evidence_agent.EvidenceControllerTests.test_permission_and_reference_validation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_evidence_agent.EvidenceControllerTests.test_scoped_evidence_and_no_repeat_calls",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_evidence_agent.EvidenceControllerTests.test_tool_unavailable_and_malformed_record",
+      "status": "PASS"
+    }
+  ],
+  "production_status": "NOT_VALIDATED",
+  "production_blockers": [
+    "No bank sandbox endpoint or bank-approved adapter has been supplied.",
+    "No real identity provider, service credentials or bank permission contract is configured.",
+    "No bank-verified idempotency, reconciliation, timeout or audit evidence is available."
+  ],
+  "source_sha256": {
+    "case_service.py": "7d0067acf55a026e6b630528b1353291f05932416b422e75fe30ab90bf75f2e0",
+    "evidence_agent.py": "55738af5f21502023c13675aaea9ac7e74d3cd4f0f64c2c859226906444bf740",
+    "tests/test_case_service.py": "2ef926a2c74c43ee06b9e70c4fd1361702b35513108ccab2f13aa1b84ca85dd1",
+    "tests/test_evidence_agent.py": "372f36c068de2a2586aea6125e4951c3144b63f4cb8b8d8d5b6d58907e998d5b"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "operation": "get_card_history",
+    "status": "UNAVAILABLE",
+    "records": [],
+    "retryable": true
+  },
+  {
+    "operation": "get_card_history",
+    "status": "FORBIDDEN_OR_NOT_FOUND",
+    "records": [],
+    "retryable": false
+  },
+  {
+    "operation": "get_card_history",
+    "status": "MALFORMED",
+    "records": [],
+    "retryable": false
+  }
+]

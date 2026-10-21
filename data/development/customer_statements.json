@@ -1,0 +1,30 @@
+[
+  {
+    "scenario_id": "development-recognition",
+    "transaction_id": "TX-1001",
+    "initial_statement": "I cannot place this payment.",
+    "source": "customer_assertion",
+    "verified": false
+  },
+  {
+    "scenario_id": "development-cancellation",
+    "transaction_id": "TX-1002",
+    "initial_statement": "A payment followed my cancellation.",
+    "source": "customer_assertion",
+    "verified": false
+  },
+  {
+    "scenario_id": "development-billing",
+    "transaction_id": "TX-1003",
+    "initial_statement": "Two entries look alike.",
+    "source": "customer_assertion",
+    "verified": false
+  },
+  {
+    "scenario_id": "development-refund",
+    "transaction_id": "TX-1004",
+    "initial_statement": "I am waiting for my money back.",
+    "source": "customer_assertion",
+    "verified": false
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "customer_id": "C-001",
+    "account_id": "A-001",
+    "card_id": "CARD-001",
+    "display_name": "Alex Morgan",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-001"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-001",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-002",
+    "account_id": "A-002",
+    "card_id": "CARD-002",
+    "display_name": "Demo Customer 2",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-002"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-002",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-003",
+    "account_id": "A-003",
+    "card_id": "CARD-003",
+    "display_name": "Demo Customer 3",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-003"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-003",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-004",
+    "account_id": "A-004",
+    "card_id": "CARD-004",
+    "display_name": "Demo Customer 4",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-004"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-004",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-005",
+    "account_id": "A-005",
+    "card_id": "CARD-005",
+    "display_name": "Demo Customer 5",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-005"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-005",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-006",
+    "account_id": "A-006",
+    "card_id": "CARD-006",
+    "display_name": "Demo Customer 6",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-006"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-006",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-007",
+    "account_id": "A-007",
+    "card_id": "CARD-007",
+    "display_name": "Demo Customer 7",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-007"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-007",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-008",
+    "account_id": "A-008",
+    "card_id": "CARD-008",
+    "display_name": "Demo Customer 8",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-008"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-008",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-009",
+    "account_id": "A-009",
+    "card_id": "CARD-009",
+    "display_name": "Demo Customer 9",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-009"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-009",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-010",
+    "account_id": "A-010",
+    "card_id": "CARD-010",
+    "display_name": "Demo Customer 10",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-010"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-010",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-011",
+    "account_id": "A-011",
+    "card_id": "CARD-011",
+    "display_name": "Demo Customer 11",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-011"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-011",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-012",
+    "account_id": "A-012",
+    "card_id": "CARD-012",
+    "display_name": "Demo Customer 12",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-012"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-012",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-001",
+    "account_id": "A-001-2",
+    "card_id": "CARD-001-2",
+    "display_name": "Alex Morgan",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-001"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-001-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-002",
+    "account_id": "A-002-2",
+    "card_id": "CARD-002-2",
+    "display_name": "Demo Customer 2",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-002"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-002-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-003",
+    "account_id": "A-003-2",
+    "card_id": "CARD-003-2",
+    "display_name": "Demo Customer 3",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-003"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-003-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-004",
+    "account_id": "A-004-2",
+    "card_id": "CARD-004-2",
+    "display_name": "Demo Customer 4",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-004"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-004-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-005",
+    "account_id": "A-005-2",
+    "card_id": "CARD-005-2",
+    "display_name": "Demo Customer 5",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-005"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-005-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-006",
+    "account_id": "A-006-2",
+    "card_id": "CARD-006-2",
+    "display_name": "Demo Customer 6",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-006"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-006-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-007",
+    "account_id": "A-007-2",
+    "card_id": "CARD-007-2",
+    "display_name": "Demo Customer 7",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-007"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-007-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-008",
+    "account_id": "A-008-2",
+    "card_id": "CARD-008-2",
+    "display_name": "Demo Customer 8",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-008"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-008-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-009",
+    "account_id": "A-009-2",
+    "card_id": "CARD-009-2",
+    "display_name": "Demo Customer 9",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-009"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-009-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-010",
+    "account_id": "A-010-2",
+    "card_id": "CARD-010-2",
+    "display_name": "Demo Customer 10",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-010"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-010-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-011",
+    "account_id": "A-011-2",
+    "card_id": "CARD-011-2",
+    "display_name": "Demo Customer 11",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-011"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-011-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-012",
+    "account_id": "A-012-2",
+    "card_id": "CARD-012-2",
+    "display_name": "Demo Customer 12",
+    "currency": "INR",
+    "authorised_customer_ids": [
+      "C-012"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-012-2",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  }
+]

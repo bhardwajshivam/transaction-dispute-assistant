@@ -1,0 +1,26 @@
+{
+  "generator_version": "ACTIVITY-CORPUS-1.0",
+  "seed": 20261021,
+  "customers": 12,
+  "sampled_primary_card_history": 120,
+  "snapshot": "2026-10-20",
+  "sha256": {
+    "design/profiles.json": "ca39437969e8fffb2bb272ac127ff77e36a56065766d9ce1ac5c0920ce433f4e",
+    "design/runtime_exceptions.json": "c7c98cd30d8e2f63bef8eb4a46f392d8e6c6c1b4da06937fd292b8eb292962f1",
+    "development/activity_cases.json": "27ea4a82b4da30385d3c8a4ca0f4a89f02e55cc30b7c7f4dece73e4533346b12",
+    "evaluation/activity_cases.json": "a3a80a9d45c96e514239e49ae3a73d47d7e3d58cdceb1a95d7d3e4473e1ba833",
+    "quality_report.json": "fe5ca19a0b1245eda890d03c860128b256e462dc9dec70bf1e4c499d5f1c8c6a",
+    "runtime/accounts.json": "67277eac54cc461a6e161f9575d786cc277529c1616e5c3d386ee873cc7fdd2b",
+    "runtime/actions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "runtime/audit_events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "runtime/cancellations.json": "f74f9ba8f7b6d1400bc11e3f5e04f7044de5bcaf9295546c3f4786b7a5cb55fe",
+    "runtime/cases.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "runtime/credits.json": "9579b939da980ee3e918999c5fb0dd96398fb3915822769beba9b065ce8a3256",
+    "runtime/merchants.json": "d3cd208ff008e003f2e5f4eabccf569c31e6723b8a445d5044fedf4cd226fae3",
+    "runtime/policies.json": "f52f86878dbcbd5c9614065912fa1325045953d84da7d96c90176fb855c78074",
+    "runtime/receipts.json": "ae722a5770bdf19fb693fe0c8d3492c581e6f4e3680dbacf8f7836dd097db7e3",
+    "runtime/refunds.json": "d7c6402cc5d7bd2a6f58083fd0d35f92c2ffcaf5935ebd4f0fc6ce349e0b8bde",
+    "runtime/transactions.json": "caed0f4ff2c56f1fe84a15bfc1eeb18b38d5b40d2ae9a5da07c018a94fa1cb46",
+    "testing/history_tool_responses.json": "be95f32584622ddce671c35ce145d0064e1a449137306befadae66d5d1070fe9"
+  }
+}

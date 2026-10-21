@@ -1,0 +1,24 @@
+{
+  "policy_id": "DEMO-CASE-INTAKE",
+  "version": "1.0",
+  "effective_from": "2026-10-01",
+  "effective_to": "2027-10-01",
+  "supported_issues": [
+    "unrecognised",
+    "cancellation",
+    "duplicate",
+    "wrong_amount",
+    "refund"
+  ],
+  "required_transaction_status": "Posted",
+  "required_route": "HUMAN_REVIEW",
+  "blocked_review_reasons": [
+    "EVIDENCE_VERIFICATION_UNAVAILABLE",
+    "MATERIAL_EVIDENCE_CONFLICT",
+    "POLICY_UNAVAILABLE",
+    "POLICY_CONFLICT",
+    "REFUND_VERIFICATION_UNAVAILABLE"
+  ],
+  "outcome": "SIMULATED_OPEN",
+  "notice": "Fictional intake policy only. Recording a case does not establish eligibility, fraud, liability or a refund. Mandatory specialist review remains in force."
+}

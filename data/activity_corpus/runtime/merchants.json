@@ -1,0 +1,114 @@
+[
+  {
+    "merchant_id": "M-1",
+    "trading_name": "Market Square",
+    "descriptor": "MS RETAIL",
+    "category": "groceries",
+    "mcc": "5411",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-2",
+    "trading_name": "Market Square Express",
+    "descriptor": "MS RETAIL EXPRESS",
+    "category": "groceries",
+    "mcc": "5411",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-3",
+    "trading_name": "Northstar Coffee",
+    "descriptor": "NSC HOSPITALITY",
+    "category": "coffee",
+    "mcc": "5814",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-4",
+    "trading_name": "Northstar Coffee Express",
+    "descriptor": "NSC HOSPITALITY EXPRESS",
+    "category": "coffee",
+    "mcc": "5814",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-5",
+    "trading_name": "City Transport",
+    "descriptor": "CITY TRANSIT",
+    "category": "transport",
+    "mcc": "4111",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-6",
+    "trading_name": "City Transport Express",
+    "descriptor": "CITY TRANSIT EXPRESS",
+    "category": "transport",
+    "mcc": "4111",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-7",
+    "trading_name": "Harbour Kitchen",
+    "descriptor": "HK DINING GROUP",
+    "category": "dining",
+    "mcc": "5812",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-8",
+    "trading_name": "Harbour Kitchen Express",
+    "descriptor": "HK DINING GROUP EXPRESS",
+    "category": "dining",
+    "mcc": "5812",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-9",
+    "trading_name": "Oak & Field",
+    "descriptor": "OAF COMMERCE",
+    "category": "shopping",
+    "mcc": "5311",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-10",
+    "trading_name": "Oak & Field Express",
+    "descriptor": "OAF COMMERCE EXPRESS",
+    "category": "shopping",
+    "mcc": "5311",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-11",
+    "trading_name": "Wayfarer Travel",
+    "descriptor": "WF BOOKINGS",
+    "category": "travel",
+    "mcc": "4722",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-12",
+    "trading_name": "Wayfarer Travel Express",
+    "descriptor": "WF BOOKINGS EXPRESS",
+    "category": "travel",
+    "mcc": "4722",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-13",
+    "trading_name": "Streamwave",
+    "descriptor": "SW DIGITAL SERVICES",
+    "category": "subscription",
+    "mcc": "4899",
+    "provenance": "synthetic curated trading name"
+  },
+  {
+    "merchant_id": "M-14",
+    "trading_name": "Cedar Services",
+    "descriptor": "CEDAR PAYMENTS",
+    "category": "specialist",
+    "mcc": "5999",
+    "provenance": "synthetic curated trading name"
+  }
+]

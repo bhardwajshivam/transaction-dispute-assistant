@@ -1,0 +1,434 @@
+[
+  {
+    "transaction_id": "TX-691847",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-869736",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-783612",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-710740",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-719244",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-697074",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-440069",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-888651",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-908356",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-984623",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-783377",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-359043",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-713813",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-355395",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-218170",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-111797",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-751658",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-858364",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-251092",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-917561",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-155442",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-709383",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-206933",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-496050",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-344423",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-671032",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-885419",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-668829",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-406790",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-734626",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-431838",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-432272",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-508275",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-636868",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-551335",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-122215",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-823761",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-127480",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-226666",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-297055",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-534361",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-134295",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-971812",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-223522",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-546022",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-747493",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-701592",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-164151",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-751111",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-369511",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-668495",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-804139",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-779770",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-188829",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-619281",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-373425",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-167294",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-518475",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-638661",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-321800",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-259174",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-321111",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-551150",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-437793",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-535047",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-687082",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-489834",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-462293",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-251053",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  },
+  {
+    "transaction_id": "TX-408715",
+    "construction": "legitimate_large_purchase",
+    "authorisation_truth": "authorised",
+    "explanation": "A planned purchase with a matching merchant receipt; unusualness alone should not establish fraud."
+  },
+  {
+    "transaction_id": "TX-743058",
+    "construction": "repeated_same_order",
+    "authorisation_truth": "unknown",
+    "explanation": "Two posted charges share an order reference; processing duplication still requires investigation."
+  },
+  {
+    "transaction_id": "TX-976585",
+    "construction": "two_separate_orders",
+    "authorisation_truth": "authorised",
+    "explanation": "Same merchant and amount, distinct orders. Matching amount does not establish a duplicate."
+  }
+]

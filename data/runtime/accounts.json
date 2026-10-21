@@ -1,0 +1,44 @@
+[
+  {
+    "customer_id": "C-001",
+    "account_id": "A-001",
+    "card_id": "CARD-001",
+    "display_name": "Alex Morgan",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-001"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-001",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-002",
+    "account_id": "A-002",
+    "card_id": "CARD-002",
+    "display_name": "Demo Customer 2",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-002"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-002",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  },
+  {
+    "customer_id": "C-003",
+    "account_id": "A-003",
+    "card_id": "CARD-003",
+    "display_name": "Demo Customer 3",
+    "currency": "GBP",
+    "authorised_customer_ids": [
+      "C-003"
+    ],
+    "source": "demo_identity_service",
+    "source_reference": "A-003",
+    "observed_at": "2026-10-20T00:00:00Z",
+    "verification_status": "synthetic_verified"
+  }
+]

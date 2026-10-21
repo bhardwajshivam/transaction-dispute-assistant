@@ -1,0 +1,189 @@
+{
+  "case_count": 8,
+  "passed": 8,
+  "failed": 0,
+  "critical_case_count": 0,
+  "error_counts": {},
+  "critical_false_negatives": 0,
+  "unsupported_autonomous_actions": 0,
+  "false_success_claims": 0,
+  "weighted_error_cost": 0,
+  "cost_version": "DEMO-WORKFLOW-COSTS-1.0",
+  "route_metrics": {
+    "ABSTAIN": {
+      "support": 2,
+      "predicted": 2,
+      "correct": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 2,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "CLARIFY": {
+      "support": 1,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 1,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "EXPLAIN": {
+      "support": 2,
+      "predicted": 2,
+      "correct": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 2,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "HUMAN_REVIEW": {
+      "support": 2,
+      "predicted": 2,
+      "correct": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 2,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    },
+    "POLICY_INFORMATION": {
+      "support": 1,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cases_passed": 1,
+      "critical_false_negatives": 0,
+      "unsupported_actions": 0,
+      "weighted_error_cost": 0
+    }
+  },
+  "route_confusion": {
+    "EXPLAIN": {
+      "EXPLAIN": 2
+    },
+    "HUMAN_REVIEW": {
+      "HUMAN_REVIEW": 2
+    },
+    "POLICY_INFORMATION": {
+      "POLICY_INFORMATION": 1
+    },
+    "CLARIFY": {
+      "CLARIFY": 1
+    },
+    "ABSTAIN": {
+      "ABSTAIN": 2
+    }
+  },
+  "component_results": {
+    "primary_reason_code": {
+      "passed": 4
+    },
+    "transaction_match": {
+      "passed": 2
+    },
+    "expected_errors": {
+      "passed": 8
+    },
+    "retrieval_relevance": {
+      "passed": 3
+    },
+    "policy_version": {
+      "passed": 2
+    },
+    "review_reason_codes": {
+      "passed": 2
+    },
+    "clause_attribution": {
+      "passed": 1
+    },
+    "step": {
+      "passed": 1
+    },
+    "candidates": {
+      "passed": 1
+    },
+    "failure_recovery": {
+      "passed": 1
+    },
+    "handoff_count": {
+      "passed": 1
+    },
+    "handoff_package": {
+      "passed": 1
+    }
+  },
+  "counterfactual_groups": {
+    "irrelevant_wording": [
+      {
+        "case_id": "recognised",
+        "material_change": null,
+        "expected_route": "EXPLAIN",
+        "actual_route": "EXPLAIN",
+        "expected_controls": {
+          "route": "EXPLAIN",
+          "reason": "CUSTOMER_RECOGNISED",
+          "selected": "TX-1001",
+          "review_required": false,
+          "policy_id": "DEMO-INTAKE",
+          "policy_version": "1.1"
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": "CUSTOMER_RECOGNISED",
+          "candidates": [],
+          "selected": "TX-1001",
+          "step": "satisfaction",
+          "pending_field": null
+        },
+        "passed": true
+      }
+    ],
+    "search_amount": [
+      {
+        "case_id": "search_amount_42",
+        "material_change": "Only actual charged amount changes.",
+        "expected_route": "CLARIFY",
+        "actual_route": "CLARIFY",
+        "expected_controls": {
+          "route": "CLARIFY",
+          "step": "transaction",
+          "candidates": [
+            "TX-1003",
+            "TX-1004"
+          ],
+          "selected": null,
+          "review_required": false
+        },
+        "actual_controls": {
+          "review_required": false,
+          "reason": null,
+          "candidates": [
+            "TX-1003",
+            "TX-1004"
+          ],
+          "selected": null,
+          "step": "transaction",
+          "pending_field": null
+        },
+        "passed": true
+      }
+    ]
+  },
+  "model_evaluation": "Deterministic extraction by default; mocked model failure/invalid-output adapters. This does not measure live smollm2 extraction accuracy.",
+  "limits": [
+    "Constructed synthetic functional journeys, not real bank prevalence or independent policy adjudication.",
+    "Shared app turn/reopen services are exercised; browser rendering, session expiry and staff login have separate tests.",
+    "No fitted model is trained on scenario labels. Cases/fault recipes are transparent and related, not independent samples.",
+    "Costs are illustrative relative severities, not currency estimates; categories can overlap.",
+    "Unsupported-claim checks cover provenance and selected dangerous positive assertions, not general semantic entailment."
+  ]
+}

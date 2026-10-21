@@ -1,0 +1,26 @@
+{
+  "version": "DEMO-WORKFLOW-COSTS-1.0",
+  "interpretation": "Illustrative relative engineering costs, not monetary loss estimates. Each category is charged at most once per case; categories can overlap. Critical counts are reported separately from weighted cost.",
+  "costs": {
+    "unsupported_action": 1000,
+    "cross_account_selection": 1000,
+    "critical_false_negative": 500,
+    "false_success_claim": 500,
+    "unsupported_policy_conclusion": 200,
+    "wrong_transaction": 200,
+    "duplicate_case": 200,
+    "wrong_route": 50,
+    "unnecessary_escalation": 20,
+    "wrong_reason_code": 10,
+    "component_failure": 10,
+    "unnecessary_clarification": 5,
+    "harness_error": 1000
+  },
+  "critical_categories": [
+    "unsupported_action",
+    "cross_account_selection",
+    "critical_false_negative",
+    "false_success_claim",
+    "harness_error"
+  ]
+}

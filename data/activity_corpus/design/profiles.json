@@ -1,0 +1,194 @@
+[
+  {
+    "customer_id": "C-001",
+    "card_id": "CARD-001",
+    "spending_scale": 0.6590082211647328,
+    "sampled_count": 116,
+    "profile": "lower_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-002",
+    "card_id": "CARD-002",
+    "spending_scale": 1.3843642681830353,
+    "sampled_count": 131,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-003",
+    "card_id": "CARD-003",
+    "spending_scale": 8.90764606280696,
+    "sampled_count": 113,
+    "profile": "higher_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-004",
+    "card_id": "CARD-004",
+    "spending_scale": 0.6694710717425085,
+    "sampled_count": 137,
+    "profile": "lower_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-005",
+    "card_id": "CARD-005",
+    "spending_scale": 1.1996421337738705,
+    "sampled_count": 104,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-006",
+    "card_id": "CARD-006",
+    "spending_scale": 9.195387807043794,
+    "sampled_count": 133,
+    "profile": "higher_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-007",
+    "card_id": "CARD-007",
+    "spending_scale": 0.6050783175125886,
+    "sampled_count": 102,
+    "profile": "lower_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-008",
+    "card_id": "CARD-008",
+    "spending_scale": 1.380411531285219,
+    "sampled_count": 136,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-009",
+    "card_id": "CARD-009",
+    "spending_scale": 7.774931647007835,
+    "sampled_count": 133,
+    "profile": "higher_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-010",
+    "card_id": "CARD-010",
+    "spending_scale": 0.6806269417132538,
+    "sampled_count": 106,
+    "profile": "lower_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-011",
+    "card_id": "CARD-011",
+    "spending_scale": 1.486476759660994,
+    "sampled_count": 117,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-012",
+    "card_id": "CARD-012",
+    "spending_scale": 9.100683224615425,
+    "sampled_count": 131,
+    "profile": "higher_spend",
+    "sparse_secondary_card": false
+  },
+  {
+    "customer_id": "C-001",
+    "card_id": "CARD-001-2",
+    "spending_scale": 0.6721082130617372,
+    "sampled_count": 37,
+    "profile": "lower_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-002",
+    "card_id": "CARD-002-2",
+    "spending_scale": 1.3239188311796082,
+    "sampled_count": 38,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-003",
+    "card_id": "CARD-003-2",
+    "spending_scale": 8.62731198024158,
+    "sampled_count": 44,
+    "profile": "higher_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-004",
+    "card_id": "CARD-004-2",
+    "spending_scale": 0.5866619761840737,
+    "sampled_count": 46,
+    "profile": "lower_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-005",
+    "card_id": "CARD-005-2",
+    "spending_scale": 1.501381962712775,
+    "sampled_count": 46,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-006",
+    "card_id": "CARD-006-2",
+    "spending_scale": 8.26044513728483,
+    "sampled_count": 39,
+    "profile": "higher_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-007",
+    "card_id": "CARD-007-2",
+    "spending_scale": 0.6609686808808614,
+    "sampled_count": 42,
+    "profile": "lower_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-008",
+    "card_id": "CARD-008-2",
+    "spending_scale": 1.3401437754023109,
+    "sampled_count": 42,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-009",
+    "card_id": "CARD-009-2",
+    "spending_scale": 9.259137629423979,
+    "sampled_count": 45,
+    "profile": "higher_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-010",
+    "card_id": "CARD-010-2",
+    "spending_scale": 0.6898593258197664,
+    "sampled_count": 37,
+    "profile": "lower_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-011",
+    "card_id": "CARD-011-2",
+    "spending_scale": 1.3340313497010257,
+    "sampled_count": 41,
+    "profile": "mixed_spend",
+    "sparse_secondary_card": true
+  },
+  {
+    "customer_id": "C-012",
+    "card_id": "CARD-012-2",
+    "spending_scale": 8.686035216015291,
+    "sampled_count": 45,
+    "profile": "higher_spend",
+    "sparse_secondary_card": true
+  }
+]

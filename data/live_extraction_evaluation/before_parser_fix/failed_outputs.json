@@ -1,0 +1,737 @@
+[
+  {
+    "id": "charged_expected",
+    "expected": {
+      "charged_amount": "210.00",
+      "charged_currency": "INR",
+      "expected_amount": "180.00",
+      "expected_currency": "INR",
+      "transaction_date": "2026-10-14"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:49.896636Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1517961208,
+      "load_duration": 1093659333,
+      "prompt_eval_count": 229,
+      "prompt_eval_duration": 57605000,
+      "eval_count": 19,
+      "eval_duration": 345812000
+    },
+    "error_code": null,
+    "elapsed_ms": 1603,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency",
+        "expected_amount",
+        "expected_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ],
+        "expected_amount": [
+          "deterministic_parser"
+        ],
+        "expected_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "transaction_date": "2026-10-14",
+      "charged_amount": "210.00",
+      "charged_currency": "INR",
+      "expected_amount": "180.00",
+      "expected_currency": "INR"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 5,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "charged_amount": "210.00",
+        "charged_currency": "INR",
+        "expected_amount": "180.00",
+        "expected_currency": "INR",
+        "transaction_date": "2026-10-14"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 5,
+      "predicted_fields": 5,
+      "expected_fields": 5,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "reference",
+    "expected": {
+      "transaction_reference": "TX-1023"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:50.417478Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 463920083,
+      "load_duration": 6874708,
+      "prompt_eval_count": 208,
+      "prompt_eval_duration": 35197000,
+      "eval_count": 19,
+      "eval_duration": 410303000
+    },
+    "error_code": null,
+    "elapsed_ms": 467,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "transaction_reference"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_reference": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "transaction_reference": "TX-1023"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 1,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "transaction_reference": "TX-1023"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 1,
+      "predicted_fields": 1,
+      "expected_fields": 1,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "purchase_refund",
+    "expected": {
+      "original_amount": "450.00",
+      "original_currency": "INR",
+      "original_date": "2026-10-01",
+      "refund_amount": "450.00",
+      "refund_currency": "INR",
+      "refund_date": "2026-10-12"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:50.739254Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 317928417,
+      "load_duration": 2353125,
+      "prompt_eval_count": 239,
+      "prompt_eval_duration": 32564000,
+      "eval_count": 19,
+      "eval_duration": 276570000
+    },
+    "error_code": null,
+    "elapsed_ms": 321,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "original_amount",
+        "original_currency",
+        "original_date",
+        "refund_amount",
+        "refund_currency",
+        "refund_date"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "original_date": [
+          "deterministic_parser"
+        ],
+        "refund_date": [
+          "deterministic_parser"
+        ],
+        "original_amount": [
+          "deterministic_parser"
+        ],
+        "original_currency": [
+          "deterministic_parser"
+        ],
+        "refund_amount": [
+          "deterministic_parser"
+        ],
+        "refund_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "original_date": "2026-10-01",
+      "refund_date": "2026-10-12",
+      "original_amount": "450.00",
+      "original_currency": "INR",
+      "refund_amount": "450.00",
+      "refund_currency": "INR"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 6,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "original_amount": "450.00",
+        "original_currency": "INR",
+        "original_date": "2026-10-01",
+        "refund_amount": "450.00",
+        "refund_currency": "INR",
+        "refund_date": "2026-10-12"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 6,
+      "predicted_fields": 6,
+      "expected_fields": 6,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "cancel_date",
+    "expected": {
+      "cancellation_date": "2026-10-05",
+      "charged_amount": "99.00",
+      "charged_currency": "INR",
+      "transaction_date": "2026-10-15"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:51.123134Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 379549583,
+      "load_duration": 3362500,
+      "prompt_eval_count": 233,
+      "prompt_eval_duration": 37111000,
+      "eval_count": 19,
+      "eval_duration": 333581000
+    },
+    "error_code": null,
+    "elapsed_ms": 382,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "cancellation_date",
+        "charged_amount",
+        "charged_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "cancellation_date": [
+          "deterministic_parser"
+        ],
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "cancellation_date": "2026-10-05",
+      "transaction_date": "2026-10-15",
+      "charged_amount": "99.00",
+      "charged_currency": "INR"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 4,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "cancellation_date": "2026-10-05",
+        "charged_amount": "99.00",
+        "charged_currency": "INR",
+        "transaction_date": "2026-10-15"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 4,
+      "predicted_fields": 4,
+      "expected_fields": 4,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "relative_date",
+    "expected": {
+      "charged_amount": "200.00",
+      "charged_currency": "INR"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:52.082198Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 310286833,
+      "load_duration": 2886166,
+      "prompt_eval_count": 210,
+      "prompt_eval_duration": 32362000,
+      "eval_count": 19,
+      "eval_duration": 270121000
+    },
+    "error_code": null,
+    "elapsed_ms": 313,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "charged_amount": "200.00",
+      "charged_currency": "INR"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 2,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "charged_amount": "200.00",
+        "charged_currency": "INR"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 2,
+      "predicted_fields": 2,
+      "expected_fields": 2,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "ambiguous_currency",
+    "expected": {
+      "charged_amount": "200.00",
+      "transaction_date": "2026-10-10"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:52.404636Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 318379375,
+      "load_duration": 2868708,
+      "prompt_eval_count": 219,
+      "prompt_eval_duration": 34810000,
+      "eval_count": 19,
+      "eval_duration": 273726000
+    },
+    "error_code": null,
+    "elapsed_ms": 322,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "charged_amount",
+        "transaction_date"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "transaction_date": "2026-10-10",
+      "charged_amount": "200.00"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 2,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "charged_amount": "200.00",
+        "transaction_date": "2026-10-10"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 2,
+      "predicted_fields": 2,
+      "expected_fields": 2,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "duplicate_amount",
+    "expected": {
+      "charged_amount": "320.00",
+      "charged_currency": "INR",
+      "transaction_date": "2026-10-09"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:53.415182Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 345085834,
+      "load_duration": 2912750,
+      "prompt_eval_count": 220,
+      "prompt_eval_duration": 22516000,
+      "eval_count": 19,
+      "eval_duration": 315490000
+    },
+    "error_code": null,
+    "elapsed_ms": 348,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "charged_amount",
+        "charged_currency",
+        "transaction_date"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_date": [
+          "deterministic_parser"
+        ],
+        "charged_amount": [
+          "deterministic_parser"
+        ],
+        "charged_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "transaction_date": "2026-10-09",
+      "charged_amount": "320.00",
+      "charged_currency": "INR"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 3,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "charged_amount": "320.00",
+        "charged_currency": "INR",
+        "transaction_date": "2026-10-09"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 3,
+      "predicted_fields": 3,
+      "expected_fields": 3,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "injection",
+    "expected": {
+      "transaction_reference": "TX-1024"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:53.704753Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 284687334,
+      "load_duration": 2596334,
+      "prompt_eval_count": 218,
+      "prompt_eval_duration": 30169000,
+      "eval_count": 19,
+      "eval_duration": 245243000
+    },
+    "error_code": null,
+    "elapsed_ms": 288,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "transaction_reference"
+      ],
+      "rejected_fields": [
+        "charged_amount"
+      ],
+      "conflicting_fields": [],
+      "uncertain_fields": [],
+      "field_sources": {
+        "transaction_reference": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "transaction_reference": "TX-1024"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 1,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "transaction_reference": "TX-1024"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": true,
+      "correct_fields": 1,
+      "predicted_fields": 1,
+      "expected_fields": 1,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {}
+    }
+  },
+  {
+    "id": "iso_date",
+    "expected": {
+      "charged_amount": "85.00",
+      "charged_currency": "INR",
+      "transaction_date": "2026-10-07",
+      "expected_amount": "75.00",
+      "expected_currency": "INR"
+    },
+    "response": {
+      "model": "smollm2:135m",
+      "created_at": "2026-10-21T12:59:54.368643Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"field\":\"charged_amount\",\"span\":\"£10\"}]}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 310005417,
+      "load_duration": 2133458,
+      "prompt_eval_count": 227,
+      "prompt_eval_duration": 32985000,
+      "eval_count": 19,
+      "eval_duration": 270624000
+    },
+    "error_code": null,
+    "elapsed_ms": 313,
+    "rejected_model_fields": [
+      "charged_amount"
+    ],
+    "model_response_valid": true,
+    "trace": {
+      "model": "smollm2:135m",
+      "status": "OLLAMA_EXTRACTED",
+      "accepted_fields": [
+        "expected_amount",
+        "expected_currency"
+      ],
+      "rejected_fields": [
+        "transaction_date",
+        "charged_amount"
+      ],
+      "conflicting_fields": [
+        "charged_amount"
+      ],
+      "uncertain_fields": [],
+      "field_sources": {
+        "expected_amount": [
+          "deterministic_parser"
+        ],
+        "expected_currency": [
+          "deterministic_parser"
+        ]
+      }
+    },
+    "model_only": {},
+    "combined": {
+      "expected_amount": "75.00",
+      "expected_currency": "INR"
+    },
+    "model_metrics": {
+      "exact_match": false,
+      "correct_fields": 0,
+      "predicted_fields": 0,
+      "expected_fields": 5,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "charged_amount": "85.00",
+        "charged_currency": "INR",
+        "transaction_date": "2026-10-07",
+        "expected_amount": "75.00",
+        "expected_currency": "INR"
+      }
+    },
+    "combined_metrics": {
+      "exact_match": false,
+      "correct_fields": 2,
+      "predicted_fields": 2,
+      "expected_fields": 5,
+      "unsupported_or_wrong_fields": {},
+      "missing_or_wrong_fields": {
+        "charged_amount": "85.00",
+        "charged_currency": "INR",
+        "transaction_date": "2026-10-07"
+      }
+    }
+  }
+]

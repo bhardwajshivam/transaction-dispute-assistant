@@ -1,0 +1,1417 @@
+{
+  "split": "development",
+  "case_count": 78,
+  "passed": 78,
+  "family_balance": {
+    "amount_boundary": 12,
+    "legitimate_exception": 6,
+    "normal_looking_unauthorised": 6,
+    "order_reference": 18,
+    "time_availability": 24,
+    "sparse_history": 6,
+    "malformed_history": 6
+  },
+  "failures": [],
+  "results": [
+    {
+      "case_id": "TX-920650",
+      "family": "amount_boundary",
+      "variant": "at",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-977396",
+      "family": "amount_boundary",
+      "variant": "above",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-644612",
+      "family": "legitimate_exception",
+      "variant": "planned_purchase",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-530040",
+      "family": "normal_looking_unauthorised",
+      "variant": "reported_unapproved",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-838602",
+      "family": "order_reference",
+      "variant": "same",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-632426",
+      "family": "order_reference",
+      "variant": "different",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-452793",
+      "family": "order_reference",
+      "variant": "missing",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-895566",
+      "family": "time_availability",
+      "variant": "earlier",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-368640",
+      "family": "time_availability",
+      "variant": "same_day",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-797549",
+      "family": "time_availability",
+      "variant": "future",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-410610",
+      "family": "time_availability",
+      "variant": "delayed",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-164574",
+      "family": "sparse_history",
+      "variant": "nine_rows",
+      "passed": true,
+      "actual": {
+        "status": "PARTIAL",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "case_id": "TX-242779",
+      "family": "malformed_history",
+      "variant": "invalid_amount",
+      "passed": true,
+      "actual": {
+        "status": "INSUFFICIENT_DATA",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "INSUFFICIENT_DATA"
+      }
+    },
+    {
+      "case_id": "TX-814856",
+      "family": "amount_boundary",
+      "variant": "at",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-770566",
+      "family": "amount_boundary",
+      "variant": "above",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-839092",
+      "family": "legitimate_exception",
+      "variant": "planned_purchase",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-720216",
+      "family": "normal_looking_unauthorised",
+      "variant": "reported_unapproved",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-192305",
+      "family": "order_reference",
+      "variant": "same",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-576969",
+      "family": "order_reference",
+      "variant": "different",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-163438",
+      "family": "order_reference",
+      "variant": "missing",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-505486",
+      "family": "time_availability",
+      "variant": "earlier",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-940345",
+      "family": "time_availability",
+      "variant": "same_day",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-830201",
+      "family": "time_availability",
+      "variant": "future",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-647538",
+      "family": "time_availability",
+      "variant": "delayed",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-620740",
+      "family": "sparse_history",
+      "variant": "nine_rows",
+      "passed": true,
+      "actual": {
+        "status": "PARTIAL",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "case_id": "TX-225537",
+      "family": "malformed_history",
+      "variant": "invalid_amount",
+      "passed": true,
+      "actual": {
+        "status": "INSUFFICIENT_DATA",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "INSUFFICIENT_DATA"
+      }
+    },
+    {
+      "case_id": "TX-603574",
+      "family": "amount_boundary",
+      "variant": "at",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-964656",
+      "family": "amount_boundary",
+      "variant": "above",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-127422",
+      "family": "legitimate_exception",
+      "variant": "planned_purchase",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-779320",
+      "family": "normal_looking_unauthorised",
+      "variant": "reported_unapproved",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-499274",
+      "family": "order_reference",
+      "variant": "same",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-244221",
+      "family": "order_reference",
+      "variant": "different",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-819686",
+      "family": "order_reference",
+      "variant": "missing",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-679419",
+      "family": "time_availability",
+      "variant": "earlier",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-250317",
+      "family": "time_availability",
+      "variant": "same_day",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-925172",
+      "family": "time_availability",
+      "variant": "future",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-275945",
+      "family": "time_availability",
+      "variant": "delayed",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-897925",
+      "family": "sparse_history",
+      "variant": "nine_rows",
+      "passed": true,
+      "actual": {
+        "status": "PARTIAL",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "case_id": "TX-586266",
+      "family": "malformed_history",
+      "variant": "invalid_amount",
+      "passed": true,
+      "actual": {
+        "status": "INSUFFICIENT_DATA",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "INSUFFICIENT_DATA"
+      }
+    },
+    {
+      "case_id": "TX-640688",
+      "family": "amount_boundary",
+      "variant": "at_floor_minus_one",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-182180",
+      "family": "amount_boundary",
+      "variant": "at_floor",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-995537",
+      "family": "legitimate_exception",
+      "variant": "planned_purchase",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-614850",
+      "family": "normal_looking_unauthorised",
+      "variant": "reported_unapproved",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-764250",
+      "family": "order_reference",
+      "variant": "same",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-782324",
+      "family": "order_reference",
+      "variant": "different",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-257948",
+      "family": "order_reference",
+      "variant": "missing",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-556546",
+      "family": "time_availability",
+      "variant": "earlier",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-537886",
+      "family": "time_availability",
+      "variant": "same_day",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-496457",
+      "family": "time_availability",
+      "variant": "future",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-436771",
+      "family": "time_availability",
+      "variant": "delayed",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-268490",
+      "family": "sparse_history",
+      "variant": "nine_rows",
+      "passed": true,
+      "actual": {
+        "status": "PARTIAL",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "case_id": "TX-300110",
+      "family": "malformed_history",
+      "variant": "invalid_amount",
+      "passed": true,
+      "actual": {
+        "status": "INSUFFICIENT_DATA",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "INSUFFICIENT_DATA"
+      }
+    },
+    {
+      "case_id": "TX-281520",
+      "family": "amount_boundary",
+      "variant": "at",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-537043",
+      "family": "amount_boundary",
+      "variant": "above",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-599230",
+      "family": "legitimate_exception",
+      "variant": "planned_purchase",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-248665",
+      "family": "normal_looking_unauthorised",
+      "variant": "reported_unapproved",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-743832",
+      "family": "order_reference",
+      "variant": "same",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-493666",
+      "family": "order_reference",
+      "variant": "different",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-424964",
+      "family": "order_reference",
+      "variant": "missing",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-203161",
+      "family": "time_availability",
+      "variant": "earlier",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-899801",
+      "family": "time_availability",
+      "variant": "same_day",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-515071",
+      "family": "time_availability",
+      "variant": "future",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-548495",
+      "family": "time_availability",
+      "variant": "delayed",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-934314",
+      "family": "sparse_history",
+      "variant": "nine_rows",
+      "passed": true,
+      "actual": {
+        "status": "PARTIAL",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "case_id": "TX-283504",
+      "family": "malformed_history",
+      "variant": "invalid_amount",
+      "passed": true,
+      "actual": {
+        "status": "INSUFFICIENT_DATA",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "INSUFFICIENT_DATA"
+      }
+    },
+    {
+      "case_id": "TX-272715",
+      "family": "amount_boundary",
+      "variant": "at",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-594033",
+      "family": "amount_boundary",
+      "variant": "above",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-865736",
+      "family": "legitimate_exception",
+      "variant": "planned_purchase",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-248886",
+      "family": "normal_looking_unauthorised",
+      "variant": "reported_unapproved",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-690094",
+      "family": "order_reference",
+      "variant": "same",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-398090",
+      "family": "order_reference",
+      "variant": "different",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-458110",
+      "family": "order_reference",
+      "variant": "missing",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-224008",
+      "family": "time_availability",
+      "variant": "earlier",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "route": "RECOMMEND_SPECIALIST_REVIEW",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-968711",
+      "family": "time_availability",
+      "variant": "same_day",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-392874",
+      "family": "time_availability",
+      "variant": "future",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-788494",
+      "family": "time_availability",
+      "variant": "delayed",
+      "passed": true,
+      "actual": {
+        "status": "ASSESSED",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "ASSESSED"
+      }
+    },
+    {
+      "case_id": "TX-538041",
+      "family": "sparse_history",
+      "variant": "nine_rows",
+      "passed": true,
+      "actual": {
+        "status": "PARTIAL",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "PARTIAL"
+      }
+    },
+    {
+      "case_id": "TX-845775",
+      "family": "malformed_history",
+      "variant": "invalid_amount",
+      "passed": true,
+      "actual": {
+        "status": "INSUFFICIENT_DATA",
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "expected": {
+        "reason_codes": [],
+        "route": "NO_ADDITIONAL_ROUTE",
+        "status": "INSUFFICIENT_DATA"
+      }
+    }
+  ],
+  "authorisation_vs_anomaly": {
+    "unknown:not_flagged": 42,
+    "unknown:flagged": 24,
+    "authorised:flagged": 6,
+    "unauthorised:not_flagged": 6
+  },
+  "interpretation": "A flagged authorised purchase is a legitimate anomaly, not proven fraud. A non-flagged unauthorised purchase demonstrates why complaint routing must remain independent. These are constructed cases, not calibrated fraud prevalence.",
+  "leakage_control": "Customer-disjoint splits; numerical facts only; opaque random references; no model fitting or threshold tuning."
+}

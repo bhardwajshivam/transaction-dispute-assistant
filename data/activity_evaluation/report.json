@@ -1,0 +1,298 @@
+{
+  "rules": {
+    "rules_version": "DEMO-ACTIVITY-1.0",
+    "history_days": 90,
+    "minimum_history": 10,
+    "amount_multiplier": 3,
+    "minimum_amount_minor": 5000,
+    "repeat_window_days": 3,
+    "review_rule_version": "DEMO-ACTIVITY-REVIEW-1.0",
+    "review_signal_codes": [
+      "AMOUNT_ABOVE_HISTORICAL_BASELINE",
+      "REPEATED_CHARGE_SAME_ORDER",
+      "REPEATED_CHARGE_ORDER_UNKNOWN"
+    ]
+  },
+  "scenario_count": 16,
+  "passed": 16,
+  "false_review_flags": 0,
+  "missed_constructed_review_flags": 0,
+  "results": [
+    {
+      "scenario_id": "amount_exact_threshold",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "amount_one_minor_over",
+      "passed": true,
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "actual": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      }
+    },
+    {
+      "scenario_id": "high_against_low_history",
+      "passed": true,
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "actual": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      }
+    },
+    {
+      "scenario_id": "ordinary_against_high_history",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "too_few_prior_payments",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "PARTIAL",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "PARTIAL",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "enough_prior_payments",
+      "passed": true,
+      "expected": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "actual": {
+        "reason_codes": [
+          "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      }
+    },
+    {
+      "scenario_id": "same_order",
+      "passed": true,
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "actual": {
+        "reason_codes": [
+          "REPEATED_CHARGE_SAME_ORDER"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      }
+    },
+    {
+      "scenario_id": "distinct_order",
+      "passed": true,
+      "expected": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [
+          "MATCHING_CHARGES_DISTINCT_ORDERS"
+        ],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "unknown_order",
+      "passed": true,
+      "expected": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      },
+      "actual": {
+        "reason_codes": [
+          "REPEATED_CHARGE_ORDER_UNKNOWN"
+        ],
+        "status": "ASSESSED",
+        "route": "RECOMMEND_SPECIALIST_REVIEW"
+      }
+    },
+    {
+      "scenario_id": "same_day_ambiguous",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "future_payment",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "delayed_presentment",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "ASSESSED",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "other_currency",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "PARTIAL",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "PARTIAL",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "malformed_history",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "INSUFFICIENT_DATA",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "INSUFFICIENT_DATA",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "pending_target",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "INSUFFICIENT_DATA",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "INSUFFICIENT_DATA",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    },
+    {
+      "scenario_id": "no_history",
+      "passed": true,
+      "expected": {
+        "reason_codes": [],
+        "status": "PARTIAL",
+        "route": "NO_ADDITIONAL_ROUTE"
+      },
+      "actual": {
+        "reason_codes": [],
+        "status": "PARTIAL",
+        "route": "NO_ADDITIONAL_ROUTE"
+      }
+    }
+  ],
+  "data_quality": {
+    "duplicate_input_cases": 0,
+    "expected_route_balance": {
+      "NO_ADDITIONAL_ROUTE": 11,
+      "RECOMMEND_SPECIALIST_REVIEW": 5
+    },
+    "expected_status_balance": {
+      "ASSESSED": 11,
+      "PARTIAL": 3,
+      "INSUFFICIENT_DATA": 2
+    },
+    "counterfactual_groups": {
+      "amount_boundary": 2,
+      "personal_baseline": 2,
+      "history_count": 2,
+      "order_reference": 3,
+      "date_ordering": 2
+    },
+    "deliberate_defects": [
+      "Missing order reference",
+      "String amount in history",
+      "Pending target with no posting date",
+      "Empty and insufficient history"
+    ],
+    "construction": "Hand-constructed numeric counterfactuals. No sampled customer prevalence or fraud labels.",
+    "label_leakage_control": "Expected labels and scenario IDs are excluded from assessor inputs. Customer wording is absent.",
+    "limitations": "Small engineered rule checks, not an independent estimate of fraud detection performance. No thresholds fitted to these cases."
+  }
+}

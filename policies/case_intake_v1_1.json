@@ -1,0 +1,37 @@
+{
+  "policy_id": "DEMO-CASE-INTAKE",
+  "version": "1.1",
+  "scope": "synthetic dispute case recording only",
+  "authority": "Fictional prototype case-intake policy",
+  "clauses": [
+    {
+      "clause_id": "CASE-01",
+      "text": "Record only a confirmed, permitted, supported posted-payment concern with validated routing evidence.",
+      "outcome": "SIMULATED_OPEN"
+    }
+  ],
+  "effective_from": "2026-10-20",
+  "effective_to": "2027-10-01",
+  "supported_issues": [
+    "unrecognised",
+    "cancellation",
+    "duplicate",
+    "wrong_amount",
+    "refund"
+  ],
+  "required_transaction_status": "Posted",
+  "required_route": "HUMAN_REVIEW",
+  "blocked_review_reasons": [
+    "EVIDENCE_VERIFICATION_UNAVAILABLE",
+    "MATERIAL_EVIDENCE_CONFLICT",
+    "POLICY_UNAVAILABLE",
+    "POLICY_CONFLICT",
+    "POLICY_STALE",
+    "POLICY_PRECONDITION_UNVERIFIED",
+    "REFUND_VERIFICATION_UNAVAILABLE"
+  ],
+  "outcome": "SIMULATED_OPEN",
+  "notice": "Fictional intake policy only. Recording a case does not establish eligibility, fraud, liability or a refund. Mandatory specialist review remains in force.",
+  "supersedes": "1.0",
+  "publication_status": "published"
+}

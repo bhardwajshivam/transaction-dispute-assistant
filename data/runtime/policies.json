@@ -1,0 +1,27 @@
+[
+  {
+    "policy_id": "DEMO-INTAKE",
+    "version": "1.1",
+    "fictional": true,
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "scope": "synthetic card intake only",
+    "rules": [
+      {
+        "rule_id": "P-01",
+        "condition": "Customer confirms recognition and resolution",
+        "outcome": "EXPLAIN"
+      },
+      {
+        "rule_id": "P-02",
+        "condition": "Customer reports payment without permission",
+        "outcome": "HUMAN_REVIEW"
+      },
+      {
+        "rule_id": "P-03",
+        "condition": "Unresolved billing, cancellation or refund concern",
+        "outcome": "HUMAN_REVIEW"
+      }
+    ]
+  }
+]

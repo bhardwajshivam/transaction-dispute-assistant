@@ -1,0 +1,202 @@
+[
+  {
+    "case_id": "recognised",
+    "family": "recognition",
+    "steps": [
+      "I have an unrecognised transaction",
+      "CARD-001",
+      "Please investigate payment TX-1001.",
+      "Confirm and search",
+      "TX-1001",
+      "Yes",
+      "Yes"
+    ],
+    "fixture": {},
+    "counterfactual_group": "irrelevant_wording",
+    "material_change": null,
+    "expected": {
+      "route": "EXPLAIN",
+      "reason": "CUSTOMER_RECOGNISED",
+      "selected": "TX-1001",
+      "review_required": false,
+      "policy_id": "DEMO-INTAKE",
+      "policy_version": "1.1"
+    }
+  },
+  {
+    "case_id": "cancelled_subscription",
+    "family": "cancellation",
+    "steps": [
+      "I am charged even after cancelling my subscription",
+      "CARD-001",
+      "Please investigate payment TX-1002.",
+      "Confirm and search",
+      "TX-1002",
+      "A subscription or recurring payment",
+      "13-10-2026",
+      "Email",
+      "Yes",
+      "CANCEL-EXAMPLE"
+    ],
+    "fixture": {},
+    "counterfactual_group": null,
+    "material_change": null,
+    "expected": {
+      "route": "HUMAN_REVIEW",
+      "reason": "CANCELLATION_REVIEW",
+      "review_required": false,
+      "policy_id": "DEMO-INTAKE"
+    }
+  },
+  {
+    "case_id": "ongoing_card_risk",
+    "family": "unauthorised",
+    "steps": [
+      "I have an unrecognised transaction",
+      "CARD-001",
+      "Please investigate payment TX-1001.",
+      "Confirm and search",
+      "TX-1001",
+      "No",
+      "No",
+      "No",
+      "Yes"
+    ],
+    "fixture": {},
+    "counterfactual_group": null,
+    "material_change": null,
+    "expected": {
+      "route": "HUMAN_REVIEW",
+      "review_required": true,
+      "review_codes": [
+        "ONGOING_CARD_RISK"
+      ],
+      "urgent_guidance": true
+    }
+  },
+  {
+    "case_id": "policy_question",
+    "family": "policy",
+    "steps": [
+      "I have a question about dispute policy",
+      "What evidence do I need after cancelling a subscription?"
+    ],
+    "fixture": {},
+    "counterfactual_group": null,
+    "material_change": null,
+    "expected": {
+      "route": "POLICY_INFORMATION",
+      "reason": "POLICY_ANSWER_GROUNDED",
+      "policy_id": "DEMO-CANCEL",
+      "policy_version": "2.0",
+      "clauses": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_required": false
+    }
+  },
+  {
+    "case_id": "search_amount_42",
+    "family": "matching",
+    "steps": [
+      "I have been charged the wrong amount",
+      "CARD-001",
+      "I was charged INR 42 instead of INR 40 on 15-10-2026.",
+      "Confirm and search"
+    ],
+    "fixture": {},
+    "counterfactual_group": "search_amount",
+    "material_change": "Only actual charged amount changes.",
+    "expected": {
+      "route": "CLARIFY",
+      "step": "transaction",
+      "candidates": [
+        "TX-1003",
+        "TX-1004"
+      ],
+      "selected": null,
+      "review_required": false
+    }
+  },
+  {
+    "case_id": "policy_missing",
+    "family": "policy_failure",
+    "steps": [
+      "I have an unrecognised transaction",
+      "CARD-001",
+      "Please investigate payment TX-1001.",
+      "Confirm and search",
+      "TX-1001"
+    ],
+    "fixture": {
+      "missing_policy": true
+    },
+    "counterfactual_group": null,
+    "material_change": null,
+    "expected": {
+      "route": "ABSTAIN",
+      "review_required": true,
+      "review_codes": [
+        "POLICY_UNAVAILABLE"
+      ]
+    }
+  },
+  {
+    "case_id": "model_timeout",
+    "family": "model_failure",
+    "steps": [
+      "I have an unrecognised transaction",
+      "CARD-001",
+      "Please investigate payment TX-1001.",
+      "Confirm and search",
+      "TX-1001",
+      "Yes",
+      "Yes"
+    ],
+    "fixture": {
+      "model_timeout": true
+    },
+    "counterfactual_group": null,
+    "material_change": null,
+    "expected": {
+      "route": "EXPLAIN",
+      "reason": "CUSTOMER_RECOGNISED",
+      "review_required": false,
+      "recovered": true,
+      "rejected_extraction": false
+    }
+  },
+  {
+    "case_id": "tool_unavailable_handoff",
+    "family": "tool_failure",
+    "steps": [
+      "I have an unrecognised transaction",
+      "CARD-001",
+      "Please investigate payment TX-1001.",
+      "Confirm and search",
+      "TX-1001",
+      "Yes, request human assistance"
+    ],
+    "fixture": {
+      "merchant_unavailable": true
+    },
+    "counterfactual_group": null,
+    "material_change": null,
+    "expected": {
+      "route": "ABSTAIN",
+      "review_required": true,
+      "handoff_count": 1,
+      "handoff_fields": [
+        "customer_statements_unverified",
+        "demo_bank_facts",
+        "evidence",
+        "policy_context",
+        "missing_information",
+        "actions_attempted"
+      ]
+    }
+  }
+]

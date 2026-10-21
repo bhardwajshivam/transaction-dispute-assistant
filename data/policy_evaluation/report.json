@@ -1,0 +1,991 @@
+{
+  "case_count": 14,
+  "passed": 14,
+  "unsupported_conclusions": 0,
+  "results": [
+    {
+      "case_id": "current-0",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "2.0",
+            "title": "Cancelled recurring payment evidence",
+            "source_uri": "policy://DEMO-CANCEL/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-20",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "C1",
+            "text": "Provide the original payment reference, merchant, date, charged amount and currency.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C1"
+          },
+          {
+            "clause_id": "C2",
+            "text": "Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C2"
+          },
+          {
+            "clause_id": "C3",
+            "text": "A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C3"
+          },
+          {
+            "clause_id": "C4",
+            "text": "This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C4"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-CANCEL",
+              "version": "2.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "as_of": "2026-10-20",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-CANCEL/2.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": "1.0",
+              "publication_status": "published",
+              "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+              "applicability": "CURRENT_AS_OF"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "C1",
+              "text": "Provide the original payment reference, merchant, date, charged amount and currency.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C1"
+            },
+            {
+              "clause_id": "C2",
+              "text": "Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C2"
+            },
+            {
+              "clause_id": "C3",
+              "text": "A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C3"
+            },
+            {
+              "clause_id": "C4",
+              "text": "This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C4"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-10-20: Cancelled recurring payment evidence (DEMO-CANCEL v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Provide the original payment reference, merchant, date, charged amount and currency. [Source: policy://DEMO-CANCEL/2.0#C1]\n\n• Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented. [Source: policy://DEMO-CANCEL/2.0#C2]\n\n• A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review. [Source: policy://DEMO-CANCEL/2.0#C3]\n\n• This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement. [Source: policy://DEMO-CANCEL/2.0#C4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    },
+    {
+      "case_id": "current-1",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-REFUND",
+            "version": "2.0",
+            "title": "Missing refund evidence",
+            "source_uri": "policy://DEMO-REFUND/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-REFUND-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-20",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-REFUND",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "R1",
+            "text": "Provide the original purchase reference, merchant, purchase date, amount and currency.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R1"
+          },
+          {
+            "clause_id": "R2",
+            "text": "Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R2"
+          },
+          {
+            "clause_id": "R3",
+            "text": "A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R3"
+          },
+          {
+            "clause_id": "R4",
+            "text": "No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R4"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-REFUND",
+              "version": "2.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "as_of": "2026-10-20",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-REFUND/2.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": "1.0",
+              "publication_status": "published",
+              "approval_id": "APPROVED-DEMO-REFUND-2.0",
+              "applicability": "CURRENT_AS_OF"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "R1",
+              "text": "Provide the original purchase reference, merchant, purchase date, amount and currency.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R1"
+            },
+            {
+              "clause_id": "R2",
+              "text": "Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R2"
+            },
+            {
+              "clause_id": "R3",
+              "text": "A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R3"
+            },
+            {
+              "clause_id": "R4",
+              "text": "No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R4"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-10-20: Missing refund evidence (DEMO-REFUND v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Provide the original purchase reference, merchant, purchase date, amount and currency. [Source: policy://DEMO-REFUND/2.0#R1]\n\n• Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference. [Source: policy://DEMO-REFUND/2.0#R2]\n\n• A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received. [Source: policy://DEMO-REFUND/2.0#R3]\n\n• No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed. [Source: policy://DEMO-REFUND/2.0#R4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    },
+    {
+      "case_id": "current-2",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-RECOGNITION",
+            "version": "2.0",
+            "title": "Merchant recognition and reported unauthorised activity",
+            "source_uri": "policy://DEMO-RECOGNITION/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-RECOGNITION-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-20",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-RECOGNITION",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "U1",
+            "text": "Merchant trading names and statement descriptors may differ. Resolve the merchant using bank records before asking whether the customer recognises the payment.",
+            "source_uri": "policy://DEMO-RECOGNITION/2.0#U1"
+          },
+          {
+            "clause_id": "U2",
+            "text": "A merchant match, familiar account history or a low anomaly score does not establish customer authorisation.",
+            "source_uri": "policy://DEMO-RECOGNITION/2.0#U2"
+          },
+          {
+            "clause_id": "U3",
+            "text": "A report of an unauthorised payment or ongoing card risk requires specialist review. Advise the customer to contact the bank through its official app or the number on the card; this prototype cannot secure a card.",
+            "source_uri": "policy://DEMO-RECOGNITION/2.0#U3"
+          },
+          {
+            "clause_id": "U4",
+            "text": "If specialist review is already required, skip the merchant-recognition question. Do not label a payment as proven fraud from customer statements or anomaly signals alone.",
+            "source_uri": "policy://DEMO-RECOGNITION/2.0#U4"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-RECOGNITION",
+              "version": "2.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "as_of": "2026-10-20",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-RECOGNITION/2.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": "1.0",
+              "publication_status": "published",
+              "approval_id": "APPROVED-DEMO-RECOGNITION-2.0",
+              "applicability": "CURRENT_AS_OF"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "U1",
+              "text": "Merchant trading names and statement descriptors may differ. Resolve the merchant using bank records before asking whether the customer recognises the payment.",
+              "source_uri": "policy://DEMO-RECOGNITION/2.0#U1"
+            },
+            {
+              "clause_id": "U2",
+              "text": "A merchant match, familiar account history or a low anomaly score does not establish customer authorisation.",
+              "source_uri": "policy://DEMO-RECOGNITION/2.0#U2"
+            },
+            {
+              "clause_id": "U3",
+              "text": "A report of an unauthorised payment or ongoing card risk requires specialist review. Advise the customer to contact the bank through its official app or the number on the card; this prototype cannot secure a card.",
+              "source_uri": "policy://DEMO-RECOGNITION/2.0#U3"
+            },
+            {
+              "clause_id": "U4",
+              "text": "If specialist review is already required, skip the merchant-recognition question. Do not label a payment as proven fraud from customer statements or anomaly signals alone.",
+              "source_uri": "policy://DEMO-RECOGNITION/2.0#U4"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-10-20: Merchant recognition and reported unauthorised activity (DEMO-RECOGNITION v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Merchant trading names and statement descriptors may differ. Resolve the merchant using bank records before asking whether the customer recognises the payment. [Source: policy://DEMO-RECOGNITION/2.0#U1]\n\n• A merchant match, familiar account history or a low anomaly score does not establish customer authorisation. [Source: policy://DEMO-RECOGNITION/2.0#U2]\n\n• A report of an unauthorised payment or ongoing card risk requires specialist review. Advise the customer to contact the bank through its official app or the number on the card; this prototype cannot secure a card. [Source: policy://DEMO-RECOGNITION/2.0#U3]\n\n• If specialist review is already required, skip the merchant-recognition question. Do not label a payment as proven fraud from customer statements or anomaly signals alone. [Source: policy://DEMO-RECOGNITION/2.0#U4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    },
+    {
+      "case_id": "current-3",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-BILLING",
+            "version": "2.0",
+            "title": "Multiple charges and wrong-amount evidence",
+            "source_uri": "policy://DEMO-BILLING/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-BILLING-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-20",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-BILLING",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "B1",
+            "text": "For possible multiple charging, collect both payment references, dates, amounts, currencies, order references and whether the customer made one purchase or separate purchases.",
+            "source_uri": "policy://DEMO-BILLING/2.0#B1"
+          },
+          {
+            "clause_id": "B2",
+            "text": "For a wrong-amount concern, distinguish the amount actually charged from the amount agreed or expected. Ask for a receipt and any tip, deposit or later adjustment.",
+            "source_uri": "policy://DEMO-BILLING/2.0#B2"
+          },
+          {
+            "clause_id": "B3",
+            "text": "Matching amounts alone do not establish duplicate processing. Different order references are context, not proof that every charge is valid.",
+            "source_uri": "policy://DEMO-BILLING/2.0#B3"
+          },
+          {
+            "clause_id": "B4",
+            "text": "Unresolved discrepancies require human review. This corpus does not authorise an automatic refund or decide legal eligibility.",
+            "source_uri": "policy://DEMO-BILLING/2.0#B4"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-BILLING",
+              "version": "2.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "as_of": "2026-10-20",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-BILLING/2.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": "1.0",
+              "publication_status": "published",
+              "approval_id": "APPROVED-DEMO-BILLING-2.0",
+              "applicability": "CURRENT_AS_OF"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "B1",
+              "text": "For possible multiple charging, collect both payment references, dates, amounts, currencies, order references and whether the customer made one purchase or separate purchases.",
+              "source_uri": "policy://DEMO-BILLING/2.0#B1"
+            },
+            {
+              "clause_id": "B2",
+              "text": "For a wrong-amount concern, distinguish the amount actually charged from the amount agreed or expected. Ask for a receipt and any tip, deposit or later adjustment.",
+              "source_uri": "policy://DEMO-BILLING/2.0#B2"
+            },
+            {
+              "clause_id": "B3",
+              "text": "Matching amounts alone do not establish duplicate processing. Different order references are context, not proof that every charge is valid.",
+              "source_uri": "policy://DEMO-BILLING/2.0#B3"
+            },
+            {
+              "clause_id": "B4",
+              "text": "Unresolved discrepancies require human review. This corpus does not authorise an automatic refund or decide legal eligibility.",
+              "source_uri": "policy://DEMO-BILLING/2.0#B4"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-10-20: Multiple charges and wrong-amount evidence (DEMO-BILLING v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• For possible multiple charging, collect both payment references, dates, amounts, currencies, order references and whether the customer made one purchase or separate purchases. [Source: policy://DEMO-BILLING/2.0#B1]\n\n• For a wrong-amount concern, distinguish the amount actually charged from the amount agreed or expected. Ask for a receipt and any tip, deposit or later adjustment. [Source: policy://DEMO-BILLING/2.0#B2]\n\n• Matching amounts alone do not establish duplicate processing. Different order references are context, not proof that every charge is valid. [Source: policy://DEMO-BILLING/2.0#B3]\n\n• Unresolved discrepancies require human review. This corpus does not authorise an automatic refund or decide legal eligibility. [Source: policy://DEMO-BILLING/2.0#B4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    },
+    {
+      "case_id": "ambiguous",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "CLARIFY",
+      "actual": {
+        "status": "CLARIFY",
+        "reason_code": "POLICY_QUESTION_AMBIGUOUS",
+        "policy_conclusion": false,
+        "sources": [],
+        "text": "Please choose one of the supported policy questions so I do not guess which policy applies."
+      }
+    },
+    {
+      "case_id": "eligibility",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "OUT_OF_SCOPE",
+      "actual": {
+        "status": "OUT_OF_SCOPE",
+        "reason_code": "POLICY_TOPIC_OUT_OF_SCOPE",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [],
+        "excluded_versions": [],
+        "clauses": [],
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "OUT_OF_SCOPE",
+          "reason_code": "POLICY_TOPIC_OUT_OF_SCOPE",
+          "allowed": false,
+          "sources": [],
+          "clauses": []
+        },
+        "policy_conclusion": false,
+        "text": "I cannot give a policy conclusion: the requested material is outside scope, missing, conflicting or cannot be verified. You can request human assistance. No eligibility or refund decision has been made."
+      }
+    },
+    {
+      "case_id": "deadline",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "OUT_OF_SCOPE",
+      "actual": {
+        "status": "OUT_OF_SCOPE",
+        "reason_code": "POLICY_TOPIC_OUT_OF_SCOPE",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [],
+        "excluded_versions": [],
+        "clauses": [],
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "OUT_OF_SCOPE",
+          "reason_code": "POLICY_TOPIC_OUT_OF_SCOPE",
+          "allowed": false,
+          "sources": [],
+          "clauses": []
+        },
+        "policy_conclusion": false,
+        "text": "I cannot give a policy conclusion: the requested material is outside scope, missing, conflicting or cannot be verified. You can request human assistance. No eligibility or refund decision has been made."
+      }
+    },
+    {
+      "case_id": "injection",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-REFUND",
+            "version": "2.0",
+            "title": "Missing refund evidence",
+            "source_uri": "policy://DEMO-REFUND/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-REFUND-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-20",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-REFUND",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "R1",
+            "text": "Provide the original purchase reference, merchant, purchase date, amount and currency.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R1"
+          },
+          {
+            "clause_id": "R2",
+            "text": "Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R2"
+          },
+          {
+            "clause_id": "R3",
+            "text": "A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R3"
+          },
+          {
+            "clause_id": "R4",
+            "text": "No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed.",
+            "source_uri": "policy://DEMO-REFUND/2.0#R4"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-REFUND",
+              "version": "2.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "as_of": "2026-10-20",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-REFUND/2.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": "1.0",
+              "publication_status": "published",
+              "approval_id": "APPROVED-DEMO-REFUND-2.0",
+              "applicability": "CURRENT_AS_OF"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "R1",
+              "text": "Provide the original purchase reference, merchant, purchase date, amount and currency.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R1"
+            },
+            {
+              "clause_id": "R2",
+              "text": "Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R2"
+            },
+            {
+              "clause_id": "R3",
+              "text": "A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R3"
+            },
+            {
+              "clause_id": "R4",
+              "text": "No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed.",
+              "source_uri": "policy://DEMO-REFUND/2.0#R4"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-10-20: Missing refund evidence (DEMO-REFUND v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Provide the original purchase reference, merchant, purchase date, amount and currency. [Source: policy://DEMO-REFUND/2.0#R1]\n\n• Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference. [Source: policy://DEMO-REFUND/2.0#R2]\n\n• A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received. [Source: policy://DEMO-REFUND/2.0#R3]\n\n• No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed. [Source: policy://DEMO-REFUND/2.0#R4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    },
+    {
+      "case_id": "missing",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "UNAVAILABLE",
+      "actual": {
+        "status": "UNAVAILABLE",
+        "reason_code": "POLICY_CORPUS_UNAVAILABLE_OR_MALFORMED",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [],
+        "excluded_versions": [],
+        "clauses": [],
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "UNAVAILABLE",
+          "reason_code": "POLICY_CORPUS_UNAVAILABLE_OR_MALFORMED",
+          "allowed": false,
+          "sources": [],
+          "clauses": []
+        },
+        "policy_conclusion": false,
+        "text": "I cannot give a policy conclusion: the requested material is outside scope, missing, conflicting or cannot be verified. You can request human assistance. No eligibility or refund decision has been made."
+      }
+    },
+    {
+      "case_id": "tampered",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "UNAVAILABLE",
+      "actual": {
+        "status": "UNAVAILABLE",
+        "reason_code": "POLICY_INTEGRITY_FAILURE",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [],
+        "excluded_versions": [],
+        "clauses": [],
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "UNAVAILABLE",
+          "reason_code": "POLICY_INTEGRITY_FAILURE",
+          "allowed": false,
+          "sources": [],
+          "clauses": []
+        },
+        "policy_conclusion": false,
+        "text": "I cannot give a policy conclusion: the requested material is outside scope, missing, conflicting or cannot be verified. You can request human assistance. No eligibility or refund decision has been made."
+      }
+    },
+    {
+      "case_id": "overlap",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "CONFLICT",
+      "actual": {
+        "status": "CONFLICT",
+        "reason_code": "POLICY_VERSION_CONFLICT",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "1.0",
+            "title": "Cancelled recurring payment evidence",
+            "source_uri": "policy://DEMO-CANCEL/1.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-CANCEL-1.0",
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "publication_status": "superseded",
+            "supersedes": null,
+            "as_of": "2026-10-20",
+            "applicability": "HISTORICAL_APPLICABLE"
+          },
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "2.0",
+            "title": "Cancelled recurring payment evidence",
+            "source_uri": "policy://DEMO-CANCEL/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-20",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [],
+        "clauses": [],
+        "corpus_sha256": "cba37e3ff86c2bdb20299d82b4b5c40dfba528d3c01a7f7261d7985c8c91d052",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "CONFLICT",
+          "reason_code": "POLICY_VERSION_CONFLICT",
+          "allowed": false,
+          "sources": [],
+          "clauses": []
+        },
+        "policy_conclusion": false,
+        "text": "I cannot give a policy conclusion: the requested material is outside scope, missing, conflicting or cannot be verified. You can request human assistance. No eligibility or refund decision has been made."
+      }
+    },
+    {
+      "case_id": "expired",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "NOT_FOUND",
+      "actual": {
+        "status": "NOT_FOUND",
+        "reason_code": "POLICY_NOT_EFFECTIVE",
+        "as_of": "2026-10-20",
+        "scope": "synthetic card dispute information only",
+        "sources": [],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          },
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "2.0",
+            "publication_status": "published",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-10-01",
+            "effective_to": "2026-10-10"
+          }
+        ],
+        "clauses": [],
+        "corpus_sha256": "d94d329c4d1844394df78c1acf13137a8aa941af1facca22cbda335f33ba9d7c",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-20",
+          "status": "NOT_FOUND",
+          "reason_code": "POLICY_NOT_EFFECTIVE",
+          "allowed": false,
+          "sources": [],
+          "clauses": []
+        },
+        "policy_conclusion": false,
+        "text": "I cannot give a policy conclusion: the requested material is outside scope, missing, conflicting or cannot be verified. You can request human assistance. No eligibility or refund decision has been made."
+      }
+    },
+    {
+      "case_id": "before-boundary",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-09-30",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "1.0",
+            "title": "Cancelled recurring payment evidence",
+            "source_uri": "policy://DEMO-CANCEL/1.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-CANCEL-1.0",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01",
+            "publication_status": "superseded",
+            "supersedes": null,
+            "as_of": "2026-09-30",
+            "applicability": "HISTORICAL_APPLICABLE"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "2.0",
+            "publication_status": "published",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-10-01",
+            "effective_to": null
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "C1",
+            "text": "Provide the cancellation request date, method and any available confirmation.",
+            "source_uri": "policy://DEMO-CANCEL/1.0#C1"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-09-30",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-CANCEL",
+              "version": "1.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-01-01",
+              "effective_to": "2026-10-01",
+              "as_of": "2026-09-30",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-CANCEL/1.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": null,
+              "publication_status": "superseded",
+              "approval_id": "APPROVED-DEMO-CANCEL-1.0",
+              "applicability": "HISTORICAL_APPLICABLE"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "C1",
+              "text": "Provide the cancellation request date, method and any available confirmation.",
+              "source_uri": "policy://DEMO-CANCEL/1.0#C1"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-09-30: Cancelled recurring payment evidence (DEMO-CANCEL v1.0). Effective from 2026-01-01; effective to 2026-10-01.\n\n• Provide the cancellation request date, method and any available confirmation. [Source: policy://DEMO-CANCEL/1.0#C1]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    },
+    {
+      "case_id": "on-boundary",
+      "passed": true,
+      "unsupported_conclusion": false,
+      "expected_status": "SUCCESS",
+      "actual": {
+        "status": "SUCCESS",
+        "reason_code": "POLICY_RETRIEVED",
+        "as_of": "2026-10-01",
+        "scope": "synthetic card dispute information only",
+        "sources": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "2.0",
+            "title": "Cancelled recurring payment evidence",
+            "source_uri": "policy://DEMO-CANCEL/2.0",
+            "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+            "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+            "effective_from": "2026-10-01",
+            "effective_to": null,
+            "publication_status": "published",
+            "supersedes": "1.0",
+            "as_of": "2026-10-01",
+            "applicability": "CURRENT_AS_OF"
+          }
+        ],
+        "excluded_versions": [
+          {
+            "policy_id": "DEMO-CANCEL",
+            "version": "1.0",
+            "publication_status": "superseded",
+            "reason": "NOT_EFFECTIVE_AS_OF",
+            "effective_from": "2026-01-01",
+            "effective_to": "2026-10-01"
+          }
+        ],
+        "clauses": [
+          {
+            "clause_id": "C1",
+            "text": "Provide the original payment reference, merchant, date, charged amount and currency.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C1"
+          },
+          {
+            "clause_id": "C2",
+            "text": "Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C2"
+          },
+          {
+            "clause_id": "C3",
+            "text": "A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C3"
+          },
+          {
+            "clause_id": "C4",
+            "text": "This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement.",
+            "source_uri": "policy://DEMO-CANCEL/2.0#C4"
+          }
+        ],
+        "corpus_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+        "policy_context": {
+          "contract_version": "policy-evidence-v1",
+          "purpose": "policy_information",
+          "scope": "synthetic card dispute information only",
+          "as_of": "2026-10-01",
+          "status": "SUCCESS",
+          "reason_code": "POLICY_VALIDATED",
+          "allowed": true,
+          "sources": [
+            {
+              "policy_id": "DEMO-CANCEL",
+              "version": "2.0",
+              "scope": "synthetic card dispute information only",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "as_of": "2026-10-01",
+              "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+              "source_uri": "policy://DEMO-CANCEL/2.0",
+              "content_sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+              "hash_scope": "corpus",
+              "supersedes": "1.0",
+              "publication_status": "published",
+              "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+              "applicability": "CURRENT_AS_OF"
+            }
+          ],
+          "clauses": [
+            {
+              "clause_id": "C1",
+              "text": "Provide the original payment reference, merchant, date, charged amount and currency.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C1"
+            },
+            {
+              "clause_id": "C2",
+              "text": "Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C2"
+            },
+            {
+              "clause_id": "C3",
+              "text": "A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C3"
+            },
+            {
+              "clause_id": "C4",
+              "text": "This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement.",
+              "source_uri": "policy://DEMO-CANCEL/2.0#C4"
+            }
+          ]
+        },
+        "policy_conclusion": true,
+        "text": "Fictional prototype policy, applicable as of 2026-10-01: Cancelled recurring payment evidence (DEMO-CANCEL v2.0). Effective from 2026-10-01; effective to no scheduled end. Supersedes v1.0.\n\n• Provide the original payment reference, merchant, date, charged amount and currency. [Source: policy://DEMO-CANCEL/2.0#C1]\n\n• Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented. [Source: policy://DEMO-CANCEL/2.0#C2]\n\n• A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review. [Source: policy://DEMO-CANCEL/2.0#C3]\n\n• This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement. [Source: policy://DEMO-CANCEL/2.0#C4]\n\nThis is general evidence-collection guidance, not a decision about your account, eligibility or refund."
+      }
+    }
+  ],
+  "limitations": "Small constructed policy conformance suite, not complete workflow evaluation. Approved fixture conflicts simulate governance mistakes; tampering retains the old digest."
+}

@@ -1,0 +1,2241 @@
+[
+  {
+    "scenario_id": "amount_exact_threshold",
+    "pair_id": "amount_boundary",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "ASSESSED",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "amount_one_minor_over",
+    "pair_id": "amount_boundary",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6001,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [
+        "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+      ],
+      "status": "ASSESSED",
+      "route": "RECOMMEND_SPECIALIST_REVIEW"
+    }
+  },
+  {
+    "scenario_id": "high_against_low_history",
+    "pair_id": "personal_baseline",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 1000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [
+        "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+      ],
+      "status": "ASSESSED",
+      "route": "RECOMMEND_SPECIALIST_REVIEW"
+    }
+  },
+  {
+    "scenario_id": "ordinary_against_high_history",
+    "pair_id": "personal_baseline",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "ASSESSED",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "too_few_prior_payments",
+    "pair_id": "history_count",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 9001,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "PARTIAL",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "enough_prior_payments",
+    "pair_id": "history_count",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 9001,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 3000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [
+        "AMOUNT_ABOVE_HISTORICAL_BASELINE"
+      ],
+      "status": "ASSESSED",
+      "route": "RECOMMEND_SPECIALIST_REVIEW"
+    }
+  },
+  {
+    "scenario_id": "same_order",
+    "pair_id": "order_reference",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 5000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      },
+      {
+        "transaction_id": "EARLIER",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-3",
+        "amount_minor": 5000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-19",
+        "posted_date": "2026-10-19",
+        "status": "Posted",
+        "order_reference": "ORDER-A"
+      }
+    ],
+    "expected": {
+      "reason_codes": [
+        "REPEATED_CHARGE_SAME_ORDER"
+      ],
+      "status": "ASSESSED",
+      "route": "RECOMMEND_SPECIALIST_REVIEW"
+    }
+  },
+  {
+    "scenario_id": "distinct_order",
+    "pair_id": "order_reference",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 5000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      },
+      {
+        "transaction_id": "EARLIER",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-3",
+        "amount_minor": 5000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-19",
+        "posted_date": "2026-10-19",
+        "status": "Posted",
+        "order_reference": "ORDER-B"
+      }
+    ],
+    "expected": {
+      "reason_codes": [
+        "MATCHING_CHARGES_DISTINCT_ORDERS"
+      ],
+      "status": "ASSESSED",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "unknown_order",
+    "pair_id": "order_reference",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 5000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      },
+      {
+        "transaction_id": "EARLIER",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-3",
+        "amount_minor": 5000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-19",
+        "posted_date": "2026-10-19",
+        "status": "Posted",
+        "order_reference": null
+      }
+    ],
+    "expected": {
+      "reason_codes": [
+        "REPEATED_CHARGE_ORDER_UNKNOWN"
+      ],
+      "status": "ASSESSED",
+      "route": "RECOMMEND_SPECIALIST_REVIEW"
+    }
+  },
+  {
+    "scenario_id": "same_day_ambiguous",
+    "pair_id": "date_ordering",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 5000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      },
+      {
+        "transaction_id": "SAME-DAY",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-3",
+        "amount_minor": 5000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-20",
+        "posted_date": "2026-10-20",
+        "status": "Posted",
+        "order_reference": "ORDER-A"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "ASSESSED",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "future_payment",
+    "pair_id": "date_ordering",
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 5000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      },
+      {
+        "transaction_id": "FUTURE",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-3",
+        "amount_minor": 5000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-21",
+        "posted_date": "2026-10-21",
+        "status": "Posted",
+        "order_reference": "ORDER-A"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "ASSESSED",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "delayed_presentment",
+    "pair_id": null,
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 5000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      },
+      {
+        "transaction_id": "DELAYED",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-3",
+        "amount_minor": 5000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-19",
+        "posted_date": "2026-10-21",
+        "status": "Posted",
+        "order_reference": "ORDER-A"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "ASSESSED",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "other_currency",
+    "pair_id": null,
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "INR",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "PARTIAL",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "malformed_history",
+    "pair_id": null,
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": "2000",
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "INSUFFICIENT_DATA",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "pending_target",
+    "pair_id": null,
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": null,
+      "status": "Pending",
+      "order_reference": "ORDER-A"
+    },
+    "history": [
+      {
+        "transaction_id": "H-0",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-10",
+        "posted_date": "2026-10-10",
+        "status": "Posted",
+        "order_reference": "ORDER-H-0"
+      },
+      {
+        "transaction_id": "H-1",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-09",
+        "posted_date": "2026-10-09",
+        "status": "Posted",
+        "order_reference": "ORDER-H-1"
+      },
+      {
+        "transaction_id": "H-2",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-08",
+        "posted_date": "2026-10-08",
+        "status": "Posted",
+        "order_reference": "ORDER-H-2"
+      },
+      {
+        "transaction_id": "H-3",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-07",
+        "posted_date": "2026-10-07",
+        "status": "Posted",
+        "order_reference": "ORDER-H-3"
+      },
+      {
+        "transaction_id": "H-4",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-06",
+        "posted_date": "2026-10-06",
+        "status": "Posted",
+        "order_reference": "ORDER-H-4"
+      },
+      {
+        "transaction_id": "H-5",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-05",
+        "posted_date": "2026-10-05",
+        "status": "Posted",
+        "order_reference": "ORDER-H-5"
+      },
+      {
+        "transaction_id": "H-6",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-04",
+        "posted_date": "2026-10-04",
+        "status": "Posted",
+        "order_reference": "ORDER-H-6"
+      },
+      {
+        "transaction_id": "H-7",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-03",
+        "posted_date": "2026-10-03",
+        "status": "Posted",
+        "order_reference": "ORDER-H-7"
+      },
+      {
+        "transaction_id": "H-8",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-02",
+        "posted_date": "2026-10-02",
+        "status": "Posted",
+        "order_reference": "ORDER-H-8"
+      },
+      {
+        "transaction_id": "H-9",
+        "account_id": "A-001",
+        "card_id": "CARD-001",
+        "merchant_id": "M-1",
+        "amount_minor": 2000,
+        "currency": "GBP",
+        "purchase_date": "2026-10-01",
+        "posted_date": "2026-10-01",
+        "status": "Posted",
+        "order_reference": "ORDER-H-9"
+      }
+    ],
+    "expected": {
+      "reason_codes": [],
+      "status": "INSUFFICIENT_DATA",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  },
+  {
+    "scenario_id": "no_history",
+    "pair_id": null,
+    "transaction": {
+      "transaction_id": "TARGET",
+      "account_id": "A-001",
+      "card_id": "CARD-001",
+      "merchant_id": "M-3",
+      "amount_minor": 6000,
+      "currency": "GBP",
+      "purchase_date": "2026-10-20",
+      "posted_date": "2026-10-20",
+      "status": "Posted",
+      "order_reference": "ORDER-A"
+    },
+    "history": [],
+    "expected": {
+      "reason_codes": [],
+      "status": "PARTIAL",
+      "route": "NO_ADDITIONAL_ROUTE"
+    }
+  }
+]

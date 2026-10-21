@@ -1,0 +1,213 @@
+{
+  "corpus_version": "1.0",
+  "policies": [
+    {
+      "policy_id": "DEMO-CANCEL",
+      "version": "1.0",
+      "title": "Cancelled recurring payment evidence",
+      "topic": "cancellation_evidence",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-10-01",
+      "publication_status": "superseded",
+      "supersedes": null,
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-CANCEL-1.0",
+      "source_uri": "policy://DEMO-CANCEL/1.0",
+      "clauses": [
+        {
+          "clause_id": "C1",
+          "text": "Provide the cancellation request date, method and any available confirmation."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-CANCEL",
+      "version": "2.0",
+      "title": "Cancelled recurring payment evidence",
+      "topic": "cancellation_evidence",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-10-01",
+      "effective_to": null,
+      "publication_status": "published",
+      "supersedes": "1.0",
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-CANCEL-2.0",
+      "source_uri": "policy://DEMO-CANCEL/2.0",
+      "clauses": [
+        {
+          "clause_id": "C1",
+          "text": "Provide the original payment reference, merchant, date, charged amount and currency."
+        },
+        {
+          "clause_id": "C2",
+          "text": "Provide when and how cancellation was requested, when it became effective, and any confirmation or reference. Missing confirmation should be recorded as missing; it must not be invented."
+        },
+        {
+          "clause_id": "C3",
+          "text": "A cancellation request does not by itself establish that cancellation was effective before the charge. Conflicting dates or records require human review."
+        },
+        {
+          "clause_id": "C4",
+          "text": "This policy describes evidence collection only. It does not establish dispute eligibility, a chargeback deadline, liability or a refund entitlement."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-REFUND",
+      "version": "1.0",
+      "title": "Missing refund evidence",
+      "topic": "refund_evidence",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-10-01",
+      "publication_status": "superseded",
+      "supersedes": null,
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-REFUND-1.0",
+      "source_uri": "policy://DEMO-REFUND/1.0",
+      "clauses": [
+        {
+          "clause_id": "R1",
+          "text": "Collect the original purchase details and available merchant refund confirmation."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-REFUND",
+      "version": "2.0",
+      "title": "Missing refund evidence",
+      "topic": "refund_evidence",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-10-01",
+      "effective_to": null,
+      "publication_status": "published",
+      "supersedes": "1.0",
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-REFUND-2.0",
+      "source_uri": "policy://DEMO-REFUND/2.0",
+      "clauses": [
+        {
+          "clause_id": "R1",
+          "text": "Provide the original purchase reference, merchant, purchase date, amount and currency."
+        },
+        {
+          "clause_id": "R2",
+          "text": "Provide the promised or processed refund date, expected amount and currency, destination payment method and merchant confirmation or refund reference."
+        },
+        {
+          "clause_id": "R3",
+          "text": "A merchant refund record is not proof of a posted account credit. Compare related credits, amounts and destination before describing a refund as received."
+        },
+        {
+          "clause_id": "R4",
+          "text": "No linked record is not proof that a refund was never issued. This corpus specifies no processing deadline; do not declare a refund overdue or guaranteed."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-RECOGNITION",
+      "version": "1.0",
+      "title": "Merchant recognition and reported unauthorised activity",
+      "topic": "merchant_recognition",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-10-01",
+      "publication_status": "superseded",
+      "supersedes": null,
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-RECOGNITION-1.0",
+      "source_uri": "policy://DEMO-RECOGNITION/1.0",
+      "clauses": [
+        {
+          "clause_id": "U1",
+          "text": "Merchant descriptors can differ from trading names; recognition alone does not establish authorisation."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-RECOGNITION",
+      "version": "2.0",
+      "title": "Merchant recognition and reported unauthorised activity",
+      "topic": "merchant_recognition",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-10-01",
+      "effective_to": null,
+      "publication_status": "published",
+      "supersedes": "1.0",
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-RECOGNITION-2.0",
+      "source_uri": "policy://DEMO-RECOGNITION/2.0",
+      "clauses": [
+        {
+          "clause_id": "U1",
+          "text": "Merchant trading names and statement descriptors may differ. Resolve the merchant using bank records before asking whether the customer recognises the payment."
+        },
+        {
+          "clause_id": "U2",
+          "text": "A merchant match, familiar account history or a low anomaly score does not establish customer authorisation."
+        },
+        {
+          "clause_id": "U3",
+          "text": "A report of an unauthorised payment or ongoing card risk requires specialist review. Advise the customer to contact the bank through its official app or the number on the card; this prototype cannot secure a card."
+        },
+        {
+          "clause_id": "U4",
+          "text": "If specialist review is already required, skip the merchant-recognition question. Do not label a payment as proven fraud from customer statements or anomaly signals alone."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-BILLING",
+      "version": "1.0",
+      "title": "Multiple charges and wrong-amount evidence",
+      "topic": "billing_evidence",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-10-01",
+      "publication_status": "superseded",
+      "supersedes": null,
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-BILLING-1.0",
+      "source_uri": "policy://DEMO-BILLING/1.0",
+      "clauses": [
+        {
+          "clause_id": "B1",
+          "text": "Collect the payment details and any receipt or order reference."
+        }
+      ]
+    },
+    {
+      "policy_id": "DEMO-BILLING",
+      "version": "2.0",
+      "title": "Multiple charges and wrong-amount evidence",
+      "topic": "billing_evidence",
+      "scope": "synthetic card dispute information only",
+      "effective_from": "2026-10-01",
+      "effective_to": null,
+      "publication_status": "published",
+      "supersedes": "1.0",
+      "authority": "Prototype policy owner: explicitly fictional, not a bank or legal authority",
+      "approval_id": "APPROVED-DEMO-BILLING-2.0",
+      "source_uri": "policy://DEMO-BILLING/2.0",
+      "clauses": [
+        {
+          "clause_id": "B1",
+          "text": "For possible multiple charging, collect both payment references, dates, amounts, currencies, order references and whether the customer made one purchase or separate purchases."
+        },
+        {
+          "clause_id": "B2",
+          "text": "For a wrong-amount concern, distinguish the amount actually charged from the amount agreed or expected. Ask for a receipt and any tip, deposit or later adjustment."
+        },
+        {
+          "clause_id": "B3",
+          "text": "Matching amounts alone do not establish duplicate processing. Different order references are context, not proof that every charge is valid."
+        },
+        {
+          "clause_id": "B4",
+          "text": "Unresolved discrepancies require human review. This corpus does not authorise an automatic refund or decide legal eligibility."
+        }
+      ]
+    }
+  ]
+}

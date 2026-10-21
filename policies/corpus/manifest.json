@@ -1,0 +1,6 @@
+{
+  "corpus_version": "1.0",
+  "file": "dispute_information.json",
+  "sha256": "dfcab6c05a4906b0f2fd81019cbd478566103c1a9d31c1b1b4144a3d86ae8b4a",
+  "approval_note": "Reviewed fictional fixture corpus. Update this manifest only with an intentional policy change and regression review."
+}

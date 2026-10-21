@@ -1,0 +1,209 @@
+{
+  "case_count": 47,
+  "passed": 44,
+  "failed": 3,
+  "critical_case_count": 2,
+  "error_counts": {
+    "critical_false_negative": 2,
+    "wrong_route": 1,
+    "wrong_reason_code": 1,
+    "component_failure": 1
+  },
+  "critical_false_negatives": 2,
+  "unsupported_autonomous_actions": 0,
+  "false_success_claims": 0,
+  "weighted_error_cost": 1070,
+  "cost_version": "DEMO-WORKFLOW-COSTS-1.0",
+  "route_metrics": {
+    "ABSTAIN": {
+      "support": 9,
+      "predicted": 9,
+      "correct": 9,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "CLARIFY": {
+      "support": 8,
+      "predicted": 8,
+      "correct": 8,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "EXPLAIN": {
+      "support": 8,
+      "predicted": 8,
+      "correct": 8,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "GATHER_EVIDENCE": {
+      "support": 2,
+      "predicted": 3,
+      "correct": 2,
+      "precision": 0.6666666666666666,
+      "recall": 1.0
+    },
+    "HUMAN_REVIEW": {
+      "support": 19,
+      "predicted": 18,
+      "correct": 18,
+      "precision": 1.0,
+      "recall": 0.9473684210526315
+    },
+    "POLICY_INFORMATION": {
+      "support": 1,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "route_confusion": {
+    "EXPLAIN": {
+      "EXPLAIN": 8
+    },
+    "HUMAN_REVIEW": {
+      "HUMAN_REVIEW": 18,
+      "GATHER_EVIDENCE": 1
+    },
+    "GATHER_EVIDENCE": {
+      "GATHER_EVIDENCE": 2
+    },
+    "CLARIFY": {
+      "CLARIFY": 8
+    },
+    "POLICY_INFORMATION": {
+      "POLICY_INFORMATION": 1
+    },
+    "ABSTAIN": {
+      "ABSTAIN": 9
+    }
+  },
+  "component_results": {
+    "expected_errors": {
+      "passed": 47
+    },
+    "retrieval_relevance": {
+      "passed": 3
+    },
+    "policy_version": {
+      "passed": 2
+    },
+    "step": {
+      "passed": 8
+    },
+    "credit_found": {
+      "passed": 2
+    },
+    "candidates": {
+      "passed": 4
+    },
+    "pending_field": {
+      "passed": 1
+    },
+    "search_confirmed": {
+      "passed": 3
+    },
+    "clause_attribution": {
+      "passed": 1
+    },
+    "failure_recovery": {
+      "passed": 4
+    },
+    "unsupported_extraction_rejected": {
+      "passed": 1
+    },
+    "handoff_count": {
+      "passed": 1
+    },
+    "handoff_package": {
+      "failed": 1
+    },
+    "case_count": {
+      "passed": 6
+    },
+    "action_count": {
+      "passed": 6
+    },
+    "case_status": {
+      "passed": 8
+    },
+    "saw_unknown": {
+      "passed": 2
+    }
+  },
+  "counterfactual_groups": {
+    "irrelevant_wording": [
+      {
+        "case_id": "recognised",
+        "material_change": null,
+        "expected_route": "EXPLAIN",
+        "actual_route": "EXPLAIN",
+        "passed": true
+      },
+      {
+        "case_id": "recognised_polite",
+        "material_change": "Only irrelevant polite wording changes.",
+        "expected_route": "EXPLAIN",
+        "actual_route": "EXPLAIN",
+        "passed": true
+      }
+    ],
+    "permission": [
+      {
+        "case_id": "reported_unauthorised",
+        "material_change": "Customer reports no permission.",
+        "expected_route": "HUMAN_REVIEW",
+        "actual_route": "HUMAN_REVIEW",
+        "passed": true
+      },
+      {
+        "case_id": "authorisation_uncertain",
+        "material_change": "Customer is uncertain instead of reporting lack of permission; safe human review still required.",
+        "expected_route": "HUMAN_REVIEW",
+        "actual_route": "HUMAN_REVIEW",
+        "passed": false
+      }
+    ],
+    "cancellation_date": [
+      {
+        "case_id": "cancellation_date_matches",
+        "material_change": "Customer date agrees with merchant request date.",
+        "expected_route": "GATHER_EVIDENCE",
+        "actual_route": "GATHER_EVIDENCE",
+        "passed": true
+      },
+      {
+        "case_id": "cancellation_date_conflicts",
+        "material_change": "Only reported cancellation date differs from merchant evidence.",
+        "expected_route": "HUMAN_REVIEW",
+        "actual_route": "GATHER_EVIDENCE",
+        "passed": false
+      }
+    ],
+    "search_amount": [
+      {
+        "case_id": "search_amount_42",
+        "material_change": "Only actual charged amount changes.",
+        "expected_route": "CLARIFY",
+        "actual_route": "CLARIFY",
+        "passed": true
+      },
+      {
+        "case_id": "search_amount_43",
+        "material_change": "Only actual charged amount changes.",
+        "expected_route": "CLARIFY",
+        "actual_route": "CLARIFY",
+        "passed": true
+      }
+    ]
+  },
+  "model_evaluation": "Deterministic extraction by default; mocked model failure/invalid-output adapters. This does not measure live smollm2 extraction accuracy.",
+  "limits": [
+    "Constructed synthetic functional journeys, not real bank prevalence or independent policy adjudication.",
+    "Shared app turn/reopen services are exercised; browser rendering, session expiry and staff login have separate tests.",
+    "No fitted model is trained on scenario labels. Cases/fault recipes are transparent and related, not independent samples.",
+    "Costs are illustrative relative severities, not currency estimates; categories can overlap.",
+    "Unsupported-claim checks cover provenance and selected dangerous positive assertions, not general semantic entailment."
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "errors": [],
+  "transaction_count": 2225,
+  "status_balance": {
+    "Posted": 2223,
+    "Pending": 2
+  },
+  "recurring_count": 144,
+  "duplicate_looking_groups": 0,
+  "missing_posted_dates": 2,
+  "notes": [
+    "No real fraud prevalence or calibration is claimed.",
+    "Same family recipes deliberately recur across customer-disjoint splits; this is not family-held-out generalisation.",
+    "Repeated evaluation inputs with different truth illustrate non-identifiability of authorisation from transaction patterns.",
+    "Labels, profiles, family names, customer statements and construction metadata are excluded from runtime tables.",
+    "Near-neighbours are intentional: amount/order/time edits are grouped by family. No learned model has been fitted."
+  ],
+  "currency_balance": {
+    "GBP": 1454,
+    "INR": 771
+  },
+  "channel_balance": {
+    "Online": 1405,
+    "Card present": 820
+  },
+  "merchant_count": 14,
+  "customer_count": 12,
+  "card_history_counts": {
+    "CARD-001": 127,
+    "CARD-002": 142,
+    "CARD-003": 124,
+    "CARD-004": 148,
+    "CARD-005": 115,
+    "CARD-006": 144,
+    "CARD-007": 113,
+    "CARD-008": 147,
+    "CARD-009": 144,
+    "CARD-010": 117,
+    "CARD-011": 128,
+    "CARD-012": 142,
+    "CARD-001-2": 48,
+    "CARD-002-2": 49,
+    "CARD-003-2": 55,
+    "CARD-004-2": 57,
+    "CARD-005-2": 57,
+    "CARD-006-2": 50,
+    "CARD-007-2": 53,
+    "CARD-008-2": 53,
+    "CARD-009-2": 56,
+    "CARD-010-2": 48,
+    "CARD-011-2": 52,
+    "CARD-012-2": 56
+  },
+  "missing_order_references": 79,
+  "missing_receipt_count": 417,
+  "delayed_presentment_count": 48,
+  "exact_cross_split_inputs": 0,
+  "customer_split_overlap": [],
+  "repeated_inputs_within_split": {
+    "development": 6,
+    "evaluation": 6
+  },
+  "near_duplicate_pairs_within_three_days": {
+    "same_order": 24,
+    "distinct_orders": 121
+  },
+  "field_missingness": {
+    "posted_date": 2,
+    "posted_at": 2,
+    "occurred_at": 0,
+    "order_reference": 79,
+    "merchant_category": 0,
+    "merchant_country": 0
+  },
+  "evaluation_family_balance": {
+    "development": {
+      "amount_boundary": 12,
+      "legitimate_exception": 6,
+      "normal_looking_unauthorised": 6,
+      "order_reference": 18,
+      "time_availability": 24,
+      "sparse_history": 6,
+      "malformed_history": 6
+    },
+    "evaluation": {
+      "amount_boundary": 12,
+      "legitimate_exception": 6,
+      "normal_looking_unauthorised": 6,
+      "order_reference": 18,
+      "time_availability": 24,
+      "sparse_history": 6,
+      "malformed_history": 6
+    }
+  },
+  "evaluation_route_balance": {
+    "development": {
+      "NO_ADDITIONAL_ROUTE": 48,
+      "RECOMMEND_SPECIALIST_REVIEW": 30
+    },
+    "evaluation": {
+      "NO_ADDITIONAL_ROUTE": 48,
+      "RECOMMEND_SPECIALIST_REVIEW": 30
+    }
+  },
+  "evaluation_truth_balance": {
+    "development": {
+      "unknown": 66,
+      "authorised": 6,
+      "unauthorised": 6
+    },
+    "evaluation": {
+      "unknown": 66,
+      "authorised": 6,
+      "unauthorised": 6
+    }
+  }
+}

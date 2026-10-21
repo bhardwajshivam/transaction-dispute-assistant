@@ -1,0 +1,52 @@
+{
+  "cases": 14,
+  "valid_model_responses": 14,
+  "model_name": "smollm2:135m",
+  "server_metadata": {
+    "server": {
+      "version": "0.33.2"
+    },
+    "models": [
+      {
+        "name": "smollm2:135m",
+        "digest": "9077fe9d2ae1a4a41a868836b56b8163731a8fe16621397028c2c76f838c6907",
+        "details": {
+          "parent_model": "[LOCAL_PATH_REDACTED]",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "134.52M",
+          "quantization_level": "F16",
+          "context_length": 8192,
+          "embedding_length": 576
+        }
+      }
+    ]
+  },
+  "source_sha256": {
+    "concern_extraction.py": "ea50571978967ba4bdc3a2c8ba07c0643e3f81a07ed4932003e6cca6d77dca52",
+    "intake.py": "300be92ec3dda3588fda3565ecf88f3883b6e792e14085da0b595c788f97d2c4",
+    "privacy.py": "6202aa5a6cc46da2af378aeb198da8e4e11adc986520813115f345c24b9491c8",
+    "scripts/evaluate_live_extraction.py": "38e07ae67d5183e03d834a21ac1787627631c149badad9eedd008e154a9f9c30"
+  },
+  "cases_with_rejected_model_fields": 14,
+  "model_response_note": "Valid JSON does not imply grounded or useful extraction. Precision/recall describe validated fields; inspect rejected proposals and raw synthetic outputs.",
+  "transport": "actual loopback Ollama",
+  "case_sha256": "423a56447bd50051c2c99c4e9d863ec545e20ebb5ec4e65f0c7eba1397a5b19c",
+  "limits": "Handwritten synthetic probes; not independent customer data. No banking actions or production validation.",
+  "model": {
+    "exact_matches": 5,
+    "field_precision": null,
+    "field_recall": 0.0,
+    "cases_with_wrong_fields": 0
+  },
+  "combined": {
+    "exact_matches": 13,
+    "field_precision": 1.0,
+    "field_recall": 0.896551724137931,
+    "cases_with_wrong_fields": 0
+  },
+  "status": "MEASURED"
+}

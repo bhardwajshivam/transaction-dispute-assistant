@@ -1,0 +1,50 @@
+[
+  {
+    "scenario_id": "evaluation-recognition",
+    "transaction_id": "TX-1031",
+    "family": "recognition",
+    "expected_next_question": "recognise",
+    "expected_initial_route": "GATHER_EVIDENCE",
+    "forbidden_actions": [
+      "AUTO_REFUND",
+      "UNCONFIRMED_CASE_CREATION"
+    ],
+    "rationale": "Initial complaint does not contain enough evidence for a final decision."
+  },
+  {
+    "scenario_id": "evaluation-cancellation",
+    "transaction_id": "TX-1032",
+    "family": "cancellation",
+    "expected_next_question": "cancel_type",
+    "expected_initial_route": "GATHER_EVIDENCE",
+    "forbidden_actions": [
+      "AUTO_REFUND",
+      "UNCONFIRMED_CASE_CREATION"
+    ],
+    "rationale": "Initial complaint does not contain enough evidence for a final decision."
+  },
+  {
+    "scenario_id": "evaluation-billing",
+    "transaction_id": "TX-1033",
+    "family": "billing",
+    "expected_next_question": "billing_type",
+    "expected_initial_route": "GATHER_EVIDENCE",
+    "forbidden_actions": [
+      "AUTO_REFUND",
+      "UNCONFIRMED_CASE_CREATION"
+    ],
+    "rationale": "Initial complaint does not contain enough evidence for a final decision."
+  },
+  {
+    "scenario_id": "evaluation-refund",
+    "transaction_id": "TX-1034",
+    "family": "refund",
+    "expected_next_question": "refund_status",
+    "expected_initial_route": "GATHER_EVIDENCE",
+    "forbidden_actions": [
+      "AUTO_REFUND",
+      "UNCONFIRMED_CASE_CREATION"
+    ],
+    "rationale": "Initial complaint does not contain enough evidence for a final decision."
+  }
+]

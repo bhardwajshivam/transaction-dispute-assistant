@@ -1,0 +1,10 @@
+{
+  "rules_version": "DEMO-ACTIVITY-1.0",
+  "history_days": 90,
+  "minimum_history": 10,
+  "amount_multiplier": 3,
+  "minimum_amount_minor": 5000,
+  "repeat_window_days": 3,
+  "review_rule_version": "DEMO-ACTIVITY-REVIEW-1.0",
+  "review_signal_codes": ["AMOUNT_ABOVE_HISTORICAL_BASELINE", "REPEATED_CHARGE_SAME_ORDER", "REPEATED_CHARGE_ORDER_UNKNOWN"]
+}
