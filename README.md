@@ -2,6 +2,8 @@
 
 Streamlit guided chat, deterministic routing and SQLite concern history, with optional bounded local Ollama evidence gathering. All account and transaction records are synthetic. No real bank actions, refund adjudication or human connection occurs.
 
+See [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md) for detailed component, customer journey, case execution/recovery and evaluation graphs rendered directly on GitHub.
+
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the capability map, authority boundaries, alternatives, failure controls and end-to-end flow.
 
 See [REFLECTION.md](REFLECTION.md) for the weakest component, unresolved risks, evaluation-driven changes, next priorities and AI-assisted development disclosure. It includes the author-confirmed decision to prefer deterministic techniques first.

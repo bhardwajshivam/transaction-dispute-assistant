@@ -12,6 +12,9 @@ neither use has authority to decide policy or execute an action. No agent
 framework is required: ordinary functions, explicit state and durable command
 records provide inspectable controls without another orchestration dependency.
 
+For detailed component, journey, action-recovery and evaluation diagrams, see
+[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md).
+
 ## Output authority
 
 These categories describe what a component may establish:
