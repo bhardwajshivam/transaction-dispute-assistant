@@ -12,6 +12,14 @@ For step-by-step installation, customer journeys, representative access, exports
 
 ## Setup
 
+```sh
+git clone https://github.com/bhardwajshivam/transaction-dispute-assistant.git
+cd transaction-dispute-assistant
+```
+
+The repository is private; reviewers must have access and authenticate with their
+own GitHub account. Do not share your personal token or credentials.
+
 Python 3.10 or newer:
 
 ```sh

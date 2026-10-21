@@ -12,7 +12,17 @@ for the recorded clean-environment verification. The default application needs
 no model server or API key. Package installation requires an internet connection
 or a separately provisioned wheelhouse.
 
-After cloning this repository, enter its directory and run:
+Clone the repository (GitHub access is required), then enter its directory:
+
+```sh
+git clone https://github.com/bhardwajshivam/transaction-dispute-assistant.git
+cd transaction-dispute-assistant
+```
+
+The repository is private; reviewers must have access and authenticate with their
+own GitHub account. Do not share your personal token or credentials.
+
+Create the virtual environment and prepare the demo:
 
 ```sh
 python3 -m venv .venv
