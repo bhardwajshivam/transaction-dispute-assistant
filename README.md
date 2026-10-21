@@ -134,7 +134,7 @@ The same arguments reproduce JSON and checksums. Runtime data, scenario labels a
 python -m unittest discover -s tests -v
 ```
 
-Current result: **221 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
+Current result: **230 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
 
 
 ## Card selection and scope
@@ -207,3 +207,11 @@ See [SUBMISSION.md](SUBMISSION.md) for the archive, checksum, clean-room verific
 ## Data-quality audit
 
 Run `python scripts/audit_data_quality.py` to reproduce the consolidated [quality report](data/data_quality/REPORT.md), template-similarity and surface-token diagnostics. See [DATASET.md](DATASET.md) for methodology and frozen challenge cases. Shared templates, tiny wording-baseline samples and pending external label review limit generalisation claims.
+
+## Workflow controls and colleague continuation
+
+See [WORKFLOW_CONTROLS.md](WORKFLOW_CONTROLS.md) for the explicit ordinary
+transition table, action-service boundaries and versioned handoff task list.
+Run `python scripts/validate_workflow_controls.py` to reproduce the package-level
+continuation and invalid/repeated/interrupted/reopened journey checks. This is
+synthetic contract validation; actual representative usability remains untested.

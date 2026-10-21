@@ -30,6 +30,11 @@ class TurnResult:
 
 
 def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None,gatherer=None):
+    from workflow_contract import check_state, check_transition, VERSION
+    try:
+        check_state(state)
+    except ValueError as error:
+        raise WorkflowError('transition', str(error)) from None
     protected=protect(text)
     if protected.contains_secrets: raise WorkflowError('input','SECRET_BLOCKED')
     text=protected.text
@@ -68,6 +73,11 @@ def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None
         if candidate['review_requirement']=='REQUIRED' and candidate['step'] not in ('handoff_confirm','handoff_pending','done'):
             offer_review(candidate); prompt(candidate)
     try:
+        check_transition(state,candidate,question)
+        candidate['workflow_version']=VERSION
+    except ValueError as error:
+        raise WorkflowError('transition', str(error)) from None
+    try:
         cid,revision=save_note(candidate,question,text,concern_id=concern_id,revision=revision,database=database)
     except (sqlite3.Error,ValueError,PermissionError,FileNotFoundError):
         # A case command may already have committed independently of chat saving.
@@ -82,6 +92,11 @@ def reopen(concern_id,*,database=None):
     from case_chat import restore
     saved,_=get_concern(concern_id,database=database)
     state=json.loads(saved['state_json'])
+    from workflow_contract import check_state
+    try:
+        check_state(state)
+    except ValueError as error:
+        raise WorkflowError('transition', str(error)) from None
     command=latest(concern_id,demo_customer(),database)
     if command:
         if command['status'] in ('UNKNOWN','SUBMITTING'): command=reconcile(command['command_id'],demo_customer(),database)

@@ -239,6 +239,10 @@ def save_note(state, question, statement, concern_id=None, revision=0,
                        "policy_context": (state.get('decision') or {}).get('policy_context'),
                        "limitations": 'No real human connection. Documents unverified; only fictional intake rules consulted.',
                        "conversation": state['messages']}
+            from handoff_continuation import continuation, VERSION as HANDOFF_VERSION
+            package['handoff_version']=HANDOFF_VERSION
+            package['workflow_version']=state.get('workflow_version','LEGACY_UNVERSIONED')
+            package['continuation']=continuation(package)
             db.execute('INSERT INTO handoff_requests VALUES (?,?,?,?,?,?)', (request_id, concern_id, customer_id, now, 'SIMULATED_QUEUED', codec.seal(json.dumps(sanitise(package), ensure_ascii=False))))
             audit(db, concern_id, customer_id, 'HANDOFF_QUEUED')
         return concern_id, revision + 1

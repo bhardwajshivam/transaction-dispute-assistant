@@ -1,0 +1,188 @@
+{
+  "failures": {},
+  "limits": [
+    "Synthetic temporary databases and deterministic modes only.",
+    "Continuation test checks package facts/tasks, not a real representative usability study.",
+    "Not formal verification or exhaustive coverage of all transition pairs.",
+    "Case/card services retain explicit confirmation, permission and idempotency guards."
+  ],
+  "ordinary_transitions": {
+    "adjustment": [
+      "satisfaction"
+    ],
+    "billing_type": [
+      "duplicate",
+      "expected_amount",
+      "expected_currency"
+    ],
+    "cancel_confirm": [
+      "cancel_reference",
+      "satisfaction"
+    ],
+    "cancel_date": [
+      "cancel_method"
+    ],
+    "cancel_method": [
+      "cancel_confirm"
+    ],
+    "cancel_reference": [
+      "satisfaction"
+    ],
+    "cancel_type": [
+      "cancel_date",
+      "cancel_method"
+    ],
+    "card": [
+      "elaborate"
+    ],
+    "confirm": [
+      "satisfaction"
+    ],
+    "currency_receipt": [
+      "satisfaction"
+    ],
+    "different_issue": [
+      "satisfaction"
+    ],
+    "done": [
+      "satisfaction"
+    ],
+    "duplicate": [
+      "purchase_count"
+    ],
+    "elaborate": [
+      "other_transaction",
+      "search_confirm",
+      "search_details"
+    ],
+    "expected_amount": [
+      "receipt"
+    ],
+    "expected_currency": [
+      "currency_receipt"
+    ],
+    "expected_currency_only": [
+      "receipt"
+    ],
+    "handoff_confirm": [
+      "done",
+      "handoff_pending"
+    ],
+    "handoff_pending": [
+      "done"
+    ],
+    "issue": [
+      "card",
+      "policy_topic"
+    ],
+    "other_transaction": [
+      "satisfaction",
+      "search_confirm",
+      "search_details"
+    ],
+    "other_user": [
+      "permission"
+    ],
+    "permission": [
+      "safety",
+      "satisfaction"
+    ],
+    "policy_topic": [
+      "satisfaction"
+    ],
+    "purchase_count": [
+      "receipt"
+    ],
+    "receipt": [
+      "adjustment",
+      "satisfaction"
+    ],
+    "recognise": [
+      "other_user",
+      "resolved"
+    ],
+    "refund_amount": [
+      "refund_method"
+    ],
+    "refund_confirm": [
+      "refund_reference",
+      "satisfaction"
+    ],
+    "refund_currency_only": [
+      "refund_method"
+    ],
+    "refund_date": [
+      "refund_amount",
+      "refund_currency_only",
+      "refund_method"
+    ],
+    "refund_method": [
+      "refund_confirm"
+    ],
+    "refund_reference": [
+      "satisfaction"
+    ],
+    "refund_status": [
+      "refund_amount",
+      "refund_currency_only",
+      "refund_date",
+      "refund_method"
+    ],
+    "resolved": [
+      "other_user",
+      "satisfaction"
+    ],
+    "safety": [
+      "satisfaction"
+    ],
+    "satisfaction": [
+      "done",
+      "handoff_confirm",
+      "policy_topic"
+    ],
+    "search_confirm": [
+      "elaborate",
+      "search_details",
+      "transaction"
+    ],
+    "search_details": [
+      "search_confirm"
+    ],
+    "transaction": [
+      "cancel_type",
+      "duplicate",
+      "elaborate",
+      "expected_amount",
+      "expected_currency_only",
+      "receipt",
+      "recognise",
+      "refund_status",
+      "satisfaction"
+    ]
+  },
+  "passed": 9,
+  "source_sha256": {
+    "concerns.py": "91fa0298483db2cdc24f77bf822dbc855cfe3071f412eaa7f22896358a0a6335",
+    "conversation.py": "ca0961b306d46e96125ea162b5ae0ce7bd62748dc92aa8d8b8b62e4aa4031dbb",
+    "handoff_continuation.py": "0b59453c16ffcb2eced62f334879c927d050d50a5916bcf8241e0c49a55b8e5c",
+    "representative_ui.py": "b8ff948fbfcabfb22437caceb29065d114cd95d080aec38c5ea118415478b5fa",
+    "scripts/validate_workflow_controls.py": "b72c3efbd2e4c3ce34ce8d94fd4aa657089fe3bd5a027cbc29feaea2efaeed6c",
+    "tests/test_workflow_controls.py": "a6c6748dec48c98026da09406fd92d3c2c163babb0d6dee8eac5b2ec5cf01538",
+    "workflow.py": "83ea82672e7151113a91254c8c2b3e5a1f722f901e95e07b5bde32e503f9a651",
+    "workflow_contract.py": "1d05abff7b5ef0d381267c245e8b27a096163cdc10b9a70b93cdae9956ad7259"
+  },
+  "tests": [
+    "tests.test_workflow_controls.WorkflowControlTests.test_card_interruption_reopen_and_cancel_resume_original_search",
+    "tests.test_workflow_controls.WorkflowControlTests.test_contract_includes_all_rendered_question_states",
+    "tests.test_workflow_controls.WorkflowControlTests.test_early_confirmation_and_unlisted_card_do_not_authorise_or_advance",
+    "tests.test_workflow_controls.WorkflowControlTests.test_handoff_package_supports_conflict_continuation_without_transcript",
+    "tests.test_workflow_controls.WorkflowControlTests.test_illegal_controller_jump_is_not_saved",
+    "tests.test_workflow_controls.WorkflowControlTests.test_repeated_search_confirmation_and_wrong_reference_preserve_candidates",
+    "tests.test_workflow_controls.WorkflowControlTests.test_stale_turn_cannot_overwrite_saved_state",
+    "tests.test_workflow_controls.WorkflowControlTests.test_unknown_action_handoff_prioritises_reconciliation_not_replacement",
+    "tests.test_workflow_controls.WorkflowControlTests.test_unknown_state_stops_before_tools_or_storage"
+  ],
+  "tests_run": 9,
+  "version": "WORKFLOW-CONTROLS-EVALUATION-1.0",
+  "workflow_version": "DISPUTE-WORKFLOW-1.0"
+}

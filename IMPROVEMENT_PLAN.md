@@ -17,8 +17,9 @@ No runtime database, customer history, keys or local machine metadata is copied.
    tag identity in traces; live evaluator captures model digest and separates
    model/parser/combined metrics. Raw failures retained; model quality remains
    limited and one final robustness response required fallback.
-4. **Workflow/handoff — pending:** explicit transition matrix and invalid/repeated/
-   interrupted/reopened journey checks; representative continuation test.
+4. **Workflow/handoff — implemented:** explicit ordinary transition contract,
+   invalid/repeated/interrupted/reopened journey checks and package-level
+   continuation test. Real representative usability review remains outstanding.
 5. **Privacy/visibility — pending:** failure-path logging/export checks and minimised
    operational counters, without raw customer statements in metrics.
 6. **Evaluation — pending:** rerun component/workflow/demonstration suites and
@@ -87,3 +88,15 @@ Paths below identify the current implementation/report and intended evidence.
 - Relevant observed failures fixed without changing expected answers: reference
   as merchant, wrong-role currency, negated assertions and orphan conflict currency.
 - New probes have now informed development; they are not held-out evaluation.
+
+## Step 4 evidence
+
+- `WORKFLOW_CONTROLS.md` documents ordinary transitions, interruptions and limits.
+- `workflow_contract.py` rejects unknown states/illegal ordinary jumps in the
+  shared service. Case/card actions retain their own stronger service guards.
+- New frozen handoff packages include a versioned advisory continuation checklist;
+  representative UI displays it without replacing the original assertions/facts.
+- Reproduce: `python scripts/validate_workflow_controls.py`; output:
+  `data/workflow_controls/report.json`. Nine new contract tests pass.
+- Actual representative usability validation remains open. No formal verification
+  or exhaustive state-pair coverage is claimed.

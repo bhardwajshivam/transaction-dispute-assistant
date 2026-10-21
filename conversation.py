@@ -19,7 +19,7 @@ QUESTIONS = {
     "search_confirm": ("Please confirm the search details.", ["Confirm and search", "Edit details"]),
     "search_details": ("Please provide the missing search detail.", ["I don’t know / need help"]),
     "other_transaction": ("Does your issue concern a specific card transaction?", ["Yes", "No", "I’m not sure"]),
-    "transaction": ("Which payment is this about? Choose a transaction below. You can search by merchant, descriptor or reference.", []),
+    "transaction": ("Which payment is this about? Choose a transaction below. You can filter the list by amount, date or reference.", []),
     "recognise": ("Do these merchant details help you recognise the payment?", YES_NO),
     "resolved": ("Does this resolve your concern?", YES_NO),
     "other_user": ("Could another authorised cardholder have made this payment?", YES_NO),

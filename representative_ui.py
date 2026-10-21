@@ -88,6 +88,12 @@ def render():
         st.write('Required review:', current.get('review_requirement', 'Not recorded'))
         st.write('Review reasons:', current.get('review_reason_codes', []))
         st.write('Missing information / outstanding work:', package.get('missing_information', []))
+        if package.get('continuation'):
+            st.subheader('Suggested continuation — requires representative judgement')
+            for task in package['continuation']['tasks']:
+                st.write(task['instruction'])
+                if task['references']:
+                    st.write('References:', task['references'])
         st.write('Case actions attempted and recorded outcomes:')
         st.json(package.get('actions_attempted', []))
         st.subheader('Customer account of the issue — unverified')
