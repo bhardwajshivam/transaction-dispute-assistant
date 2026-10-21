@@ -52,6 +52,21 @@ class IntakeTests(unittest.TestCase):
         self.assertEqual(s['step'], 'receipt')
         self.assertEqual(s['answers']['expected_amount'], 'INR 40.00')
 
+    def test_model_date_mislabelled_as_merchant_does_not_hide_matches(self):
+        text = 'I was charged INR 42 instead of INR 40 on 15-10-2026'
+        for span in ('15-10-2026', 'on 15-10-2026', 'INR 42'):
+            with self.subTest(span=span), patch.dict('os.environ', {'CONCERN_EXTRACTION_MODE': 'ollama'}):
+                response = {'done': True, 'done_reason': 'stop', 'message': {'content': json.dumps({'entities': [{'field': 'merchant', 'span': span}]})}}
+                with patch('concern_extraction.local_chat', return_value=response):
+                    s = start()
+                    for message in (OPTIONS[3], 'CARD-001'):
+                        submit(s, message)
+                    submit(s, text, extractor=extract)
+                self.assertNotIn('merchant', s['intake'])
+                self.assertIn('merchant', s['extraction_trace'][-1]['rejected_fields'])
+                submit(s, 'Confirm and search')
+                self.assertEqual({t.reference for t in search_transactions(s)}, {'TX-1003', 'TX-1004'})
+
     def test_edit_invalidates_confirmation_and_amount_not_expected_used_for_search(self):
         s = begin(3, 'charged INR 42 instead of INR 8 on 15-10-2026')
         submit(s, 'Edit details')
@@ -80,6 +95,17 @@ class IntakeTests(unittest.TestCase):
         submit(s, 'Confirm and search')
         self.assertEqual({t.reference for t in search_transactions(s)}, {'TX-1003', 'TX-1004'})
 
+    def test_merchant_is_context_only_and_cannot_filter_or_replace_amount(self):
+        s = begin(0, 'Payment on 15-10-2026')
+        s['intake']['merchant'] = 'An unrelated merchant'
+        self.assertEqual(missing_field(s), 'identifier')
+        submit(s, 'Another merchant')
+        self.assertEqual(s['step'], 'search_details')
+        submit(s, 'INR 42')
+        self.assertNotIn('An unrelated merchant', s['messages'][-1][1])
+        submit(s, 'Confirm and search')
+        self.assertEqual({t.reference for t in search_transactions(s)}, {'TX-1003', 'TX-1004'})
+
     def test_date_validation_and_range(self):
         s = begin(0, 'I do not recognise this payment')
         submit(s, '31-02-2026'); self.assertEqual(s['step'], 'search_details')
@@ -94,12 +120,38 @@ class IntakeTests(unittest.TestCase):
 
     def test_ambiguous_currency_and_unknown_details(self):
         s = begin(3, 'I was charged $10 instead of $8 on 18-10-2026')
-        self.assertEqual(s['pending_search_field'], 'charged_currency')
-        submit(s, 'USD')
         self.assertEqual(s['step'], 'search_confirm')
+        self.assertNotIn('charged_currency', s['intake'])
+        self.assertIn('across currencies', s['messages'][-1][1])
         s = begin(0, 'I am unsure')
         submit(s, 'I don’t know / need help')
         self.assertEqual(s['step'], 'handoff_confirm')
+
+    def test_unknown_currency_matches_multiple_currencies_and_known_currency_filters(self):
+        import sqlite3
+        with sqlite3.connect(self.db) as db:
+            db.execute("UPDATE transactions SET currency='USD' WHERE transaction_id='TX-1004'")
+        for option in (0, 1, 2, 3, 4):
+            with self.subTest(option=option):
+                text = 'Original purchase was 42 on 15-10-2026' if option == 4 else 'Charged 42 on 15-10-2026'
+                s = begin(option, text)
+                self.assertEqual(s['step'], 'search_confirm')
+                submit(s, 'Confirm and search')
+                results = search_transactions(s)
+                self.assertEqual({t.reference for t in results}, {'TX-1003', 'TX-1004'})
+                self.assertEqual({t.amount for t in results}, {'INR 42.00', 'USD 42.00'})
+        s = begin(3, 'Charged INR 42 on 15-10-2026')
+        submit(s, 'Confirm and search')
+        self.assertEqual([t.reference for t in search_transactions(s)], ['TX-1003'])
+
+    def test_saved_currency_question_can_be_skipped(self):
+        s = begin(3, 'Charged 42 on 15-10-2026')
+        s['step'] = 'search_details'
+        s['pending_search_field'] = 'charged_currency'
+        submit(s, 'I don’t know / need help')
+        self.assertEqual(s['step'], 'search_confirm')
+        submit(s, 'Confirm and search')
+        self.assertEqual(len(search_transactions(s)), 2)
 
     def test_other_issue_avoids_unnecessary_search(self):
         s = begin(5, 'I need help with my address')

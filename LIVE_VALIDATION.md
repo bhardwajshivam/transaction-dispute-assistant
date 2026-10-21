@@ -114,3 +114,7 @@ still exits 1 intentionally: parser success does not satisfy model-quality check
 The full regression suite passes 208 tests; all 47 workflow journeys still pass.
 
 Published server/model metadata excludes machine-local parent-model paths and arbitrary username/hostname fields. Synthetic raw responses are path-minimised before storage. Earlier report copies have had environment-specific path metadata removed without changing their metrics. Source fingerprints retain their original provenance.
+
+## Subsequent configuration change
+
+At the product owner’s request, complaint extraction now defaults to `ollama`; the evidence proposer remains deterministic. The extraction prompt no longer contains the literal amount example copied in the historical failed outputs. The historical measurements above describe the previous prompt/default and remain unchanged. The revised prompt has not yet been re-evaluated live. Exact-span validation, deterministic parser support, confirmation and guided fallback remain active. Explicit `CONCERN_EXTRACTION_MODE=deterministic` still disables the extraction model.

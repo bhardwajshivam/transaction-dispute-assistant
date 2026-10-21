@@ -1,8 +1,8 @@
 # Confirmed simulated card protection
 
 Card protection is a separate safety journey. It is available through **Secure
-or block my card** at the opening and as a chat reply option during another
-concern. Explicit phrases such as `block card`, `block my card`, `I want to block
+or block my card** at the opening. It is not repeated among the follow-up
+choices for another concern. Explicit phrases such as `block card`, `block my card`, `I want to block
 my card`, `can you block my card?` or `my card was stolen` also start it. Narrow
 anchored rules recognise requests; negated instructions, hypothetical/advice
 questions and prompt-injection prose do not silently select an action.

@@ -36,18 +36,43 @@ Open [http://localhost:8501](http://localhost:8501). The setup generates two car
 
 No working database, encryption key or saved concern history is included in the submission archive. If the database already exists, skip generation/loading and launch the app to preserve saved concerns. Updated generation does not rewrite an existing database. To deliberately reset all demo data, including saved concern histories and handoff requests, stop the app, regenerate the fixtures with the command above, then run `python scripts/load_database.py --replace`. No reset is needed when updating application code; concern schema migrations are additive.
 
-## Local model mode
+## LLM extraction and deterministic workflow
 
-Start Ollama, download the model once, then launch with:
+The default chat uses local **Ollama `smollm2:135m` to suggest details from the customer's description**. It does not decide which transaction is disputed, apply policy, authorise actions or generate the outcome explanation.
+
+| Capability | Technique and control |
+|---|---|
+| Understand the description | Local LLM suggests exact source spans for dates, charged/expected/original/refund amounts, currencies and references. PII is screened/redacted before transport. |
+| Validate reported details | Deterministic schema, source-span, date, amount and role checks; parser support and guided questions handle missing or unusable suggestions. Details remain unverified customer assertions. |
+| Find the transaction | Customer confirms criteria; SQL verifies account/card scope and filters by date and actual charged amount (original purchase for refunds), or exact reference. Merchant names never filter. Known currency filters exactly; absent currency matches across currencies without FX conversion. Results show recorded currencies and require customer selection. |
+| Gather evidence | A bounded deterministic controller fills evidence gaps. An optional LLM may suggest allowlisted read-only lookups; the controller validates every proposal. |
+| Assess and route | Versioned policy, evidence gates and review rules are deterministic. Activity rules and clustering produce advisory signals only. |
+| Explain and act | Templates use verified evidence and recorded reasons. Card protection and case creation require explicit confirmation, permissions, idempotency and audit. All bank operations are simulated. |
+
+### Default: local extraction, deterministic evidence gathering
+
+Install Ollama separately, start its app (or `ollama serve`), then:
 
 ```sh
 ollama pull smollm2:135m
-export EVIDENCE_PROPOSER_MODE=ollama
-export OLLAMA_MODEL=smollm2:135m
+export CONCERN_EXTRACTION_MODE=ollama
+export EVIDENCE_PROPOSER_MODE=deterministic
 python -m streamlit run app.py
 ```
 
-No API key or Python model SDK is needed. If the service is not running, start the Ollama app or run `ollama serve` separately. Default mode is `deterministic`. See [LLM_INTEGRATION.md](LLM_INTEGRATION.md) for configuration and controls. Both evidence proposals and complaint extraction are deterministic by default. Optional model extraction requires `CONCERN_EXTRACTION_MODE=ollama`; source-span validation and guided fallback still apply. No model decides eligibility. Live evaluation found 0% validated model field recall on the fixed probes; it is not recommended for the default journey.
+No API key or Python model SDK is required. The extractor uses `smollm2:135m`; `OLLAMA_MODEL` configures only the optional evidence proposer. `.env.example` is documentation and is not automatically loaded. If Ollama is unavailable or returns invalid output, the parser and guided questions keep the journey usable. Merchant/date misclassification is explicitly regression-tested.
+
+### Fully deterministic mode
+
+```sh
+export CONCERN_EXTRACTION_MODE=deterministic
+export EVIDENCE_PROPOSER_MODE=deterministic
+python -m streamlit run app.py
+```
+
+This mode makes no LLM calls. To enable the optional read-only evidence proposer separately, set `EVIDENCE_PROPOSER_MODE=ollama` and `OLLAMA_MODEL=smollm2:135m`. Neither switch grants action or policy authority. See [LLM_INTEGRATION.md](LLM_INTEGRATION.md).
+
+**Model quality limitation:** the previous extraction prompt achieved 0% validated model field recall on 14 fixed live probes. The prompt has since changed and validators have been strengthened, but a new live quality evaluation is still required. Offline tests and parser fallback do not demonstrate useful model extraction. Historical failed outputs remain documented in [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
 
 ## Journeys
 
@@ -56,7 +81,7 @@ No API key or Python model SDK is needed. If the service is not running, start t
 - Unrecognised payment: select a transaction, review merchant details and clarify authorisation.
 - Charged after cancellation: gather type, dates, method and confirmation details.
 - Multiple charges: confirm search details, select the suspected duplicate payment, then clarify purchase count and receipts.
-- Wrong amount: confirm actual charged amount/date/currency, select the payment, then clarify the agreed amount, receipt and adjustments.
+- Wrong amount: confirm actual charged amount/date and currency when known, select the payment, then clarify the agreed amount, receipt and adjustments.
 - Missing refund: gather merchant statements and check linked refund/credit records.
 - Different issue: describe the concern without selecting a transaction; unsupported requests can be handed off with confirmation.
 
@@ -109,7 +134,7 @@ The same arguments reproduce JSON and checksums. Runtime data, scenario labels a
 python -m unittest discover -s tests -v
 ```
 
-Current result: **208 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
+Current result: **213 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
 
 
 ## Card selection and scope
@@ -121,13 +146,13 @@ The generator defaults to one card per customer; the recommended setup above exp
 
 ## Confirmed transaction search
 
-See [INTAKE_FLOW.md](INTAKE_FLOW.md) for the per-issue must-know list. Dates are requested as DD-MM-YYYY and displayed that way in confirmation (stored as ISO internally). Charged, expected, original-purchase and refund amounts are distinct. Only charged/original-purchase amounts can filter payments. `$` alone does not establish currency. The fixed demo snapshot rejects dates after 20-10-2026.
+See [INTAKE_FLOW.md](INTAKE_FLOW.md) for the per-issue must-know list. Dates are requested as DD-MM-YYYY and displayed that way in confirmation (stored as ISO internally). Charged, expected, original-purchase and refund amounts are distinct. Only charged/original-purchase amounts can filter payments; merchant names are context only. Currency is optional: missing or ambiguous currency allows matching the nominal amount across currencies, with each result displaying its recorded currency. No FX conversion or currency inference is performed. `$` alone does not establish currency. The fixed demo snapshot rejects dates after 20-10-2026.
 
-Descriptions use deterministic extraction by default and are not sent to a model. Set `CONCERN_EXTRACTION_MODE=ollama` explicitly to evaluate optional local `smollm2:135m` extraction. The 14 live probes exposed 0% validated model field recall; source-span rejection prevents the observed invented values from entering intake. This setting is separate from `EVIDENCE_PROPOSER_MODE`. See [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
+Descriptions are screened/redacted and sent to local `smollm2:135m` by default. Set `CONCERN_EXTRACTION_MODE=deterministic` to avoid model processing. The 14 historical live probes of the previous prompt exposed 0% validated model field recall; source-span rejection prevents the observed invented values from entering intake. This setting is separate from `EVIDENCE_PROPOSER_MODE`. See [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
 
-The default extraction path requires no model, API key or new dependency. In optional model mode, incomplete/malformed output falls back; accepted spans must appear in the customer text and pass date/money/role checks. Extracted values remain unverified assertions. With `SHOW_INTERNAL_DEBUG=1`, the **Reported details and extraction checks** expander shows accepted/rejected fields and their parser/model provenance. These records persist with concern history and handoff packages.
+The fully deterministic mode requires no model or API key. In the default LLM extraction mode, incomplete/malformed output falls back; accepted spans must appear in the customer text and pass date/money/role checks. Extracted values remain unverified assertions. With `SHOW_INTERNAL_DEBUG=1`, the **Reported details and extraction checks** expander shows accepted/rejected fields and their parser/model provenance. These records persist with concern history and handoff packages.
 
-Search requires **Confirm and search**. **Edit details** asks for a corrected description and invalidates the previous criteria. No-match and unavailable-service states are distinguished; the app never silently broadens filters. **Change search details** and human assistance are offered when needed. An exact TX reference is an alternate search path; confirmation explicitly states that other reported details will be compared after selection. Older saved concerns without confirmed criteria are redirected to collect them before a new search.
+Search requires **Confirm and search**. **Edit details** asks for a corrected description and invalidates the previous criteria. No-match and unavailable-service states are distinguished. Confirmation states when currency is unspecified and matching will span currencies; the app does not silently relax supplied criteria. **Change search details** and human assistance are offered when needed. An exact TX reference is an alternate search path; confirmation explicitly states that other reported details will be compared after selection. Older saved concerns without confirmed criteria are redirected to collect them before a new search.
 
 
 ## Representative workspace

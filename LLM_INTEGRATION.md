@@ -43,7 +43,7 @@ python -m streamlit run app.py
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `CONCERN_EXTRACTION_MODE` | `deterministic` | Explicit `ollama` enables experimental local description extraction |
+| `CONCERN_EXTRACTION_MODE` | `ollama` | Local description extraction; `deterministic` disables model processing |
 | `EVIDENCE_PROPOSER_MODE` | `deterministic` | `ollama` enables the local proposer |
 | `OLLAMA_MODEL` | `smollm2:135m` | Installed local model tag; cloud-labelled model names rejected |
 | `OLLAMA_TIMEOUT_SECONDS` | `30` | Finite transport-operation timeout from 1–120 seconds |
@@ -61,7 +61,7 @@ Endpoint is fixed to `http://127.0.0.1:11434/api/chat`; no remote endpoint confi
 
 The backend rejects incomplete output, malformed/oversized JSON, unexpected tool calls and proposals outside the supplied choices. Server errors are sanitised; raw server messages are not persisted. A fixed loopback address and rejection of cloud-labelled names support local deployment, but the operator must still use genuine local model weights and an appropriately configured Ollama installation.
 
-The model sees the selected synthetic transaction reference, workflow step, evidence statuses and permitted proposals. The evidence proposer excludes complaint text, identity, credentials and raw bank evidence. The separate intake extractor screens and redacts the customer description before local processing; detected authentication secrets are blocked. See SECURITY.md. Trace metadata persists with concern notes and handoff packages. Evidence proposals and complaint extraction use separate schemas and authority boundaries. `concern_extraction.py` extracts deterministic source spans by default, with explicit opt-in for local smollm2:135m; `intake.py` validates them and requires confirmation before searching.
+The model sees the selected synthetic transaction reference, workflow step, evidence statuses and permitted proposals. The evidence proposer excludes complaint text, identity, credentials and raw bank evidence. The separate intake extractor screens and redacts the customer description before local processing; detected authentication secrets are blocked. See SECURITY.md. Trace metadata persists with concern notes and handoff packages. Evidence proposals and complaint extraction use separate schemas and authority boundaries. `concern_extraction.py` attempts local smollm2:135m extraction by default, with deterministic parser support and guided fallback; `intake.py` validates them and requires confirmation before searching.
 
 SmolLM2 135M is small; structured output validation does not establish semantic reliability. Invalid proposals must continue to fall back rather than weakening validation.
 

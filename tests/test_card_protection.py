@@ -221,6 +221,11 @@ class CardProtectionTests(unittest.TestCase):
     def test_streamlit_opening_option_card_selection_confirmation_and_cancel(self):
         from streamlit.testing.v1 import AppTest
         app=AppTest.from_file('app.py',default_timeout=15).run()
+        self.assertTrue(any(b.label==chat.OPEN for b in app.button))
+        next(b for b in app.button if b.label==OPTIONS[0]).click().run()
+        self.assertFalse(any(b.label==chat.OPEN for b in app.button))
+        self.assertFalse(app.exception)
+        app=AppTest.from_file('app.py',default_timeout=15).run()
         next(b for b in app.button if b.label==chat.OPEN).click().run()
         next(b for b in app.button if b.label.startswith('Demo card CARD-001 ')).click().run()
         next(b for b in app.button if b.label==chat.LOCK).click().run()

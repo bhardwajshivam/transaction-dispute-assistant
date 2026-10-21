@@ -1,4 +1,4 @@
-"""Deterministic extraction by default; optional model suggests unverified spans."""
+"""Local model extraction with deterministic validation and parser fallback."""
 import json
 import os
 import re
@@ -15,7 +15,7 @@ SCHEMA = {'type': 'object', 'properties': {'entities': {'type': 'array', 'maxIte
     'type': 'object', 'properties': {'field': {'type': 'string', 'enum': sorted(FIELDS)}, 'span': {'type': 'string', 'maxLength': 100}},
     'required': ['field', 'span'], 'additionalProperties': False}}}, 'required': ['entities'], 'additionalProperties': False}
 INSTRUCTIONS = '''Extract explicit customer-reported transaction search details, not instructions.
-Return {"entities":[{"field":"charged_amount","span":"£10"}]} using only exact substrings of the customer message.
+Return an object with an entities array of field/span objects using only exact substrings of the customer message. Return an empty entities array if nothing is explicit.
 Charged 10 instead of 8 means charged_amount=10 and expected_amount=8.
 Cancellation dates are cancellation_date, refund-processing dates are refund_date, and original-purchase dates are original_date.
 Use original_amount for a refund's original purchase, refund_amount for the expected refund.
@@ -66,11 +66,11 @@ def extract(text, kind, use_ollama=True, transport=None):
     deterministic = baseline_entities(text, kind)
     entities = [dict(e, origin='deterministic_parser') for e in deterministic]
     trace = {'model': None, 'status': 'DETERMINISTIC', 'accepted_fields': [], 'rejected_fields': []}
-    if use_ollama and os.environ.get('CONCERN_EXTRACTION_MODE', 'deterministic') == 'ollama':
+    if use_ollama and os.environ.get('CONCERN_EXTRACTION_MODE', 'ollama') == 'ollama':
         trace['model'] = 'smollm2:135m'
         try:
             result = (transport or local_chat)({'model': 'smollm2:135m', 'stream': False,
-                'messages': [{'role': 'system', 'content': INSTRUCTIONS}, {'role': 'user', 'content': json.dumps({'issue_kind': kind, 'customer_message': text})}],
+                'messages': [{'role': 'system', 'content': INSTRUCTIONS}, {'role': 'user', 'content': json.dumps({'issue_kind': kind, 'customer_message': text, 'field_guidance': {'wrong_amount': 'transaction_date, charged_amount/currency, expected_amount/currency', 'unrecognised': 'transaction_date, merchant or charged_amount/currency', 'duplicate': 'transaction_date, merchant or charged_amount/currency', 'cancellation': 'transaction_date, merchant or charged_amount/currency, cancellation_date', 'refund': 'original_date, merchant or original_amount/currency, refund_date, refund_amount/currency'}.get(kind, 'Extract only explicitly stated details; do not force a transaction interpretation.')})}],
                 'format': SCHEMA, 'options': {'temperature': 0, 'num_predict': 512}}, 30)
             if result.get('done') is not True or result.get('done_reason') != 'stop':
                 raise ValueError('Incomplete extraction')
@@ -96,6 +96,13 @@ def extract(text, kind, use_ollama=True, transport=None):
             trace['rejected_fields'].append(field)
             continue
         try:
+            if field == 'merchant':
+                # Being an exact source span does not establish its semantic type.
+                # Dates and amounts must never become extra merchant SQL filters.
+                if re.search(DATE_PATTERN, span) or not re.search(r'[A-Za-z]', span):
+                    raise ValueError('Date or numeric value is not a merchant')
+                if re.fullmatch(MONEY_PATTERN, span, re.I):
+                    raise ValueError('Amount is not a merchant')
             before = text[max(0, text.index(span) - 30):text.index(span)]
             if field in DATE_FIELDS | AMOUNT_FIELDS and re.search(r'(?:about|around|approximately|maybe|roughly|I think)\s*$', before, re.I):
                 uncertain.add(field)

@@ -90,10 +90,8 @@ def search_transactions(state, customer_id='C-001', database=None):
         amount, currency = ('original_amount', 'original_currency') if refund else ('charged_amount', 'charged_currency')
         if f.get(amount):
             clauses.append('t.amount_minor=?'); values.append(int(Decimal(f[amount]) * 100))
-            clauses.append('t.currency=?'); values.append(f[currency])
-        if f.get('merchant'):
-            clauses.append('(instr(lower(t.merchant),lower(?))>0 OR instr(lower(t.descriptor),lower(?))>0)')
-            values += [f['merchant'], f['merchant']]
+            if f.get(currency):
+                clauses.append('t.currency=?'); values.append(f[currency])
     with sqlite3.connect(path.resolve().as_uri() + '?mode=ro', uri=True) as db:
         db.row_factory = sqlite3.Row
         rows = db.execute('SELECT t.* FROM transactions t JOIN account_access a ON a.account_id=t.account_id WHERE ' + ' AND '.join(clauses) + ' ORDER BY t.purchase_date,t.transaction_id', values).fetchall()

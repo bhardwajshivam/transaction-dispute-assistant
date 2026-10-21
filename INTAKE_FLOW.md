@@ -41,3 +41,9 @@ Historical smoke checks (combined parser/model results, not model-only accuracy)
 These checks demonstrate a real failure being contained, not general model accuracy. Source-span checks cannot prove every semantic interpretation correct; customer confirmation and later evidence verification remain necessary. Merchant matching uses literal trading-name/descriptor matching, not a general semantic retrieval system. Refund evidence is synthetic, and full eligibility policy execution remains incomplete.
 
 The later 14-case evaluation supersedes those smoke checks as extraction evidence: model-only validated recall was 0%; after the parser correction, deterministic extraction passes all 14 fixed probes. See [LIVE_VALIDATION.md](LIVE_VALIDATION.md).
+
+### Search identifiers
+
+Merchant names and descriptors are context only and never search filters. Searches use the selected owned card, payment date/date range, actual charged amount and currency (original purchase amount for refunds), or an exact transaction reference. Merchant-only descriptions require the missing amount. Customer confirmation precedes lookup. The transaction-list filter uses reference, amount and date.
+
+Currency is optional for lookup. When absent or ambiguous, confirmation explicitly states that the nominal amount will be matched across currencies without FX conversion. Known currency remains an exact filter. Every candidate displays its bank-recorded currency; the customer must choose a transaction. Missing currency does not establish currency agreement for any later eligibility assessment. Older saved search-currency questions allow “I don’t know / need help” to proceed to confirmation.

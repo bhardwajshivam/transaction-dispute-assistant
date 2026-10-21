@@ -35,8 +35,8 @@ class ExtractionRegressionTests(unittest.TestCase):
         fields, _, _ = extract(text, 'wrong_amount', False)
         self.assertEqual(fields, {'charged_amount':'85.00', 'charged_currency':'INR', 'transaction_date':'2026-10-07'})
 
-    def test_default_and_invalid_mode_never_contact_model(self):
-        for mode in (None, 'invalid'):
+    def test_deterministic_and_invalid_mode_never_contact_model(self):
+        for mode in ('deterministic', 'invalid'):
             with patch.dict(os.environ):
                 os.environ.pop('CONCERN_EXTRACTION_MODE', None)
                 if mode: os.environ['CONCERN_EXTRACTION_MODE'] = mode
@@ -53,3 +53,14 @@ class ExtractionRegressionTests(unittest.TestCase):
             with self.subTest(case=case['id']):
                 fields, _, _ = extract(case['text'], case['kind'], False)
                 self.assertEqual(fields, case['expected'])
+
+    def test_default_attempts_local_model_and_validates_customer_spans(self):
+        with patch.dict(os.environ):
+            os.environ.pop('CONCERN_EXTRACTION_MODE', None)
+            response = {'done': True, 'done_reason': 'stop', 'message': {'content': json.dumps({'entities': [{'field': 'merchant', 'span': 'Northstar'}]})}}
+            with patch('concern_extraction.local_chat', return_value=response) as transport:
+                fields, _, trace = extract('Northstar charged INR 85 on 07-10-2026.', 'unrecognised')
+                transport.assert_called_once()
+                self.assertEqual(fields['merchant'], 'Northstar')
+                self.assertEqual(trace['field_sources']['merchant'], ['ollama'])
+                self.assertEqual(trace['status'], 'OLLAMA_EXTRACTED')

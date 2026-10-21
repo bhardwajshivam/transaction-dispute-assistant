@@ -89,21 +89,17 @@ def missing_field(state):
         return 'date_end'
     if kind == 'wrong_amount':
         if not f.get('charged_amount'): return 'charged_amount'
-        if not f.get('charged_currency'): return 'charged_currency'
     else:
         amount = 'original_amount' if kind == 'refund' else 'charged_amount'
-        currency = amount.replace('_amount', '_currency')
-        if not f.get('merchant') and not f.get(amount):
+        if not f.get(amount):
             return 'identifier'
-        if f.get(amount) and not f.get(currency):
-            return currency
     return None
 
 
 def search_question(state):
     field = state['pending_search_field']
     if field == 'identifier':
-        return 'What merchant/statement descriptor or amount identifies the payment? You can also enter its exact TX reference. For refunds, use the original purchase details, not the refund amount.'
+        return 'What amount was charged? Include the currency if known, for example INR 42. You can also enter the exact TX reference. For refunds, use the original purchase amount, not the refund amount. Merchant names are not used to search.'
     if field in DATE_FIELDS:
         return f"What is the {LABELS[field].lower()}? Please use DD-MM-YYYY. You may provide a range as DD-MM-YYYY to DD-MM-YYYY, or enter the exact TX reference if available."
     if field.endswith('_currency'):
@@ -114,12 +110,18 @@ def search_question(state):
 def confirmation_text(state):
     parts = [f"Selected card: {state['answers']['card_id']}"]
     for field in sorted(state.get('intake', {})):
+        if field == 'merchant':
+            continue
         value = state['intake'][field]
         if field in DATE_FIELDS:
             value = date.fromisoformat(value).strftime('%d-%m-%Y')
         parts.append(f'{LABELS[field]}: {value}')
     if state.get('intake', {}).get('transaction_reference'):
         parts.append('Search uses the exact reference; other reported details will be compared after selection.')
+    else:
+        currency = 'original_currency' if state.get('issue_kind') == 'refund' else 'charged_currency'
+        if not state.get('intake', {}).get(currency):
+            parts.append('Currency: not provided. Search will match the amount across currencies; each result will show its recorded currency. No currency or FX conversion is assumed.')
     return 'Please confirm these details before I search your card transactions:\n\n' + '\n\n'.join(parts) + '\n\nThese are your reported details, not yet verified bank facts.'
 
 
@@ -137,6 +139,11 @@ def advance(state):
 
 
 def collect(state, text):
+    if state.get('pending_search_field') in ('charged_currency', 'original_currency') and text in ('I don’t know / need help', "I don't know", 'I don’t know'):
+        # Resume older saved journeys that still asked for search currency.
+        state.setdefault('intake', {}).pop(state['pending_search_field'], None)
+        advance(state)
+        return
     if text == 'I don’t know / need help':
         from review import offer_review
         offer_review(state)
@@ -149,12 +156,7 @@ def collect(state, text):
             set_field(state, 'transaction_reference', text)
         elif field == 'identifier':
             amount = 'original_amount' if state['issue_kind'] == 'refund' else 'charged_amount'
-            try:
-                normalise(amount, text)
-            except ValueError:
-                set_field(state, 'merchant', text)
-            else:
-                set_field(state, amount, text)
+            set_field(state, amount, text)
         elif field in DATE_FIELDS and ' to ' in text:
             start, end = text.split(' to ', 1)
             values = normalise(field, start), normalise('date_end', end)
