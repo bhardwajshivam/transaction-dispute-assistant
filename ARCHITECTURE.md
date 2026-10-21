@@ -3,7 +3,7 @@
 This prototype provides evidence collection, bounded intake routing, general
 policy information, a confirmed simulated handoff and confirmed simulated case
 recording. It does not adjudicate chargeback eligibility, establish fraud, issue
-refunds, block cards or contact a real representative. All bank records and
+refunds, block real cards or contact a real representative. A separate confirmed simulator supports card lock/block; see [CARD_PROTECTION.md](CARD_PROTECTION.md). All bank records and
 policies are synthetic. The reference clock is 20 October 2026.
 
 The design starts with capabilities. Deterministic code owns the workflow and
@@ -105,12 +105,13 @@ restores the concern and reconciles pending case commands. UI session expiry
 remains in `app.py`; customer identity is the fixed demo principal. This is an
 explicit production authentication gap, not a real bank login.
 
-## Three policy authorities
+## Four policy authorities
 
 | Purpose | Source and consumer | Supported conclusion |
 |---|---|---|
 | Transaction intake | SQLite `policies`, DEMO-INTAKE v1.1; `policy_contract.intake` | Recognised/resolved explanation or supported referral for reported unauthorised/unresolved concerns |
 | General information | `policies/corpus/dispute_information.json` and its approved manifest; `policy_service` | Four topics of attributed evidence-collection guidance; superseded versions excluded by date |
+| Card protection | `policies/card_protection_v1.json` and approved digest; `card_service` | Whether an explicitly confirmed synthetic lock/block may execute; never an automatic consequence of a risk score |
 | Case recording | `policies/case_intake_v1_1.json`; `case_service` | Whether a confirmed simulated case may be recorded under the narrow demo contract |
 
 All share attribution envelopes: purpose, scope, as-of date, status/reason,
@@ -179,7 +180,7 @@ for key, staff and retention setup and known limits.
   critical errors, route-specific metrics, cost framework and preserved failures.
 - [LIVE_VALIDATION.md](LIVE_VALIDATION.md): 14 unchanged extraction probes pass
   deterministically after a parser fix; live model-only validated recall remains
-  0%. All 186 regression tests pass. These are development/synthetic results.
+  0%. All 204 regression tests pass. These are development/synthetic results.
 - [ACTIVITY_DATA.md](ACTIVITY_DATA.md) and [DATASET.md](DATASET.md): generation,
   schemas, sampled versus constructed evidence, coverage and remaining gaps.
 - [ACTIVITY_ASSESSMENT.md](ACTIVITY_ASSESSMENT.md) and [CLUSTERING.md](CLUSTERING.md):

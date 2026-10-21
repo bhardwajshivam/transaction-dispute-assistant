@@ -68,6 +68,8 @@ def record_reply(text, rerun=True):
     except WorkflowError as error:
         if error.code == 'SECRET_BLOCKED':
             st.error('Please remove OTPs, PINs, CVVs, passwords or access tokens and resend. This reply has not been saved or sent to the model.')
+        elif error.stage == 'card':
+            st.error(f"Card protection was not confirmed ({error.code}). Reopen this concern to check the saved request before retrying. For real protection, use the bank’s official controls or urgent support.")
         elif error.stage == 'case':
             st.error(f"Case submission was not confirmed ({error.code}). Reopen the concern to check status. A new case has not been assumed.")
         else:
@@ -146,11 +148,14 @@ if state.get('clustering'):
 
 def render_replies():
     options = choices(state)
-    extra = case_options(state)
-    if (state.get('case_command') or {}).get('status') == 'PREPARED':
+    from card_chat import active as card_active, OPEN as CARD_OPEN
+    extra = [] if card_active(state) else case_options(state)
+    if not card_active(state) and (state.get('case_command') or {}).get('status') == 'PREPARED':
         options = extra
     else:
         options = extra + options
+    if not card_active(state) and CARD_OPEN not in options:
+        options.append(CARD_OPEN)
     if state["step"] in {"transaction", "duplicate"}:
         search = st.text_input("Filter transactions", key=f"search_{state['step']}_{len(state['messages'])}", placeholder="Merchant, descriptor or TX reference")
         from domain import selected_transactions, search_transactions
@@ -160,7 +165,7 @@ def render_replies():
             candidates = ()
             state['search_status'] = 'UNAVAILABLE'
         allowed = {t.reference for t in candidates if search.strip().casefold() in f"{t.reference} {t.merchant} {t.descriptor}".casefold()}
-        options = [o for o in options if o.split(" · ")[0] in allowed or o in ("I can’t find it", "Change search details", "Request human assistance")]
+        options = [o for o in options if o.split(" · ")[0] in allowed or o in ("I can’t find it", "Change search details", "Request human assistance", CARD_OPEN)]
         if state.get('search_status') == 'UNAVAILABLE':
             st.warning("Transaction lookup is unavailable. This is not evidence that no payment exists. Please retry later or request human assistance.")
         elif not candidates:
@@ -202,5 +207,5 @@ if os.environ.get("SHOW_INTERNAL_DEBUG", "0") == "1" and state["decision"]:
         st.json(state["decision"])
         st.caption("All chat answers are customer assertions. Read-only tool records are demo bank facts. No document verification or authoritative eligibility policy is connected.")
         st.json(state["answers"])
-if text := st.chat_input("Describe your concern, answer, or add a follow-up update…", max_chars=2000, disabled=state["step"] in ("issue", "card")):
+if text := st.chat_input("Describe your concern, answer, or add a follow-up update…", max_chars=2000, disabled=state["step"] in ("issue", "card", "protect_card")):
     record_reply(text)

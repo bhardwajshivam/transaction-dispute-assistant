@@ -1,5 +1,6 @@
 """Deterministic review requirements, independent of customer satisfaction."""
 REASONS = {
+    'CARD_PROTECTION_SUPPORT_REQUIRED': 'Card protection requires official bank or specialist assistance; no real protection is provided by this simulator.',
     'AUTHORISATION_UNCLEAR': 'Authorisation remains uncertain and requires specialist review.',
     'POLICY_STALE': 'The policy or its attribution has changed; the earlier conclusion needs revalidation.',
     'POLICY_PRECONDITION_UNVERIFIED': 'The facts required by the retrieved policy have not been established.',

@@ -55,6 +55,8 @@ def connection(database=None):
         db.executescript(SCHEMA)
         from case_service import initialise
         initialise(db)
+        from card_service import initialise as initialise_cards
+        initialise_cards(db)
         encrypted_columns = [('concerns', 'state_json'), ('case_commands', 'payload_json'), ('cases', 'record_json'), ('actions', 'record_json'), ('audit_events', 'record_json')]
         sample = next((r[0] for table, column in encrypted_columns
                        if (r := db.execute(f'SELECT {column} FROM {table} WHERE {column} LIKE ? LIMIT 1', (PREFIX+'%',)).fetchone())), None)
@@ -201,7 +203,7 @@ def save_note(state, question, statement, concern_id=None, revision=0,
                 event['customer_statement'] = codec.open(event['customer_statement'])
             tx = db.execute('SELECT * FROM transactions WHERE transaction_id=?', (transaction_id,)).fetchone() if transaction_id else None
             missing=[]
-            if not transaction_id and state.get('issue_kind')!='policy_question': missing.append('SELECTED_TRANSACTION')
+            if not transaction_id and state.get('issue_kind')!='policy_question' and not state.get('card_protection'): missing.append('SELECTED_TRANSACTION')
             for key,evidence in state.get('evidence',{}).items():
                 if evidence.get('status') not in ('SUCCESS','NOT_FOUND'):
                     missing.append(key.upper()+'_VERIFICATION')
@@ -215,12 +217,14 @@ def save_note(state, question, statement, concern_id=None, revision=0,
             if state['review_reason_codes']:
                 missing.append('SPECIALIST_REVIEW_OF_RECORDED_REASONS')
             attempted=[dict(row) for row in db.execute('SELECT command_id,status,case_id,reason_code,confirmed_at FROM case_commands WHERE concern_id=? ORDER BY rowid',(concern_id,))]
+            attempted += [dict(row) for row in db.execute('SELECT command_id,status,card_id,action,reason_code,confirmed_at FROM card_commands WHERE concern_id=? ORDER BY rowid',(concern_id,))]
             package = {"customer_statements_unverified": events,
                        "demo_bank_facts": dict(tx) if tx else None,
                        "decision": state.get('decision'), "answers": state['answers'],
                        "evidence": state.get("evidence", {}), "controller_trace": state.get("agent_trace", []),
                        "unusual_activity": state.get('unusual_activity'), "activity_review": state.get('activity_review'),
                        "clustering": state.get('clustering'), "clustering_review": state.get('clustering_review'),
+                       "card_protection": state.get('card_protection'),
                        "policy_qa": state.get('policy_qa'), "policy_qa_history": state.get('policy_qa_history', []),
                        "intake_assertions": state.get("intake_assertions", []), "search_confirmation": state.get("search_confirmation"), "extraction_trace": state.get("extraction_trace", []),
                        "proposer_trace": state.get("proposer_trace", []), "evidence_runtime": state.get("evidence_runtime", {}),

@@ -47,7 +47,7 @@ python scripts/validate_bank_integration.py
 python scripts/validate_bank_integration.py --require-production
 ```
 
-The first command runs 28 existing evidence/case-service tests against fresh
+The first command runs 46 evidence/case/card-protection tests against fresh
 isolated SQLite databases and writes `data/bank_integration_validation/report.json`.
 Checks include ownership, permission revocation, confirmation, expiry, changed
 evidence/policy, same-key replay, concurrent duplicate requests, atomic failure,
@@ -111,4 +111,4 @@ After the fix, the actual Ollama rerun also achieved 14/14 combined exact matche
 with 100% field precision/recall. Model-only validated field recall remained 0%
 and all 14 responses contained rejected model fields. The live evaluator therefore
 still exits 1 intentionally: parser success does not satisfy model-quality checks.
-The full regression suite passes 186 tests; all 47 workflow journeys still pass.
+The full regression suite passes 204 tests; all 47 workflow journeys still pass.

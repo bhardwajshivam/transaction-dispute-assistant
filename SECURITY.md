@@ -75,3 +75,7 @@ Local CLI access assumes an authorised administrator with filesystem access. Exp
 Run `python -m unittest discover -s tests -v` in `.venv`. Tests cover secret rejection, redaction before model/storage, preservation of INR 200 and 19-10-2026, encrypted storage/migration, missing/wrong keys, permissions, compact events, safe export fields, staff login/scope/expiry, metadata audits, dry-run retention and preservation holds. These tests do not establish exhaustive PII detection or regulatory compliance.
 
 References: [OWASP logging](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html), [OWASP cryptographic storage](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html), [Fernet authenticated encryption](https://cryptography.io/en/stable/fernet/).
+
+## Simulated card controls
+
+The separate card-protection service requires a `card:protect` demo principal, current card access, durable permission, approved fictional policy, a current preview and explicit confirmation. It records durable intent and audited idempotent actions, supports unknown-outcome reconciliation, and includes attempts in confirmed handoffs. Card/action/status metadata is cleartext synthetic operational data; concern payloads remain encrypted. See [CARD_PROTECTION.md](CARD_PROTECTION.md). No real bank card is modified.

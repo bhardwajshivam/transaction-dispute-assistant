@@ -84,8 +84,10 @@ def prompt(state):
 
 def choices(state):
     step = state["step"]
+    from card_chat import active as card_active, choices as card_choices, OPEN as CARD_OPEN
+    if card_active(state):return card_choices(state)
     if step == 'issue':
-        return OPTIONS + [POLICY_OPTION]
+        return OPTIONS + [CARD_OPEN, POLICY_OPTION]
     if step == 'policy_topic':
         from policy_service import QUESTIONS as POLICY_QUESTIONS
         return list(POLICY_QUESTIONS)

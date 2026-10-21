@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.generate_data import write_json
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('tests.test_case_service', 'tests.test_evidence_agent')
+MODULES = ('tests.test_case_service', 'tests.test_evidence_agent', 'tests.test_card_protection')
 
 
 class RecordedResult(unittest.TestResult):
@@ -45,7 +45,7 @@ def run(output):
                   'No real identity provider, service credentials or bank permission contract is configured.',
                   'No bank-verified idempotency, reconciliation, timeout or audit evidence is available.'],
               'source_sha256': {p: hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in
-                  ('case_service.py','evidence_agent.py','tests/test_case_service.py','tests/test_evidence_agent.py')}}
+                  ('case_service.py','evidence_agent.py','card_service.py','card_chat.py','policies/card_protection_v1.json','policies/card_protection_approved.json','tests/test_case_service.py','tests/test_evidence_agent.py','tests/test_card_protection.py')}}
     write_json(Path(output)/'report.json', report)
     return report
 

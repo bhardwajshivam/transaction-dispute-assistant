@@ -1,6 +1,6 @@
 # Transaction Dispute Assistant
 
-Streamlit guided chat, deterministic routing and SQLite concern history, with optional bounded local Ollama evidence gathering. All account and transaction records are synthetic. No real bank actions, refund adjudication or human connection occurs.
+Streamlit guided chat, deterministic routing and SQLite concern history, with optional bounded local Ollama evidence gathering. All account and transaction records are synthetic. No real bank actions, refund adjudication or human connection occurs. Card protection is simulated and requires separate explicit confirmation.
 
 See [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md) for detailed component, customer journey, case execution/recovery and evaluation graphs rendered directly on GitHub.
 
@@ -50,6 +50,8 @@ python -m streamlit run app.py
 No API key or Python model SDK is needed. If the service is not running, start the Ollama app or run `ollama serve` separately. Default mode is `deterministic`. See [LLM_INTEGRATION.md](LLM_INTEGRATION.md) for configuration and controls. Both evidence proposals and complaint extraction are deterministic by default. Optional model extraction requires `CONCERN_EXTRACTION_MODE=ollama`; source-span validation and guided fallback still apply. No model decides eligibility. Live evaluation found 0% validated model field recall on the fixed probes; it is not recommended for the default journey.
 
 ## Journeys
+
+- Secure or block a card: select the card, choose temporary lock or permanent block, then explicitly confirm the simulated action. No transaction or detailed reason is required first. This can interrupt an existing concern; see [CARD_PROTECTION.md](CARD_PROTECTION.md).
 
 - Unrecognised payment: select a transaction, review merchant details and clarify authorisation.
 - Charged after cancellation: gather type, dates, method and confirmation details.
@@ -107,7 +109,7 @@ The same arguments reproduce JSON and checksums. Runtime data, scenario labels a
 python -m unittest discover -s tests -v
 ```
 
-Current result: **186 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
+Current result: **204 tests pass**, including 18 shared-policy-gating tests, 17 versioned-policy/journey tests, 15 clustering tests, 22 focused case-service tests, 11 activity-assessment tests and 7 richer-corpus tests. Tests are offline functional checks, not proof of banking readiness or model reliability. Confirmed simulated case creation, idempotent retries and outcome reconciliation are now implemented; see [CASE_CREATION.md](CASE_CREATION.md) for controls, examples and evaluation. Major remaining work includes broader extraction coverage, richer contradictions/counterfactual datasets, independent terminal labels, complete eligibility policy execution, production bank adapters and independent evaluation on realistic bank data. Simulated tools and handoffs must not be presented as real operations.
 
 
 ## Card selection and scope
@@ -171,7 +173,7 @@ Run `python scripts/evaluate_workflow.py` for 47 isolated, offline journeys thro
 
 ## Live model and integration checks
 
-See [LIVE_VALIDATION.md](LIVE_VALIDATION.md). `python scripts/evaluate_live_extraction.py` measures actual local Ollama responses separately from parser fallback and preserves failures. `python scripts/validate_bank_integration.py` runs 28 simulator contract checks; `--require-production` fails closed because a real bank sandbox/adapter is not configured. Live model probes exposed 0% validated model field recall, so the model is not validated as a dependable extractor.
+See [LIVE_VALIDATION.md](LIVE_VALIDATION.md). `python scripts/evaluate_live_extraction.py` measures actual local Ollama responses separately from parser fallback and preserves failures. `python scripts/validate_bank_integration.py` runs 46 simulator contract checks; `--require-production` fails closed because a real bank sandbox/adapter is not configured. Live model probes exposed 0% validated model field recall, so the model is not validated as a dependable extractor.
 
 ## Submission package and clean verification
 

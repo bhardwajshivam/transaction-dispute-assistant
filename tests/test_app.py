@@ -141,7 +141,8 @@ class ConversationTests(unittest.TestCase):
         self.addCleanup(env.stop)
         app = AppTest.from_file('app.py').run()
         from policy_journey import OPEN
-        self.assertEqual([b.label for b in app.chat_message[-1].button], OPTIONS+[OPEN])
+        from card_chat import OPEN as CARD_OPEN
+        self.assertEqual([b.label for b in app.chat_message[-1].button], OPTIONS+[CARD_OPEN,OPEN])
         self.assertTrue(app.chat_input[0].disabled)
         next(b for b in app.button if b.label == OPTIONS[0]).click().run()
         self.assertEqual(app.session_state.conversation['step'], 'card')

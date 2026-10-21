@@ -226,8 +226,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-43080fa46453",
-              "EV-6b327178564b",
+              "EV-eb18eca55582",
+              "EV-cb40332c1478",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -483,8 +483,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-0e29f798c6e7",
-              "EV-c01c568f3aab",
+              "EV-5c8f77275d63",
+              "EV-88aae948adce",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -761,8 +761,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-634ea52e2d2e",
-              "EV-92fb7ee25665",
+              "EV-ef7075439d02",
+              "EV-9fc75dd2a15a",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -1008,8 +1008,8 @@
             "policy_conclusion": false,
             "policy_reason_code": "CUSTOMER_ACKNOWLEDGEMENT_OR_OPERATIONAL_REFERRAL",
             "evidence_ids": [
-              "EV-74612c041e25",
-              "EV-63f068a05bef"
+              "EV-7d40db2d1dae",
+              "EV-214c551d165e"
             ]
           },
           "review_codes": [
@@ -1256,8 +1256,8 @@
             "policy_conclusion": false,
             "policy_reason_code": "CUSTOMER_ACKNOWLEDGEMENT_OR_OPERATIONAL_REFERRAL",
             "evidence_ids": [
-              "EV-e11bb666f578",
-              "EV-4c5b5b3717c3"
+              "EV-e46e775f4db3",
+              "EV-a55372d801cd"
             ]
           },
           "review_codes": [
@@ -1568,9 +1568,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-d0c98711f98a",
-              "EV-d695733e5b1c",
-              "EV-252bcf7ffb9b",
+              "EV-18922ff9d353",
+              "EV-fbc26a8d9e87",
+              "EV-925fd410188b",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -2204,9 +2204,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-80f157b37013",
-              "EV-83fc6a74d689",
-              "EV-27dbf3e8af5b",
+              "EV-552111beb771",
+              "EV-ca8a1928020c",
+              "EV-facf3222c7d0",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -2477,9 +2477,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-5860e531614b",
-              "EV-862981768ec8",
-              "EV-27a49ca810a3",
+              "EV-d3dbc93d189f",
+              "EV-0dc115c0b7f7",
+              "EV-6367d9ffbe91",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -2787,10 +2787,10 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-ab798a9f923e",
-              "EV-e4d473015bd4",
-              "EV-098b8243c84f",
-              "EV-54694ed7a86b",
+              "EV-84c8264f5ed0",
+              "EV-b289b31bf082",
+              "EV-2955ddf60b26",
+              "EV-6bbf77220dfc",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -3098,8 +3098,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-40e2281c9a4e",
-              "EV-c397a82308d8",
+              "EV-e093bd11386f",
+              "EV-430e011ec3ae",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -5566,8 +5566,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-83e5d1f881b9",
-              "EV-3a5c10f87d41",
+              "EV-f27b6fc563bc",
+              "EV-ca5b22905d56",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -5822,8 +5822,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-8de46b98398f",
-              "EV-9ded769e91fb",
+              "EV-30ff11c1a4f2",
+              "EV-216585bb9958",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -6078,8 +6078,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-0aef797378cb",
-              "EV-a99f822c1f8d",
+              "EV-5d032389e78d",
+              "EV-65edee67f4bb",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -6334,8 +6334,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-21c4a5aae4b9",
-              "EV-d69048a67f01",
+              "EV-38b09dd6be39",
+              "EV-31a37d8fcf7a",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -6589,8 +6589,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-e683eb465408",
-              "EV-472e1635aad0",
+              "EV-ea2b52b790ae",
+              "EV-f284e7afc89c",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -6841,8 +6841,8 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-b1f34cdd7322",
-              "EV-41148bdcee9f",
+              "EV-78a2f3ed5979",
+              "EV-497262617c97",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -6919,32 +6919,32 @@
         {
           "customer_statements_unverified": [
             {
-              "recorded_at": "2026-10-21T13:30:19.696438+00:00",
+              "recorded_at": "2026-10-21T15:04:10.462989+00:00",
               "question_key": "issue",
               "customer_statement": "I have an unrecognised transaction"
             },
             {
-              "recorded_at": "2026-10-21T13:30:19.708663+00:00",
+              "recorded_at": "2026-10-21T15:04:10.472349+00:00",
               "question_key": "card",
               "customer_statement": "CARD-001"
             },
             {
-              "recorded_at": "2026-10-21T13:30:19.712812+00:00",
+              "recorded_at": "2026-10-21T15:04:10.475108+00:00",
               "question_key": "elaborate",
               "customer_statement": "Please investigate payment TX-1001."
             },
             {
-              "recorded_at": "2026-10-21T13:30:19.716955+00:00",
+              "recorded_at": "2026-10-21T15:04:10.478049+00:00",
               "question_key": "search_confirm",
               "customer_statement": "Confirm and search"
             },
             {
-              "recorded_at": "2026-10-21T13:30:19.729175+00:00",
+              "recorded_at": "2026-10-21T15:04:10.485344+00:00",
               "question_key": "transaction",
               "customer_statement": "TX-1001"
             },
             {
-              "recorded_at": "2026-10-21T13:30:19.737008+00:00",
+              "recorded_at": "2026-10-21T15:04:10.490104+00:00",
               "question_key": "handoff_confirm",
               "customer_statement": "Yes, request human assistance"
             }
@@ -6978,10 +6978,10 @@
           },
           "evidence": {
             "transaction": {
-              "evidence_id": "EV-e1452da040de",
+              "evidence_id": "EV-45864c548558",
               "source": "verify_selected_transaction",
               "transaction_id": "TX-1001",
-              "observed_at": "2026-10-21T13:30:19.723238+00:00",
+              "observed_at": "2026-10-21T15:04:10.481995+00:00",
               "status": "SUCCESS",
               "records": [
                 {
@@ -7027,18 +7027,18 @@
               ]
             },
             "merchant": {
-              "evidence_id": "EV-90ef8711bd1a",
+              "evidence_id": "EV-b046e59af257",
               "source": "resolve_merchant",
               "transaction_id": "TX-1001",
-              "observed_at": "2026-10-21T13:30:19.723701+00:00",
+              "observed_at": "2026-10-21T15:04:10.482279+00:00",
               "status": "UNAVAILABLE",
               "records": []
             },
             "policy": {
-              "evidence_id": "EV-0f9376f3d045",
+              "evidence_id": "EV-8ee22dc398ab",
               "source": "resolve_intake_policy",
               "transaction_id": "TX-1001",
-              "observed_at": "2026-10-21T13:30:19.723716+00:00",
+              "observed_at": "2026-10-21T15:04:10.482288+00:00",
               "status": "SUCCESS",
               "records": [
                 {
@@ -7161,7 +7161,7 @@
                 "transaction_id": "TX-1001"
               },
               "validation": "VALIDATED",
-              "recorded_at": "2026-10-21T13:30:19.723238+00:00",
+              "recorded_at": "2026-10-21T15:04:10.481995+00:00",
               "result_status": "SUCCESS"
             },
             {
@@ -7171,7 +7171,7 @@
                 "transaction_id": "TX-1001"
               },
               "validation": "VALIDATED",
-              "recorded_at": "2026-10-21T13:30:19.723701+00:00",
+              "recorded_at": "2026-10-21T15:04:10.482279+00:00",
               "result_status": "UNAVAILABLE"
             },
             {
@@ -7181,7 +7181,7 @@
                 "transaction_id": "TX-1001"
               },
               "validation": "VALIDATED",
-              "recorded_at": "2026-10-21T13:30:19.723716+00:00",
+              "recorded_at": "2026-10-21T15:04:10.482288+00:00",
               "result_status": "SUCCESS"
             }
           ],
@@ -7521,6 +7521,7 @@
             "reason_codes": [],
             "notice": "Cluster-distance anomaly score, not a probability of fraud. No action is authorised."
           },
+          "card_protection": null,
           "policy_qa": null,
           "policy_qa_history": [],
           "intake_assertions": [
@@ -7636,7 +7637,7 @@
             ],
             [
               "assistant",
-              "Your assistance request has been recorded: HELP-3842043601FF. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
+              "Your assistance request has been recorded: HELP-C0BEF657A5A3. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
             ]
           ]
         }
@@ -7747,7 +7748,7 @@
             "EVIDENCE_VERIFICATION_UNAVAILABLE"
           ],
           "assistant": [
-            "Your assistance request has been recorded: HELP-3842043601FF. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
+            "Your assistance request has been recorded: HELP-C0BEF657A5A3. In a live banking service, a representative would contact you on your registered mobile number shortly. This is a simulation: no callback has been scheduled and no real representative has been notified."
           ],
           "case_status": null,
           "counts": {
@@ -8265,9 +8266,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-882634a6dd9d",
-              "EV-ca9b353aab4b",
-              "EV-dfe1cca1b788",
+              "EV-b8073ec8cb5b",
+              "EV-50eb8895e46b",
+              "EV-128c1da0acce",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -8345,9 +8346,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-882634a6dd9d",
-              "EV-ca9b353aab4b",
-              "EV-dfe1cca1b788",
+              "EV-b8073ec8cb5b",
+              "EV-50eb8895e46b",
+              "EV-128c1da0acce",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -8424,15 +8425,15 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-882634a6dd9d",
-              "EV-ca9b353aab4b",
-              "EV-dfe1cca1b788",
+              "EV-b8073ec8cb5b",
+              "EV-50eb8895e46b",
+              "EV-128c1da0acce",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
           "review_codes": [],
           "assistant": [
-            "Your simulated dispute case is recorded: CASE-ad5ef09ed92141f7. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
+            "Your simulated dispute case is recorded: CASE-960927f780174ce4. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
           ],
           "case_status": "SUCCEEDED",
           "counts": {
@@ -8698,9 +8699,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-771d458d4eec",
-              "EV-a1d80b45cee2",
-              "EV-b3b3b1007b7a",
+              "EV-d8fec4c19b6a",
+              "EV-2bbb4c6baabb",
+              "EV-fda8a6c67c82",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -8778,9 +8779,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-771d458d4eec",
-              "EV-a1d80b45cee2",
-              "EV-b3b3b1007b7a",
+              "EV-d8fec4c19b6a",
+              "EV-2bbb4c6baabb",
+              "EV-fda8a6c67c82",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -8857,15 +8858,15 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-771d458d4eec",
-              "EV-a1d80b45cee2",
-              "EV-b3b3b1007b7a",
+              "EV-d8fec4c19b6a",
+              "EV-2bbb4c6baabb",
+              "EV-fda8a6c67c82",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
           "review_codes": [],
           "assistant": [
-            "Your simulated dispute case is recorded: CASE-85be644b32ad4754. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
+            "Your simulated dispute case is recorded: CASE-26d3fc2c14a64c8f. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
           ],
           "case_status": "SUCCEEDED",
           "counts": {
@@ -9140,9 +9141,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-b1afce610f90",
-              "EV-eb85a8cda450",
-              "EV-debeb1048549",
+              "EV-40ead0ab87fa",
+              "EV-1cbfb1d15587",
+              "EV-e74c31c88e83",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -9220,9 +9221,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-b1afce610f90",
-              "EV-eb85a8cda450",
-              "EV-debeb1048549",
+              "EV-40ead0ab87fa",
+              "EV-1cbfb1d15587",
+              "EV-e74c31c88e83",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -9299,15 +9300,15 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-b1afce610f90",
-              "EV-eb85a8cda450",
-              "EV-debeb1048549",
+              "EV-40ead0ab87fa",
+              "EV-1cbfb1d15587",
+              "EV-e74c31c88e83",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
           "review_codes": [],
           "assistant": [
-            "Your simulated dispute case is recorded: CASE-7eba333dff074c08. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
+            "Your simulated dispute case is recorded: CASE-3c7fea468f7940b7. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
           ],
           "case_status": "SUCCEEDED",
           "counts": {
@@ -9505,9 +9506,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-1e4e1bf182e2",
-              "EV-e90967b4036e",
-              "EV-2b2630d2f4d8",
+              "EV-989884a02581",
+              "EV-661d70dc79c3",
+              "EV-6cd5fd4439cf",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -9585,9 +9586,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-1e4e1bf182e2",
-              "EV-e90967b4036e",
-              "EV-2b2630d2f4d8",
+              "EV-989884a02581",
+              "EV-661d70dc79c3",
+              "EV-6cd5fd4439cf",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -9664,15 +9665,15 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-1e4e1bf182e2",
-              "EV-e90967b4036e",
-              "EV-2b2630d2f4d8",
+              "EV-989884a02581",
+              "EV-661d70dc79c3",
+              "EV-6cd5fd4439cf",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
           "review_codes": [],
           "assistant": [
-            "Your simulated dispute case is recorded: CASE-7eba333dff074c08. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
+            "Your simulated dispute case is recorded: CASE-3c7fea468f7940b7. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
           ],
           "case_status": "SUCCEEDED",
           "counts": {
@@ -9940,9 +9941,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-3286a43222ba",
-              "EV-adc4f1d899e9",
-              "EV-61933b1863ae",
+              "EV-e428ab6ae599",
+              "EV-dd3440ee25d8",
+              "EV-0359ba231f87",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10020,9 +10021,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-3286a43222ba",
-              "EV-adc4f1d899e9",
-              "EV-61933b1863ae",
+              "EV-e428ab6ae599",
+              "EV-dd3440ee25d8",
+              "EV-0359ba231f87",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10292,9 +10293,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-09f3525b99ff",
-              "EV-56210f10bd17",
-              "EV-cdc07057fd52",
+              "EV-[PHONE_OR_IDENTIFIER_REDACTED]",
+              "EV-1a62c6cd5d0b",
+              "EV-7a911d3550e6",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10372,9 +10373,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-09f3525b99ff",
-              "EV-56210f10bd17",
-              "EV-cdc07057fd52",
+              "EV-[PHONE_OR_IDENTIFIER_REDACTED]",
+              "EV-1a62c6cd5d0b",
+              "EV-7a911d3550e6",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10451,9 +10452,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-09f3525b99ff",
-              "EV-56210f10bd17",
-              "EV-cdc07057fd52",
+              "EV-[PHONE_OR_IDENTIFIER_REDACTED]",
+              "EV-1a62c6cd5d0b",
+              "EV-7a911d3550e6",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10724,9 +10725,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-fad4603b9a53",
-              "EV-ac797d369fd9",
-              "EV-9f8d33aef9c0",
+              "EV-5f8646fa5e38",
+              "EV-4b8aa8d29c16",
+              "EV-6be27eb37571",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10804,9 +10805,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-fad4603b9a53",
-              "EV-ac797d369fd9",
-              "EV-9f8d33aef9c0",
+              "EV-5f8646fa5e38",
+              "EV-4b8aa8d29c16",
+              "EV-6be27eb37571",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -10883,9 +10884,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-fad4603b9a53",
-              "EV-ac797d369fd9",
-              "EV-9f8d33aef9c0",
+              "EV-5f8646fa5e38",
+              "EV-4b8aa8d29c16",
+              "EV-6be27eb37571",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11157,9 +11158,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-f74421c2240e",
-              "EV-fb4d84eaf24d",
-              "EV-334fb980654e",
+              "EV-3008d1d917c9",
+              "EV-0e18f9d9dc88",
+              "EV-67fdcc6f71d4",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11237,9 +11238,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-f74421c2240e",
-              "EV-fb4d84eaf24d",
-              "EV-334fb980654e",
+              "EV-3008d1d917c9",
+              "EV-0e18f9d9dc88",
+              "EV-67fdcc6f71d4",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11316,9 +11317,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-f74421c2240e",
-              "EV-fb4d84eaf24d",
-              "EV-334fb980654e",
+              "EV-3008d1d917c9",
+              "EV-0e18f9d9dc88",
+              "EV-67fdcc6f71d4",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11398,9 +11399,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-f74421c2240e",
-              "EV-fb4d84eaf24d",
-              "EV-334fb980654e",
+              "EV-3008d1d917c9",
+              "EV-0e18f9d9dc88",
+              "EV-67fdcc6f71d4",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11479,9 +11480,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-f74421c2240e",
-              "EV-fb4d84eaf24d",
-              "EV-334fb980654e",
+              "EV-3008d1d917c9",
+              "EV-0e18f9d9dc88",
+              "EV-67fdcc6f71d4",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11489,7 +11490,7 @@
             "ACTION_OUTCOME_UNKNOWN"
           ],
           "assistant": [
-            "Your simulated dispute case is recorded: CASE-879323917b054375. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
+            "Your simulated dispute case is recorded: CASE-8e077a7f76524464. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
           ],
           "case_status": "SUCCEEDED",
           "counts": {
@@ -11760,9 +11761,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-69e5be3b2dab",
-              "EV-f9293760a722",
-              "EV-c690536a9fe5",
+              "EV-2941ba879fc0",
+              "EV-d5d2af3ba380",
+              "EV-eb4526a6405f",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11840,9 +11841,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-69e5be3b2dab",
-              "EV-f9293760a722",
-              "EV-c690536a9fe5",
+              "EV-2941ba879fc0",
+              "EV-d5d2af3ba380",
+              "EV-eb4526a6405f",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -11919,9 +11920,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-69e5be3b2dab",
-              "EV-f9293760a722",
-              "EV-c690536a9fe5",
+              "EV-2941ba879fc0",
+              "EV-d5d2af3ba380",
+              "EV-eb4526a6405f",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -12001,9 +12002,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-69e5be3b2dab",
-              "EV-f9293760a722",
-              "EV-c690536a9fe5",
+              "EV-2941ba879fc0",
+              "EV-d5d2af3ba380",
+              "EV-eb4526a6405f",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -12011,7 +12012,7 @@
             "ACTION_OUTCOME_UNKNOWN"
           ],
           "assistant": [
-            "Your simulated dispute case is recorded: CASE-a723474032494c05. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
+            "Your simulated dispute case is recorded: CASE-cdb632fc81514d42. If a case already existed for this payment, this concern has been linked to it. No real bank submission, refund or card action has occurred. Any required specialist review still applies. You can continue with the questions below."
           ],
           "case_status": "SUCCEEDED",
           "counts": {
@@ -12283,9 +12284,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-931db25af676",
-              "EV-62d14ea07028",
-              "EV-fc0448d6f389",
+              "EV-32b80c81359b",
+              "EV-e04d43544818",
+              "EV-f2d42e1e6b58",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -12363,9 +12364,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-931db25af676",
-              "EV-62d14ea07028",
-              "EV-fc0448d6f389",
+              "EV-32b80c81359b",
+              "EV-e04d43544818",
+              "EV-f2d42e1e6b58",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },
@@ -12442,9 +12443,9 @@
             "policy_conclusion": true,
             "policy_reason_code": "POLICY_VALIDATED",
             "evidence_ids": [
-              "EV-931db25af676",
-              "EV-62d14ea07028",
-              "EV-fc0448d6f389",
+              "EV-32b80c81359b",
+              "EV-e04d43544818",
+              "EV-f2d42e1e6b58",
               "efdea2f674d8f49c7ddfef417c0f0beee5f300229f2009f80f141b6b3675b950"
             ]
           },

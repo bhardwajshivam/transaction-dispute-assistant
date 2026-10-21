@@ -13,10 +13,11 @@ def purge_expired(days, database=None, execute=False, now=None):
         ids = [row[0] for row in db.execute(
             "SELECT concern_id FROM concerns WHERE updated_at<? AND concern_id NOT IN (SELECT concern_id FROM concern_holds) "
             "AND concern_id NOT IN (SELECT concern_id FROM case_links) "
-            "AND concern_id NOT IN (SELECT concern_id FROM case_commands WHERE status IN ('SUBMITTING','UNKNOWN','SUCCEEDED'))", (cutoff,))]
+            "AND concern_id NOT IN (SELECT concern_id FROM case_commands WHERE status IN ('SUBMITTING','UNKNOWN','SUCCEEDED')) "
+            "AND concern_id NOT IN (SELECT concern_id FROM card_commands WHERE status IN ('SUBMITTING','UNKNOWN','SUCCEEDED'))", (cutoff,))]
         if execute:
             for cid in ids:
-                for table in ('case_commands', 'handoff_requests', 'concern_review', 'concern_events'):
+                for table in ('card_commands', 'case_commands', 'handoff_requests', 'concern_review', 'concern_events'):
                     db.execute(f'DELETE FROM {table} WHERE concern_id=?', (cid,))
                 db.execute('DELETE FROM concerns WHERE concern_id=?', (cid,))
                 audit(db, cid, 'local-retention-admin', 'RETENTION_PURGED')

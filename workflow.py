@@ -12,6 +12,7 @@ from conversation import submit,prompt
 from review import update_review,offer_review
 from concerns import save_note
 from case_chat import handle as handle_case
+from card_chat import handle as handle_card, active as card_active, intent as card_intent
 
 
 class WorkflowError(ValueError):
@@ -35,12 +36,14 @@ def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None
     candidate=deepcopy(state)
     update_review(candidate)
     question=candidate['step']
+    card_request=card_active(candidate) or card_intent(text)
     try:
-        handled=handle_case(candidate,text,concern_id,database)
+        card_handled=handle_card(candidate,text,concern_id,database)
+        handled=card_handled or handle_case(candidate,text,concern_id,database)
     except (sqlite3.Error,ValueError,PermissionError,FileNotFoundError) as error:
-        raise WorkflowError('case',getattr(error,'code','PERMISSION_DENIED' if isinstance(error,PermissionError) else 'CASE_SERVICE_UNAVAILABLE')) from None
+        raise WorkflowError('card' if card_request else 'case',getattr(error,'code','PERMISSION_DENIED' if isinstance(error,PermissionError) else 'CARD_SERVICE_UNAVAILABLE' if card_request else 'CASE_SERVICE_UNAVAILABLE')) from None
     if handled:
-        question='case_control'
+        question='card_control' if card_handled else 'case_control'
     elif question=='done':
         candidate['messages'].extend([('user',text),('assistant','Your update has been added to this concern’s history. The earlier routing suggestion has not been re-evaluated; contact the bank for further review.')])
         candidate['answers'].setdefault('follow_up_updates',[]).append(text)
@@ -56,7 +59,7 @@ def process(state,text,concern_id=None,revision=0,*,database=None,extractor=None
             from concern_extraction import extract
             extractor=extract
         submit(candidate,text,extractor=extractor)
-    if candidate.get('answers',{}).get('transaction') and question not in ('handoff_confirm','satisfaction','follow_up_update','case_control'):
+    if candidate.get('answers',{}).get('transaction') and question not in ('handoff_confirm','satisfaction','follow_up_update','case_control','card_control'):
         if gatherer is None:
             from orchestration import gather
             gatherer=gather
@@ -84,4 +87,10 @@ def reopen(concern_id,*,database=None):
         if command['status'] in ('UNKNOWN','SUBMITTING'): command=reconcile(command['command_id'],demo_customer(),database)
         restore(state,command)
         state['messages'].append(('assistant',f"Saved case submission status: {command['status']}. Reference: {command.get('case_id') or command['command_id']}."))
+    from card_service import latest as latest_card, reconcile as reconcile_card, demo_principal
+    from card_chat import restore as restore_card, active as card_active
+    card=latest_card(concern_id,demo_principal(),database)
+    if card and (card_active(state) or card['status'] in ('SUBMITTING','UNKNOWN')):
+        if card['status'] in ('SUBMITTING','UNKNOWN'):card=reconcile_card(card['command_id'],demo_principal(),database)
+        restore_card(state,card)
     return TurnResult(state,concern_id,saved['revision'],())

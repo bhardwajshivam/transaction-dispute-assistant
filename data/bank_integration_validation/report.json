@@ -1,6 +1,6 @@
 {
   "environment": "ISOLATED_SQLITE_SIMULATOR",
-  "tests_run": 28,
+  "tests_run": 46,
   "contract_status": "PASS",
   "checks": [
     {
@@ -114,6 +114,78 @@
     {
       "test": "tests.test_evidence_agent.EvidenceControllerTests.test_tool_unavailable_and_malformed_record",
       "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_block_cannot_be_downgraded_and_repeated_block_is_noop",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_changed_card_state_requires_reconfirmation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_committed_action_recovers_after_chat_save_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_expired_cancelled_and_superseded_previews_fail",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_gateway_rejects_unconfirmed_intent_and_concurrent_replay_is_once",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_intent_is_narrow_and_negation_or_hypotheticals_do_not_act",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_interruption_preserves_original_dispute_card_and_answers",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_missing_card_status_fails_closed",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_missing_or_tampered_policy_never_authorises_action",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_new_card_journey_has_no_transaction_or_reason_prerequisite",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_permission_scope_expiry_and_revocation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_preview_is_not_action_and_exact_confirmation_is_required",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_reported_stolen_card_keeps_review_and_rejects_lock_downgrade",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_simulation_preserves_transaction_facts_and_retains_action_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_streamlit_opening_option_card_selection_confirmation_and_cancel",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_timeout_after_commit_reconciles_even_after_policy_loss",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_timeout_before_commit_retries_same_key",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_card_protection.CardProtectionTests.test_unknown_reopen_uses_durable_command_and_help_package_has_attempts",
+      "status": "PASS"
     }
   ],
   "production_status": "NOT_VALIDATED",
@@ -125,7 +197,12 @@
   "source_sha256": {
     "case_service.py": "7d0067acf55a026e6b630528b1353291f05932416b422e75fe30ab90bf75f2e0",
     "evidence_agent.py": "55738af5f21502023c13675aaea9ac7e74d3cd4f0f64c2c859226906444bf740",
+    "card_service.py": "79fa41dfb294de2537a0ad7654b0c329b26e99535d7d242d6618aa27e7bf617f",
+    "card_chat.py": "0dedec9cd4eca0d386e32063291996b8450b13ad1f3e8c8b7d33a2b89db6750a",
+    "policies/card_protection_v1.json": "b7dcc7b569f20ab7ee85a7b2b68ec1d2f6686cb6c66ccbad4a141696e401b39f",
+    "policies/card_protection_approved.json": "882eebc367ea9381b752c6474253d340f1c3439d4ea86520ad6fd62444d2516c",
     "tests/test_case_service.py": "2ef926a2c74c43ee06b9e70c4fd1361702b35513108ccab2f13aa1b84ca85dd1",
-    "tests/test_evidence_agent.py": "372f36c068de2a2586aea6125e4951c3144b63f4cb8b8d8d5b6d58907e998d5b"
+    "tests/test_evidence_agent.py": "372f36c068de2a2586aea6125e4951c3144b63f4cb8b8d8d5b6d58907e998d5b",
+    "tests/test_card_protection.py": "21503203bce2077db08f9171109378d7979d57aca866fa94c543883760b7472b"
   }
 }

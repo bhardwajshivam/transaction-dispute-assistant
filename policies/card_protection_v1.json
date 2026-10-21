@@ -1,0 +1,14 @@
+{
+  "policy_id": "DEMO-CARD-PROTECTION",
+  "version": "1.0",
+  "scope": "synthetic card controls only",
+  "effective_from": "2026-10-20",
+  "effective_to": null,
+  "fictional": true,
+  "actions": {
+    "LOCK": "Temporarily restrict this simulated card. Unlocking is not implemented in this prototype; a live bank must provide its supported unlock controls.",
+    "BLOCK": "Permanently block this simulated card. This cannot be undone in this prototype. Replacement is a separate bank process."
+  },
+  "notice": "Simulation only. No real bank card is changed. Restrictions do not cancel subscriptions, reverse payments or guarantee that every payment type is stopped.",
+  "authority": "Fictional prototype card protection policy"
+}

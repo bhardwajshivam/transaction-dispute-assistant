@@ -43,6 +43,8 @@ flowchart TB
     end
 
     subgraph action["Separate consequential-action boundary - simulated only"]
+        cardcommand["card_chat.py and card_service.py<br/>Interruptible card selection, lock or block<br/>Exact confirmation and approved policy"]
+        cardledger["Card commands and atomic simulated gateway<br/>State-version guard, idempotency and audit<br/>Status reconciliation and no real card action"]
         command["case_chat.py and case_service.py<br/>Preview and explicit confirmation<br/>Fresh permission, evidence and policy checks"]
         ledger["Durable command state<br/>Stable command ID and idempotency key<br/>Status lookup and reconciliation"]
         gateway["Atomic SQLite case gateway<br/>Create or link existing simulated case<br/>Business duplicate guard and action audit"]
@@ -51,7 +53,7 @@ flowchart TB
 
     subgraph sources["Local authoritative sources within the simulator"]
         bank[("SQLite bank fixtures<br/>Accounts, access, transactions, merchants<br/>Receipts, cancellations, refunds and credits")]
-        policies[("Three fictional policy sources<br/>SQLite intake rules<br/>Approved information corpus and manifest<br/>Versioned case-recording JSON")]
+        policies[("Four fictional policy sources<br/>SQLite intake rules<br/>Approved information corpus and manifest<br/>Case-recording JSON and approved card-control JSON")]
         config[("Versioned activity and clustering configuration")]
         records[("SQLite operational records<br/>Concerns, events, review state, handoffs<br/>Commands, cases, actions and audit records")]
         keys["Local private key or supplied Fernet key<br/>Excluded from GitHub and submission archive"]
@@ -81,6 +83,11 @@ flowchart TB
     ollama -.-> validate
     validate -.->|"unverified extraction suggestions"| parser
     validate -.->|"permitted read proposal only"| evidence
+    chat -->|"card protection request or interruption"| cardcommand
+    cardcommand -->|"current ownership, permission and status"| bank
+    cardcommand -->|"approved source and effective date"| policies
+    cardcommand --> cardledger --> records
+    cardledger -->|"verified simulated outcome or UNKNOWN"| explain
     chat -->|"request preview or explicitly confirm"| command
     command --> gate
     command -->|"fresh ownership and permissions"| bank
@@ -109,6 +116,11 @@ produce an action. Its completion still requires committed outcome evidence.
 ```mermaid
 flowchart TD
     begin["Start customer chat"] --> issue{"Complaint or general policy question?"}
+    issue -->|"Card protection or explicit interrupt"| protectcard["Select accessible card without transaction or detailed reason"]
+    protectcard --> protecttype["Choose lock or permanent block<br/>Reported compromise cannot downgrade to lock"]
+    protecttype --> protectconfirm["Explain effects and obtain exact confirmation<br/>Recheck card version, permission and approved policy"]
+    protectconfirm --> protectresult["Simulated committed result or UNKNOWN<br/>Reconcile and retry using the same command ID"]
+    protectresult --> saved
     issue -->|"Transaction complaint"| card["Select an accessible demo card"]
     card --> describe["Customer elaborates the concern"]
     describe --> protect{"Detected authentication secret?"}
@@ -285,3 +297,5 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the capability/authority matrix,
 alternatives, detailed source ownership and operational limits;
 [USER_GUIDE.md](USER_GUIDE.md) for running the app; and
 [EVALUATION.md](EVALUATION.md) for reproducible measurements and limitations.
+
+Card protection is the additional independently gated action path. See [CARD_PROTECTION.md](CARD_PROTECTION.md) for state transitions, initial simulator assumptions, recovery tests and limits. Models and activity scores cannot invoke it.

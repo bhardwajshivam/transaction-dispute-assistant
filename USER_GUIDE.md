@@ -1,7 +1,7 @@
 # Using the Transaction Dispute Assistant
 
 This guide is for running and reviewing the synthetic prototype locally. It does
-not connect to a bank, issue refunds, block cards or arrange real callbacks.
+not connect to a bank, issue refunds, block real cards or arrange real callbacks. It supports explicitly confirmed simulated card controls.
 Use synthetic information only. The demo reference date is 20 October 2026;
 future dates relative to that snapshot are intentionally rejected.
 
@@ -116,6 +116,17 @@ A different reported date can correctly trigger material-conflict review.
 See [DEMO_JOURNEYS.md](DEMO_JOURNEYS.md) for the eight required demonstrations
 and exact automated references, including urgent-risk and failure paths.
 
+## Secure or block a card without a dispute
+
+Choose **Secure or block my card**, or type an explicit request such as `block
+my card` during a concern. Select the card, choose temporary lock or permanent
+block and review the consequences. Confirm with the explicit action button.
+A detailed reason or transaction lookup is not required first. Lost/stolen or
+compromised reports retain required review and do not offer temporary lock as a
+downgrade. Completion is simulated only; use official bank controls for actual
+protection. Unlock and replacement are not implemented. You can resume the
+original concern afterwards. See [CARD_PROTECTION.md](CARD_PROTECTION.md).
+
 ## 4. Understand an outcome
 
 Merchant details and historical spending signals are evidence, not proof of
@@ -194,8 +205,8 @@ python scripts/demonstrate_journeys.py
 python scripts/validate_bank_integration.py
 ```
 
-Recorded results: 186 regression tests, 14/14 deterministic extraction probes,
-47/47 workflow cases, 14/14 policy cases, 8/8 demonstration journeys and 28/28
+Recorded results: 204 regression tests, 14/14 deterministic extraction probes,
+47/47 workflow cases, 14/14 policy cases, 8/8 demonstration journeys and 46/46
 simulator contract checks. Reports are JSON/Markdown under `data/`; workflow
 reports include source fingerprints, component checks, critical errors, weighted
 costs and failure traces. These are synthetic development/conformance results,

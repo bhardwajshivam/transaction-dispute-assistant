@@ -74,6 +74,7 @@ def customer_export(state, concern_id, events):
         'routing': {k: state['decision'].get(k) for k in ('route','reason','explanation','policy_conclusion','decision_type','policy_reason_code','policy_context')} if state.get('decision') else None,
         'review_requirement': state.get('review_requirement'), 'review_reason_codes': state.get('review_reason_codes'),
         'handoff_status': state.get('handoff_status'),
+        'simulated_card_protection': {k: state.get('card_protection', {}).get('command', {}).get(k) for k in ('command_id','card_id','action','status','reason_code')},
         'simulated_case': {k: state.get('case_command', {}).get(k) for k in ('case_id', 'status', 'reason_code')},
         'activity_checks': {'status': state.get('unusual_activity', {}).get('status'),
                             'rules_version': state.get('unusual_activity', {}).get('rules_version'),

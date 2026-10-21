@@ -300,6 +300,31 @@
         "passed": 16,
         "exit_code": 0
       }
+    },
+    {
+      "change": "Added independent confirmed simulated card-protection journey, interrupt/resume controls, approved fictional policy, durable idempotent actions, reconciliation and handoff/retention integration.",
+      "source_sha256": {
+        "card_service.py": "79fa41dfb294de2537a0ad7654b0c329b26e99535d7d242d6618aa27e7bf617f",
+        "card_chat.py": "0dedec9cd4eca0d386e32063291996b8450b13ad1f3e8c8b7d33a2b89db6750a",
+        "workflow.py": "b4ddf1ed40a9e07f6be98862ca7f720a238a3be37e1f170c262e7b46fd01773b",
+        "app.py": "3c1c0d009ca45346a9edcf0ff86071129261047bb77eb76272a34904f4c6f221",
+        "conversation.py": "85a6ddcc3b522f338a89d30717ec6ecace3fa1a0f4f704ae16d37f65a3c0b6f9",
+        "concerns.py": "6d8636223e68e98aa94f5fe1563ad311d78b5cd98e3dbf8481a33e4d1f5550fd",
+        "review.py": "2f63fada999ba2a448e8f78e87a1b5384d95ab606c493ee12c8da8a7b789adf6",
+        "privacy.py": "6265a5463b58b4b20f0ce7793db25a91537e68aefcb42ffc3bc4e5b8c449b201",
+        "retention.py": "aa7e4d865ced3aa5ea572b966bebda29b715c159bd72cec521ca6e247a5a1613",
+        "tests/test_card_protection.py": "21503203bce2077db08f9171109378d7979d57aca866fa94c543883760b7472b",
+        "policies/card_protection_v1.json": "b7dcc7b569f20ab7ee85a7b2b68ec1d2f6686cb6c66ccbad4a141696e401b39f",
+        "policies/card_protection_approved.json": "882eebc367ea9381b752c6474253d340f1c3439d4ea86520ad6fd62444d2516c"
+      },
+      "validation": {
+        "regression_tests": 204,
+        "new_card_tests": 18,
+        "existing_workflow_cases_passed": 47,
+        "simulator_contract_tests": 46,
+        "mermaid_diagrams_parsed": 4
+      },
+      "limitations": "Original clean-room report predates this addition. New changes were validated with isolated synthetic tests and current application environment; production integration remains unvalidated."
     }
   ]
 }
