@@ -208,6 +208,10 @@ See [SUBMISSION.md](SUBMISSION.md) for the archive, checksum, clean-room verific
 
 Run `python scripts/audit_data_quality.py` to reproduce the consolidated [quality report](data/data_quality/REPORT.md), template-similarity and surface-token diagnostics. See [DATASET.md](DATASET.md) for methodology and frozen challenge cases. Shared templates, tiny wording-baseline samples and pending external label review limit generalisation claims.
 
+All retained reports, source-version limits and reproduction commands are indexed
+in [REPORTS.md](REPORTS.md). Improvement steps 1–5 are implemented; the expanded
+evaluation and final release verification are still pending.
+
 ## Workflow controls and colleague continuation
 
 See [WORKFLOW_CONTROLS.md](WORKFLOW_CONTROLS.md) for the explicit ordinary

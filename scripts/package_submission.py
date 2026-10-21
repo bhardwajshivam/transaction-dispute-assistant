@@ -24,6 +24,7 @@ def files(root=ROOT):
         ok |= parts == ('.streamlit','config.toml')
         ok |= parts[0] in ('scripts','tests','evaluation') and path.suffix in ('.py','.json')
         ok |= parts[0]=='policies' and path.suffix=='.json'
+        ok |= parts[0]=='evaluation_baselines' and path.suffix in ('.json','.md')
         ok |= parts[0]=='data' and path.suffix in ('.json','.md') and (
             (len(parts)>2 and parts[1] in DATA_DIRS) or parts[1] in ('manifest.json','quality_report.json'))
         if ok: yield path

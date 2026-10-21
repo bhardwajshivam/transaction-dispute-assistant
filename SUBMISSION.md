@@ -17,8 +17,10 @@ Archive member timestamps are fixed so unchanged inputs produce the same archive
 
 Do not submit the entire development folder or copy your existing database/key
 into the archive. Regenerate runtime data and create a new local database/key.
-Live model weights are external and optional; the default flow and main results
-need no Ollama server. Python dependencies require package-index access or an
+Live model weights are external. Default complaint extraction attempts local
+Ollama and falls back when unavailable; explicitly select deterministic mode for
+offline operation. The main offline test suites need no Ollama server.
+Python dependencies require package-index access or an
 independently provisioned wheelhouse; dependencies are not bundled.
 
 ## Fresh-directory procedure
@@ -32,12 +34,17 @@ python -m pip install -r requirements.txt
 python -m pip check
 python scripts/generate_data.py --seed 42 --cards-per-customer 2 --include-inr-example
 python scripts/load_database.py
+export CONCERN_EXTRACTION_MODE=deterministic
+export EVIDENCE_PROPOSER_MODE=deterministic
 python -m unittest discover -s tests -q
 python scripts/evaluate_deterministic_extraction.py
 python scripts/evaluate_workflow.py
 python scripts/evaluate_policy.py
 python scripts/demonstrate_journeys.py
 python scripts/validate_bank_integration.py
+python scripts/audit_data_quality.py
+python scripts/validate_workflow_controls.py
+python scripts/validate_privacy_operations.py
 python scripts/generate_activity_data.py
 python scripts/evaluate_activity_corpus.py --split development
 python scripts/evaluate_activity_corpus.py --split evaluation
